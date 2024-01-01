@@ -18,8 +18,14 @@ OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRC_FILES))
 MAIN_SRC_NAME := $(notdir $(basename $(wildcard $(SRC_DIR)/*.cpp)))
 
 
+DIRECTORIES := $(SRC_DIR) $(INCLUDE_DIR) $(BUILD_DIR) $(GEN_DIR)
+${DIRECTORIES}:
+	mkdir -p ${DIRECTORIES}
+create_directories:
+	@mkdir -p $(DIRECTORIES)
+
 # Build executable with debug flags
-alldebug: $(BUILD_DIR)/$(MAIN_SRC_NAME)_debug
+alldebug: create_directories $(BUILD_DIR)/$(MAIN_SRC_NAME)_debug
 
 $(BUILD_DIR)/$(MAIN_SRC_NAME)_debug: $(patsubst $(BUILD_DIR)/%.o, $(BUILD_DIR)/%_debug.o, $(OBJ_FILES))
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $^ -o $@
@@ -30,7 +36,7 @@ $(BUILD_DIR)/%_debug.o: $(SRC_DIR)/%.cpp
 
 
 # Build executable with asan flags
-allasan: $(BUILD_DIR)/$(MAIN_SRC_NAME)_asan
+allasan: create_directories $(BUILD_DIR)/$(MAIN_SRC_NAME)_asan
 $(BUILD_DIR)/$(MAIN_SRC_NAME)_asan: $(patsubst $(BUILD_DIR)/%.o, $(BUILD_DIR)/%_asan.o, $(OBJ_FILES))
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(ASAN_FLAGS) $^ -o $@
 
@@ -40,7 +46,7 @@ $(BUILD_DIR)/%_asan.o: $(SRC_DIR)/%.cpp
 
 
 # Build executable with optimization flags
-alloptimized: $(BUILD_DIR)/$(MAIN_SRC_NAME)_optimized
+alloptimized: create_directories $(BUILD_DIR)/$(MAIN_SRC_NAME)_optimized
 
 $(BUILD_DIR)/$(MAIN_SRC_NAME)_optimized: $(patsubst $(BUILD_DIR)/%.o, $(BUILD_DIR)/%_optimized.o, $(OBJ_FILES))
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(OPTIMIZE_FLAGS) $^ -o $@
