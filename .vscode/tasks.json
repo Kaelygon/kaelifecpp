@@ -1,0 +1,45 @@
+// tasks.json
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build with Makefile (alldebug)",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"alldebug"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Build with Makefile (allasan)",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"allasan"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Build with Makefile (alloptimized)",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"alloptimized"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"problemMatcher": []
+		}
+	]
+}

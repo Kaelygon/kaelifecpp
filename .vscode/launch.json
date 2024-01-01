@@ -1,0 +1,63 @@
+// launch.json
+{
+	"version": "0.2.0",
+	"configurations": [
+		//default debuggers
+		{ //-g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -Og 
+			"name": "g++ build with debugger",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_debug",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "Build with Makefile (alldebug)",  
+			"miDebuggerPath": "/usr/bin/gdb"
+		},
+		//fasnitizer
+		{ // -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -Og -fsanitize=address
+			"name": "g++ build with debugger fsanitizer",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_asan",
+			"args": [
+//				"2>&1", //&"warning: GDB: Failed to set controlling terminal: Operation not permitted\n"????
+//				"|",
+//				"stdbuf",
+//				"-oL",
+//				"tee",
+//				"kaelife.log"
+			],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [
+//			  {
+//				"name": "LSAN_OPTIONS",
+//				"value": "verbosity=1:log_threads=1"
+//			  }
+			],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "Build with Makefile (allasan)",  
+			"miDebuggerPath": "/usr/bin/gdb"
+		},
+		//disables debuggers and uses optimization flags
+		{ //-mavx2 -O3 -Os
+			"name": "g++ build with optimization flags",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_optimized",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "Build with Makefile (alloptimized)",  
+			"miDebuggerPath": "/usr/bin/gdb"
+		}
+	]
+}
