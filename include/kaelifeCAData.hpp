@@ -328,21 +328,24 @@ public: //public functions
 				
 				for(uint i=0;i<localIterTask;i++){ //iterate the given amount 
 
+					//iterate stripe of the world
 					for (uint tx = 0; tx < lv.tileRows; ++tx) {
+						//check if tx is near border
 						bool nearBorderX = (tx < lv.maskRadx) || (tx >= lv.tileRows - lv.maskRadx);
 						for (uint ty = lv.threadId*stripeSize; ty < (lv.threadId+1)*stripeSize; ty += 1) {
 							iterateCellLV(tx, ty, lv, nearBorderX);
 						}
 					}
 
-					localBarrier.arrive_and_wait(); //Make sure no threads are writing
+					//Each thread has to be done before next iteration. Otherwise part of the world would simulate at different speed
+					localBarrier.arrive_and_wait(); 
 					threadCloneBuffer(lv);
 
 				}
 			}
 		}
 
-		//Cellular automata iteration logic local variables
+		//Cellular automata iteration logic using ThreadCache lv
 		inline void iterateCellLV(const uint ti, const uint tj, CACache::ThreadCache &lv, bool nearBorder){
 
 			int neigsum=0;
@@ -350,20 +353,19 @@ public: //public functions
 			int cellState = stateBuf[lv.activeBuf][ti][tj];
 			int ogState = cellState;
 
-			//check if near border
+			//check if ti,tj is near border
 			nearBorder = nearBorder || (tj < lv.maskRady) || (tj >= lv.tileCols - lv.maskRady );
 			uint nx,ny;
-
 
 			for(int i=0;i<lv.maskElements;++i){		
 			//for (size_t i : lv.neigMaskInd) {		
 				if(lv.neigMask1d[i]==0){continue;}
 
-				int x=i%lv.maskWidth;
-				x=x-lv.maskRadx; // map coords e.g. [0,5] to [-2,2] 
+				//iterator to coordinate relative to mask center
+				int x=i%lv.maskWidth-lv.maskRadx;
 				int y=i/lv.maskWidth-lv.maskRady;
 
-				//mask cells in world space, wrapped if out of bound
+				//mask cell coordinate in world space, wrapped if out of bound
 				nx = nearBorder ? (ti+x+lv.tileRows)%lv.tileRows : ti+x;
 				ny = nearBorder ? (tj+y+lv.tileCols)%lv.tileCols : tj+y;
 				#if KAELIFE_DEBUG
@@ -377,11 +379,10 @@ public: //public functions
 					}			
 				#endif
 
-				uint neigValue=stateBuf[lv.activeBuf][nx][ny];
+				uint neigValue=stateBuf[lv.activeBuf][nx][ny]; //get world cell value
 
-				if(neigValue==0){continue;}
+				if(neigValue < lv.clipTreshold){continue;} //clip any values below clipTreshold
 				
-				neigValue*=(neigValue>=lv.clipTreshold); //clip treshold stateCount/2
 				neigValue=neigValue*lv.neigMask1d[i]/UINT8_MAX; //weight
 				neigsum+=neigValue;
 			}

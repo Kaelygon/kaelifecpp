@@ -14,8 +14,10 @@
 
 /*
 controls
-New rules..... [R]
-New add rule..... [T]
+Random rules..... [R]
+Random add rule.. [T]
+Random all....... [Y]
+Mutate........... [M]
 Draw............. mouse left/right
 Draw radius...... [Q]:-1 [E]:+1
 Draw random...... [W]
@@ -23,11 +25,9 @@ Simu Speed....... [1]:-1 [3]:+1
 Pause............ [2], [Shift]+[P]
 Iterate once..... [4]
 Print rules...... [P]
-Switch preset.... [,] [.]
+Switch automata.. [,] [.]
 Shader Color..... [Shift]+[N]
-Mutate........... [M]
-Show frameTime... [F]
-Randomize all.... [Y]
+print frameTime.. [F]
 Hue--............ [Shift]+[Q]
 Hue++............ [Shift]+[E]
 Color stagger--.. [Alt]+[Q]

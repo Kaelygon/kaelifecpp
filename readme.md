@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------------------
 
-![alt text](https://github.com/kaelygon/kaelifecpp/image.png?raw=true)
+![alt text](raw.githubusercontent.com/Kaelygon/kaelifecpp/main/icon.png?raw=true)
 
 # kaelifecpp Generalized Cellular Automata
  

@@ -23,6 +23,7 @@ public:
 		uint stateCount = 0;
 		std::vector<int16_t> ruleRange={0};
 		std::vector<int8_t> ruleAdd={0,0};
+		uint8_t clipTreshold = 128;
 
 		WorldMatrix<uint8_t> neigMask={
 			{UINT8_MAX, UINT8_MAX, UINT8_MAX},

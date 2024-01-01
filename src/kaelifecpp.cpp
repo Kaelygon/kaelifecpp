@@ -1,5 +1,4 @@
-//2-bit cellular automata by Kaelygon CC BY-SA 4.0 2023
-//https://creativecommons.org/licenses/by-sa/4.0/
+
 #include <GL/glew.h>
 #include <iostream>
 #include <SDL2/SDL.h>
@@ -87,7 +86,7 @@ int main() {
 
 	initPixelMap(kaelife);
 
-	//could do this in draw calss if one ever is made
+	//could do this in draw class if one ever is made
 	placeHolderDraw(kaelife);
 
 	SDL_GL_SetSwapInterval(0);
