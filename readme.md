@@ -1,17 +1,17 @@
 ----------------------------------------------------------------------------------------------
 
-![alt text](raw.githubusercontent.com/Kaelygon/kaelifecpp/main/icon.png?raw=true)
+![alt text](raw.githubusercontent.com/Kaelygon/kaelifecpp/main/icon.png)
 
 # kaelifecpp Generalized Cellular Automata
  
 ## Rules explanation
-´´´
+```
 The cellular automata in this program can have number of different 
 configurations.
 
 Let's use example Kaelife
-´´´
-´´´c++
+```
+```c++
 {
     .name = "Kaelife",
     .stateCount = 4,
@@ -24,8 +24,8 @@ Let's use example Kaelife
     },
     .clipTreshold = stateCount/2
 }
-´´´
-´´´
+```
+```
 stateCount is the number of states, 0 to 3
 ruleRange is a sorted list of possible neighbor sums
 ruleAdd is list of modifiers that will be added to the cell
@@ -48,15 +48,15 @@ Each iteration following calculations are performed on each cell as follows:
     stateCount.
 -Newly calculated cell value is written to a buffer until all cells are computed
 -Completed buffer values are used for next iteration
-´´´
+```
 
 ## User Controls
-´´´
+```
 The engine uses SDL2 and GLEW for simple display and keyboard and mouse input.
 There is no GUI and most of the information is printed in console.
 The cellular automata is displayed on window with default size of 576x384
-´´´
-´´´
+```
+```
 Controls
 Random rules..... [R]
 Random add rule.. [T]
@@ -77,7 +77,7 @@ Hue++............ [Shift]+[E]
 Color stagger--.. [Alt]+[Q]
 Color stagger++.. [Alt]+[E]
 Exit:............ [ESC]
-´´´
+```
 
 ----------------------------------------------------------------------------------------------
 
