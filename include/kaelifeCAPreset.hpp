@@ -10,9 +10,12 @@
 #include <limits>
 #include <cstring>
 #include <algorithm>
+#include <mutex>
 
 class CAPreset {
 public:
+	std::mutex indexMutex;
+
 	CAPreset() {
 		setPreset(0);
         for (auto& automata : list) {
@@ -66,22 +69,21 @@ public:
 
 	//BOF preset managing func
 		uint setPreset(uint ind=0){
-			if(ind>=list.size()){
-				index=list.size()-1+list.empty();
-			}else if(ind>=UINT64_MAX/2){
+			std::unique_lock<std::mutex> lock(indexMutex); //index may be set by CAData or InputHandler 
+			if(ind>=(uint)list.size() && ind < UINT_MAX/2){
 				index=0;
+			}else if(ind>=UINT_MAX/2){
+				index=list.size()-1;
 			}else{
 				index=ind;
 			}
 			return index;
 		}
 		uint nextPreset(){
-			index++;
-			return setPreset(index);
+			return setPreset(index+1);
 		}
 		uint prevPreset(){
-			index--;
-			return setPreset(index);
+			return setPreset(index-1);
 		}
 
 		//add to preset and return its index
@@ -96,11 +98,8 @@ public:
 		//{ uint OR const char* dst, uint OR const char* src, bool keepName=true } 
 		std::array<uint, 2> copyPreset(T1 dst, T2 src, bool keepName=true) {
 
-			uint srcInd = -1;
-			uint dstInd = -1;
-			
-			dstInd=getPresetIndex(dst);
-			srcInd=getPresetIndex(src);
+			uint srcInd = getPresetIndex(src);
+			uint dstInd = getPresetIndex(dst);
 
 			if( srcInd==UINT_MAX || dstInd==UINT_MAX ){ //null check
 				printf("Destination or source preset doesn't exist!\n");
@@ -120,13 +119,11 @@ public:
 
 			return {dstInd,srcInd};
 		}
-	//EOF preset managing func
 
 		//{ uint OR const char*, const char* } 
 		template <typename T1, typename = std::enable_if_t<std::is_same<T1, const char*>::value || std::is_same<T1, uint>::value>>
-		uint renamePreset(T1 presetNameOrId, const char* presetName="UNNAMED"){
-			uint ind = -1;
-				ind=getPresetIndex(presetNameOrId);
+		uint renamePreset(T1 nameOrId, const char* presetName="UNNAMED"){
+			uint ind = getPresetIndex(nameOrId);
 			if( ind==UINT_MAX ){ //null check
 				printf("Preset doesn't exist!\n");
 				return ind;
@@ -134,6 +131,32 @@ public:
 			list[ind].name=presetName;
 			return ind;
 		}
+
+		//randomize preset by name or index. 
+		//Returns -1 if no preset was not found by index
+		//Returns seed if no preset was not found by name
+		//{ uint OR const char* } 
+		template <typename T1, typename = std::enable_if_t<std::is_same<T1, const char*>::value || std::is_same<T1, uint>::value>>
+		uint64_t seedFromName(T1 nameOrId){
+			uint ind = getPresetIndex(nameOrId);
+			uint64_t interpSeed;
+			if constexpr (std::is_same<T1, uint>::value) {
+				if(ind==UINT_MAX){ //no preset found by index
+					return ind;
+				}
+				interpSeed = reinterpret_cast<uint64_t>(list[ind].name);
+			}else{
+				interpSeed = reinterpret_cast<uint64_t>(nameOrId);
+			}
+			uint64_t *seedPtr = &interpSeed;
+
+			if(ind!=UINT_MAX){ //if a preset was found by name
+				interpSeed = randAll(ind, seedPtr); 
+			}
+
+			return interpSeed;
+		}
+	//EOF preset managing func
 
 	//BOF Printers
 	
@@ -188,8 +211,8 @@ public:
 		void randRuleMask( uint ind, uint64_t* seed=nullptr ){
 			if(list[ind].stateCount==0){return;}
 			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
-			for(uint i=0;i<list[ind].neigMask.wmSize();i++){
-				for(uint j=0;j<list[ind].neigMask[i].wmSize();j++){
+			for(uint i=0;i<list[ind].neigMask.getWidth();i++){
+				for(uint j=0;j<list[ind].neigMask.getHeight();j++){
 					uint8_t maskValue = ceil ( (((float)(kaelRand(seedPtr)%list[ind].stateCount)) / list[ind].stateCount) * UINT8_MAX );
 					list[ind].neigMask[i][j]=maskValue;
 				}
@@ -198,7 +221,7 @@ public:
 
 		//randomize ruleRange[]
 		void randRuleRange(uint ind, uint16_t minValue, uint16_t maxValue=0, uint64_t* seed=nullptr ) {
-			maxValue = maxValue ? maxValue :  calcMaxNeigsum(index);
+			maxValue = maxValue ? maxValue :  calcMaxNeigsum(ind);
 			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
 			uint rangeSize=list[ind].ruleRange.size();
 			list[ind].ruleRange.clear();
@@ -232,10 +255,8 @@ public:
 			uint newMaskX=kaelRand(seedPtr)%maxMask+1;
 			uint newMaskY=kaelRand(seedPtr)%maxMask+1;
 
-			list[ind].neigMask.wmResize(newMaskX);
-			for(uint i=0;i<newMaskX;i++){
-				list[ind].neigMask[i].wmResize(newMaskY);
-			}
+			list[ind].neigMask.setWidth(newMaskX);
+			list[ind].neigMask.setHeight(newMaskY);
 
 			randRuleMask(ind,seedPtr);
 
@@ -296,8 +317,8 @@ public:
 		//max possible neighboring cells sum
 		int calcMaxNeigsum(uint ind){
 			uint maxNeigsum=0;
-			for(uint i=0;i< list[ind].neigMask.wmSize(); i++){
-				for(uint j=0;j< list[ind].neigMask[i].wmSize(); j++){
+			for(uint i=0;i< list[ind].neigMask.getWidth(); i++){
+				for(uint j=0;j< list[ind].neigMask.getHeight(); j++){
 					maxNeigsum+=(uint) (list[ind].stateCount-1) * list[ind].neigMask[i][j]/UINT8_MAX;
 				}
 			}
@@ -311,6 +332,9 @@ public:
 private:
 
 	//Maybe a different config file for this list. json maybe
+	/*List of automata presets
+
+	*/
 	std::vector<PresetList> list = 
 	{
 		{//0
@@ -355,9 +379,9 @@ private:
 		},{//5
 			"none",
 			0,
-			{},
-			{},
-			{{}}
+			{0},
+			{0},
+			{{0}},
 		},{//6
 			"random",
 			255,
@@ -377,9 +401,9 @@ private:
 		},{//7
 			"Set seed",
 			0,
-			{},
-			{},
-			{{}},
+			{0},
+			{0},
+			{{0}},
 			17055218352662962746UL
 		}
 	}; 
@@ -398,7 +422,7 @@ private:
 					break;
 				}
 			}
-			if(ind >= list.size()){ind=-1;}
+			if(ind >= list.size()){ind=UINT_MAX;}
 		}else{
 			static_assert(false, "Invalid dst type");
 		}

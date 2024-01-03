@@ -5,8 +5,8 @@ CXXFLAGS = -std=c++20
 LDFLAGS = -lSDL2 -lGL -lGLEW
 
 OPTIMIZE_FLAGS = -mavx2 -O3 #everyoptimized
-DEBUG_FLAGS = -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG #everydebug
-ASAN_FLAGS  = -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -fsanitize=address #everyasan
+DEBUG_FLAGS = -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -ggdb #everydebug
+ASAN_FLAGS  = -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -ggdb -fsanitize=address #everyasan
 
 SRC_DIR = ./src
 INCLUDE_DIR = ./include

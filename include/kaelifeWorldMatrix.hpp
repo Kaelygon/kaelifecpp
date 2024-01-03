@@ -32,27 +32,31 @@ WorldMatrix<T>{
 //Acts like a 2D vector but the code-space down-up axis is flipped then axes are transposed and padded
 template <typename T>
 class WorldMatrix {
+	private:
+	std::vector<std::vector<T>> matrix={{0}};
+	std::vector<std::vector<T>> zeroMatrix={{0}};
+	size_t width =1;
+	size_t height=1;
+
 public:
-	std::vector<std::vector<T>> matrix;
+	WorldMatrix() : matrix{{0}}, width(1), height(1) {}
 	
-    WorldMatrix() = default;
 	WorldMatrix(std::initializer_list<std::initializer_list<T>> data) {
 
-		// Find the largest row size
-		size_t largestRow = 0;
+		//Find the widest row
+		width = 0;
 		for (const auto& row : data) {
-			largestRow = row.size() > largestRow ? row.size() : largestRow;
+			width = row.size() > width ? row.size() : width;
 		}
 
-		// Resize the matrix to the largest row size
-		matrix.resize(largestRow);
-		
-		for(uint i=0;i<largestRow;i++){
-			matrix[i].resize( data.size() );
+		height = data.size();
+		matrix.resize(width);
+		for(size_t i=0;i<width;i++){
+			matrix[i].resize( height );
 		}
 		
-		uint ri=0;
-		uint ci;
+		size_t ri=0;
+		size_t ci;
 		for (auto& row : data) {
 			ci=0;
 			for (auto& elem : row) {
@@ -61,68 +65,93 @@ public:
 			}
 			ri++;
 		}
-
 	}
 
-	//Accessors for left-right elements
+	//get down-up elements
 	class RowProxy {
 	public:
-		RowProxy(std::vector<T>& row) : row_(row) {}
-		
-		T& operator[](size_t col) { //left-right elements
+		RowProxy(std::vector<T>& row, size_t rowSize) : row_(row), rowSize_ (rowSize) {}
+
+		T& operator[]( size_t col ) {
+			if ( col >= rowSize_ ) {
+				static T nullValue = T(); 
+				printf("Invalid WorldMatrix Y [][%lu] \n", col );
+				//abort();
+				return nullValue;
+			}
 			return row_[col];
 		}
-		const T& operator[](size_t col) const { //left-right elements
+
+		const T& operator[]( size_t col ) const {
+			if ( col >= rowSize_ ) {
+				static T nullValue = T(); 
+				printf("Invalid WorldMatrix Y [][%lu] \n", col );
+				//abort();
+				return nullValue;
+			}
 			return row_[col];
-		}
-		
-		size_t wmSize() const { //left-right size
-			return row_.size();
-		}
-		void wmResize(size_t sizeY) { //left-right resize
-			row_.resize(sizeY);
 		}
 
 	private:
-		std::vector<T>& row_;
+		std::vector<std::vector<T>> zeroRow = {{0}};
+		std::vector<T>& row_= 0;
+		size_t rowSize_ = 0;
 	};
 
-	RowProxy operator[](size_t i) {
-		if (i >= matrix.size()) {return zeroMatrix[0];} //out of range
-		return RowProxy(matrix[i]);
+	RowProxy operator[](size_t row) {
+		if ( !width || row >= width ) {
+			printf("Invalid WorldMatrix X [%lu][%lu] \n", row, height);
+			//abort();
+			return RowProxy(zeroMatrix[0], height );
+		} // out of range
+		return RowProxy(matrix[row], height );
 	}
-    const RowProxy operator[](size_t i) const {
-		if (i >= matrix.size()) {return const_cast<std::vector<T>&>(zeroMatrix[0]);} //out of range
-        return RowProxy(const_cast<std::vector<T>&>(matrix[i]));
-    }
 
-	//get element
-	T& operator()(size_t row, size_t col) {
-		return matrix[row][col];
+	const RowProxy operator[](size_t row) const {
+		if ( !width || row >= width ) {
+			static std::vector<T> nullValue = {T()}; 
+			printf("Invalid WorldMatrix X [%lu][%lu] \n", row, height);
+			//abort();
+			return RowProxy(nullValue, height );
+		} // out of range
+    	return RowProxy(const_cast<std::vector<T>&>(matrix[row]), height );
 	}
-	//get element
-	const T& operator()(size_t row, size_t col) const {
-		return matrix[row][col];
-	}
+
+
+
 
 	//get matrix left-right size
-	size_t wmSize() const {
-		return matrix.size();
+	size_t getWidth() const {
+		return width;
 	}
 	//get matrix[i] down-up size
-	size_t wmSize(size_t i) {
-		if (i >= matrix.size()) {return 0;} //no rows
-		return matrix[i].size();
+	size_t getHeight() const {
+		return height;
 	}
 	
 	//resize matrix down-up to sizeX
-	void wmResize(uint sizeX) {
-		matrix.resize(sizeX);
+	void setHeight(size_t newHeight) {
+		if(width==0 && newHeight!=0){setWidth(1);}
+		for(size_t i=0;i<width;i++){
+			matrix[i].resize(newHeight);
+		}
+		height=newHeight;
 	}
 	
 	//resize matrix[i] left-right to sizeY
-	void wmResize(size_t i, size_t sizeY) {
-		matrix[i].resize(sizeY);
+	void setWidth(size_t newWidth) {
+		matrix.reserve(newWidth);
+		if(newWidth>width){
+			std::vector<T> addCol(width,0);
+			for(int i=0;i<(int)newWidth-(int)width;i++){
+				matrix.push_back(addCol);
+			}
+		}else{
+			for(int i=0;i<(int)width-(int)newWidth;i++){
+				matrix.pop_back();
+			}
+		}
+		width=newWidth;
 	}
 	
 	//Print 2D WorldVector in hard-coded format  
@@ -145,7 +174,4 @@ public:
 			printf("\n");
 		}
 	}
-	private:
-	std::vector<std::vector<T>> zeroMatrix={{0}};
-
 };

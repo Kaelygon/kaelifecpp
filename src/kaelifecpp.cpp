@@ -32,8 +32,8 @@ void placeHolderDraw(CAData &kaelife){	//perhaps ppm/png to world could be done
 
 		uint posx=rows/2-1;
 		uint posy=cols/2-2;
-		for(size_t i=0;i<flier.wmSize();i++){
-			for(size_t j=0;j<flier[0].wmSize();j++){
+		for(size_t i=0;i<flier.getWidth();i++){
+			for(size_t j=0;j<flier.getHeight();j++){
 				uint ai = i + posx   ; 
 				uint aj = j + posy   ;
 				uint bi = i + posx-12;
@@ -60,8 +60,8 @@ void placeHolderDraw(CAData &kaelife){	//perhaps ppm/png to world could be done
 		posx=kaelife.mainCache.tileRows/2 + 16;
 		posy=kaelife.mainCache.tileCols/2;
 		for(size_t k=0;k<3;k++){
-			for(size_t i=0;i<diagonalFlier.wmSize();i++){
-				for(size_t j=0;j<diagonalFlier[0].wmSize();j++){
+			for(size_t i=0;i<diagonalFlier.getWidth();i++){
+				for(size_t j=0;j<diagonalFlier.getHeight();j++){
 					int ofx=18-(-4);
 					int ofy= 4+(-4);
 					ofx=ofx*k+(2*(k==2)-(3)*(k==0));
@@ -161,6 +161,8 @@ int main() {
 				periodIters[(periodIndex)%periodSize]=iterTask;
 			}
 		}
+		SDL_GL_SwapWindow(mainSDLWindow);
+		renderCells(kaelife,kaeInput,mainSDLWindow); 
 
 		do{ // Cap the frame rate
 			elapsedTime=SDL_GetTicks() - frameStartTime;
@@ -213,8 +215,6 @@ int main() {
 		}
 
 		kaelife.kaeMutex.syncMainThread(); //sync iterations
-		renderCells(kaelife,kaeInput,mainSDLWindow); 
-		SDL_GL_SwapWindow(mainSDLWindow);
 		kaelife.doBacklog(); //execute not-thread-safe-tasks thread-safely
 	}
 

@@ -57,9 +57,8 @@ public:
 		targetFrameTime= targetFrameTime<=0.0 ? 0.000001 : targetFrameTime;
 
 		CAPreset::PresetList bufPreset("RANDOM");
-		uint64_t bufSeed=reinterpret_cast<uint64_t>(bufPreset.name);
 		uint randIndex = kaePreset.addPreset(bufPreset);
-		kaePreset.randAll(randIndex,&bufSeed);
+		kaePreset.seedFromName(randIndex);
 
 		printf("cache size: %lu\n",sizeof(mainCache));
 
@@ -114,15 +113,11 @@ public: //public functions
 	void loadPreset(int bufIndex=-1){
 		bufIndex = bufIndex==-1 ? !mainCache.activeBuf : bufIndex;
 
-		if(kaePreset.current()->stateCount==0){
-			printf(" ");
-		}
-
 		mainCache.ruleRange		=	kaePreset.current()->ruleRange;
 		mainCache.ruleAdd		=	kaePreset.current()->ruleAdd;
 		mainCache.stateCount	=	kaePreset.current()->stateCount==0 ? 1 : kaePreset.current()->stateCount; //a lot of arithmetics break with stateCount 0
-		mainCache.maskWidth		=	kaePreset.current()->neigMask   .wmSize(); 	//full mask dimensions
-		mainCache.maskHeight	=	kaePreset.current()->neigMask[0].wmSize();
+		mainCache.maskWidth		=	kaePreset.current()->neigMask.getWidth(); 	//full mask dimensions
+		mainCache.maskHeight	=	kaePreset.current()->neigMask.getHeight();
 		mainCache.maskElements	=	mainCache.maskWidth*mainCache.maskHeight;
 		mainCache.maskRadx		=	(mainCache.maskWidth )/2; 	//distance from square center. Center included 
 		mainCache.maskRady		=	(mainCache.maskHeight)/2;
