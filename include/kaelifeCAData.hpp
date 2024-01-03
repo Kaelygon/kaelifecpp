@@ -1,10 +1,10 @@
 #pragma once
 
-#include "./kaelRandom.hpp"
+#include "kaelRandom.hpp"
 #include "kaelifeCALock.hpp"
-#include "./kaelifeWorldMatrix.hpp"
-#include "./kaelifeCAPreset.hpp"
-#include "./kaelifeCACache.hpp"
+#include "kaelifeWorldMatrix.hpp"
+#include "kaelifeCAPreset.hpp"
+#include "kaelifeCACache.hpp"
 
 #include <iostream>
 #include <cmath>
@@ -29,54 +29,52 @@
 class CAData {
 public:
 
+	CALock kaeMutex;
 	CAPreset kaePreset;
 	CACache kaeCache;
 	CACache::ThreadCache mainCache; //cache of CAData that should be used to update thread cache synchronously
 
-	CAData() : neigMask{{}, {}} { // Constructor
+	CAData() { // Constructor
 
-		mainCache.threadId		=	(uint)-1; //only threads use this
-		mainCache.threadCount	=	std::thread::hardware_concurrency();
+		mainCache.threadId		=	UINT_MAX; //only threads use this
 		mainCache.activeBuf		=	0;
-		mainCache.tileRows		=	576;
+		mainCache.tileRows		=	576; 
 		mainCache.tileCols		=	384;
+		mainCache.threadCount	=	std::thread::hardware_concurrency();
+		if(mainCache.threadCount>mainCache.tileCols){mainCache.threadCount=mainCache.tileCols;}
 
 		aspectRatio=(float)mainCache.tileRows/mainCache.tileCols;
 		renderWidth = mainCache.tileRows>1024 ? mainCache.tileRows : 1024 ;
 		renderHeight = renderWidth/aspectRatio;
-
-		stateBuf[!mainCache.activeBuf].resize(mainCache.tileRows);
-		stateBuf[ mainCache.activeBuf].resize(mainCache.tileRows);
-		for(uint i=0;i<mainCache.tileRows;i++){
-			stateBuf[!mainCache.activeBuf][i].resize (mainCache.tileCols);
-			stateBuf[ mainCache.activeBuf][i].reserve(mainCache.tileCols);
+		
+		for (int j = 0; j < 2; j++) {
+			stateBuf[j].resize(mainCache.tileRows);
+			for (uint i = 0; i < mainCache.tileRows; i++) {
+				stateBuf[j][i].resize(mainCache.tileCols);
+			}
 		}
-
-		loadPreset(!mainCache.activeBuf); //initialize rest mainCache variables
-		cloneBuffer(); 
-		kaePreset.printPreset(0);
 
 		targetFrameTime= targetFrameTime<=0.0 ? 0.000001 : targetFrameTime;
 
-		CAPreset::PresetList bufPreset = {
-			.name = "RANDOM",
-		};
-		//uint64_t bufSeed=reinterpret_cast<uint64_t>(bufPreset.name);
-		uint64_t bufSeed = 3317025035631099721;
+		CAPreset::PresetList bufPreset("RANDOM");
+		uint64_t bufSeed=reinterpret_cast<uint64_t>(bufPreset.name);
 		uint randIndex = kaePreset.addPreset(bufPreset);
 		kaePreset.randAll(randIndex,&bufSeed);
 
 		printf("cache size: %lu\n",sizeof(mainCache));
+
+		loadPreset(!mainCache.activeBuf); //initialize rest mainCache variables
+		cloneBuffer(); 
+		kaePreset.printPreset(0);
 	}
 
 private: //private vars and custom data types
 
-	std::vector<const char*> backlogList; //tasks to do that are not thread safe	
-
-	WorldMatrix<uint8_t> neigMask[2]; //buffered to prevent incomplete read in iterateCell
+	std::vector<const char*> backlogList; //tasks to do that are not thread safe
 
 public: //public vars and custom data types
 	//TODO: make a new configuration that CAData constructor reads and assigns correct starting variables
+	//TODO: separate all drawing related stuff to a new class and pass stateBuf and some new config structure to it
 		
 	//Origin is at left bottom corner. X is horizontally right, Y is vertically up
 	std::vector<std::vector<uint8_t>>stateBuf[2]; // double buffer
@@ -91,7 +89,6 @@ public: //public vars and custom data types
 	//EOF vars that CAData write
 
 	//BOF vars that CAData+InputHandler write
-		//TODO: separate all drawing related stuff to a new class and pass stateBuf and some new config structure to it
 		//drawn pixel buffer 
 		typedef struct{
 			uint16_t pos[2]; //list of coordinates to update {{123,23},...,{3,7}}
@@ -117,7 +114,6 @@ public: //public functions
 	void loadPreset(int bufIndex=-1){
 		bufIndex = bufIndex==-1 ? !mainCache.activeBuf : bufIndex;
 
-		neigMask[bufIndex] = kaePreset.current()->neigMask;
 		if(kaePreset.current()->stateCount==0){
 			printf(" ");
 		}
@@ -125,15 +121,17 @@ public: //public functions
 		mainCache.ruleRange		=	kaePreset.current()->ruleRange;
 		mainCache.ruleAdd		=	kaePreset.current()->ruleAdd;
 		mainCache.stateCount	=	kaePreset.current()->stateCount==0 ? 1 : kaePreset.current()->stateCount; //a lot of arithmetics break with stateCount 0
-		mainCache.maskWidth		=	kaePreset.current()->neigMask.matrix   .size(); 	//full mask dimensions
-		mainCache.maskHeight	=	kaePreset.current()->neigMask.matrix[0].size();
+		mainCache.maskWidth		=	kaePreset.current()->neigMask   .wmSize(); 	//full mask dimensions
+		mainCache.maskHeight	=	kaePreset.current()->neigMask[0].wmSize();
 		mainCache.maskElements	=	mainCache.maskWidth*mainCache.maskHeight;
 		mainCache.maskRadx		=	(mainCache.maskWidth )/2; 	//distance from square center. Center included 
 		mainCache.maskRady		=	(mainCache.maskHeight)/2;
-		mainCache.clipTreshold	=	kaePreset.current()->stateCount/2;
+		mainCache.clipTreshold	=	kaePreset.current()->clipTreshold;
 
 		mainCache.neigMask1d.clear();
-		mainCache.neigMask1d.resize( mainCache.maskElements );
+		if(mainCache.maskElements!=0){
+			mainCache.neigMask1d.resize( mainCache.maskElements );
+		}
 
 		//mainCache.neigMaskInd.clear();
 		//mainCache.neigMaskInd.reserve( mainCache.maskElements );
@@ -141,27 +139,12 @@ public: //public functions
 		for (int i = 0; i < mainCache.maskWidth; ++i) {
 			for (int j = 0; j < mainCache.maskHeight; ++j) {
 				uint ind = i+j*mainCache.maskWidth;
-				mainCache.neigMask1d[ind]=neigMask[bufIndex].matrix[i][j]; //store 1d mask
+				mainCache.neigMask1d[ind]=kaePreset.current()->neigMask[i][j]; //store 1d mask
 				//if(mainCache.neigMask1d[ind]!=0){ mainCache.neigMaskInd.push_back(ind); } //store non-zero index
 			}
 		}
 
 		mainCache.index++;
-	}
-
-	//Perform only when threads are paused
-	void copyDrawBuf(){
-		std::lock_guard<std::mutex> lock(drawMutex);//wait till drawing is done
-
-    	for (const auto& pixel : drawBuf) {
-			uint16_t x = pixel.pos[0]%mainCache.tileRows;
-			uint16_t y = pixel.pos[1]%mainCache.tileCols;
-
-			stateBuf[!mainCache.activeBuf][x][y] = pixel.state;
-		}
-		drawMouseBuf.clear();
-		drawMouseBuf.clear();
-		drawBuf.clear();
 	}
 
 	//execute before cloneBuffer not-thread safe functions backlog
@@ -211,7 +194,7 @@ public: //public functions
 			if(strcmp(*keyword, "randAdd") == 0){
 				auto copyIndex = kaePreset.copyPreset("RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
-				int rr=std::min( (int)ceil((kaePreset.current()->stateCount-1)) ,127);
+				int rr=std::min( (int)(kaePreset.current()->stateCount-1) ,127);
 				kaePreset.randRuleAdd(kaePreset.index,-rr,rr);
 				loadPreset();
 				kaePreset.printRuleAdd(kaePreset.index);
@@ -277,19 +260,40 @@ public: //public functions
 	void cloneBuffer(){
 		//clone buffer
 		stateBuf[mainCache.activeBuf] = stateBuf[!mainCache.activeBuf];
-		neigMask[mainCache.activeBuf] = neigMask[!mainCache.activeBuf];
 
 		//swap buffer index
 		mainCache.activeBuf = !mainCache.activeBuf;
+	}
+
+	//Perform only when threads are paused
+	void copyDrawBuf(){
+		std::lock_guard<std::mutex> lock(drawMutex);//wait till drawing is done
+
+    	for (const auto& pixel : drawBuf) {
+			uint16_t x = pixel.pos[0]%mainCache.tileRows;
+			uint16_t y = pixel.pos[1]%mainCache.tileCols;
+
+			#if KAELIFE_DEBUG
+				if(x>=mainCache.tileRows || y>=mainCache.tileCols){
+					printf("OUT OF WORLD BOUNDS copyDrawBuf\n");
+					abort();
+				}	
+			#endif
+
+			stateBuf[!mainCache.activeBuf][x][y] = pixel.state;
+		}
+		drawMouseBuf.clear();
+		drawMouseBuf.clear();
+		drawBuf.clear();
 	}
 
 
 	//BOF iterate functions
 	public:
 		//progress state[][] by 1 step multi threaded
-		inline void iterateStateMT(std::vector<std::thread> &threads, CALock *iterLock) {
+		inline void iterateStateMT(std::vector<std::thread> &threads) {
 
-			iterLock->resizeThread(mainCache.threadCount);
+			kaeMutex.resizeThread(mainCache.threadCount);
 			std::barrier localBarrier(mainCache.threadCount);
 			CACache::ThreadCache cache = mainCache;
 			kaeCache.copyCache(&cache, mainCache);
@@ -297,8 +301,8 @@ public: //public functions
 			for (uint i = 0; i < mainCache.threadCount; ++i) {
 				cache.threadId=i;
 
-				threads.emplace_back([&, iterLock, cache]() {
-					iterateState(&(*iterLock), cache, localBarrier);
+				threads.emplace_back([&, cache]() {
+					iterateState(cache, localBarrier);
 				});
 			}
 			for (auto &thread : threads){
@@ -309,10 +313,18 @@ public: //public functions
 		}
 
 	private:
-		inline void iterateState(CALock *iterLock, CACache::ThreadCache lv, std::barrier<>& localBarrier) {
-
+		inline void iterateState(CACache::ThreadCache lv, std::barrier<>& localBarrier) {
 			uint localIterTask=0;
-			uint stripeSize=ceil(lv.tileCols/lv.threadCount);
+
+			//spread threads task to 2D stripes 
+			uint iterSize=(lv.tileRows+lv.threadCount/2)/lv.threadCount;
+			uint remainder=lv.tileRows%lv.threadCount; //remaining rows that couldn't be split evenly
+			uint iterStart	=	 lv.threadId*iterSize;
+			uint iterEnd	=(lv.threadId+1)*iterSize;
+			iterStart+=remainder    *(lv.threadId)/lv.threadCount; //spread out by remainder
+			iterEnd  +=(remainder)*(lv.threadId+1)/lv.threadCount; //fill gaps with remaining rows
+				
+			iterEnd = iterEnd > lv.tileRows ? lv.tileRows : iterEnd;
 
 			while(1){
 				localIterTask=0;
@@ -320,19 +332,19 @@ public: //public functions
 				if(lv.index!=mainCache.index){
 					kaeCache.copyCache(&lv, mainCache);
 				}
-				iterLock->waitResume(lv.threadId,&localIterTask,&lv.activeBuf); //wait main thread resume signal
+				kaeMutex.waitResume(lv.threadId,&localIterTask,&lv.activeBuf); //wait main thread resume signal
 				
-				if(iterLock->isThreadTerminated.load()){
+				if(kaeMutex.isThreadTerminated.load()){
 					return;
 				}
 				
 				for(uint i=0;i<localIterTask;i++){ //iterate the given amount 
 
 					//iterate stripe of the world
-					for (uint tx = 0; tx < lv.tileRows; ++tx) {
+					for (uint tx = iterStart; tx < iterEnd; tx++) {
 						//check if tx is near border
 						bool nearBorderX = (tx < lv.maskRadx) || (tx >= lv.tileRows - lv.maskRadx);
-						for (uint ty = lv.threadId*stripeSize; ty < (lv.threadId+1)*stripeSize; ty += 1) {
+						for (uint ty = 0; ty < lv.tileCols; ++ty) {
 							iterateCellLV(tx, ty, lv, nearBorderX);
 						}
 					}
@@ -404,9 +416,9 @@ public: //public functions
 		}
 	//EOF iterate functions
 
-
 	private:
-
+	//BOF stateBuf functions
+	
 	//randomize state[!activeBuf][][]. Not thread safe
 	void randState(uint numStates, uint64_t* seed=nullptr ){
 		uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
@@ -416,5 +428,5 @@ public: //public functions
 			}
 		}
 	}
-
+	//EOF stateBuf functions
 };

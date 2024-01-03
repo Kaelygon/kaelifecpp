@@ -4,9 +4,9 @@ CXX = g++
 CXXFLAGS = -std=c++20
 LDFLAGS = -lSDL2 -lGL -lGLEW
 
-OPTIMIZE_FLAGS = -mavx2 -O3 -Os
-DEBUG_FLAGS = -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -Og 
-ASAN_FLAGS  = -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -Og -fsanitize=address #otherwise fsanitize and valgrind clash 
+OPTIMIZE_FLAGS = -mavx2 -O3 #everyoptimized
+DEBUG_FLAGS = -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG #everydebug
+ASAN_FLAGS  = -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -fsanitize=address #everyasan
 
 SRC_DIR = ./src
 INCLUDE_DIR = ./include
@@ -21,42 +21,49 @@ MAIN_SRC_NAME := $(notdir $(basename $(wildcard $(SRC_DIR)/*.cpp)))
 DIRECTORIES := $(SRC_DIR) $(INCLUDE_DIR) $(BUILD_DIR) $(GEN_DIR)
 ${DIRECTORIES}:
 	mkdir -p ${DIRECTORIES}
-create_directories:
-	@mkdir -p $(DIRECTORIES)
+
+
+define build_every_src
+$(BUILD_DIR)/%_$(1): $$(BUILD_DIR)/%_$(1).o
+	$$(CXX) $$(CXXFLAGS) $$(LDFLAGS) $(2) $$^ -o $$@
+
+$$(BUILD_DIR)/%_$(1).o: $$(SRC_DIR)/%.cpp
+	$$(CXX) $$(CXXFLAGS) -I$$(INCLUDE_DIR) $(2) -c $$< -o $$@
+endef
+
+
+define build_active_src
+$(BUILD_DIR)/$(ACTIVE_SRC_NAME)_$(1): $$(BUILD_DIR)/$$(ACTIVE_SRC_NAME).o
+	$$(CXX) $$(CXXFLAGS) $$(LDFLAGS) $$(ACTIVE_SRC_FLAGS) $$^ -o $$@
+
+$$(BUILD_DIR)/$$(ACTIVE_SRC_NAME).o: $$(ACTIVE_SRC_PATH)/$$(ACTIVE_SRC_NAME).cpp
+	$$(CXX) $$(CXXFLAGS) -I$$(INCLUDE_DIR) $$(ACTIVE_SRC_FLAGS) -c $$< -o $$@
+endef
+
 
 # Build executable with debug flags
-alldebug: create_directories $(BUILD_DIR)/$(MAIN_SRC_NAME)_debug
-
-$(BUILD_DIR)/$(MAIN_SRC_NAME)_debug: $(patsubst $(BUILD_DIR)/%.o, $(BUILD_DIR)/%_debug.o, $(OBJ_FILES))
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(DEBUG_FLAGS) $^ -o $@
-
-# Build object files from source files with optimization flgas
-$(BUILD_DIR)/%_debug.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -I$(INCLUDE_DIR) $(DEBUG_FLAGS) -c $< -o $@
-
+everydebug: create_directories $(foreach program,$(MAIN_SRC_NAME),$(BUILD_DIR)/$(program)_debug)
+$(eval $(call build_every_src,debug,$(DEBUG_FLAGS)))
 
 # Build executable with asan flags
-allasan: create_directories $(BUILD_DIR)/$(MAIN_SRC_NAME)_asan
-$(BUILD_DIR)/$(MAIN_SRC_NAME)_asan: $(patsubst $(BUILD_DIR)/%.o, $(BUILD_DIR)/%_asan.o, $(OBJ_FILES))
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(ASAN_FLAGS) $^ -o $@
-
-# Build object files from source files with optimization flgas
-$(BUILD_DIR)/%_asan.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -I$(INCLUDE_DIR) $(ASAN_FLAGS) -c $< -o $@
-
+everyasan: create_directories $(foreach program,$(MAIN_SRC_NAME),$(BUILD_DIR)/$(program)_asan)
+$(eval $(call build_every_src,asan,$(ASAN_FLAGS)))
 
 # Build executable with optimization flags
-alloptimized: create_directories $(BUILD_DIR)/$(MAIN_SRC_NAME)_optimized
+everyoptimized: create_directories $(foreach program,$(MAIN_SRC_NAME),$(BUILD_DIR)/$(program)_optimized)
+$(eval $(call build_every_src,optimized,$(OPTIMIZE_FLAGS)))
 
-$(BUILD_DIR)/$(MAIN_SRC_NAME)_optimized: $(patsubst $(BUILD_DIR)/%.o, $(BUILD_DIR)/%_optimized.o, $(OBJ_FILES))
-	$(CXX) $(CXXFLAGS) $(LDFLAGS) $(OPTIMIZE_FLAGS) $^ -o $@
 
-# Build object files from source files with optimization flgas
-$(BUILD_DIR)/%_optimized.o: $(SRC_DIR)/%.cpp
-	$(CXX) $(CXXFLAGS) -I$(INCLUDE_DIR) $(OPTIMIZE_FLAGS) -c $< -o $@
+# Build vscode active file
+activedebug: create_directories $(BUILD_DIR)/$(ACTIVE_SRC_NAME)_active
+$(eval $(call build_active_src,active,$(DEBUG_FLAGS)))
 
+#all: alloptimized allasan alldebug
+
+create_directories:
+	@mkdir -p $(DIRECTORIES)
 
 clean:
 	rm -f $(BUILD_DIR)/*
 
-.PHONY: alldebug alloptimized clean
+.PHONY: everyoptimized activedebug everyasan everydebug all create_directories

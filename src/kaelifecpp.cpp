@@ -15,67 +15,76 @@
 #include "./kaelifeSDL.hpp"
 #include "./kaelifeRenderer.hpp"
 
-void placeHolderDraw(CAData &kaelife){	
-	{
-		if(kaelife.mainCache.tileRows>16 && kaelife.mainCache.tileCols>16 ){
-			//draw 2 fliers
-			WorldMatrix<uint8_t> flier={
-				{0,0,1,0},
-				{2,2,2,0},
-				{0,2,2,3},
-				{2,2,2,0},
-				{0,3,3,0},
-				{0,1,1,0}
-			};
+void placeHolderDraw(CAData &kaelife){	//perhaps ppm/png to world could be done
+ 
+	uint rows = kaelife.mainCache.tileRows;
+	uint cols = kaelife.mainCache.tileCols;
 
-			uint posx=kaelife.mainCache.tileRows/2-1;
-			uint posy=kaelife.mainCache.tileCols/2-2;
-			for(size_t i=0;i<flier.wmSize();i++){
-				for(size_t j=0;j<flier[0].wmSize();j++){
-					kaelife.stateBuf[!kaelife.mainCache.activeBuf][i + posx  ][j + posy   ] = flier[i][j]; //write to inactive buffer
-					kaelife.stateBuf[!kaelife.mainCache.activeBuf][i + posx-12][j + posy-1] = flier[i][j];
-				}
-			}
+		//draw 2 fliers
+		WorldMatrix<uint8_t> flier={
+			{0,0,1,0},
+			{2,2,2,0},
+			{0,2,2,3},
+			{2,2,2,0},
+			{0,3,3,0},
+			{0,1,1,0}
+		};
 
-		}
-
-		if(kaelife.mainCache.tileRows>64 && kaelife.mainCache.tileCols>32 ){
-			WorldMatrix<uint8_t> diagonalFlier={
-				{2,3,3,0},
-				{3,3,1,0},
-				{0,2,2,1},
-				{3,2,2,3},
-				{0,2,2,0},
-				{0,3,3,0},
-				{0,1,1,0}
-			};
-
-			uint posx=kaelife.mainCache.tileRows/2 + 16;
-			uint posy=kaelife.mainCache.tileCols/2;
-			for(size_t k=0;k<3;k++){
-				for(size_t i=0;i<diagonalFlier.wmSize();i++){
-					for(size_t j=0;j<diagonalFlier[0].wmSize();j++){
-						int ofx=18-(-4);
-						int ofy= 4+(-4);
-						ofx=ofx*k+(2*(k==2)-(3)*(k==0));
-						ofy=ofy*k-(2*(k==2)-(3)*(k==0));
-						kaelife.stateBuf[!kaelife.mainCache.activeBuf][i + posx+ofx][j + posy+ofy] = diagonalFlier[i][j]; //maybe possible to keep them alive together
-					}
-				}
+		uint posx=rows/2-1;
+		uint posy=cols/2-2;
+		for(size_t i=0;i<flier.wmSize();i++){
+			for(size_t j=0;j<flier[0].wmSize();j++){
+				uint ai = i + posx   ; 
+				uint aj = j + posy   ;
+				uint bi = i + posx-12;
+				uint bj = j + posy-1 ;
+				ai=(ai+rows)%rows;
+				aj=(aj+cols)%cols;
+				bi=(bi+rows)%rows;
+				bj=(bj+cols)%cols;
+				kaelife.stateBuf[!kaelife.mainCache.activeBuf][ai][aj] = flier[i][j]; //write to inactive buffer
+				kaelife.stateBuf[!kaelife.mainCache.activeBuf][bi][bj] = flier[i][j];
 			}
 		}
 
+		WorldMatrix<uint8_t> diagonalFlier={
+			{2,3,3,0},
+			{3,3,1,0},
+			{0,2,2,1},
+			{3,2,2,3},
+			{0,2,2,0},
+			{0,3,3,0},
+			{0,1,1,0}
+		};
 
-		kaelife.addBacklog("cloneBuffer");
-		kaelife.doBacklog();
-	}
+		posx=kaelife.mainCache.tileRows/2 + 16;
+		posy=kaelife.mainCache.tileCols/2;
+		for(size_t k=0;k<3;k++){
+			for(size_t i=0;i<diagonalFlier.wmSize();i++){
+				for(size_t j=0;j<diagonalFlier[0].wmSize();j++){
+					int ofx=18-(-4);
+					int ofy= 4+(-4);
+					ofx=ofx*k+(2*(k==2)-(3)*(k==0));
+					ofy=ofy*k-(2*(k==2)-(3)*(k==0));
+					ofx=((i+posx+ofx)+rows)%rows;
+					ofy=((j+posy+ofy)+cols)%cols;
+					kaelife.stateBuf[!kaelife.mainCache.activeBuf][ofx][ofy] = diagonalFlier[i][j]; //maybe possible to keep them alive together
+				}
+			}
+		}
 
+	//border test
+//	kaelife.stateBuf[!kaelife.mainCache.activeBuf][0][0]=1;
+//	kaelife.stateBuf[!kaelife.mainCache.activeBuf][kaelife.mainCache.tileRows-1][0]=2;
+//	kaelife.stateBuf[!kaelife.mainCache.activeBuf][kaelife.mainCache.tileRows-1][kaelife.mainCache.tileCols-1]=3;
+
+	kaelife.addBacklog("cloneBuffer");
+	kaelife.doBacklog();
 }
 
 int main() {
-	
+
 	CAData kaelife;
-	CALock kaeMutex;
 	InputHandler kaeInput;
 
 	SDL_Window* mainSDLWindow;
@@ -94,7 +103,7 @@ int main() {
 	std::vector<std::thread> iterThreads;
 
 	std::thread iterHandler = std::thread([&]() {
-		kaelife.iterateStateMT(iterThreads, &kaeMutex);
+		kaelife.iterateStateMT(iterThreads);
 	});
 
 	std::thread inputThread = std::thread([&]() {
@@ -115,10 +124,10 @@ int main() {
 
 	std::vector<uint> periodTime(periodSize,kaelife.slowFrameTime);
 
-	double avgTime = kaelife.slowFrameTime;
-	double avgIters = 1000.0/kaelife.slowFrameTime;
+	float avgTime = kaelife.slowFrameTime;
+	float avgIters = 1000.0/kaelife.slowFrameTime;
 
-	double guessMaxIters = 1000.0/kaelife.slowFrameTime;
+	float guessMaxIters = 1000.0/kaelife.slowFrameTime;
 	
 	while (!QUIT_FLAG) {
 
@@ -143,17 +152,15 @@ int main() {
 					iterAccumulate = iterTask*kaelife.targetFrameTime;
 				}
 
-				kaeMutex.continueThread(iterTask,kaelife.mainCache.activeBuf); //pass iteration count
+				kaelife.kaeMutex.continueThread(iterTask,kaelife.mainCache.activeBuf); //pass iteration count
 
-				double wholeIters=iterTask*kaelife.targetFrameTime; //Simulation time of whole iterations
-				iterAccumulate-=(double)wholeIters; //substract the iteration count passed to continueThread
+				float wholeIters=iterTask*kaelife.targetFrameTime; //Simulation time of whole iterations
+				iterAccumulate-=(float)wholeIters; //substract the iteration count passed to continueThread
 				iterAccumulate= iterAccumulate<0 ? 0 : iterAccumulate;
 				
 				periodIters[(periodIndex)%periodSize]=iterTask;
 			}
 		}
-		renderCells(kaelife,kaeInput,mainSDLWindow); 
-		SDL_GL_SwapWindow(mainSDLWindow);
 
 		do{ // Cap the frame rate
 			elapsedTime=SDL_GetTicks() - frameStartTime;
@@ -172,11 +179,11 @@ int main() {
 				avgIters+=periodIters[i];
 				avgTime+=periodTime[i];
 			}
-			avgIters/=(double)periodSize;
-			avgTime /=(double)periodSize;
+			avgIters/=(float)periodSize;
+			avgTime /=(float)periodSize;
 
 			if(kaeInput.displayFrameTime){
-				double itersPerSec = avgIters*(1000.0/avgTime) * !kaeInput.pause;
+				float itersPerSec = avgIters*(1000.0/avgTime) * !kaeInput.pause;
 				printf("%f ms %f iter/s\n", avgTime, itersPerSec);
 				//printf("guess max %f\n", guessMaxIters);
 			}
@@ -189,15 +196,15 @@ int main() {
 		periodSize=(int)2*(1000.0/avgTime); //change period size depending on frame rate
 		periodSize+=periodSize==0;
 
-		double frameTimeDistance = abs( avgTime - kaelife.slowFrameTime ); //how far off frame time is from slowest allowed time
+		float frameTimeDistance = abs( avgTime - kaelife.slowFrameTime ); //how far off frame time is from slowest allowed time
 		if( frameTimeDistance > kaelife.targetFrameTime && !kaeInput.pause){ //if higher than 1 frame deviation
 			if(avgTime>kaelife.slowFrameTime){ //if the simulation is lagging behind from target
-				double newGuess = guessMaxIters/((double)avgTime/kaelife.slowFrameTime);
+				float newGuess = guessMaxIters/((float)avgTime/kaelife.slowFrameTime);
 				guessMaxIters=(guessMaxIters+2*newGuess)/3.0; //smooth by average
 				
 				guessMaxIters = guessMaxIters<1 ? 1 : guessMaxIters;
 			}else{
-				double newGuess = guessMaxIters * ((double)kaelife.slowFrameTime/avgTime);
+				float newGuess = guessMaxIters * ((float)kaelife.slowFrameTime/avgTime);
 				newGuess = guessMaxIters > kaeInput.simSpeed ? kaeInput.simSpeed : guessMaxIters;
 				guessMaxIters=(guessMaxIters+2*newGuess)/3.0;
 
@@ -205,12 +212,14 @@ int main() {
 			}
 		}
 
-		kaeMutex.syncMainThread(); //sync iterations
+		kaelife.kaeMutex.syncMainThread(); //sync iterations
+		renderCells(kaelife,kaeInput,mainSDLWindow); 
+		SDL_GL_SwapWindow(mainSDLWindow);
 		kaelife.doBacklog(); //execute not-thread-safe-tasks thread-safely
 	}
 
 	//join any running threads
-	kaeMutex.terminateThread();
+	kaelife.kaeMutex.terminateThread();
 	inputThread.join();
 	iterHandler.join();
 	
@@ -223,5 +232,6 @@ int main() {
 	return 0;
 }
 
-//valgrind --tool=callgrind ./kaelifeMain
-//LSAN_OPTIONS=verbosity=1:log_threads=1 | ./kaelifeMain
+//benchmarking , needs -g flag
+//valgrind --tool=callgrind ./build/kaelifecpp_optimized
+//

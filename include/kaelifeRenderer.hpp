@@ -10,6 +10,9 @@
 // Function to read a shader file and return the content as a string
 std::string readShaderFile(const std::string& filePath) {
     std::ifstream file(filePath);
+    if(!file){
+        printf("Failed to read glsl header: %s\n",filePath.c_str());
+    }
     std::stringstream buffer;
     buffer << file.rdbuf();
     return buffer.str();
@@ -143,28 +146,28 @@ void initPixelMap(const CAData& cellData) {
 
 
 void updateTexture(const CAData& cellData) {
-    uint activeRenderBuf = cellData.mainCache.activeBuf; //ensure buffer doesn't change during render
-    glBindTexture(GL_TEXTURE_2D, textureID);
+    uint activeRenderBuf = cellData.mainCache.activeBuf; // ensure buffer doesn't change during render
 
-    //reduce from 2D to 1D
-    std::vector<uint8_t> pixelData;
-    pixelData.resize(cellData.mainCache.tileCols * cellData.mainCache.tileRows);
+    // allocate memory for pixelData
+    uint8_t *pixelData = new uint8_t[cellData.mainCache.tileRows * cellData.mainCache.tileCols];
 
     for (uint i = 0; i < cellData.mainCache.tileRows; ++i) {
-        const auto& row = cellData.stateBuf[activeRenderBuf][i];
-        std::memcpy(pixelData.data() + i * cellData.mainCache.tileCols, row.data(), cellData.mainCache.tileCols);
+        const auto& row = cellData.stateBuf[activeRenderBuf].at(i);
+        std::memcpy(pixelData + i * cellData.mainCache.tileCols, row.data(), cellData.mainCache.tileCols);
     }
+    
+    glBindTexture(GL_TEXTURE_2D, textureID);
 
-    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, cellData.mainCache.tileCols, cellData.mainCache.tileRows, GL_LUMINANCE, GL_UNSIGNED_BYTE, pixelData.data());
+    glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, cellData.mainCache.tileCols, cellData.mainCache.tileRows, GL_LUMINANCE, GL_UNSIGNED_BYTE, pixelData);
 
     glBindTexture(GL_TEXTURE_2D, 0);
-
-
+    delete[] pixelData;
 }
 
-
-
-
+//    for (uint i = 0; i < cellData.mainCache.tileRows; ++i) {
+//        const auto& row = cellData.stateBuf[activeRenderBuf].at(i);
+//        std::memcpy(pixelData.data() + i * cellData.mainCache.tileCols, row.data(), cellData.mainCache.tileCols);
+//    }
 
 
 static inline void renderCells(const CAData& cellData, const InputHandler& kaeInput, SDL_Window *&SDLWindow) {
@@ -192,7 +195,7 @@ static inline void renderCells(const CAData& cellData, const InputHandler& kaeIn
 	shaderCursorPos[0]=worldCursorPos[0];
 	shaderCursorPos[1]=worldCursorPos[1];
     uint numStates=cellData.kaePreset.current()->stateCount;
-	float shaderCellStateScale = 255.0 / (numStates - 1);
+	float shaderCellStateScale = (float)UINT8_MAX / (numStates - 1);
 	float shaderDrawRadius  = (float)kaeInput.drawRadius;
 	float shaderCursorBorder= (float)cursorBorder;
     float shaderShaderColor = kaeInput.shaderColor;
@@ -206,7 +209,7 @@ static inline void renderCells(const CAData& cellData, const InputHandler& kaeIn
     shaderTileDim[1]=cellData.mainCache.tileCols;
 
 	// Pass shader variables
-	glUniform2f (glGetUniformLocation(shaderProgram, "tileDim"		    ), shaderTileDim[1], shaderTileDim[0] ); //flip coordinates in glew
+	glUniform2f (glGetUniformLocation(shaderProgram, "tileDim"		    ), shaderTileDim  [1], shaderTileDim  [0] ); //flip coordinates in glew
 	glUniform2f (glGetUniformLocation(shaderProgram, "cursorPos"		), shaderCursorPos[1], shaderCursorPos[0] );
     glUniform1f (glGetUniformLocation(shaderProgram, "cellStateScale"	), shaderCellStateScale);
 	glUniform1f (glGetUniformLocation(shaderProgram, "cursorRadius"		), shaderDrawRadius);

@@ -82,7 +82,6 @@ bool compHue (const Color& color1, const Color& color2) {
 void generatePalette(){
 
 
-	bool printCol=false;
 	std::vector<std::vector<uint8_t>> weight[]={
 		{//kael palette
 			{ 27, 63, 105,/*136,*/166, 201, 248 },
@@ -106,7 +105,7 @@ void generatePalette(){
 		}
 	};
 	uint palIndex=0;
-	bool pastel=1;
+	double pastel=0.2;
 
 	uint count=0;
 	for(uint i=0;i<weight[palIndex][0].size();i+=1){
@@ -118,17 +117,19 @@ void generatePalette(){
 				y=weight[palIndex][1][j];
 				z=weight[palIndex][2][k];
 
-                if (pastel) {
+                if (pastel>0.0) {
 
 					// pastel effect scaled by luminosity
 					Color minCol = Color{weight[palIndex][0].front(),weight[palIndex][1].front(),weight[palIndex][2].front()};
 					Color maxCol = Color{weight[palIndex][0].back() ,weight[palIndex][1].back() ,weight[palIndex][2].back() };
-					double minLum=calcLum( minCol );
-					double maxLum=calcLum( maxCol );
+					double minLum=calcLum( minCol ) ;
+					double maxLum=calcLum( maxCol ) ;
 					double luminosity = (  calcLum({x, y, z}) - minLum  ) / ( maxLum - minLum ) ; //normalize
 
-					double scale = ( (1.0 - 2*(abs(luminosity-0.5))) );
-					scale*=0.2; //20%
+					double lumDist = luminosity-0.5;
+					lumDist *= lumDist < 0 ? -1.0 : 1.0;
+					double scale = ( (1.0 - 2.0*(lumDist)) );
+					scale*=pastel; //20%
 
                     x = (uint8_t)(std::round( ( (1.0-scale) * x + (scale) * (NUM_COLS - x) ) ));
                     y = (uint8_t)(std::round( ( (1.0-scale) * y + (scale) * (NUM_COLS - y) ) ));
@@ -146,52 +147,87 @@ void generatePalette(){
 
 
 // Print the  palette
-void printPalette(){
-	for(int i=0;i<palette.size();i++){
+void printPalette(std::string outPath){
+	std::string vec3str;
+	vec3str = "const uniform vec3 palette[256] = vec3[](\n";
+	for(uint i=0;i<palette.size();i++){
 		Color bufCol=palette[i];
-		std::cout << "vec3(" 
-			<< static_cast<int>(bufCol[0]) << ", "
-			<< static_cast<int>(bufCol[1]) << ", "
-			<< static_cast<int>(bufCol[2]) << ")," << std::endl;
+		vec3str+= 
+		(std::string)"\t" +
+		"vec3(" 
+			+ std::to_string((uint8_t)bufCol[0]) + ", "
+			+ std::to_string((uint8_t)bufCol[1]) + ", "
+			+ std::to_string((uint8_t)bufCol[2]) + ")";
+		if(i!=palette.size()-1){
+			vec3str+= ",";
+		}
+		vec3str+= "\n";
 	}
+	vec3str+= ");\n";
+
+    // Clear
+	std::string shaderFile = outPath+"palette.h.glsl";
+    std::ofstream clearFile;
+	clearFile.open(shaderFile, std::ofstream::out | std::ofstream::trunc);
+    clearFile.close();
+
+    // Save the palette as an image using ImageMagick
+    std::ofstream writeShader(shaderFile.c_str(), std::ios_base::app);
+	if(!writeShader) {
+		printf("Failed to write ppm file\n");
+	}
+	writeShader << vec3str.c_str();
+	writeShader.close();
 };
 
 
-void writePalette() {
+void writePalette(std::string outPath) {
 
-    // Clear file
-    std::ofstream ofs;
-    ofs.open("palette.ppm", std::ofstream::out | std::ofstream::trunc);
-    ofs.close();
+	std::string ppmFile=outPath+"palette.ppm";
+	std::string pngFile=outPath+"palette.png";
+
+    // Clear writePpmFile
+    std::ofstream clearFile;
+	clearFile.open(ppmFile.c_str(), std::ofstream::out | std::ofstream::trunc);
+    clearFile.close();
 
     // Save the palette as an image using ImageMagick
-    std::ofstream file("palette.ppm", std::ios_base::app | std::ios::binary);
+    std::ofstream writePpmFile(ppmFile.c_str(), std::ios_base::app | std::ios::binary);
+	if(!writePpmFile) {
+		printf("Failed to write ppm file\n");
+	}
 	uint squareSize= ceil(sqrt(palette.size())) ;
-    file << "P6\n";
-    file << squareSize << " " << squareSize << "\n";
-    file << NUM_COLS << "\n";
+    writePpmFile << "P6\n";
+    writePpmFile << squareSize << " " << squareSize << "\n";
+    writePpmFile << NUM_COLS << "\n";
 
-	while(palette.size()!=squareSize*squareSize){
+	while(palette.size()<squareSize*squareSize){
 		palette.push_back(Color{0,0,0});
 	}
 
-    for (int i = 0; i < palette.size(); i++) {
+    for (uint i = 0; i < palette.size(); i++) {
         Color bufCol = palette[i];
 
-        file << (uint8_t)(bufCol[0]) << (uint8_t)(bufCol[1]) << (uint8_t)(bufCol[2]);
+        writePpmFile << (uint8_t)(bufCol[0]) << (uint8_t)(bufCol[1]) << (uint8_t)(bufCol[2]);
     }
 
-    file.close();
+    writePpmFile.close();
 
     // Convert the PPM image to PNG using ImageMagick
-    system("magick palette.ppm palette.png");
+	std::string magickCmd="magick " + ppmFile + " " + pngFile;
+	printf("%s\n",magickCmd.c_str());
+    system(magickCmd.c_str());
 }
 
-int main() {
+int main(int argn, const char** argc) {
+	std::string outPath = "./generated/";
+	if(argn==2){
+		outPath=argc[1];
+	}
+	
 	// Sort the palette vector using the custom comparison function
 
 	generatePalette();
-//	generatePaletteCGPT();
 
 	if(palette.size()==252){//fill 6-6-7s
 		palette.push_back(Color{ 31,  5, 43}); //tieblu
@@ -215,9 +251,9 @@ int main() {
         return hueA < hueB;
     });
 	
-	printPalette();
+	printPalette(outPath);
 
-	writePalette();
+	writePalette(outPath);
 	printf("size %lu\n",palette.size());
 
 	return 0;

@@ -1,9 +1,6 @@
 #version 330 core
 
-//#include "./shader/palette.fs.glsl" //handled by processShaderSource()
-//const vec3 palette[1] = vec3[](
-//        vec3(251, 106, 104)
-//);
+//#include "./shader/palette.h.glsl" //handled by processShaderSource()
 
 uniform sampler2D textureSampler;
 uniform float cellStateScale;

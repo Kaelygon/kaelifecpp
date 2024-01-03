@@ -25,15 +25,19 @@ WorldMatrix<T>{
 }
 //This way the hardcoded vector has same orientation as the world space and potentially eases the mirroring and randomizing the elements
 //WorldMatrix is not recommended to be used in tight loops 
+//left-right = Rows
+//down-up = Columns
 */
 //2D vector in world space
-//Acts like a 2D vector but the code-space up-down axis is flipped then axes are transposed and padded
+//Acts like a 2D vector but the code-space down-up axis is flipped then axes are transposed and padded
 template <typename T>
 class WorldMatrix {
 public:
 	std::vector<std::vector<T>> matrix;
 	
+    WorldMatrix() = default;
 	WorldMatrix(std::initializer_list<std::initializer_list<T>> data) {
+
 		// Find the largest row size
 		size_t largestRow = 0;
 		for (const auto& row : data) {
@@ -84,11 +88,13 @@ public:
 	};
 
 	RowProxy operator[](size_t i) {
+		if (i >= matrix.size()) {return zeroMatrix[0];} //out of range
 		return RowProxy(matrix[i]);
 	}
-	const RowProxy operator[](size_t i) const {
-		return RowProxy(matrix[i]);
-	}
+    const RowProxy operator[](size_t i) const {
+		if (i >= matrix.size()) {return const_cast<std::vector<T>&>(zeroMatrix[0]);} //out of range
+        return RowProxy(const_cast<std::vector<T>&>(matrix[i]));
+    }
 
 	//get element
 	T& operator()(size_t row, size_t col) {
@@ -99,13 +105,14 @@ public:
 		return matrix[row][col];
 	}
 
-	//get matrix down-up size
+	//get matrix left-right size
 	size_t wmSize() const {
 		return matrix.size();
 	}
 	//get matrix[i] down-up size
-	void wmSize(size_t i) {
-		matrix[i].size();
+	size_t wmSize(size_t i) {
+		if (i >= matrix.size()) {return 0;} //no rows
+		return matrix[i].size();
 	}
 	
 	//resize matrix down-up to sizeX
@@ -120,7 +127,7 @@ public:
 	
 	//Print 2D WorldVector in hard-coded format  
 	void printCodeSpace() {
-		uint8_t maxDigits = log10(UINT8_MAX)+1;
+		size_t maxDigits = log10(UINT8_MAX)+1;
 
 		size_t numRows = matrix.size();
 		size_t numCols = (numRows > 0) ? matrix[0].size() : 0;
@@ -128,9 +135,9 @@ public:
 		for (size_t j = 0; j < numCols; ++j) {
 			printf("{");
 			for (size_t i = 0; i < numRows; ++i) {
-				uint8_t num = (j < matrix[i].size()) ? matrix[i][numCols-j-1] : 0;
-				uint8_t digits = num > 0 ? static_cast<uint8_t>(log10((double)num) + 1) : 1;
-				for (uint8_t k = 0; k < maxDigits - digits; ++k) { printf(" ");	}
+				T num = (j < matrix[i].size()) ? matrix[i][numCols-j-1] : 0;
+				size_t digits = num > 0 ? static_cast<size_t>(log10((double)num) + 1) : 1;
+				for (size_t k = 0; k < maxDigits - digits; ++k) { printf(" ");	}
 				printf("%d", num);
 				if (i == numRows - 1) {	printf("}"); }
 				if (!(i == numRows - 1 && j == numCols - 1)) { printf(","); }
@@ -138,5 +145,7 @@ public:
 			printf("\n");
 		}
 	}
+	private:
+	std::vector<std::vector<T>> zeroMatrix={{0}};
 
 };

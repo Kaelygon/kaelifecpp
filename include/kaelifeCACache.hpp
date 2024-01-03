@@ -1,16 +1,10 @@
 #pragma once
 
-#include "./kaelifeWorldMatrix.hpp"
-#include "./kaelRandom.hpp"
-
 #include <iostream>
 #include <vector>
 #include <cstdint>
 #include <cmath>
-#include <cmath>
 #include <limits>
-#include <cstring>
-#include <algorithm>
 
 //CAData and its iterate threads caches
 class CACache {
@@ -25,7 +19,7 @@ public:
 		uint 				 threadId 		= -1; 
 		uint 				 threadCount 	= -1;
 		std::vector<uint8_t> neigMask1d  	= {}; //flattened neigMask
-		//std::vector<size_t> neigMaskInd 	= ; //non zero neigMask1d indices. slower even if 9 of 25 elements are zero.
+		//std::vector<size_t> neigMaskInd 	= 0; //non zero neigMask1d indices. slower even if 9 of 25 elements are zero.
 		bool				 activeBuf	 	= 0; //active stateBuf. write to !activeBuf read from activeBuf
 		std::vector<int16_t> ruleRange	 	= {0}; //CA add ranges
 		std::vector<int8_t>  ruleAdd	 	= {0,0}; //CA additive values within each range
@@ -35,8 +29,8 @@ public:
 		uint8_t 			 maskRadx	 	= 0; //x length from center of the mask. Center excluded
 		uint8_t 			 maskRady	 	= 0; //y length from center of the mask. Center excluded
 		uint16_t 			 maskElements	= 0; //neigmask elements
-		uint 			 	 tileRows	 	= 0; //wold space X dimension left to right
-		uint 			 	 tileCols	 	= 0; //wold space Y dimension down to up
+		uint 			 	 tileRows	 	= 1; //wold space X dimension left to right. Can't be 0 or odd
+		uint 			 	 tileCols	 	= 1; //wold space Y dimension down to up. Can't be 0 or odd
 		uint8_t 			 clipTreshold	= 0; //CA rule to discard any neighbors below this value
 		uint				 iterRepeats	= 0; //iteration thread task size
 		size_t				 index		 	= 0; //cache incrementor to check if cache is up to date
@@ -60,7 +54,6 @@ public:
 
 		dst->neigMask1d.resize(dst->maskElements);
 		
-		//even if the max size is the same, we can't tell if values chag
 		dst->neigMask1d=src.neigMask1d;
 		//dst->neigMaskInd=src.neigMaskInd;
     }

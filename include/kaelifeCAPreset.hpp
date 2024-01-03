@@ -1,12 +1,11 @@
 #pragma once
 
-#include "./kaelifeWorldMatrix.hpp"
-#include "./kaelRandom.hpp"
+#include "kaelifeWorldMatrix.hpp"
+#include "kaelRandom.hpp"
 
 #include <iostream>
 #include <vector>
 #include <cstdint>
-#include <cmath>
 #include <cmath>
 #include <limits>
 #include <cstring>
@@ -16,24 +15,50 @@ class CAPreset {
 public:
 	CAPreset() {
 		setPreset(0);
+        for (auto& automata : list) {
+            if (automata.presetSeed != UINT64_MAX) {
+                uint ind = getPresetIndex(automata.name);
+                uint64_t* seedPtr = &automata.presetSeed;
+                randAll(ind, seedPtr);
+            }
+        }
 	}
-	
-	typedef struct{
-		const char* name;
-		uint stateCount = 0;
-		std::vector<int16_t> ruleRange={0};
-		std::vector<int8_t> ruleAdd={0,0};
-		uint8_t clipTreshold = 128;
 
-		WorldMatrix<uint8_t> neigMask={
-			{UINT8_MAX, UINT8_MAX, UINT8_MAX},
-			{UINT8_MAX,   		0, UINT8_MAX},
-			{UINT8_MAX, UINT8_MAX, UINT8_MAX},
-		};
-	}PresetList;
+	struct PresetList {
+		const char* name;
+		uint stateCount;
+		std::vector<int16_t> ruleRange;
+		std::vector<int8_t> ruleAdd;
+		uint8_t clipTreshold;
+		WorldMatrix<uint8_t> neigMask;
+		uint64_t presetSeed;
+
+		// Constructor to set clipTreshold to half of stateCount
+		PresetList(
+				const char* n = "UNNAMED", 
+				uint sc = 0, 
+				const std::vector<int16_t>& rr = {0},
+				const std::vector<int8_t>& ra = {0, 0},
+				const WorldMatrix<uint8_t>& m =
+				{
+					{UINT8_MAX, UINT8_MAX, UINT8_MAX},
+					{UINT8_MAX, 		0, UINT8_MAX},
+					{UINT8_MAX, UINT8_MAX, UINT8_MAX}
+				},
+				uint64_t ps = UINT64_MAX
+		) : 
+			name(n), 
+			stateCount(sc), 
+			ruleRange(rr), 
+			ruleAdd(ra), 
+			clipTreshold(sc / 2),
+			neigMask(m),
+			presetSeed(ps)
+			{}
+	};
 
 	//current preset index
-	uint index;
+	uint index=0;
 	//current preset
 	const PresetList* current() const {
 		return &list[index];
@@ -41,16 +66,22 @@ public:
 
 	//BOF preset managing func
 		uint setPreset(uint ind=0){
-			index = (ind + list.size()) % list.size();
+			if(ind>=list.size()){
+				index=list.size()-1+list.empty();
+			}else if(ind>=UINT64_MAX/2){
+				index=0;
+			}else{
+				index=ind;
+			}
 			return index;
 		}
 		uint nextPreset(){
-			index = (index+1) % list.size();
-			return index;
+			index++;
+			return setPreset(index);
 		}
 		uint prevPreset(){
-			index = (index-1 + list.size()) % list.size();
-			return index;
+			index--;
+			return setPreset(index);
 		}
 
 		//add to preset and return its index
@@ -71,8 +102,8 @@ public:
 			dstInd=getPresetIndex(dst);
 			srcInd=getPresetIndex(src);
 
-			if( srcInd==(uint)-1 || dstInd==(uint)-1 ){ //null check
-				printf("Destination or source preset doesn't exist!");
+			if( srcInd==UINT_MAX || dstInd==UINT_MAX ){ //null check
+				printf("Destination or source preset doesn't exist!\n");
 				return {srcInd,dstInd};
 			}
 
@@ -96,8 +127,8 @@ public:
 		uint renamePreset(T1 presetNameOrId, const char* presetName="UNNAMED"){
 			uint ind = -1;
 				ind=getPresetIndex(presetNameOrId);
-			if( ind==(uint)-1 ){ //null check
-				printf("Preset doesn't exist!");
+			if( ind==UINT_MAX ){ //null check
+				printf("Preset doesn't exist!\n");
 				return ind;
 			}
 			list[ind].name=presetName;
@@ -107,8 +138,8 @@ public:
 	//BOF Printers
 	
 		//print ruleRange[]
-		void printRuleRange(uint ind=(uint)-1){
-			ind = ind==(uint)-1 ? index : ind;
+		void printRuleRange(uint ind=UINT_MAX){
+			ind = ind==UINT_MAX ? index : ind;
 			printf("ruleRange {");
 			for(uint i=0;i<list[ind].ruleRange.size();i++){
 				printf("%d",list[ind].ruleRange[i]);
@@ -120,8 +151,8 @@ public:
 		}
 
 		//print ruleAdd[]
-		void printRuleAdd(uint ind=(uint)-1){
-			ind = ind==(uint)-1 ? index : ind;
+		void printRuleAdd(uint ind=UINT_MAX){
+			ind = ind==UINT_MAX ? index : ind;
 			printf(".ruleAdd {");
 			for(uint i=0;i<list[ind].ruleAdd.size();i++){
 				printf("%d",list[ind].ruleAdd[i]);
@@ -132,15 +163,15 @@ public:
 			printf("},\n");
 		}
 
-		void printRuleMask(uint ind=(uint)-1){
-			ind = ind==(uint)-1 ? index : ind;
+		void printRuleMask(uint ind=UINT_MAX){
+			ind = ind==UINT_MAX ? index : ind;
 			printf(".neigMask{\n");
 			list[ind].neigMask.printCodeSpace();
 			printf("},\n");
 		}
 
-		void printPreset(uint ind=(uint)-1){
-			ind = ind==(uint)-1 ? index : ind;
+		void printPreset(uint ind=UINT_MAX){
+			ind = ind==UINT_MAX ? index : ind;
 			printf("\n");
 			printf(list[ind].name);
 			printf("\n");
@@ -148,6 +179,7 @@ public:
 			printRuleAdd	(ind);
 			printRuleMask	(ind);
 			printf("State Count: %d\n",list[ind].stateCount);
+			if(list[ind].presetSeed!=UINT64_MAX){printf("Seed: %lu\n",list[ind].presetSeed);}
 		}
 	//EOF Printers
 
@@ -232,11 +264,14 @@ public:
 			randRuleAdd(ind,-rr,rr,seedPtr);
 			randRuleRange(ind,0,maxNeigSum,seedPtr);
 			
+			list[ind].presetSeed=startSeed;
 			return startSeed;
 		}
 
 		void randRuleMutate(uint ind, uint64_t* seed=nullptr){
 			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
+			uint8_t modif = *seedPtr&0b11; //0=ruleRange 1=randAdd 2=both
+
 			int add=0;
 			if((list[ind].stateCount/2)<2){
 				add = kaelRand(seedPtr)%3-1;
@@ -244,10 +279,15 @@ public:
 				add = kaelRand(seedPtr)%(list[ind].stateCount)-list[ind].stateCount/2;
 				add/=2;
 			}
-			for(size_t i=0;i<list[ind].ruleRange.size();i++){
+			
+			uint maxLen = list[ind].ruleRange.size() * (modif==0 || modif==2) ;
+			for(size_t i=0;i<maxLen;i++){
+				add += add==0 ? kaelRand(seedPtr)%3-1 : 0;
 				list[ind].ruleRange[i]+=add;
 			}
-			for(size_t i=0;i<list[ind].ruleAdd.size();i++){
+			maxLen = list[ind].ruleAdd.size() * (modif==1 || modif==2) ;
+			for(size_t i=0;i<maxLen;i++){
+				add += add==0 ? kaelRand(seedPtr)%3-1 : 0;
 				list[ind].ruleAdd[i]+=add;
 			}
 		}
@@ -270,24 +310,25 @@ public:
 
 private:
 
+	//Maybe a different config file for this list. json maybe
 	std::vector<PresetList> list = 
 	{
 		{//0
-			.name = "Kaelife",
-			.stateCount = 4,
-			.ruleRange = {6,9,11,24},
-			.ruleAdd = {-1,1,-1,0,-1},
+			"Kaelife",
+			4,
+			{6,9,11,24},
+			{-1,1,-1,0,-1}
 		},{//1
-			.name = "Conway",
-			.stateCount = 2,
-			.ruleRange = {2,3,4},
-			.ruleAdd = {-1,0,1,-1},
+			"Conway",
+			2,
+			{2,3,4},
+			{-1,0,1,-1}
 		},{//2
-			.name = "Hexagon",
-			.stateCount = 256,
-			.ruleRange {22,101,102,108,176,211,277,337,405,569,679,820,1180,1289,1411,1442},
-			.ruleAdd {-68,-50,17,124,111,-62,-30,86,-19,-2,-73,62,-106,75,70,-76,-79},
-			.neigMask{
+			"Hexagon",
+			256,
+			{22,101,102,108,176,211,277,337,405,569,679,820,1180,1289,1411,1442},
+			{-68,-50,17,124,111,-62,-30,86,-19,-2,-73,62,-106,75,70,-76,-79},
+			{
 				{  0, 16,255, 16,  0},
 				{255, 16,  0, 16,255},
 				{ 16,  0,  0,  0, 16},
@@ -295,16 +336,16 @@ private:
 				{  0, 16,255, 16,  0}
 			}
 		},{//3
-			.name = "Conway2Bit",
-			.stateCount = 4,
-			.ruleRange = {4,6,8},
-			.ruleAdd = {-1,0,1,-1},
+			"Conway2Bit",
+			4,
+			{4,6,8},
+			{-1,0,1,-1}
 		},{//4
-			.name = "maskTest",
-			.stateCount = 4,
-			.ruleRange = {6,9,11,24},
-			.ruleAdd = {-1,1,-1,0,-1},
-			.neigMask{
+			"maskTest",
+			4,
+			{6,9,11,24},
+			{-1,1,-1,0,-1},
+			{
 				{000,128,128,000,},
 				{128,255,255,128,},
 				{128,064,064,128,},
@@ -312,19 +353,17 @@ private:
 				{000,128,128,000 }
 			}
 		},{//5
-			.name = "none",
-			.stateCount = 0,
-			.ruleRange = {0},
-			.ruleAdd = {0,0},
-			.neigMask{
-				{0}
-			}
+			"none",
+			0,
+			{},
+			{},
+			{{}}
 		},{//6
-			.name = "random",
-			.stateCount = 255,
-			.ruleRange = {172,179,416,648,834,962,1384,1453,1465},
-			.ruleAdd = {31,-91,31,-43,113,-107,7,-9,63,-31},
-			.neigMask{
+			"random",
+			255,
+			{172,179,416,648,834,962,1384,1453,1465},
+			{31,-91,31,-43,113,-107,7,-9,63,-31},
+			{
 				{ 255 },
 				{ 000 },
 				{ 000 },
@@ -335,9 +374,16 @@ private:
 				{ 000 },
 				{ 255,255 }
 			}
+		},{//7
+			"Set seed",
+			0,
+			{},
+			{},
+			{{}},
+			17055218352662962746UL
 		}
 	}; 
-	
+
 	template <typename T1, typename = std::enable_if_t<std::is_same<T1, const char*>::value || std::is_same<T1, uint>::value>>
 	uint getPresetIndex(T1 charOrInd) {
 
@@ -345,18 +391,14 @@ private:
 		if constexpr (std::is_same<T1, uint>::value) {
 			ind=charOrInd;
 		}else if constexpr (std::is_same<T1, const char*>::value) {
-			auto it = std::find_if(
-				std::begin(list), std::end(list),
-				[charOrInd](const PresetList& elem) {
-					return strcmp(elem.name, charOrInd) == 0;
+			//search index by comparing names
+			for(uint i=0;i<list.size();i++){
+				if(strcmp(list[i].name, charOrInd)==0){
+					ind=i;
+					break;
 				}
-			);
-
-			if (it != std::end(list)) {
-				ind=std::distance(std::begin(list), it);
-			} else {
-				ind=-1;
-			}				
+			}
+			if(ind >= list.size()){ind=-1;}
 		}else{
 			static_assert(false, "Invalid dst type");
 		}

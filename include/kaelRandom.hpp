@@ -36,7 +36,7 @@ public:
 		}
 	//
 
-	//thread safe as we are iterating the given argument value or ptr
+	//thread safe as we are iterating the given argument value or ptr. Unless the pointer is seed
 		template <typename U = T, typename = std::enable_if_t<!std::is_reference<U>::value>>
 		inline const T operator()(T n) {
 			n = kaelLCG(n);

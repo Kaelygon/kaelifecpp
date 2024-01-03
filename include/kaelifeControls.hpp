@@ -8,9 +8,11 @@
 #include <cmath>
 #include <atomic>
 
-#include "./kaelifeCAData.hpp"
 #include <thread>
 #include <chrono>
+#include <stdint.h>
+
+#include "kaelifeCAData.hpp"
 
 /*
 controls
@@ -53,6 +55,8 @@ private:
 	std::atomic<bool> windowFocus=0;
 
 	uint timerSt, timerNd;
+
+	uint64_t drawSeed=314159265;
 
 public:
 		// Initialize key mappings in the constructor
@@ -100,13 +104,13 @@ public:
 
 	bool stepFrame=false;
 	bool displayFrameTime=false;
-	bool pause=false;
+	bool pause=true;
 	
 	int drawRadius=2;
 	float drawStrength=1.0;
 	bool drawRandom=false;
 
-	bool debug=true;
+	const bool debug=true; //const at least for now
 
     static int cursorPos[2];
 
@@ -386,6 +390,10 @@ void InputHandler::detectInput(CAData &cellData, SDL_Window* &SDLWindow) {
 				if(debug){
 					printf("Mouse pos (%d, %d)\n", cursorPos[0], cursorPos[1]);
 				}
+				#ifdef KAELIFE_DEBUG
+					auto cursorPosW = getWorldCursorPos(cellData, SDLWindow);
+					printf("Mouse world (%d, %d)\n", cursorPosW[0], cursorPosW[1]);
+				#endif
 			}
 		}
 			
@@ -462,12 +470,10 @@ void InputHandler::cursorDraw(CAData &cellData, int strength, SDL_Window* &SDLWi
 
 	{
 		std::lock_guard<std::mutex> lock(cellData.drawMutex); //make sure drawBuf is not being copied while drawing
-		uint64_t drawSeed=kaelRand(); //use local seed for kaelRand
 
 		for (int i = -drawRadius; i <= drawRadius; i++) {
 			for (int j = -drawRadius; j <= drawRadius; j++) {
 
-				//float mouseDist = std::hypot(i, j);
 				int mouseDist = i*i+j*j;
 				int radSq = drawRadius*drawRadius;
 				if(mouseDist >= radSq ){continue;} //if inside the circle
