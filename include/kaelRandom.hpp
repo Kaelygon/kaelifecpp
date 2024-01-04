@@ -5,64 +5,61 @@
 #include <cstdint>
 #include <cmath>
 #include <cmath>
-#include <limits>
 
 //Simple rorr lcg prng
-template <typename T = uint64_t>
+template <typename InsT = uint64_t> //instance type
 class kaelRandom {
-public:
-    static_assert(std::is_unsigned<T>::value, "Template type must be an unsigned integer type");
+private:
+	template <typename U = uint64_t, typename V = uint64_t>
+	inline const U kaelLCG(const V n) {
+		constexpr uint const bitSize = std::numeric_limits<V>::digits;
+		constexpr uint const shift = (sizeof(V)*3)-1;
 
-	//iterate kaelRand() seed
+		return ( (n>>shift) | (n<<(bitSize-shift)) ) * mul + add ;
+	}
+
+	InsT seed;
+	const InsT mul=(InsT)3083;
+	const InsT add=(InsT)13238717;
+
+public:
+    static_assert(std::is_unsigned<InsT>::value, "Template type must be an unsigned integer type");
+
+	//iterate instance seed
 		//definitely not thread safe
-		inline const T operator()() { 
+		inline InsT const operator()() { 
 			seed = kaelLCG(seed);
 			return seed;
 		}
-		void setSeed(T n) {
+		inline void setSeed(InsT n) {
 			seed = n;
 		}
 		//potentially not thread safe
-		//if input *n is nullptr, return kaelRand() seed ptr. Otherwise return *n unchanged 
-		inline T* getSeedPtr(T *n){
+		//Seed pointer null check. If input *n is nullptr, return instance seed ptr. Otherwise return *n unchanged
+		inline InsT* getSeedPtr(InsT *n){
 			if(n==nullptr){
 				return &seed;
 			}
 			return n;
 		}
-		//Pointer to kaelRand() seed. Not thread safe to modify
-		inline T* lastValue() {
+		//Pointer to instance seed. Not thread safe to modify. No null check.
+		inline InsT* getSeedPtr() {
 			return &seed;
 		}
 	//
 
-	//thread safe as we are iterating the given argument value or ptr. Unless the pointer is seed
-		template <typename U = T, typename = std::enable_if_t<!std::is_reference<U>::value>>
-		inline const T operator()(T n) {
-			n = kaelLCG(n);
-			return n;
+	//thread safe as we are iterating the given argument value or ptr. Unless the pointer is instance seed
+		//iterate literal (thread safe)
+		template <typename TL, typename = std::enable_if_t<!std::is_reference<TL>::value && !std::is_pointer<TL>::value>>
+		inline const TL operator()(const TL n) {
+			return kaelLCG(n);
 		}
-		inline const T operator()(T &n) {
-			n = kaelLCG(n);
-			return n;
-		}
-		template <typename U = T, typename = std::enable_if_t<std::is_pointer<U>::value>>
-		inline const T operator()(U n) {
+		//iterate pointer
+		template <typename U = InsT, typename V = typename std::remove_pointer<U>::type, typename = std::enable_if_t<std::is_pointer<U>::value>>
+		inline const V operator()(const U n) {
 			*n = kaelLCG(*n);
 			return *n;
 		}
 	//
-
-private:
-	inline const T kaelLCG(T n) {
-		constexpr int bitSize = std::numeric_limits<T>::digits;
-		uint lsb = n&0b111;
-		uint rorrN = bitSize * lsb + 1;
-		return ((n >> rorrN) | (n << (bitSize - rorrN))) * mul + add;
-	}
-
-	uint64_t seed;
-	uint64_t mul=3083;
-	uint64_t add=13238717;
 };
 kaelRandom kaelRand;
