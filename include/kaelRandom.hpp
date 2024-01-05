@@ -4,26 +4,45 @@
 #include <vector>
 #include <cstdint>
 #include <cmath>
-#include <cmath>
+#include <cstring>
+
+
+#include <type_traits>
+typedef unsigned int uint128_t __attribute__((mode(TI)));
 
 //Simple rorr lcg prng
 template <typename InsT = uint64_t> //instance type
 class kaelRandom {
 private:
-	template <typename U = uint64_t, typename V = uint64_t>
-	inline const U kaelLCG(const V n) {
-		constexpr uint const bitSize = std::numeric_limits<V>::digits;
-		constexpr uint const shift = (sizeof(V)*3)-1;
 
-		return ( (n>>shift) | (n<<(bitSize-shift)) ) * mul + add ;
+	template <typename V = uint64_t>
+		inline const V kaelLCG(const V n) {
+		static constexpr uint const bitSize = std::numeric_limits<V>::digits;
+		static constexpr uint const shift = (sizeof(V)*3)-1;
+		V buf = 0;
+		buf = ( (n>>shift) | (n<<(bitSize-shift)) ) * mul + add;
+		return buf ;
+	}
+
+	template <typename V = uint64_t>
+	V kaelHash(const char* cstr) {
+		InsT hash = prm35;
+    	while(*cstr){
+			hash = (hash*3343+437947) ^ ((V)cstr[0]*46337+3382607);
+			hash = kaelLCG<V>( hash );
+			cstr++;
+		}
+
+		return hash;
 	}
 
 	InsT seed;
-	const InsT mul=(InsT)3083;
-	const InsT add=(InsT)13238717;
+	static constexpr const InsT mul=(InsT)3083;
+	static constexpr const InsT add=(InsT)13238717;
+	static constexpr const InsT prm35 =(InsT)mul*add+(InsT)126;
 
 public:
-    static_assert(std::is_unsigned<InsT>::value, "Template type must be an unsigned integer type");
+	static_assert(std::is_unsigned<InsT>::value || std::is_same<InsT, uint128_t>::value , "Template type must be an unsigned integer type");
 
 	//iterate instance seed
 		//definitely not thread safe
@@ -61,5 +80,17 @@ public:
 			return *n;
 		}
 	//
+
+	//other randomizers
+		template <typename U>
+		U hashCstr(const std::string& str) {
+			return kaelHash<U>(str.c_str());
+		}
+		template <typename U>
+		U hashCstr(const char* str) {
+			return kaelHash<U>(str);
+		}
+
+
 };
 kaelRandom kaelRand;

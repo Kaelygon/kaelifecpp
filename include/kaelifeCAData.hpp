@@ -16,6 +16,7 @@
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
 #include <cstring>
+#include <string.h>
 
 #include <barrier>
 #include <syncstream>
@@ -177,7 +178,7 @@ public: //public functions
 				}//copy drawBuf 
 			}else//randomizers
 			if(strcmp(*keyword, "randAll") == 0){
-				auto copyIndex = kaePreset.copyPreset("RANDOM",kaePreset.index);
+				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				uint64_t randSeed = kaePreset.randAll(copyIndex[0]);
 				randState(kaePreset.current()->stateCount);
@@ -187,7 +188,7 @@ public: //public functions
 				cloneBufferRequest=1;
 			}else 
 			if(strcmp(*keyword, "randAdd") == 0){
-				auto copyIndex = kaePreset.copyPreset("RANDOM",kaePreset.index);
+				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				int rr=std::min( (int)(kaePreset.current()->stateCount-1) ,127);
 				kaePreset.randRuleAdd(kaePreset.index,-rr,rr);
@@ -196,7 +197,7 @@ public: //public functions
 				cloneBufferRequest=1;
 			}else 
 			if(strcmp(*keyword, "randRange") == 0){
-				auto copyIndex = kaePreset.copyPreset("RANDOM",kaePreset.index);
+				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				kaePreset.randRuleRange(kaePreset.index,0);
 				loadPreset();		
@@ -204,7 +205,7 @@ public: //public functions
 				cloneBufferRequest=1;
 			}else 
 			if(strcmp(*keyword, "randMask") == 0){
-				auto copyIndex = kaePreset.copyPreset("RANDOM",kaePreset.index);
+				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				kaePreset.randRuleMask(kaePreset.index);
 				loadPreset();
@@ -212,7 +213,7 @@ public: //public functions
 				cloneBufferRequest=1;
 			}else 
 			if(strcmp(*keyword, "randMutate") == 0){
-				auto copyIndex = kaePreset.copyPreset("RANDOM",kaePreset.index);
+				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				kaePreset.randRuleMutate(kaePreset.index);
 				loadPreset();

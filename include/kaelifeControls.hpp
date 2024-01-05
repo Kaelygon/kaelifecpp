@@ -438,8 +438,8 @@ void InputHandler::detectInput(CAData &cellData, SDL_Window* &SDLWindow) {
 
 bool isDrawOverlap(CAData &cellData, uint16_t ax, uint16_t ay) {
 	for (size_t i = 0; i < cellData.drawMouseBuf.size(); ++i) {
-		int deltaX = (int)cellData.drawMouseBuf[i].pos[0]-ax;
-		int deltaY = (int)cellData.drawMouseBuf[i].pos[1]-ay;
+		int64_t deltaX = (int)cellData.drawMouseBuf[i].pos[0]-ax;
+		int64_t deltaY = (int)cellData.drawMouseBuf[i].pos[1]-ay;
 		deltaX*=deltaX;
 		deltaY*=deltaY;			
 		int radSq = cellData.drawMouseBuf[i].radius*cellData.drawMouseBuf[i].radius;

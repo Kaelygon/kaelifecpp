@@ -13,6 +13,7 @@
 #include <mutex>
 
 class CAPreset {
+
 public:
 	std::mutex indexMutex;
 
@@ -24,11 +25,16 @@ public:
                 uint64_t* seedPtr = &automata.presetSeed;
                 randAll(ind, seedPtr);
             }
+			if(strcmp(automata.name.c_str(),"\0")==0){
+				automata.name=unsetName;
+			}
         }
 	}
-
+	
+	static constexpr const size_t maxNameLength = 32;
+	static constexpr const char* unsetName = "UNNAMED";
 	struct PresetList {
-		const char* name;
+    	std::string name;
 		uint stateCount;
 		std::vector<int16_t> ruleRange;
 		std::vector<int8_t> ruleAdd;
@@ -36,19 +42,18 @@ public:
 		WorldMatrix<uint8_t> neigMask;
 		uint64_t presetSeed;
 
-		// Constructor to set clipTreshold to half of stateCount
 		PresetList(
-				const char* n = "UNNAMED", 
-				uint sc = 0, 
-				const std::vector<int16_t>& rr = {0},
-				const std::vector<int8_t>& ra = {0, 0},
-				const WorldMatrix<uint8_t>& m =
-				{
-					{UINT8_MAX, UINT8_MAX, UINT8_MAX},
-					{UINT8_MAX, 		0, UINT8_MAX},
-					{UINT8_MAX, UINT8_MAX, UINT8_MAX}
-				},
-				uint64_t ps = UINT64_MAX
+			std::string n = unsetName,
+			uint sc = 0,
+			const std::vector<int16_t>& rr = {0},
+			const std::vector<int8_t>& ra = {0, 0},
+			const WorldMatrix<uint8_t>& m =
+			{
+				{UINT8_MAX, UINT8_MAX, UINT8_MAX},
+				{UINT8_MAX, 0, UINT8_MAX},
+				{UINT8_MAX, UINT8_MAX, UINT8_MAX}
+			},
+			uint64_t ps = UINT64_MAX
 		) : 
 			name(n), 
 			stateCount(sc), 
@@ -88,14 +93,56 @@ public:
 
 		//add to preset and return its index
 		uint addPreset(PresetList preset){
+			preset.name= preset.name=="" ? unsetName : preset.name;
+
+			preset.name.resize(std::min(preset.name.length(), maxNameLength)); //truncate
+			size_t nameLen = preset.name.length();
+
+			uint isDupe = getPresetIndex(preset.name); //check if already exists
+				
+			if(isDupe!=UINT_MAX){
+				const size_t ogMaxSfxLen = 4;
+				size_t maxSfxLen = std::min(ogMaxSfxLen,nameLen); //clip suffix to name length
+
+				uint sfxLen = 0; //character length of name suffix number e.g. abc3d123 length is 3, suffix value is 123
+				//if ascii '0' to '9'
+				std::string strNum;
+				strNum.resize(maxSfxLen);
+				do{
+					strNum[sfxLen] = preset.name[nameLen-1-sfxLen];
+				}while( isdigit(strNum[sfxLen]) && (++sfxLen < maxSfxLen) );
+
+				if(sfxLen==0){ //if no index but duplicate exists, add suffix 0
+					preset.name[ std::min(preset.name.length(),maxNameLength) ]='0';
+				}else{ //increment suffix
+					strNum.resize(sfxLen);
+					std::reverse(strNum.begin(),strNum.end());
+					uint sfxValue=stoul(strNum);
+					
+					if( ((uint)log10(sfxValue+1)!=(uint)log10(sfxValue)) && sfxValue!=0 ){ //if carry 99 -> 100
+						if(sfxLen==ogMaxSfxLen){ //overflow 9999 -> 0 only if past original max suffix length
+							sfxValue=UINT_MAX;
+							sfxLen=0;
+							nameLen-=maxSfxLen;
+						}
+						sfxLen++; nameLen++; // 999 -> 1000
+					}
+					sfxValue++; //add 1 to the suffix
+
+					preset.name.resize( std::clamp( (size_t)(nameLen-sfxLen), (size_t)0, (size_t)maxNameLength) ); //truncate
+					preset.name.append(std::to_string(sfxValue));
+				}
+			}
+
+			list[list.size()-1].name=preset.name;
 			list.push_back(preset);
 			return list.size()-1;
 		}
 
 		template <typename T1, typename T2,
-				typename = std::enable_if_t<std::is_same<T1, const char*>::value || std::is_same<T1, uint>::value>,
-				typename = std::enable_if_t<std::is_same<T2, const char*>::value || std::is_same<T2, uint>::value>>
-		//{ uint OR const char* dst, uint OR const char* src, bool keepName=true } 
+				typename = std::enable_if_t<std::is_same<T1, std::string>::value || std::is_same<T1, uint>::value>,
+				typename = std::enable_if_t<std::is_same<T2, std::string>::value || std::is_same<T2, uint>::value>>
+		//{ uint OR std::string dst, uint OR std::string src, bool keepName=true } 
 		std::array<uint, 2> copyPreset(T1 dst, T2 src, bool keepName=true) {
 
 			uint srcInd = getPresetIndex(src);
@@ -106,7 +153,7 @@ public:
 				return {srcInd,dstInd};
 			}
 
-			const char* presetName=list[srcInd].name;
+			std::string presetName=list[srcInd].name;
 			if(keepName){
 				presetName=list[dstInd].name;
 			}
@@ -120,9 +167,9 @@ public:
 			return {dstInd,srcInd};
 		}
 
-		//{ uint OR const char*, const char* } 
-		template <typename T1, typename = std::enable_if_t<std::is_same<T1, const char*>::value || std::is_same<T1, uint>::value>>
-		uint renamePreset(T1 nameOrId, const char* presetName="UNNAMED"){
+		//{ uint OR std::string, std::string } 
+		template <typename T1, typename = std::enable_if_t<std::is_same<T1, std::string>::value || std::is_same<T1, uint>::value>>
+		uint renamePreset(T1 nameOrId, std::string presetName="UNNAMED"){
 			uint ind = getPresetIndex(nameOrId);
 			if( ind==UINT_MAX ){ //null check
 				printf("Preset doesn't exist!\n");
@@ -132,23 +179,11 @@ public:
 			return ind;
 		}
 
-		template <typename T>
-		T hashCstr(const char* cstr){
-			T result = 0;
-
-			size_t bufferLength = std::strlen(cstr);
-			size_t copyLength = std::min(bufferLength, sizeof(T));
-
-			std::memcpy(&result, cstr, copyLength);
-
-			return kaelRand(&result);
-		}
-
 		//randomize preset by name or index. 
 		//Returns -1 if no preset was not found by index
 		//Returns seed if no preset was not found by name
-		//{ uint OR const char* } 
-		template <typename T1, typename = std::enable_if_t<std::is_same<T1, const char*>::value || std::is_same<T1, uint>::value>>
+		//{ uint OR char* } 
+		template <typename T1, typename = std::enable_if_t<std::is_same<T1, std::string>::value || std::is_same<T1, uint>::value>>
 		uint64_t seedFromName(T1 nameOrId){
 			uint ind = getPresetIndex(nameOrId);
 			uint64_t interpSeed;
@@ -156,9 +191,9 @@ public:
 				if(ind==UINT_MAX){ //no preset found by index
 					return ind;
 				}
-				interpSeed = hashCstr<uint64_t>(list[ind].name); //previously reinterpret_cast
+				interpSeed = kaelRand.hashCstr<uint64_t>(list[ind].name); //previously reinterpret_cast
 			}else{ //if preset by name
-				interpSeed = hashCstr<uint64_t>(nameOrId);
+				interpSeed = kaelRand.hashCstr<uint64_t>(nameOrId);
 			}
 			uint64_t *seedPtr = &interpSeed;
 
@@ -175,7 +210,7 @@ public:
 		//print ruleRange[]
 		void printRuleRange(const uint ind=UINT_MAX){
 			uint tmpind = ind==UINT_MAX ? index : ind;
-			printf("ruleRange {");
+			printf(".ruleRange {");
 			for(uint i=0;i<list[tmpind].ruleRange.size();++i){
 				printf("%d",list[tmpind].ruleRange[i]);
 				if(i!=list[tmpind].ruleRange.size()-1){
@@ -208,7 +243,7 @@ public:
 		void printPreset(const uint ind=UINT_MAX){
 			uint tmpind = ind==UINT_MAX ? index : ind;
 			printf("\n");
-			printf(list[tmpind].name);
+			printf(list[tmpind].name.c_str());
 			printf("\n");
 			printRuleRange	(tmpind);
 			printRuleAdd	(tmpind);
@@ -399,40 +434,12 @@ private:
 			{4,6,8},
 			{-1,0,1,-1}
 		},{//4
-			"maskTest",
-			4,
-			{6,9,11,24},
-			{-1,1,-1,0,-1},
-			{
-				{000,128,128,000,},
-				{128,255,255,128,},
-				{128,064,064,128,},
-				{128,255,255,128,},
-				{000,128,128,000 }
-			}
-		},{//5
 			"none",
 			0,
 			{0},
 			{0},
 			{{0}},
-		},{//6
-			"random",
-			255,
-			{172,179,416,648,834,962,1384,1453,1465},
-			{31,-91,31,-43,113,-107,7,-9,63,-31},
-			{
-				{ 255 },
-				{ 000 },
-				{ 000 },
-				{ 000 },
-				{ 000 },
-				{ 000 },
-				{ 000 },
-				{ 000 },
-				{ 255,255 }
-			}
-		},{//7
+		},{//5
 			"Set seed",
 			0,
 			{0},
@@ -442,16 +449,16 @@ private:
 		}
 	}; 
 
-	template <typename T1, typename = std::enable_if_t<std::is_same<T1, const char*>::value || std::is_same<T1, uint>::value>>
+	template <typename T1, typename = std::enable_if_t<std::is_same<T1, std::string>::value || std::is_same<T1, uint>::value>>
 	uint getPresetIndex(T1 charOrInd) {
 
 		uint ind = -1;
 		if constexpr (std::is_same<T1, uint>::value) {
 			ind=charOrInd;
-		}else if constexpr (std::is_same<T1, const char*>::value) {
+		}else if constexpr (std::is_same<T1, std::string>::value) {
 			//search index by comparing names
 			for(uint i=0;i<list.size();++i){
-				if(strcmp(list[i].name, charOrInd)==0){
+				if(strcmp(list[i].name.c_str(), charOrInd.c_str())==0){
 					ind=i;
 					break;
 				}
