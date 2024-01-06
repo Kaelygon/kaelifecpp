@@ -126,6 +126,10 @@ GLuint createShader(const std::string& vertexShaderPath, const std::string& frag
 }
 
 void initPixelMap(const CAData& cellData) {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
+    glDepthMask(GL_TRUE);
+
     shaderProgram = createShader("./shader/vertex.vs.glsl", "./shader/fragment.fs.glsl");
 
     glUseProgram(shaderProgram);
@@ -164,28 +168,14 @@ void updateTexture(const CAData& cellData) {
     delete[] pixelData;
 }
 
-//    for (uint i = 0; i < cellData.mainCache.tileRows; ++i) {
-//        const auto& row = cellData.stateBuf[activeRenderBuf].at(i);
-//        std::memcpy(pixelData.data() + i * cellData.mainCache.tileCols, row.data(), cellData.mainCache.tileCols);
-//    }
 
-
-static inline void renderCells(const CAData& cellData, const InputHandler& kaeInput, SDL_Window *&SDLWindow) {
+static inline void renderCells(const CAData& cellData, InputHandler& kaeInput, SDL_Window *&SDLWindow) {
 	const GLfloat quadVertices[] = {
 		-1.0f, -1.0f,
 		1.0f, -1.0f,
 		1.0f,  1.0f,
 		-1.0f,  1.0f
 	};
-
-	auto offsetScale = InputHandler::getWorldTransform(cellData, SDLWindow);
-	
-	glViewport(static_cast<GLint>(offsetScale[0]), static_cast<GLint>(offsetScale[1]), static_cast<GLsizei>(offsetScale[2]), static_cast<GLsizei>(offsetScale[3]));
-
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glOrtho(0, cellData.renderWidth, 0, cellData.renderHeight, -1, 1); // Set an orthographic projection
-
 
 	float cursorBorder=2; //cursor outline in tiles
 	auto worldCursorPos = InputHandler::getWorldCursorPos(cellData, SDLWindow); 
@@ -218,6 +208,20 @@ static inline void renderCells(const CAData& cellData, const InputHandler& kaeIn
 	glUniform1f (glGetUniformLocation(shaderProgram, "shaderHue"		), shaderShaderHue);
 	glUniform1f (glGetUniformLocation(shaderProgram, "stateCount"	    ), shaderStateCount);
 	glUniform1f (glGetUniformLocation(shaderProgram, "colorStagger"	    ), shaderColorStagger);
+
+
+	auto offsetScale = InputHandler::getWorldTransform(cellData, SDLWindow);
+	
+	glViewport(static_cast<GLint>(offsetScale[0]), static_cast<GLint>(offsetScale[1]), static_cast<GLsizei>(offsetScale[2]), static_cast<GLsizei>(offsetScale[3]));
+
+    glMatrixMode(GL_PROJECTION);
+
+    if( kaeInput.hasResoChanged(offsetScale[2], offsetScale[3]) ){
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    }
+    
+    glLoadIdentity();
+    glOrtho(0, cellData.renderWidth, 0, cellData.renderHeight, -1, 1); // Set an orthographic projection
 
     //copy stateBuf to texture
 	updateTexture(cellData);

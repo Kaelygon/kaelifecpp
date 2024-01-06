@@ -15,14 +15,17 @@
 const int THREAD_COUNT = 12;
 const int BUFFER_SIZE = 10000000;
 
-typedef uint32_t randType;
+typedef uint16_t randType;
 //typedef uint128_t randType;
 
 int main() {
 	kaelRandom <randType>randomizer;
 
-	for(int i=0;i<256;i++){
-		printf("%d\n",randomizer());
+	randType n = 0;
+
+	for(int i=0;i<=randType(-1);i++){
+		n=randomizer.testing(&n);
+		printf("%d\n",n);
 	}
 
     return 0;

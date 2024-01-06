@@ -41,6 +41,8 @@ std::atomic<bool> QUIT_FLAG = false;
 
 class InputHandler {
 private:
+
+
 	bool isMouseHeld = false;
 	// Define a type for function pointers
 	using KeyFunction = std::function<void(CAData&)>;
@@ -84,15 +86,21 @@ public:
 			{SDLK_PERIOD					, 	std::bind(&InputHandler::press_PERIOD, 		this, std::placeholders::_1 )},
 			{SDLK_COMMA						, 	std::bind(&InputHandler::press_COMMA, 		this, std::placeholders::_1 )},
 			{SDLK_ESCAPE			 		, 	std::bind(&InputHandler::press_ESCAPE, 		this )}
-	} {}
+
+	} {
+//		prevReso[0]=1024;
+//		prevReso[1]=1024;
+//		clearRequired=0;
+	}
 	
 	//set shader color
 	//{hue,stagger} Sort 256 rgb 6-6-7 colors by luminosity
-	uint8_t colorPreset[4][2]={
+	uint8_t colorPreset[5][2]={
 		{1,239 }, //0 pink
 		{2,69 }, //0 cyan pink
 		{40,108 }, //1 yellow blue
 		{23,156 }, //2 brown blue white
+		{4,83 } 
 	};
 
 	uint shaderColor=2; //0 grayscale, 1 normalmap, 2 color mapped
@@ -140,6 +148,7 @@ public:
 	void press_COMMA(CAData &cellData);
 	void press_ESCAPE();
 
+
 	// Detect keys method
 	void detectInput(CAData &cellData, SDL_Window* &SDLWindow);
 	void cursorDraw(CAData &cellData, int strength, SDL_Window* &SDLWindow);
@@ -148,7 +157,26 @@ public:
 	static std::array<double, 4> getWorldTransform (const CAData &cellData, SDL_Window* &SDLWindow);
 	static std::array<uint, 2>   getWorldCursorPos (const CAData &cellData, SDL_Window* &SDLWindow);
 
+
+	int prevReso[2] = { 1024, 1024 };
+	uint hasChanged = 0;
+
+	bool hasResoChanged(int x, int y) {
+		hasChanged-=hasChanged>0;
+		if(
+			prevReso[0] != x ||
+			prevReso[1] != y
+		){
+			hasChanged=1; // clear next frame(s)
+		}
+		prevReso[0] = x;
+		prevReso[1] = y;
+		return hasChanged;
+	}
 };
+
+
+
 
 int InputHandler::cursorPos[2] = {0, 0};
 
@@ -505,10 +533,13 @@ void InputHandler::cursorDraw(CAData &cellData, int strength, SDL_Window* &SDLWi
 	cellData.addBacklog("cursorDraw");
 }
 
+
+
 	//sdl window to world transform
 	std::array<double, 4> InputHandler::getWorldTransform(const CAData &cellData, SDL_Window* &SDLWindow) {
 		int x, y;
 		SDL_GetWindowSize(SDLWindow, &x, &y );
+
 		double windowAspectRatio = (double)(x) / (double)(y);
 
 		double offsetX	= 0;
