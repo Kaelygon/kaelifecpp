@@ -260,8 +260,8 @@ public:
 			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
 
 			//symmetrize
-			bool symX=kaelRand(seed)%4;//75% chance
-			bool symY=kaelRand(seed)%4;
+			bool symX=kaelRand(seedPtr)%4;//75% chance
+			bool symY=kaelRand(seedPtr)%4;
 
 			size_t mw=list[ind].neigMask.getWidth(); 
 			size_t mh=list[ind].neigMask.getHeight();
