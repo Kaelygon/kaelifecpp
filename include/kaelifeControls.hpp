@@ -112,7 +112,7 @@ public:
 
 	bool stepFrame=false;
 	bool displayFrameTime=false;
-	bool pause=true;
+	bool pause=false;
 	
 	int drawRadius=2;
 	float drawStrength=1.0;
