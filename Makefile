@@ -1,6 +1,6 @@
 # Makefile
 
-CXX = time g++
+CXX = g++
 CXXFLAGS = -std=c++20
 LDFLAGS = -lSDL2 -lGL -lGLEW
 

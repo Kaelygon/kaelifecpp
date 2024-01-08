@@ -3,46 +3,84 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Build with Makefile (alldebug)",
+			"label": "Make (all DEBUG)",
 			"type": "shell",
 			"command": "make",
 			"args": [
 				"clean",
-				"alldebug"
+				"all",
+				"ACTIVE_BUILD_VARIANT='DEBUG'",
 			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"problemMatcher": []
+			"group": "build",
+			"problemMatcher": ["$gcc"]
 		},
 		{
-			"label": "Build with Makefile (allasan)",
+			"label": "Make (all ASAN)",
 			"type": "shell",
 			"command": "make",
 			"args": [
 				"clean",
-				"allasan"
+				"all",
+				"ACTIVE_BUILD_VARIANT='ASAN'",
 			],
-			"group": {
-				"kind": "build",
-				"isDefault": false
-			},
-			"problemMatcher": []
+			"group": "build",
+			"problemMatcher": ["$gcc"]
 		},
 		{
-			"label": "Build with Makefile (alloptimized)",
+			"label": "Make (all OPTIMIZED)",
 			"type": "shell",
 			"command": "make",
 			"args": [
 				"clean",
-				"alloptimized"
+				"all",
+				"ACTIVE_BUILD_VARIANT='OPTIMIZED'",
 			],
-			"group": {
-				"kind": "build",
-				"isDefault": false
-			},
-			"problemMatcher": []
+			"group": "build",
+			"problemMatcher": ["$gcc"]
+		},
+		{
+			"label": "Make (active DEBUG)",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"clean",
+				"active",
+				"ACTIVE_BUILD_VARIANT='DEBUG'",
+				"ACTIVE_SRC_PATH='${relativeFileDirname}'",
+				"ACTIVE_SRC_NAME='${fileBasenameNoExtension}'"
+			],
+			"group": "build",
+			"problemMatcher": ["$gcc"]
+		},
+		{
+			"label": "Make (active ASAN)",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"clean",
+				"active",
+				"ACTIVE_BUILD_VARIANT='ASAN'",
+				"ACTIVE_SRC_PATH='${relativeFileDirname}'",
+				"ACTIVE_SRC_NAME='${fileBasenameNoExtension}'"
+			],
+			"group": "build",
+			"problemMatcher": ["$gcc"]
+		},
+		{
+			"label": "Make (active OPTIMIZED)",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"clean",
+				"active",
+				"ACTIVE_BUILD_VARIANT='OPTIMIZED'",
+				"ACTIVE_SRC_PATH='${relativeFileDirname}'",
+				"ACTIVE_SRC_NAME='${fileBasenameNoExtension}'"
+			],
+			"group": "build",
+			"problemMatcher": ["$gcc"]
 		}
 	]
 }
+
+//

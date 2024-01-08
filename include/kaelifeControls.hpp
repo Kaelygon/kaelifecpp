@@ -112,7 +112,7 @@ public:
 
 	bool stepFrame=false;
 	bool displayFrameTime=false;
-	bool pause=false;
+	bool pause=true;
 	
 	int drawRadius=2;
 	float drawStrength=1.0;
@@ -496,7 +496,7 @@ void InputHandler::cursorDraw(CAData &cellData, int strength, SDL_Window* &SDLWi
 
 	uint8_t drawValue=ceil(drawStrength * (numStates - 1) * strength);
 
-	{
+	{//mutex scope
 		std::lock_guard<std::mutex> lock(cellData.drawMutex); //make sure drawBuf is not being copied while drawing
 
 		for (int i = -drawRadius; i <= drawRadius; i++) {

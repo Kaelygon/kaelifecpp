@@ -191,9 +191,9 @@ public:
 				if(ind==UINT_MAX){ //no preset found by index
 					return ind;
 				}
-				interpSeed = kaelRand.hashCstr<uint64_t>(list[ind].name); //previously reinterpret_cast
+				interpSeed = kaelRand.hashCstr(list[ind].name); //previously reinterpret_cast
 			}else{ //if preset by name
-				interpSeed = kaelRand.hashCstr<uint64_t>(nameOrId);
+				interpSeed = kaelRand.hashCstr(nameOrId);
 			}
 			uint64_t *seedPtr = &interpSeed;
 

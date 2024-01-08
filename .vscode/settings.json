@@ -113,7 +113,23 @@
 		"filesystem": "cpp",
 		"format": "cpp",
 		"__verbose_abort": "cpp",
-		"hash_set": "cpp"
-	}
+		"hash_set": "cpp",
+		"__memory": "cpp",
+		"__hash": "cpp"
+	},
+	"makefile.launchConfigurations": [
+		{
+			"cwd": "/home/campus/code/kaelifecpp/build",
+			"binaryPath": "/home/campus/code/kaelifecpp/build/kaelifecpp_debug",
+			"binaryArgs": []
+		}
+	],
+	"makefile.configurations": [
+		{
+			"name": "Default",
+			"problemMatchers": ["$gcc"],
+			"makeArgs": []
+		}
+	]
 
 }

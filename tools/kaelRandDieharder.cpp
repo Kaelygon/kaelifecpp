@@ -7,41 +7,54 @@
 #include <cstring>
 #include <cstdlib>
 #include <chrono>
+#include <string>
 
 #include "kaelRandom.hpp"
 
 const int THREAD_COUNT = 24;
 const int BUFFER_SIZE = 10000000;
 
-//typedef uint64_t randType;
-typedef uint128_t randType;
+typedef uint64_t randType;
+//typedef uint32_t randType;
 
 kaelRandom<randType> randomizer;
 
-void generateRandomData(randType* buffer, int bufferSize, int threadId, randType start) {
+void generateRandomData2(randType* resultBuffer, int bufferSize, int threadId, randType start) {
     randType n = threadId + start;
     for (int i = 0; i < bufferSize; ++i) {
-        n = randomizer(&n);
-        buffer[i] = n;
+         n = randomizer(&n);
+        //n = randomizer.shuffleLCG(n);
+        resultBuffer[i] = n;
     }
 }
 
-void generateRandomData2(randType* buffer, int bufferSize, int threadId, randType start) {
 
-    uint csize = sizeof(randType);
-    char* bufChar = new char[csize];
+void generateRandomData(randType* resultBuffer, int bufferSize, int threadId, randType start) {
 
+    uint wordSize = sizeof(randType)+1; //+1 null terminate
+    char* tmpWord = new char[wordSize];
+    randType num = (start*threadId*80131)^932517113;
+    
     randType n = threadId + start;
     for (int i = 0; i < bufferSize; ++i) {
-        for(uint i=0;i<csize;i++){
-            bufChar[i]=(char)((n>>(8*i))*7+3+n);   
+        for(uint i=0;i<wordSize;i++){
+            num=num*2154798751+4871371;
+            char letter = ((num>>(8*i))&0b11111111)%78+48;
+            tmpWord[i]=letter;  //get letters
         }
+        randomizer(&num);
+
+        tmpWord[wordSize-1]='\n';
         
-        n = randomizer.hashCstr<randType>(bufChar);
-        buffer[i] = n;
+        n = randomizer.hashCstr(tmpWord);
+        //n = std::hash<std::string>{}(tmpWord);
+        resultBuffer[i] = n;
+
+        //printf(tmpWord);
+        //printf(" hash %lu \n",n);
     }
     
-    delete [] bufChar;
+    delete [] tmpWord;
 
 }
 

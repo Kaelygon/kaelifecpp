@@ -4,60 +4,144 @@
 	"configurations": [
 		//default debuggers
 		{ //-g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -Og 
-			"name": "g++ build with debugger",
+			"name": "Make all DEBUG",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_debug",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_DEBUG",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],
 			"externalConsole": false,
 			"MIMode": "gdb",
-			"preLaunchTask": "Build with Makefile (alldebug)",  
-			"miDebuggerPath": "/usr/bin/gdb"
+			"preLaunchTask": "Make (all DEBUG)",  
+			"miDebuggerPath": "/usr/bin/gdb",
+			"setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+			]
 		},
 		//fasnitizer
 		{ // -g -Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -Og -fsanitize=address
-			"name": "g++ build with debugger fsanitizer",
+			"name": "Make all ASAN",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_asan",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_ASAN",
 			"args": [
-//				"2>&1", //&"warning: GDB: Failed to set controlling terminal: Operation not permitted\n"????
-//				"|",
-//				"stdbuf",
-//				"-oL",
-//				"tee",
-//				"kaelife.log"
+				"2>&1",
+				"|",
+				"stdbuf",
+				"-oL",
+				"tee",
+				"kaelife.log"
 			],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [
-//			  {
-//				"name": "LSAN_OPTIONS",
-//				"value": "verbosity=1:log_threads=1"
-//			  }
+			  {
+				"name": "LSAN_OPTIONS",
+				"value": "verbosity=1:log_threads=1"
+			  }
 			],
 			"externalConsole": false,
 			"MIMode": "gdb",
-			"preLaunchTask": "Build with Makefile (allasan)",  
-			"miDebuggerPath": "/usr/bin/gdb"
+			"preLaunchTask": "Make (all ASAN)",  
+			"miDebuggerPath": "/usr/bin/gdb",
+			"setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+			]
 		},
 		//disables debuggers and uses optimization flags
 		{ //-mavx2 -O3 -Os
-			"name": "g++ build with optimization flags",
+			"name": "Make all OPTIMIZED",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_optimized",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_OPTIMIZED",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
 			"environment": [],
 			"externalConsole": false,
 			"MIMode": "gdb",
-			"preLaunchTask": "Build with Makefile (alloptimized)",  
-			"miDebuggerPath": "/usr/bin/gdb"
+			"preLaunchTask": "Make (all OPTIMIZED)",  
+			"miDebuggerPath": "/usr/bin/gdb",
+			"setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+			]
+		},
+		{ //Build and run active debug file
+		"name": "Make active DEBUG",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_DEBUG",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "Make (active DEBUG)",  
+			"miDebuggerPath": "/usr/bin/gdb",
+			"setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+			]
+		},
+		{ //Build and run active debug file
+		"name": "Make active ASAN",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_ASAN",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "Make (active ASAN)",  
+			"miDebuggerPath": "/usr/bin/gdb",
+			"setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+			]
+		},
+		{ //Build and run active debug file
+		"name": "Make active OPTIMIZED",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/build/${fileBasenameNoExtension}_OPTIMIZED",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"preLaunchTask": "Make (active OPTIMIZED)",  
+			"miDebuggerPath": "/usr/bin/gdb",
+			"setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+			]
 		}
 	]
 }
