@@ -6,7 +6,7 @@
 
 int main() {
 	
-	typedef uint32_t hashType;
+	typedef uint16_t hashType;
 
 	kaelRandom<hashType> randomizer;
 
@@ -39,14 +39,14 @@ int main() {
 				tmpWord[(j+1)%wordSize]++;
 			}
 
-			//std::cout << (uint)(uint8_t)tmpWord[j] << " " ;
+			std::cout << (uint)(uint8_t)tmpWord[j] << " " ;
 		}
 		
 		*hashPair.seed = randomizer.hashCstr(tmpWord);
 
 		//randomizer.shuffle(hashPair); // *hashPair.seed is set here
 		
-		//std::cout << " hash " << (uint)*hashPair.seed << "\n";
+		std::cout << " hash " << (uint)*hashPair.seed << "\n";
 
 		tmpWord[0]++;
 		if (history.count(*hashPair.seed) > 0) {

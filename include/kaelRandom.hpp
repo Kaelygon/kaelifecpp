@@ -32,11 +32,10 @@ public:
 		X* seed;
 		Y* step;
 		ShufflePair(X* seedInit=nullptr, Y* stepInit=nullptr)
-			: seed(seedInit), step(stepInit) {	
+			: seed(seedInit), step(stepInit) {
 				seed = seedInit==nullptr ? &privateSeed : seedInit;
 				step = stepInit==nullptr ? &privateStep : stepInit;
 		}
-
 		private:
 			static constexpr const X defaultSeed = (sizeof(X)==1) ? (X)125 : (X)200 ;
 			static constexpr const Y defaultStep = (sizeof(Y)==1) ? (Y)125 : (Y)200 ;	
@@ -44,9 +43,68 @@ public:
 			Y privateStep = defaultStep;
 	};
 
+	//iterate instance seed
+		//definitely not thread safe
+		inline InsT const operator()() { 
+			seed = kaelLCG(seed);
+			return seed;
+		}
+		inline void setSeed(InsT n) {
+			seed = n;
+		}
+		//potentially not thread safe
+		//Seed pointer null check. If input *n is nullptr, return instance seed ptr. Otherwise return *n unchanged
+		inline InsT* validSeedPtr(InsT *n){
+			return n==nullptr ? &seed : n;
+			if(n==nullptr){	return &seed; }
+			return n;
+		}
+		//Pointer to instance seed. Not thread safe to modify. No null check.
+		inline InsT* getSeedPtr() {
+			return &seed;
+		}
+	//
+
+	//thread safe as we are iterating the given argument value or ptr. Unless the pointer is instance seed
+		//iterate literal (thread safe)
+		template <typename U = InsT, typename = std::enable_if_t<!std::is_pointer<std::remove_reference_t<U>>::value>>
+		inline const InsT operator()(const U& n) { 
+			return kaelLCG(n);
+		}
+		//Iterate pointer
+		template <typename U = InsT, typename = std::enable_if_t<std::is_pointer<std::remove_reference_t<U>>::value>>
+		inline const InsT operator()(U n) { 
+			*n = kaelLCG(*n);
+			return *n;
+		}
+	//
+
+	//other randomizers
+		//hash c string
+		inline InsT hashCstr(const std::string& str) {
+			return kaelHash<InsT>(str.c_str());
+		}
+		
+		inline InsT hashCstr(const char* str) {
+			return kaelHash<InsT>(str);
+		}
+
+		template <typename X = InsT, typename Y = InsT>
+		inline ShufflePair<X, Y>& shuffle(ShufflePair<X, Y>& shflPair) {
+			return kaelShfl(shflPair);
+		}
+
+		template <typename X = InsT, typename Y = InsT>
+		inline InsT shuffle(X *seed, Y step=0) {
+			Y *stepPtr = step==0 ? nullptr : &step;
+			ShufflePair<X,Y> bufPair( seed, stepPtr );
+			return *kaelShfl( bufPair ).seed;
+		}
+	//
+
 private:
 
-	InsT seed;
+	InsT seed=0;
 	static constexpr const InsT mul= (InsT) (sizeof(InsT) == 1 ? 235 : 913	 	);
 	static constexpr const InsT add= (InsT) (sizeof(InsT) == 1 ? 191 : 13238717 );
  	//Generate pseudo random numbers RORR LCG
@@ -101,62 +159,6 @@ private:
 
 		return shufflePair;
 	}
-
-
-public:
-
-	//iterate instance seed
-		//definitely not thread safe
-		inline InsT const operator()() { 
-			seed = kaelLCG(seed);
-			return seed;
-		}
-		inline void setSeed(InsT n) {
-			seed = n;
-		}
-		//potentially not thread safe
-		//Seed pointer null check. If input *n is nullptr, return instance seed ptr. Otherwise return *n unchanged
-		inline InsT* getSeedPtr(InsT *n){
-			if(n==nullptr){
-				return &seed;
-			}
-			return n;
-		}
-		//Pointer to instance seed. Not thread safe to modify. No null check.
-		inline InsT* getSeedPtr() {
-			return &seed;
-		}
-	//
-
-	//thread safe as we are iterating the given argument value or ptr. Unless the pointer is instance seed
-		//iterate literal (thread safe)
-		template <typename U = InsT, typename = std::enable_if_t<!std::is_pointer<std::remove_reference_t<U>>::value>>
-		inline const InsT operator()(const U& n) { isUint<U>();
-			return kaelLCG(n);
-		}
-		//Iterate pointer
-		template <typename U = InsT, typename = std::enable_if_t<std::is_pointer<std::remove_reference_t<U>>::value>>
-		inline const InsT operator()(U n) { isUint<U>();
-			*n = kaelLCG(*n);
-			return *n;
-		}
-	//
-
-	//other randomizers
-		//hash c string
-		inline InsT hashCstr(const std::string& str) {
-			return kaelHash<InsT>(str.c_str());
-		}
-		
-		inline InsT hashCstr(const char* str) {
-			return kaelHash<InsT>(str);
-		}
-
-		template <typename X = InsT, typename Y = InsT>
-		inline ShufflePair<X, Y>& shuffle(ShufflePair<X, Y>& shflPair) {
-			return kaelShfl(shflPair);
-		}
-	//
 
 };
 kaelRandom kaelRand;

@@ -417,7 +417,7 @@ public: //public functions
 	
 	//randomize state[!activeBuf][][]. Not thread safe
 	void randState(uint numStates, uint64_t* seed=nullptr ){
-		uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
+		uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
 		for(uint i=0;i<mainCache.tileRows;i++){
 			for(uint j=0;j<mainCache.tileCols;j++){
 				stateBuf[!mainCache.activeBuf][i][j]=kaelRand(seedPtr)%numStates;

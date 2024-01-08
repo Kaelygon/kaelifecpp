@@ -134,7 +134,7 @@ public:
 				}
 			}
 
-			list[list.size()-1].name=preset.name;
+//			list[list.size()-1].name=preset.name;
 			list.push_back(preset);
 			return list.size()-1;
 		}
@@ -257,7 +257,7 @@ public:
 		//randomize neigMask[!activeBuf]. Not thread safe
 		void randRuleMask( const uint ind, uint64_t* seed=nullptr ){
 			if(list[ind].stateCount==0){return;}
-			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
+			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
 
 			//symmetrize
 			bool symX=kaelRand(seedPtr)%4;//75% chance
@@ -303,7 +303,7 @@ public:
 		//randomize ruleRange[]
 		void randRuleRange(const uint ind, uint16_t minValue, uint16_t maxValue=0, uint64_t* seed=nullptr ) {
 			maxValue = maxValue ? maxValue :  calcMaxNeigsum(ind);
-			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
+			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
 			uint rangeSize=list[ind].ruleRange.size();
 			list[ind].ruleRange.clear();
 
@@ -320,7 +320,7 @@ public:
 
 		//randomize ruleAdd[]
 		void randRuleAdd(const uint ind, int8_t minValue, int8_t maxValue, uint64_t* seed=nullptr ) {
-			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
+			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
 			int randRange = maxValue-minValue+1;
 
 			for(uint i=0;i<list[ind].ruleAdd.size();++i){
@@ -330,7 +330,7 @@ public:
 
 		//randomize everything
 		uint64_t randAll(const uint ind, uint64_t* seed=nullptr){
-			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
+			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
 			uint64_t startSeed=*seedPtr;
 			
 			list[ind].stateCount=kaelRand(seedPtr)%(UINT8_MAX-1)+2;
@@ -359,7 +359,7 @@ public:
 		}
 
 		void randRuleMutate(const uint ind, uint64_t* seed=nullptr){
-			uint64_t* seedPtr = kaelRand.getSeedPtr(seed);
+			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
 			uint8_t modif = *seedPtr&0b11; //0=ruleRange 1=randAdd 2=both
 
 			int add=0;
