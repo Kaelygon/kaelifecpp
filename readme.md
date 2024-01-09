@@ -89,7 +89,7 @@ GLEW - https://archlinux.org/packages/extra/x86_64/glew/
 SDL2 - https://archlinux.org/packages/extra/x86_64/sdl2/
 ```
 
-The only platform I use to program is x86 Arch Linux so your mileage may vary.
+The only platform I use to program is x86 Arch Linux so your mileage may vary. <br>
 Open console in some directory and clone the repository using
 ```
 $ git clone https://github.com/Kaelygon/kaelifecpp/
@@ -107,7 +107,7 @@ DEBUG : "-Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -O0". <br>
 ASAN : Address sanitizer flags "-fsanitize=address". Not compatible with Valgrind. <br>
 OPTIMIZED : (Default) Compiles using "-O3" and disables all debuggers and symbols.
 
-PROG : program base file name. "kaelifecpp" by default
+PROG : program base file name. "kaelifecpp" by default <br>
 SRC_DIR : Path to main() function .cpp source. Default is "./src"
 
 Or you can run cmake manually. The script generates and runs this by default.
@@ -116,7 +116,7 @@ cmake ./CMakeLists.txt -DBUILD=ALL -DTYPE=OPTIMIZED -DSRC_DIR=./src -DPROG=kaeli
 make
 ```
 
-And if the program builds successfully you can run it wit this command.
+And if the program builds successfully you can run it wit this command. <br>
 Make sure to run it from root folder as the program has to link GL shader files.
 ```
 ./build/kaelifecpp_OPTIMIZED
