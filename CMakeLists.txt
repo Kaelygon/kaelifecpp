@@ -27,7 +27,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Debug)
 set(OPTIMIZED_FLAGS "-O3") # OPTIMIZED
 set(DEBUG_FLAGS "-Wall" "-Wextra" "-pedantic" "-D_GLIBCXX_DEBUG" "-O0") # DEBUG
-set(ASAN_FLAGS "-Wall" "-Wextra" "-pedantic" "-D_GLIBCXX_DEBUG" "-O0" "-fsanitize=address,undefined") # ASAN
+set(ASAN_FLAGS "-Wall" "-Wextra" "-pedantic" "-D_GLIBCXX_DEBUG") # ASAN
 
 #Set directiories
 if(NOT SRC_DIR) 
@@ -42,9 +42,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BUILD_DIR})
 include_directories(${INCLUDE_DIR})
 
 if(TYPE STREQUAL "ASAN") 
+#    set (ASAN_FLAGS "${ASAN_FLAGS}" "-fno-omit-frame-pointer" "-fsanitize=address")
+    set (LINK_LIBRARIES "${LINK_LIBRARIES}" "-fno-omit-frame-pointer" "-fsanitize=address")
     set(FLAGS ${ASAN_FLAGS})
-    set (CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
-    set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
     set(CMAKE_BUILD_TYPE ${TYPE})
 elseif(TYPE STREQUAL "OPTIMIZED") 
 	set(FLAGS ${OPTIMIZED_FLAGS})

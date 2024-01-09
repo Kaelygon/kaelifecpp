@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named kaelRandDieharder_DEBUG
+# Target rules for targets named kaelifecpp_OPTIMIZED
 
 # Build rule for target.
-kaelRandDieharder_DEBUG: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kaelRandDieharder_DEBUG
-.PHONY : kaelRandDieharder_DEBUG
+kaelifecpp_OPTIMIZED: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kaelifecpp_OPTIMIZED
+.PHONY : kaelifecpp_OPTIMIZED
 
 # fast build rule for target.
-kaelRandDieharder_DEBUG/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelRandDieharder_DEBUG.dir/build.make CMakeFiles/kaelRandDieharder_DEBUG.dir/build
-.PHONY : kaelRandDieharder_DEBUG/fast
+kaelifecpp_OPTIMIZED/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/build
+.PHONY : kaelifecpp_OPTIMIZED/fast
 
-tools/kaelRandDieharder.o: tools/kaelRandDieharder.cpp.o
-.PHONY : tools/kaelRandDieharder.o
+src/kaelifecpp.o: src/kaelifecpp.cpp.o
+.PHONY : src/kaelifecpp.o
 
 # target to build an object file
-tools/kaelRandDieharder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelRandDieharder_DEBUG.dir/build.make CMakeFiles/kaelRandDieharder_DEBUG.dir/tools/kaelRandDieharder.cpp.o
-.PHONY : tools/kaelRandDieharder.cpp.o
+src/kaelifecpp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.o
+.PHONY : src/kaelifecpp.cpp.o
 
-tools/kaelRandDieharder.i: tools/kaelRandDieharder.cpp.i
-.PHONY : tools/kaelRandDieharder.i
+src/kaelifecpp.i: src/kaelifecpp.cpp.i
+.PHONY : src/kaelifecpp.i
 
 # target to preprocess a source file
-tools/kaelRandDieharder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelRandDieharder_DEBUG.dir/build.make CMakeFiles/kaelRandDieharder_DEBUG.dir/tools/kaelRandDieharder.cpp.i
-.PHONY : tools/kaelRandDieharder.cpp.i
+src/kaelifecpp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.i
+.PHONY : src/kaelifecpp.cpp.i
 
-tools/kaelRandDieharder.s: tools/kaelRandDieharder.cpp.s
-.PHONY : tools/kaelRandDieharder.s
+src/kaelifecpp.s: src/kaelifecpp.cpp.s
+.PHONY : src/kaelifecpp.s
 
 # target to generate assembly for a file
-tools/kaelRandDieharder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelRandDieharder_DEBUG.dir/build.make CMakeFiles/kaelRandDieharder_DEBUG.dir/tools/kaelRandDieharder.cpp.s
-.PHONY : tools/kaelRandDieharder.cpp.s
+src/kaelifecpp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.s
+.PHONY : src/kaelifecpp.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... kaelRandDieharder_DEBUG"
-	@echo "... tools/kaelRandDieharder.o"
-	@echo "... tools/kaelRandDieharder.i"
-	@echo "... tools/kaelRandDieharder.s"
+	@echo "... kaelifecpp_OPTIMIZED"
+	@echo "... src/kaelifecpp.o"
+	@echo "... src/kaelifecpp.i"
+	@echo "... src/kaelifecpp.s"
 .PHONY : help
 
 

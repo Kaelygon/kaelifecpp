@@ -12,6 +12,11 @@
 #include <stdio.h>
 
 bool QUIT_FLAG=0;
+void sigint(int a)
+{
+    printf("Pressed ^C\n");
+    QUIT_FLAG=1;
+}
 
 #include "kaelRandom.hpp"
 
@@ -75,7 +80,8 @@ int main() {
         threads.emplace_back(generateRandomData, buffers[i], BUFFER_SIZE, i, start[i]);
     }
     
-    while (true) {
+    signal(SIGINT, sigint);
+    for (;;) {
         for (size_t i = 0; i < threads.size(); ++i) {
             auto& thread = threads[i];
             if (thread.joinable()) {
