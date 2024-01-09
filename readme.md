@@ -84,9 +84,9 @@ Exit:............ [ESC]
 ## Building
 Dependencies 
 ```
-GL
-GLEW
-SDL2
+GL - Usually provided by graphics driver
+GLEW - https://archlinux.org/packages/extra/x86_64/glew/
+SDL2 - https://archlinux.org/packages/extra/x86_64/sdl2/
 ```
 
 The only platform I use to program is x86 Arch Linux so your mileage may vary.
