@@ -9,8 +9,6 @@ endif()
 
 if(NOT PROG) 
 	set(BUILD "ALL") #If no program specified build all 
-elseif(NOT BUILD STREQUAL "ALL")
-	set(BUILD "ALL") #If no program specified, can't build active
 endif()
 
 
@@ -27,9 +25,9 @@ set(CMAKE_CXX_STANDARD 20)
 
 # Set optimization or debugger flags
 set(CMAKE_BUILD_TYPE Debug)
-set(OPTIMIZED_FLAGS "-g" "-mavx2" "-O3") # OPTIMIZED
+set(OPTIMIZED_FLAGS "-O3") # OPTIMIZED
 set(DEBUG_FLAGS "-Wall" "-Wextra" "-pedantic" "-D_GLIBCXX_DEBUG" "-O0") # DEBUG
-set(ASAN_FLAGS "-Wall" "-Wextra" "-pedantic" "-D_GLIBCXX_DEBUG" "-fsanitize=address,undefined") # ASAN
+set(ASAN_FLAGS "-Wall" "-Wextra" "-pedantic" "-D_GLIBCXX_DEBUG" "-O0" "-fsanitize=address,undefined") # ASAN
 
 #Set directiories
 if(NOT SRC_DIR) 
@@ -90,8 +88,10 @@ function(build_all_sources)
 endfunction()
 
 if(BUILD STREQUAL "ACTIVE" AND PROG)
+    message("Building ACTIVE")
     build_active_source(${PROG})
 elseif(BUILD STREQUAL "ALL")
+    message("Building ALL")
     build_all_sources()
 endif()
 

@@ -81,4 +81,45 @@ Exit:............ [ESC]
 
 ----------------------------------------------------------------------------------------------
 
+## Cloning repository
+Dependencies 
+```
+SDL2
+GL
+GLEW
+```
 
+The only platform I use to program is x86 Arch Linux so your mileage may vary.
+Open console in some directory and clone the repository using
+```
+$ git clone https://github.com/Kaelygon/kaelifecpp/
+cd kaelifecpp/
+```
+
+Then you can build running the provided CMake bash script. Any arguments are optional. 
+```
+sh CMakeBuild.sh [ALL, ACTIVE] [DEBUG, ASAN, OPTIMIZED] [SRC_DIR] [PROG]
+```
+ALL : (Default) Builds every .cpp file into a program in SRC_DIR
+ACTIVE : Builds program named PROG.cpp in folder ./SRC_DIR 
+
+DEBUG : "-Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -O0".
+ASAN : Address sanitizer flags "-fsanitize=address,undefined". Not compatible with Valgrind.
+OPTIMIZED : (Default) Compiles using "-O3" and disables all debuggers and symbols.
+
+PROG : program base file name. "kaelifecpp" by default
+SRC_DIR : .cpp file directory. "./src" by default
+
+Or run cmake manually. The script generates and runs this by default.
+```
+cmake ./CMakeLists.txt -DBUILD=ALL -DTYPE=OPTIMIZED -DSRC_DIR=./src -DPROG=kaelifecpp
+make
+```
+
+And if the program builds successfully you can run the program.
+Make sure to run it from root folder as the program has to link GL shader files.
+```
+./build/kaelifecpp_OPTIMIZED
+```
+
+----------------------------------------------------------------------------------------------

@@ -56,8 +56,6 @@ public:
 		//Seed pointer null check. If input *n is nullptr, return instance seed ptr. Otherwise return *n unchanged
 		inline InsT* validSeedPtr(InsT *n){
 			return n==nullptr ? &seed : n;
-			if(n==nullptr){	return &seed; }
-			return n;
 		}
 		//Pointer to instance seed. Not thread safe to modify. No null check.
 		inline InsT* getSeedPtr() {

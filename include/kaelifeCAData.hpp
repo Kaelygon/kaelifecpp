@@ -45,9 +45,14 @@ public:
 		if(mainCache.threadCount>mainCache.tileCols){mainCache.threadCount=mainCache.tileCols;}
 
 		aspectRatio=(float)mainCache.tileRows/mainCache.tileCols;
-		renderWidth = mainCache.tileRows>1024 ? mainCache.tileRows : 1024 ;
-		renderHeight = renderWidth/aspectRatio;
-		
+		if(true){
+			renderWidth = mainCache.tileRows*2 ;
+			renderHeight = mainCache.tileCols*2;
+		}else{
+			renderWidth = mainCache.tileRows>1024 ? mainCache.tileRows : 1024 ;
+			renderHeight = renderWidth/aspectRatio;
+		}
+
 		for (int j = 0; j < 2; j++) {
 			stateBuf[j].resize(mainCache.tileRows);
 			for (uint i = 0; i < mainCache.tileRows; i++) {
