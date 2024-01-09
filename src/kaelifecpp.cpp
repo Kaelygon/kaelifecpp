@@ -76,7 +76,7 @@ void placeHolderDraw(CAData &kaelife){	//perhaps ppm/png to world could be done
 	//border test
 //	kaelife.stateBuf[!kaelife.mainCache.activeBuf][0][0]=1;
 //	kaelife.stateBuf[!kaelife.mainCache.activeBuf][kaelife.mainCache.tileRows-1][0]=2;
-//	kaelife.stateBuf[!kaelife.mainCache.activeBuf][kaelife.mainCache.tileRows-1][kaelife.mainCache.tileCols-1]=3;
+//	kaelife.stateBuf[!kaelife.mainCache.activeBuf][kaelife.witmainCache.tileRows-1][kaelife.mainCache.tileCols-1]=3;
 
 	kaelife.addBacklog("cloneBuffer");
 	kaelife.doBacklog();
@@ -233,5 +233,5 @@ int main() {
 }
 
 //benchmarking , needs -g flag
-//valgrind --tool=callgrind ./build/kaelifecpp_optimized
+//valgrind --tool=callgrind ./build/kaelifecpp_OPTIMIZED
 //

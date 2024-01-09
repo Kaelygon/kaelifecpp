@@ -8,6 +8,15 @@
 #include <cstdlib>
 #include <chrono>
 #include <string>
+#include <signal.h>
+#include <stdio.h>
+
+bool QUIT_FLAG=0;
+void sigint(int a)
+{
+    printf("Pressed ^C\n");
+    QUIT_FLAG=1;
+}
 
 #include "kaelRandom.hpp"
 
@@ -70,8 +79,9 @@ int main() {
         buffers.push_back(new randType[BUFFER_SIZE]);
         threads.emplace_back(generateRandomData, buffers[i], BUFFER_SIZE, i, start[i]);
     }
-
-    while (true) {
+    
+    signal(SIGINT, sigint);
+    for (;;) {
         for (size_t i = 0; i < threads.size(); ++i) {
             auto& thread = threads[i];
             if (thread.joinable()) {
@@ -82,12 +92,23 @@ int main() {
                 threads[i] = std::thread(generateRandomData, buffers[i], BUFFER_SIZE, i, start[i]);
             }
         }
+        if(QUIT_FLAG){
+            break;
+        }
+    }
+
+    for (size_t i = 0; i < threads.size(); ++i) {
+        auto& thread = threads[i];
+        if (thread.joinable()) {
+            thread.join();
+        }
     }
 
     // Cleanup
     for (size_t i = 0; i < buffers.size(); ++i) {
         delete[] buffers[i];
     }
+    printf("Exit\n");
 
     return 0;
 }
