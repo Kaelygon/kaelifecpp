@@ -100,7 +100,7 @@ Then you can build running the provided CMake bash script. Any arguments are opt
 ```
 sh CMakeBuild.sh [ALL, ACTIVE] [DEBUG, ASAN, OPTIMIZED] [SRC_DIR] [PROG]
 ```
-ALL : (Default) Builds every .cpp file into a program in SRC_DIR
+ALL : (Default) Builds every .cpp file into a program in SRC_DIR <br>
 ACTIVE : Builds program named PROG.cpp in folder ./SRC_DIR 
 
 DEBUG : "-Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -O0". <br>
