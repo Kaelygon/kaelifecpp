@@ -81,12 +81,12 @@ Exit:............ [ESC]
 
 ----------------------------------------------------------------------------------------------
 
-## Cloning repository
+## Building
 Dependencies 
 ```
-SDL2
 GL
 GLEW
+SDL2
 ```
 
 The only platform I use to program is x86 Arch Linux so your mileage may vary.
@@ -103,20 +103,20 @@ sh CMakeBuild.sh [ALL, ACTIVE] [DEBUG, ASAN, OPTIMIZED] [SRC_DIR] [PROG]
 ALL : (Default) Builds every .cpp file into a program in SRC_DIR
 ACTIVE : Builds program named PROG.cpp in folder ./SRC_DIR 
 
-DEBUG : "-Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -O0".
-ASAN : Address sanitizer flags "-fsanitize=address,undefined". Not compatible with Valgrind.
+DEBUG : "-Wall -Wextra -pedantic -D_GLIBCXX_DEBUG -O0". <br>
+ASAN : Address sanitizer flags "-fsanitize=address". Not compatible with Valgrind. <br>
 OPTIMIZED : (Default) Compiles using "-O3" and disables all debuggers and symbols.
 
 PROG : program base file name. "kaelifecpp" by default
-SRC_DIR : .cpp file directory. "./src" by default
+SRC_DIR : Path to main() function .cpp source. Default is "./src"
 
-Or run cmake manually. The script generates and runs this by default.
+Or you can run cmake manually. The script generates and runs this by default.
 ```
 cmake ./CMakeLists.txt -DBUILD=ALL -DTYPE=OPTIMIZED -DSRC_DIR=./src -DPROG=kaelifecpp
 make
 ```
 
-And if the program builds successfully you can run the program.
+And if the program builds successfully you can run it wit this command.
 Make sure to run it from root folder as the program has to link GL shader files.
 ```
 ./build/kaelifecpp_OPTIMIZED
