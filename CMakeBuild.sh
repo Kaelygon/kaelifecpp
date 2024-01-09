@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BUILD="${1:-ALL}"
-TYPE="${2:-DEBUG}"
+TYPE="${2:-OPTIMIZED}"
 SRC_DIR="${3:-./src}"
 PROG="${4:-kaelifecpp}"
 CONFIG=./CMakeLists.txt

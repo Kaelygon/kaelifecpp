@@ -5,6 +5,7 @@
 
 SDL_GLContext kaelifeInitSDL(	SDL_Window* &SDLWindow, int windowWidth, int windowHeight){
 
+
 	if (SDL_Init(SDL_INIT_VIDEO) < 0) {
 		std::cerr << "SDL initialization failed: " << SDL_GetError() << std::endl;
 	}    
@@ -22,7 +23,7 @@ SDL_GLContext kaelifeInitSDL(	SDL_Window* &SDLWindow, int windowWidth, int windo
 	int windowX = SDL_WINDOWPOS_CENTERED_DISPLAY(displayIndex);
 	int windowY = SDL_WINDOWPOS_CENTERED_DISPLAY(displayIndex);
 
-	SDLWindow = SDL_CreateWindow("GPU Rendering", windowX, windowY, windowWidth, windowHeight, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+	SDLWindow = SDL_CreateWindow("Kaelife", windowX, windowY, windowWidth, windowHeight, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
 	if (!SDLWindow) {
 		std::cerr << "Window creation failed: " << SDL_GetError() << std::endl;
 	}
