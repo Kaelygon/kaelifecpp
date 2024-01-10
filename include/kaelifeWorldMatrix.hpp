@@ -1,3 +1,5 @@
+//kaelifeWorldMatrix.hpp
+//2D rectangle std::vector in world orientation and transform
 
 #pragma once
 #include <iostream>

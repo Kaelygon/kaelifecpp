@@ -123,3 +123,22 @@ Make sure to run it from root folder as the program has to link GL shader files.
 ```
 
 ----------------------------------------------------------------------------------------------
+
+## Source Files
+```
+ ./src/kaelifecpp.cpp              # Main program
+ ./include/kaelifeBMPIO.hpp        # CA world state Bitmap export import
+ ./include/kaelifeCACache.hpp      # CAData thread cache
+ ./include/kaelifeCAData.hpp       # CA multi-threaded world state iteration
+ ./include/kaelifeCALock.hpp       # CAData thread lock
+ ./include/kaelifeCAPreset.hpp     # CA preset manager
+ ./include/kaelifeCARender.hpp     # OpenGL draw CA world state
+ ./include/kaelifeConfigIO.hpp     # Import JSON configuration
+ ./include/kaelifeControls.hpp     # Manage user input
+ ./include/kaelife.hpp             # Namespace for free functions
+ ./include/kaelifeSDL.hpp          # SDL2 window initialization
+ ./include/kaelifeWorldCore.hpp    # Main thread CA iteration managing loop
+ ./include/kaelifeWorldMatrix.hpp  # 2D rectangle std::vector in world space
+ ./include/kaelRandom.hpp          # Random and hash functions
+
+```

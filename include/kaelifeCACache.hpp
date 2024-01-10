@@ -1,3 +1,6 @@
+//kaelifeCACache.hpp
+//CA Thread cache and copy
+
 #pragma once
 
 #include <iostream>
@@ -20,7 +23,7 @@ public:
 		uint 				 threadCount 	= -1;
 		std::vector<uint8_t> neigMask1d  	= {}; //flattened neigMask
 		//std::vector<size_t> neigMaskInd 	= 0; //non zero neigMask1d indices. slower even if 9 of 25 elements are zero.
-		bool				 activeBuf	 	= 0; //active stateBuf. write to !activeBuf read from activeBuf
+		bool				 activeBuf	 	= 0; //active cellState. write to !activeBuf read from activeBuf
 		std::vector<int16_t> ruleRange	 	= {0}; //CA add ranges
 		std::vector<int8_t>  ruleAdd	 	= {0,0}; //CA additive values within each range
 		uint	 			 stateCount	 	= {0}; //number of cell states

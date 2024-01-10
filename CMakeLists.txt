@@ -3,6 +3,9 @@
 cmake_minimum_required(VERSION 3.20)
 project(kaelifecpp)
 
+string(TOUPPER ${BUILD} BUILD)
+string(TOUPPER ${TYPE} TYPE)
+
 if(NOT TYPE) 
 	set(TYPE "DEBUG") #use debug flags by default
 endif()
@@ -10,7 +13,6 @@ endif()
 if(NOT PROG) 
 	set(BUILD "ALL") #If no program specified build all 
 endif()
-
 
 # Find SDL2, OpenGL, and GLEW
 find_package(SDL2 REQUIRED)

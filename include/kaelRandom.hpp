@@ -1,3 +1,5 @@
+//kaelRandom.hpp
+//Fast pseudo randomizers and hashers
 
 #pragma once
 #include <iostream>
@@ -9,9 +11,9 @@
 
 #include <type_traits>
 
-//Simple rorr lcg prng
+//RORR LCG PRGN
 template <typename InsT = uint64_t> //instance type
-class kaelRandom {
+class KaelRandom {
 	typedef unsigned int uint128_t __attribute__((mode(TI)));
 	template <typename... Types>
 	void isUint() {	
@@ -23,7 +25,7 @@ class kaelRandom {
 		); 
 	}
 public:
-	kaelRandom(){ isUint<InsT>(); }
+	KaelRandom(){ isUint<InsT>(); }
 
 	//Store pointers to be used and modified in kaelShfl
 	//If no pointer is give, private variables are used
@@ -159,4 +161,3 @@ private:
 	}
 
 };
-kaelRandom kaelRand;

@@ -1,8 +1,11 @@
+//kaelifeCAPreset.hpp
+//Cellular automata preset manager
+
 #pragma once
 
-#include "kaelifeWorldMatrix.hpp"
 #include "kaelRandom.hpp"
-
+#include "kaelife.hpp"
+#include "kaelifeWorldMatrix.hpp"
 #include <iostream>
 #include <vector>
 #include <cstdint>
@@ -13,24 +16,7 @@
 #include <mutex>
 
 class CAPreset {
-
 public:
-	std::mutex indexMutex;
-
-	CAPreset() {
-		setPreset(0);
-        for (auto& automata : list) {
-            if (automata.presetSeed != UINT64_MAX) {
-                uint ind = getPresetIndex(automata.name);
-                uint64_t* seedPtr = &automata.presetSeed;
-                randAll(ind, seedPtr);
-            }
-			if(strcmp(automata.name.c_str(),"\0")==0){
-				automata.name=unsetName;
-			}
-        }
-	}
-	
 	static constexpr const size_t maxNameLength = 32;
 	static constexpr const char* unsetName = "UNNAMED";
 	struct PresetList {
@@ -64,9 +50,74 @@ public:
 			presetSeed(ps)
 			{}
 	};
+	
+private:
 
-	//current preset index
-	uint index=0;
+	//Maybe a different config file for this list. json maybe
+	//List of automata presets
+	std::vector<PresetList> list = 
+	{
+		{//0
+			"Kaelife",
+			4,
+			{6,9,11,24},
+			{-1,1,-1,0,-1}
+		},{//1
+			"Conway",
+			2,
+			{2,3,4},
+			{-1,0,1,-1}
+		},{//2
+			"Hexagon",
+			256,
+			{22,101,102,108,176,211,277,337,405,569,679,820,1180,1289,1411,1442},
+			{-68,-50,17,124,111,-62,-30,86,-19,-2,-73,62,-106,75,70,-76,-79},
+			{
+				{  0, 16,255, 16,  0},
+				{255, 16,  0, 16,255},
+				{ 16,  0,  0,  0, 16},
+				{255, 16,  0, 16,255},
+				{  0, 16,255, 16,  0}
+			}
+		},{//3
+			"Conway2Bit",
+			4,
+			{4,6,8},
+			{-1,0,1,-1}
+		},{//4
+			"none",
+			0,
+			{0},
+			{0},
+			{{0}},
+		},{//5
+			"Set seed",
+			0,
+			{0},
+			{0},
+			{{0}},
+			15858568242867829530UL
+		}
+	}; 
+
+public:
+	std::mutex indexMutex;
+	uint index=0; //current preset index
+
+	CAPreset() {
+		setPreset(0);
+        for (auto& automata : list) {
+            if (automata.presetSeed != UINT64_MAX) {
+                uint ind = getPresetIndex(automata.name);
+                uint64_t* seedPtr = &automata.presetSeed;
+                randAll(ind, seedPtr);
+            }
+			if(strcmp(automata.name.c_str(),"\0")==0){
+				automata.name=unsetName;
+			}
+        }
+	}
+
 	//current preset
 	const PresetList* current() const {
 		return &list[index];
@@ -191,9 +242,9 @@ public:
 				if(ind==UINT_MAX){ //no preset found by index
 					return ind;
 				}
-				interpSeed = kaelRand.hashCstr(list[ind].name); //previously reinterpret_cast
+				interpSeed = kaelife::rand.hashCstr(list[ind].name); //previously reinterpret_cast
 			}else{ //if preset by name
-				interpSeed = kaelRand.hashCstr(nameOrId);
+				interpSeed = kaelife::rand.hashCstr(nameOrId);
 			}
 			uint64_t *seedPtr = &interpSeed;
 
@@ -257,11 +308,11 @@ public:
 		//randomize neigMask[!activeBuf]. Not thread safe
 		void randRuleMask( const uint ind, uint64_t* seed=nullptr ){
 			if(list[ind].stateCount==0){return;}
-			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
+			uint64_t* seedPtr = kaelife::rand.validSeedPtr(seed);
 
 			//symmetrize
-			bool symX=kaelRand(seedPtr)%4;//75% chance
-			bool symY=kaelRand(seedPtr)%4;
+			bool symX=kaelife::rand(seedPtr)%4;//75% chance
+			bool symY=kaelife::rand(seedPtr)%4;
 
 			size_t mw=list[ind].neigMask.getWidth(); 
 			size_t mh=list[ind].neigMask.getHeight();
@@ -276,7 +327,7 @@ public:
 					uint mwDelta = mw - abs((int)mw/2-(int)i); //distance from mask center
 					uint mhDelta = mh - abs((int)mh/2-(int)j);
 					
-					uint maskValue = ceil ( (((float)(kaelRand(seedPtr)%list[ind].stateCount)) / list[ind].stateCount) * UINT8_MAX ); //randomized mask value
+					uint maskValue = ceil ( (((float)(kaelife::rand(seedPtr)%list[ind].stateCount)) / list[ind].stateCount) * UINT8_MAX ); //randomized mask value
 					maskValue=maskValue*(mwDelta*mhDelta)/(maxDelta)*multi/divid; //scale lower the further from mask center
 					maskValue = maskValue > UINT8_MAX ? UINT8_MAX : maskValue;
 					list[ind].neigMask[i][j]=(uint8_t)maskValue;
@@ -303,7 +354,7 @@ public:
 		//randomize ruleRange[]
 		void randRuleRange(const uint ind, uint16_t minValue, uint16_t maxValue=0, uint64_t* seed=nullptr ) {
 			maxValue = maxValue ? maxValue :  calcMaxNeigsum(ind);
-			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
+			uint64_t* seedPtr = kaelife::rand.validSeedPtr(seed);
 			uint rangeSize=list[ind].ruleRange.size();
 			list[ind].ruleRange.clear();
 
@@ -312,7 +363,7 @@ public:
 			for(i=0; i<rangeSize; ++i){
 				uint16_t addMax = 2*(((maxValue)-current+1)/(rangeSize-i)); //divide maxValue, current delta by remaining elements
 				addMax+=addMax==0; //prevent divide by 0
-				current+= kaelRand(seedPtr)%addMax; //add to next range
+				current+= kaelife::rand(seedPtr)%addMax; //add to next range
 				list[ind].ruleRange.push_back(current);
 				if(current>maxValue){current=maxValue; break;}  //any element above maxValue isn't used
 			}
@@ -320,23 +371,23 @@ public:
 
 		//randomize ruleAdd[]
 		void randRuleAdd(const uint ind, int8_t minValue, int8_t maxValue, uint64_t* seed=nullptr ) {
-			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
+			uint64_t* seedPtr = kaelife::rand.validSeedPtr(seed);
 			int randRange = maxValue-minValue+1;
 
 			for(uint i=0;i<list[ind].ruleAdd.size();++i){
-				list[ind].ruleAdd[i]=kaelRand(seedPtr)%randRange+minValue;
+				list[ind].ruleAdd[i]=kaelife::rand(seedPtr)%randRange+minValue;
 			}
 		}
 
 		//randomize everything
 		uint64_t randAll(const uint ind, uint64_t* seed=nullptr){
-			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
+			uint64_t* seedPtr = kaelife::rand.validSeedPtr(seed);
 			uint64_t startSeed=*seedPtr;
 			
-			list[ind].stateCount=kaelRand(seedPtr)%(UINT8_MAX-1)+2;
+			list[ind].stateCount=kaelife::rand(seedPtr)%(UINT8_MAX-1)+2;
 			uint maxMask=7;
-			uint newMaskX=kaelRand(seedPtr)%maxMask+1;
-			uint newMaskY=kaelRand(seedPtr)%maxMask+1;
+			uint newMaskX=kaelife::rand(seedPtr)%maxMask+1;
+			uint newMaskY=kaelife::rand(seedPtr)%maxMask+1;
 
 			list[ind].neigMask.setWidth(newMaskX);
 			list[ind].neigMask.setHeight(newMaskY);
@@ -345,11 +396,11 @@ public:
 
 			uint maxNeigSum = calcMaxNeigsum(ind);
 			
-			uint maxRules=kaelRand(seedPtr)%(std::min(maxNeigSum,(uint)16)+1)+1;
+			uint maxRules=kaelife::rand(seedPtr)%(std::min(maxNeigSum,(uint)16)+1)+1;
 			list[ind].ruleRange.resize(maxRules+1);
 			list[ind].ruleAdd.resize(maxRules+2);
 
-			int rr= (kaelRand(seedPtr)%list[ind].stateCount)/2;
+			int rr= (kaelife::rand(seedPtr)%list[ind].stateCount)/2;
 			rr=std::clamp(rr,1,127);
 			randRuleAdd(ind,-rr,rr,seedPtr);
 			randRuleRange(ind,0,maxNeigSum,seedPtr);
@@ -359,25 +410,25 @@ public:
 		}
 
 		void randRuleMutate(const uint ind, uint64_t* seed=nullptr){
-			uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
+			uint64_t* seedPtr = kaelife::rand.validSeedPtr(seed);
 			uint8_t modif = *seedPtr&0b11; //0=ruleRange 1=randAdd 2=both
 
 			int add=0;
 			if((list[ind].stateCount/2)<2){
-				add = kaelRand(seedPtr)%3-1;
+				add = kaelife::rand(seedPtr)%3-1;
 			}else{
-				add = kaelRand(seedPtr)%(list[ind].stateCount)-list[ind].stateCount/2;
+				add = kaelife::rand(seedPtr)%(list[ind].stateCount)-list[ind].stateCount/2;
 				add/=2;
 			}
 			
 			uint maxLen = list[ind].ruleRange.size() * (modif==0 || modif==2) ;
 			for(size_t i=0;i<maxLen;++i){
-				add += add==0 ? kaelRand(seedPtr)%3-1 : 0;
+				add += add==0 ? kaelife::rand(seedPtr)%3-1 : 0;
 				list[ind].ruleRange[i]+=add;
 			}
 			maxLen = list[ind].ruleAdd.size() * (modif==1 || modif==2) ;
 			for(size_t i=0;i<maxLen;++i){
-				add += add==0 ? kaelRand(seedPtr)%3-1 : 0;
+				add += add==0 ? kaelife::rand(seedPtr)%3-1 : 0;
 				list[ind].ruleAdd[i]+=add;
 			}
 		}
@@ -399,55 +450,6 @@ public:
 	//EOF Randomizers
 
 private:
-
-	//Maybe a different config file for this list. json maybe
-	/*List of automata presets
-
-	*/
-	std::vector<PresetList> list = 
-	{
-		{//0
-			"Kaelife",
-			4,
-			{6,9,11,24},
-			{-1,1,-1,0,-1}
-		},{//1
-			"Conway",
-			2,
-			{2,3,4},
-			{-1,0,1,-1}
-		},{//2
-			"Hexagon",
-			256,
-			{22,101,102,108,176,211,277,337,405,569,679,820,1180,1289,1411,1442},
-			{-68,-50,17,124,111,-62,-30,86,-19,-2,-73,62,-106,75,70,-76,-79},
-			{
-				{  0, 16,255, 16,  0},
-				{255, 16,  0, 16,255},
-				{ 16,  0,  0,  0, 16},
-				{255, 16,  0, 16,255},
-				{  0, 16,255, 16,  0}
-			}
-		},{//3
-			"Conway2Bit",
-			4,
-			{4,6,8},
-			{-1,0,1,-1}
-		},{//4
-			"none",
-			0,
-			{0},
-			{0},
-			{{0}},
-		},{//5
-			"Set seed",
-			0,
-			{0},
-			{0},
-			{{0}},
-			15858568242867829530UL
-		}
-	}; 
 
 	template <typename T1, typename = std::enable_if_t<std::is_same<T1, std::string>::value || std::is_same<T1, uint>::value>>
 	uint getPresetIndex(T1 charOrInd) {

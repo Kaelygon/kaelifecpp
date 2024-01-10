@@ -1,19 +1,17 @@
+//kaelifeCALock.hpp
+//CAData thread locks
 
 #pragma once
 
 #include "kaelifeCAData.hpp"
+
 #include <iostream>
 #include <vector>
 #include <chrono>
 #include <atomic>
 #include <mutex>
 #include <condition_variable>
-#include <algorithm>
 #include <numeric>
-
-#include <barrier>
-#include <syncstream>
-#include <thread>
 
 class CALock {
 public:
@@ -65,7 +63,6 @@ public:
 		resumeCV.notify_all();
 	}
 
-
     void terminateThread() {
 		#if KAELIFE_DEBUG==1
 			printf("Main signals terminate\n");
@@ -73,12 +70,6 @@ public:
 		isThreadTerminated.store(true);
 		continueThread(1,0); //threads are paused until iterCount>0
     }
-
-	void threadSleep(){
-		std::this_thread::yield();
-		//std::this_thread::sleep_for(std::chrono::nanoseconds(10));
-	};
-
 
 	void resizeThread(uint tc){
 		threadCount=tc;

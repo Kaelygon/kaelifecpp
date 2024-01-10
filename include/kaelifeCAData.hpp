@@ -1,20 +1,22 @@
+//kaelifeCAData.hpp
+//Manages and iterates cellState that holds CA cell states
+
 #pragma once
 
+#include "kaelife.hpp"
 #include "kaelRandom.hpp"
 #include "kaelifeCALock.hpp"
 #include "kaelifeWorldMatrix.hpp"
 #include "kaelifeCAPreset.hpp"
 #include "kaelifeCACache.hpp"
 
+
 #include <iostream>
 #include <cmath>
 #include <numeric>
-#include <functional>
 #include <cstdint>
 #include <vector>
 #include <algorithm>
-#include <GL/glew.h>
-#include <SDL2/SDL.h>
 #include <cstring>
 #include <string.h>
 
@@ -35,8 +37,9 @@ public:
 	CACache kaeCache;
 	CACache::ThreadCache mainCache; //cache of CAData that should be used to update thread cache synchronously
 
-	CAData() { // Constructor
-		//TODO: better init config system
+	//TODO: better init config system.
+	CAData(/*const configSubStruct CADataCFG / that holds mainCache kaePreset configurations / */) { // Constructor
+
 		mainCache.threadId		=	UINT_MAX; //only threads use this
 		mainCache.activeBuf		=	0;
 		mainCache.tileRows		=	576; 
@@ -54,9 +57,9 @@ public:
 		}
 
 		for (int j = 0; j < 2; j++) {
-			stateBuf[j].resize(mainCache.tileRows);
+			cellState[j].resize(mainCache.tileRows);
 			for (uint i = 0; i < mainCache.tileRows; i++) {
-				stateBuf[j][i].resize(mainCache.tileCols);
+				cellState[j][i].resize(mainCache.tileCols);
 			}
 		}
 
@@ -79,10 +82,13 @@ private: //private vars and custom data types
 
 public: //public vars and custom data types
 	//TODO: make a new configuration that CAData constructor reads and assigns correct starting variables
-	//TODO: separate all drawing related stuff to a new class and pass stateBuf and some new config structure to it
+	//TODO: separate all drawing related stuff to a new class and pass cellState and some new config structure to it
 		
-	//Origin is at left bottom corner. X is horizontally right, Y is vertically up
-	std::vector<std::vector<uint8_t>>stateBuf[2]; // double buffer
+	//Holds 2D cellular automata states. Double buffered. 
+	//Writes must be done to [Buffer Index] !mainCache.activeBuf and reads must be done from mainCache.activeBuf
+	//X is left to right. Y is down to up
+	//cellState[Buffer Index][X][Y]
+	std::vector<std::vector<uint8_t>>cellState[2]; // double buffer
 
 	//BOF vars that only CAData writes but others may read
 		float targetFrameTime = 20.0; //target frame time
@@ -148,6 +154,7 @@ public: //public functions
 		mainCache.index++;
 	}
 
+	//TODO: backlog is starting to get big enough to have its own class and potentially be run in main thread. This how inputHandler wouldn't need to access CAData. Each task could be its own function
 	//execute before cloneBuffer not-thread safe functions backlog
 	//writes must happen in !activeBuf
 	void addBacklog(const char* keyword){
@@ -247,7 +254,7 @@ public: //public functions
 		for (size_t i = 0; i < lv.updatedCells[0].size(); ++i) {
 			uint16_t x = lv.updatedCells[0][i];
 			uint16_t y = lv.updatedCells[1][i];
-			stateBuf[lv.activeBuf][x][y] = stateBuf[!lv.activeBuf][x][y];
+			cellState[lv.activeBuf][x][y] = cellState[!lv.activeBuf][x][y];
 		}
 
 		lv.updatedCells[0].clear();
@@ -260,7 +267,7 @@ public: //public functions
 	//not thread safe cloneBuffer
 	void cloneBuffer(){
 		//clone buffer
-		stateBuf[mainCache.activeBuf] = stateBuf[!mainCache.activeBuf];
+		cellState[mainCache.activeBuf] = cellState[!mainCache.activeBuf];
 
 		//swap buffer index
 		mainCache.activeBuf = !mainCache.activeBuf;
@@ -281,7 +288,7 @@ public: //public functions
 				}	
 			#endif
 
-			stateBuf[!mainCache.activeBuf][x][y] = pixel.state;
+			cellState[!mainCache.activeBuf][x][y] = pixel.state;
 		}
 		drawMouseBuf.clear();
 		drawMouseBuf.clear();
@@ -363,8 +370,8 @@ public: //public functions
 
 			int neigsum=0;
 			int addValue=lv.ruleAdd.back();
-			int cellState = stateBuf[lv.activeBuf][ti][tj];
-			int ogState = cellState;
+			int currentCellState = cellState[lv.activeBuf][ti][tj]; //current cell value
+			int ogState = currentCellState;
 
 			//check if ti,tj is near border
 			nearBorder = nearBorder || (tj < lv.maskRady) || (tj >= lv.tileCols - lv.maskRady );
@@ -392,7 +399,7 @@ public: //public functions
 					}			
 				#endif
 
-				uint neigValue=stateBuf[lv.activeBuf][nx][ny]; //get world cell value
+				uint neigValue=cellState[lv.activeBuf][nx][ny]; //get world cell value
 
 				if(neigValue < lv.clipTreshold){continue;} //clip any values below clipTreshold
 				
@@ -408,26 +415,26 @@ public: //public functions
 				}
 			}
 
-			cellState += addValue;
-			cellState = std::clamp(cellState, 0, (int)(lv.stateCount) - 1);
-			if(ogState == cellState){return;}
+			currentCellState += addValue;
+			currentCellState = std::clamp(currentCellState, 0, (int)(lv.stateCount) - 1);
+			if(ogState == currentCellState){return;}
 			lv.updatedCells[0].push_back(ti);
 			lv.updatedCells[1].push_back(tj);
-			stateBuf[!lv.activeBuf][ti][tj] = cellState; //write to inactive buffer
+			cellState[!lv.activeBuf][ti][tj] = currentCellState; //write to inactive buffer
 		}
 	//EOF iterate functions
 
 	private:
-	//BOF stateBuf functions
+	//BOF cellState functions
 	
 	//randomize state[!activeBuf][][]. Not thread safe
 	void randState(uint numStates, uint64_t* seed=nullptr ){
-		uint64_t* seedPtr = kaelRand.validSeedPtr(seed);
+		uint64_t* seedPtr = kaelife::rand.validSeedPtr(seed);
 		for(uint i=0;i<mainCache.tileRows;i++){
 			for(uint j=0;j<mainCache.tileCols;j++){
-				stateBuf[!mainCache.activeBuf][i][j]=kaelRand(seedPtr)%numStates;
+				cellState[!mainCache.activeBuf][i][j]=kaelife::rand(seedPtr)%numStates;
 			}
 		}
 	}
-	//EOF stateBuf functions
+	//EOF cellState functions
 };

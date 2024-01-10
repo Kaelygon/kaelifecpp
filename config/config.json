@@ -1,0 +1,15 @@
+{
+	"pause": true,
+	"resolution": {
+	  "width": 1920,
+	  "height": 1080
+	},
+	"preset": "high",
+	"keyConfigurations": {
+	  "moveUp": "W",
+	  "moveDown": "S",
+	  "moveLeft": "A",
+	  "moveRight": "D"
+	}
+  }
+  
