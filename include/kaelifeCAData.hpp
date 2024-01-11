@@ -9,7 +9,7 @@
 #include "kaelifeWorldMatrix.hpp"
 #include "kaelifeCAPreset.hpp"
 #include "kaelifeCACache.hpp"
-
+#include "kaelifeCADraw.hpp"
 
 #include <iostream>
 #include <cmath>
@@ -36,9 +36,10 @@ public:
 	CAPreset kaePreset;
 	CACache kaeCache;
 	CACache::ThreadCache mainCache; //cache of CAData that should be used to update thread cache synchronously
+	CADraw kaeDraw;
 
 	//TODO: better init config system.
-	CAData(/*const configSubStruct CADataCFG / that holds mainCache kaePreset configurations / */) { // Constructor
+	CAData() { // Constructor
 
 		mainCache.threadId		=	UINT_MAX; //only threads use this
 		mainCache.activeBuf		=	0;
@@ -81,9 +82,7 @@ private: //private vars and custom data types
 	std::vector<const char*> backlogList; //tasks to do that are not thread safe
 
 public: //public vars and custom data types
-	//TODO: make a new configuration that CAData constructor reads and assigns correct starting variables
-	//TODO: separate all drawing related stuff to a new class and pass cellState and some new config structure to it
-		
+
 	//Holds 2D cellular automata states. Double buffered. 
 	//Writes must be done to [Buffer Index] !mainCache.activeBuf and reads must be done from mainCache.activeBuf
 	//X is left to right. Y is down to up
@@ -98,24 +97,6 @@ public: //public vars and custom data types
 		uint renderWidth;
 		uint renderHeight;
 	//EOF vars that CAData write
-
-	//BOF vars that CAData+InputHandler write
-		//drawn pixel buffer 
-		typedef struct{
-			uint16_t pos[2]; //list of coordinates to update {{123,23},...,{3,7}}
-			uint8_t state;
-		}drawBuffer;
-
-		typedef struct{
-			uint16_t pos[2];
-			uint8_t radius;
-		}drawMouseBuffer;
-		
-		std::vector<drawBuffer> drawBuf;
-		std::vector<drawMouseBuffer> drawMouseBuf;
-		std::mutex drawMutex;
-
-	//EOF CAData+InputHandler
 	
 
 public: //public functions
@@ -154,7 +135,6 @@ public: //public functions
 		mainCache.index++;
 	}
 
-	//TODO: backlog is starting to get big enough to have its own class and potentially be run in main thread. This how inputHandler wouldn't need to access CAData. Each task could be its own function
 	//execute before cloneBuffer not-thread safe functions backlog
 	//writes must happen in !activeBuf
 	void addBacklog(const char* keyword){
@@ -184,8 +164,8 @@ public: //public functions
 				cloneBufferRequest=1;
 			}else 
 			if(strcmp(*keyword, "cursorDraw") == 0){
-				if(drawMouseBuf.size()>0){ 
-					copyDrawBuf(); 
+				if(kaeDraw.hasPixels()){ 
+					kaeDraw.copyDrawBuf(cellState[!mainCache.activeBuf], mainCache); 
 					cloneBufferRequest=1;
 				}//copy drawBuf 
 			}else//randomizers
@@ -272,29 +252,6 @@ public: //public functions
 		//swap buffer index
 		mainCache.activeBuf = !mainCache.activeBuf;
 	}
-
-	//Perform only when threads are paused
-	void copyDrawBuf(){
-		std::lock_guard<std::mutex> lock(drawMutex);//wait till drawing is done
-
-    	for (const auto& pixel : drawBuf) {
-			uint16_t x = pixel.pos[0]%mainCache.tileRows;
-			uint16_t y = pixel.pos[1]%mainCache.tileCols;
-
-			#if KAELIFE_DEBUG
-				if(x>=mainCache.tileRows || y>=mainCache.tileCols){
-					printf("OUT OF WORLD BOUNDS copyDrawBuf\n");
-					abort();
-				}	
-			#endif
-
-			cellState[!mainCache.activeBuf][x][y] = pixel.state;
-		}
-		drawMouseBuf.clear();
-		drawMouseBuf.clear();
-		drawBuf.clear();
-	}
-
 
 	//BOF iterate functions
 	public:
@@ -424,7 +381,7 @@ public: //public functions
 		}
 	//EOF iterate functions
 
-	private:
+	public:
 	//BOF cellState functions
 	
 	//randomize state[!activeBuf][][]. Not thread safe

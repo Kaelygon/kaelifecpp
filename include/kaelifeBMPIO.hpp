@@ -9,10 +9,10 @@
 
 namespace kaelife {
 	//eventually make this bitmap import export
-	void placeHolderDraw(CAData &kaelife){
+	void placeHolderDraw(CAData &cellData){
 	
-		uint rows = kaelife.mainCache.tileRows;
-		uint cols = kaelife.mainCache.tileCols;
+		uint rows = cellData.mainCache.tileRows;
+		uint cols = cellData.mainCache.tileCols;
 
 			//draw 2 fliers
 			WorldMatrix<uint8_t> flier={
@@ -36,8 +36,8 @@ namespace kaelife {
 					aj=(aj+cols)%cols;
 					bi=(bi+rows)%rows;
 					bj=(bj+cols)%cols;
-					kaelife.cellState[!kaelife.mainCache.activeBuf][ai][aj] = flier[i][j]; //write to inactive buffer
-					kaelife.cellState[!kaelife.mainCache.activeBuf][bi][bj] = flier[i][j];
+					cellData.cellState[!cellData.mainCache.activeBuf][ai][aj] = flier[i][j]; //write to inactive buffer
+					cellData.cellState[!cellData.mainCache.activeBuf][bi][bj] = flier[i][j];
 				}
 			}
 
@@ -51,8 +51,8 @@ namespace kaelife {
 				{0,1,1,0}
 			};
 
-			posx=kaelife.mainCache.tileRows/2 + 16;
-			posy=kaelife.mainCache.tileCols/2;
+			posx=cellData.mainCache.tileRows/2 + 16;
+			posy=cellData.mainCache.tileCols/2;
 			for(size_t k=0;k<3;k++){
 				for(size_t i=0;i<diagonalFlier.getWidth();i++){
 					for(size_t j=0;j<diagonalFlier.getHeight();j++){
@@ -62,17 +62,17 @@ namespace kaelife {
 						ofy=ofy*k-(2*(k==2)-(3)*(k==0));
 						ofx=((i+posx+ofx)+rows)%rows;
 						ofy=((j+posy+ofy)+cols)%cols;
-						kaelife.cellState[!kaelife.mainCache.activeBuf][ofx][ofy] = diagonalFlier[i][j]; //maybe possible to keep them alive together
+						cellData.cellState[!cellData.mainCache.activeBuf][ofx][ofy] = diagonalFlier[i][j]; //maybe possible to keep them alive together
 					}
 				}
 			}
 
 		//border test
-	//	kaelife.cellState[!kaelife.mainCache.activeBuf][0][0]=1;
-	//	kaelife.cellState[!kaelife.mainCache.activeBuf][kaelife.mainCache.tileRows-1][0]=2;
-	//	kaelife.cellState[!kaelife.mainCache.activeBuf][kaelife.witmainCache.tileRows-1][kaelife.mainCache.tileCols-1]=3;
+	//	cellData.cellState[!cellData.mainCache.activeBuf][0][0]=1;
+	//	cellData.cellState[!cellData.mainCache.activeBuf][cellData.mainCache.tileRows-1][0]=2;
+	//	cellData.cellState[!cellData.mainCache.activeBuf][cellData.witmainCache.tileRows-1][cellData.mainCache.tileCols-1]=3;
 
-		kaelife.addBacklog("cloneBuffer");
-		kaelife.doBacklog();
+		cellData.addBacklog("cloneBuffer");
+		cellData.doBacklog();
 	}
 }

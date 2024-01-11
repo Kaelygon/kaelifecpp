@@ -117,24 +117,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named kaelifecpp_OPTIMIZED
+# Target rules for targets named kaelifecpp_ASAN
 
 # Build rule for target.
-kaelifecpp_OPTIMIZED: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kaelifecpp_OPTIMIZED
-.PHONY : kaelifecpp_OPTIMIZED
+kaelifecpp_ASAN: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kaelifecpp_ASAN
+.PHONY : kaelifecpp_ASAN
 
 # fast build rule for target.
-kaelifecpp_OPTIMIZED/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/build
-.PHONY : kaelifecpp_OPTIMIZED/fast
+kaelifecpp_ASAN/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_ASAN.dir/build.make CMakeFiles/kaelifecpp_ASAN.dir/build
+.PHONY : kaelifecpp_ASAN/fast
+
+#=============================================================================
+# Target rules for targets named clean_all
+
+# Build rule for target.
+clean_all: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean_all
+.PHONY : clean_all
+
+# fast build rule for target.
+clean_all/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_all.dir/build.make CMakeFiles/clean_all.dir/build
+.PHONY : clean_all/fast
 
 src/kaelifecpp.o: src/kaelifecpp.cpp.o
 .PHONY : src/kaelifecpp.o
 
 # target to build an object file
 src/kaelifecpp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_ASAN.dir/build.make CMakeFiles/kaelifecpp_ASAN.dir/src/kaelifecpp.cpp.o
 .PHONY : src/kaelifecpp.cpp.o
 
 src/kaelifecpp.i: src/kaelifecpp.cpp.i
@@ -142,7 +155,7 @@ src/kaelifecpp.i: src/kaelifecpp.cpp.i
 
 # target to preprocess a source file
 src/kaelifecpp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_ASAN.dir/build.make CMakeFiles/kaelifecpp_ASAN.dir/src/kaelifecpp.cpp.i
 .PHONY : src/kaelifecpp.cpp.i
 
 src/kaelifecpp.s: src/kaelifecpp.cpp.s
@@ -150,7 +163,7 @@ src/kaelifecpp.s: src/kaelifecpp.cpp.s
 
 # target to generate assembly for a file
 src/kaelifecpp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_ASAN.dir/build.make CMakeFiles/kaelifecpp_ASAN.dir/src/kaelifecpp.cpp.s
 .PHONY : src/kaelifecpp.cpp.s
 
 # Help Target
@@ -161,7 +174,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... kaelifecpp_OPTIMIZED"
+	@echo "... clean_all"
+	@echo "... kaelifecpp_ASAN"
 	@echo "... src/kaelifecpp.o"
 	@echo "... src/kaelifecpp.i"
 	@echo "... src/kaelifecpp.s"

@@ -127,6 +127,7 @@ Make sure to run it from root folder as the program has to link GL shader files.
 ## Source Files
 ```
  ./src/kaelifecpp.cpp              # Main program
+ 
  ./include/kaelifeBMPIO.hpp        # CA world state Bitmap export import
  ./include/kaelifeCACache.hpp      # CAData thread cache
  ./include/kaelifeCAData.hpp       # CA multi-threaded world state iteration
@@ -140,5 +141,9 @@ Make sure to run it from root folder as the program has to link GL shader files.
  ./include/kaelifeWorldCore.hpp    # Main thread CA iteration managing loop
  ./include/kaelifeWorldMatrix.hpp  # 2D rectangle std::vector in world space
  ./include/kaelRandom.hpp          # Random and hash functions
+
+ ./shader/fragment.fs.glsl         # glsl fragment shader
+ ./shader/palette.h.glsl           # hard coded 256 color palette
+ ./shader/vertex.vs.glsl           # glsl vertex shader
 
 ```

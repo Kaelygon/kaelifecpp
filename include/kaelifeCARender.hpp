@@ -15,14 +15,22 @@
 #include <vector>
 #include <algorithm>
 
-class CARender{
+class CARender {
+private:
+    CAData& cellData;
+    InputHandler& kaeInput;
+    SDL_Window*& SDLWindow;  // Use reference to pointer
+
 public:
+    CARender(CAData &inCAData, InputHandler &inInputHandler, SDL_Window*& inSDL_Window)
+        : cellData(inCAData), kaeInput(inInputHandler), SDLWindow(inSDL_Window) {}
+
 	// In initialization code
 	static GLuint textureID;
 	static GLuint shaderProgram;
-	void initOpenGL(const CAData& cellData);
+	void initOpenGL();
 
-	static inline void renderCells(const CAData& cellData, InputHandler& kaeInput, SDL_Window *&SDLWindow) {
+	inline void renderCells() {
 		const GLfloat quadVertices[] = {
 			-1.0f, -1.0f,
 			1.0f, -1.0f,
@@ -31,7 +39,7 @@ public:
 		};
 
 		float cursorBorder=2; //cursor outline in tiles
-		auto worldCursorPos = InputHandler::getWorldCursorPos(cellData, SDLWindow); 
+		auto worldCursorPos = kaeInput.getWorldCursorPos(); 
 
 		//normalize variables for shader
 		float shaderCursorPos[2];
@@ -63,7 +71,7 @@ public:
 		glUniform1f (glGetUniformLocation(shaderProgram, "colorStagger"	    ), shaderColorStagger);
 
 
-		auto offsetScale = InputHandler::getWorldTransform(cellData, SDLWindow);
+		auto offsetScale = kaeInput.getWorldTransform();
 		
 		glViewport(static_cast<GLint>(offsetScale[0]), static_cast<GLint>(offsetScale[1]), static_cast<GLsizei>(offsetScale[2]), static_cast<GLsizei>(offsetScale[3]));
 
@@ -233,7 +241,7 @@ private:
 GLuint CARender::textureID = 0;
 GLuint CARender::shaderProgram = 0;
 
-void CARender::initOpenGL(const CAData& cellData) {
+void CARender::initOpenGL() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
 	glDepthMask(GL_TRUE);

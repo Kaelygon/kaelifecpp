@@ -24,7 +24,7 @@ namespace kaelife {
 		});
 
 		std::thread inputThread = std::thread([&]() {
-			kaeInput.detectInput(kaelife, SDLWindow);
+			kaeInput.detectInput();
 		});
 
 
@@ -79,7 +79,7 @@ namespace kaelife {
 				}
 			}
 			SDL_GL_SwapWindow(SDLWindow);
-			kaeRender.renderCells(kaelife,kaeInput,SDLWindow); 
+			kaeRender.renderCells(); 
 
 			do{ // Cap the frame rate
 				elapsedTime=SDL_GetTicks() - frameStartTime;

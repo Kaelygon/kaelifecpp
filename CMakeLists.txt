@@ -44,8 +44,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BUILD_DIR})
 include_directories(${INCLUDE_DIR})
 
 if(TYPE STREQUAL "ASAN") 
-#    set (ASAN_FLAGS "${ASAN_FLAGS}" "-fno-omit-frame-pointer" "-fsanitize=address")
-    set (LINK_LIBRARIES "${LINK_LIBRARIES}" "-fno-omit-frame-pointer" "-fsanitize=address")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fno-omit-frame-pointer")
+    set(LINK_LIBRARIES "${LINK_LIBRARIES}" "-fsanitize=address")
     set(FLAGS ${ASAN_FLAGS})
     set(CMAKE_BUILD_TYPE ${TYPE})
 elseif(TYPE STREQUAL "OPTIMIZED") 
@@ -98,3 +98,8 @@ elseif(BUILD STREQUAL "ALL")
 endif()
 
 message("Building ${CXX_STD}/${SRC_DIR} ${PROG} using ${CXX} ${FLAGS} Libs ${LINK_LIBRARIES}")
+
+#make clean
+add_custom_target(clean_all
+    COMMAND ${CMAKE_COMMAND} -E remove_directory ${BUILD_DIR}/*
+)

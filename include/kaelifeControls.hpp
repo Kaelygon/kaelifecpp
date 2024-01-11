@@ -43,15 +43,19 @@ Exit:............ [ESC]
 class InputHandler {
 private:
 
-	bool isMouseHeld = false;
+    CAData& cellData;
+    SDL_Window*& SDLWindow;
 	// Define a type for function pointers
 	using KeyFunction = std::function<void(CAData&)>;
 	// Map key combinations to functions
 	std::map<SDL_Keycode, KeyFunction> keyFuncMap;
+
     // Map to store the state of keys or mouse buttons
     std::map<int, bool> keyStates;
+	
+	bool isMouseHeld = false;
 	float holdAccel=1.0;
-	std::atomic<bool> windowFocus=0;
+	bool windowFocus=0;
 	uint timerSt, timerNd;
 	uint64_t drawSeed=314159265;
 
@@ -102,68 +106,67 @@ public:
 		prevReso[1] = y;
 		return hasChanged;
 	}
-
+	
 	// Initialize key mappings in the constructor
-	InputHandler() : keyFuncMap{
-			{SDLK_r					 		, 	std::bind(&InputHandler::press_r, 			this, std::placeholders::_1)},
-			{SDLK_t					 		, 	std::bind(&InputHandler::press_t, 			this, std::placeholders::_1 )},
+	InputHandler(CAData &inCAData, SDL_Window*& inSDL_Window) : cellData(inCAData), SDLWindow(inSDL_Window), keyFuncMap{
+			{SDLK_r					 		, 	std::bind(&InputHandler::press_r, 			this )},
+			{SDLK_t					 		, 	std::bind(&InputHandler::press_t, 			this )},
 			{SDLK_q					 		, 	std::bind(&InputHandler::press_q, 			this )},
 			{SDLK_e					 		, 	std::bind(&InputHandler::press_e, 			this )},
 			{SDLK_1					 		, 	std::bind(&InputHandler::press_1, 			this )},
 			{SDLK_2					 		, 	std::bind(&InputHandler::press_2, 			this )},
 			{SDLK_3					 		, 	std::bind(&InputHandler::press_3, 			this )},
 			{SDLK_4					 		, 	std::bind(&InputHandler::press_4, 			this )},
-			{SDLK_p					 		, 	std::bind(&InputHandler::press_p, 			this, std::placeholders::_1 )},
+			{SDLK_p					 		, 	std::bind(&InputHandler::press_p, 			this )},
 			{SDLK_w					 		, 	std::bind(&InputHandler::press_w, 			this )},
 			{SDLK_f					 		, 	std::bind(&InputHandler::press_f, 			this )},
-			{SDLK_m					 		, 	std::bind(&InputHandler::press_m, 			this, std::placeholders::_1 )},
-			{SDLK_n					 		, 	std::bind(&InputHandler::press_n, 			this, std::placeholders::_1 )},
-			{SDLK_y					 		, 	std::bind(&InputHandler::press_y, 			this, std::placeholders::_1 )},
+			{SDLK_m					 		, 	std::bind(&InputHandler::press_m, 			this )},
+			{SDLK_n					 		, 	std::bind(&InputHandler::press_n, 			this )},
+			{SDLK_y					 		, 	std::bind(&InputHandler::press_y, 			this )},
 			{SDLK_q	| (KMOD_LALT<<16)		, 	std::bind(&InputHandler::press_q_LALT, 		this )},
 			{SDLK_e	| (KMOD_LALT<<16)		, 	std::bind(&InputHandler::press_e_LALT, 		this )},
 			{SDLK_q	| (KMOD_LSHIFT<<16)		, 	std::bind(&InputHandler::press_q_LSHIFT, 	this )},
 			{SDLK_e	| (KMOD_LSHIFT<<16)		, 	std::bind(&InputHandler::press_e_LSHIFT, 	this )},
 			{SDLK_n	| (KMOD_LSHIFT<<16)		, 	std::bind(&InputHandler::press_n_LSHIFT, 	this )},
 			{SDLK_p	| (KMOD_LSHIFT<<16)		, 	std::bind(&InputHandler::press_p_LSHIFT, 	this )},
-			{SDLK_PERIOD					, 	std::bind(&InputHandler::press_PERIOD, 		this, std::placeholders::_1 )},
-			{SDLK_COMMA						, 	std::bind(&InputHandler::press_COMMA, 		this, std::placeholders::_1 )},
+			{SDLK_PERIOD					, 	std::bind(&InputHandler::press_PERIOD, 		this )},
+			{SDLK_COMMA						, 	std::bind(&InputHandler::press_COMMA, 		this )},
 			{SDLK_ESCAPE			 		, 	std::bind(&InputHandler::press_ESCAPE, 		this )}
 
 	} {}
 
 	// Function prototypes
-	void press_r(CAData &cellData);
-	void press_t(CAData &cellData);
+	void press_r();
+	void press_t();
 	void press_q();
 	void press_e();
 	void press_1();
 	void press_2();
 	void press_3();
 	void press_4();
-	void press_p(CAData &cellData);
+	void press_p();
 	void press_w();
 	void press_f();
-	void press_m(CAData &cellData);
-	void press_n(CAData &cellData);
-	void press_y(CAData &cellData);
+	void press_m();
+	void press_n();
+	void press_y();
 	void press_q_LALT();
 	void press_e_LALT();
 	void press_q_LSHIFT();
 	void press_e_LSHIFT();
 	void press_n_LSHIFT();
 	void press_p_LSHIFT();
-	void press_PERIOD(CAData &cellData);
-	void press_COMMA(CAData &cellData);
+	void press_PERIOD();
+	void press_COMMA();
 	void press_ESCAPE();
 
 
 	// Detect keys method
-	void detectInput(CAData &cellData, SDL_Window* &SDLWindow);
-	void cursorDraw(CAData &cellData, int strength, SDL_Window* &SDLWindow);
+	void detectInput();
 	
 
-	static std::array<double, 4> getWorldTransform (const CAData &cellData, SDL_Window* &SDLWindow);
-	static std::array<uint, 2>   getWorldCursorPos (const CAData &cellData, SDL_Window* &SDLWindow);
+	std::array<double, 4> getWorldTransform ();
+	std::array<uint, 2>   getWorldCursorPos ();
 };
 
 
@@ -173,23 +176,23 @@ int InputHandler::cursorPos[2] = {0, 0};
 
 // Function implementations
 	//randomize all
-	void InputHandler::press_y(CAData &cellData){
+	void InputHandler::press_y(){
 		cellData.addBacklog("randAll");
 	};
 	//random mask
-	void InputHandler::press_n(CAData &cellData){
+	void InputHandler::press_n(){
 		cellData.addBacklog("randMask");
 	};
 	//randomize ranges
-	void InputHandler::press_r(CAData &cellData){
+	void InputHandler::press_r(){
 		cellData.addBacklog("randRange");
 	};
 	//randomize adds
-	void InputHandler::press_t(CAData &cellData){
+	void InputHandler::press_t(){
 		cellData.addBacklog("randAdd");
 	};
 	//rand mutate
-	void InputHandler::press_m(CAData &cellData){
+	void InputHandler::press_m(){
 		cellData.addBacklog("randMutate");
 	};
 	//shader color stagger--
@@ -300,7 +303,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 		}
 	};
 	//print rules
-	void InputHandler::press_p(CAData &cellData){
+	void InputHandler::press_p(){
 		cellData.kaePreset.printPreset();
 		printf("Shader {%d,%d},\n",shaderHue,colorStagger);
 	};
@@ -334,7 +337,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 		}
 	};
 	//next preset
-	void InputHandler::press_PERIOD(CAData &cellData){
+	void InputHandler::press_PERIOD(){
 		int ind =cellData.kaePreset.nextPreset();
 		if(debug){
 			printf("preset: %d\n",ind);
@@ -343,7 +346,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 		cellData.addBacklog("loadPreset");
 	};
 	//previous preset
-	void InputHandler::press_COMMA(CAData &cellData){
+	void InputHandler::press_COMMA(){
 		int ind = cellData.kaePreset.prevPreset();
 		if(debug){
 			printf("preset: %d\n",ind);
@@ -353,7 +356,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 
 
 
-void InputHandler::detectInput(CAData &cellData, SDL_Window* &SDLWindow) {
+void InputHandler::detectInput() {
 	holdAccel=1.0;
 	while(!QUIT_FLAG){
 		SDL_Event event;
@@ -410,7 +413,7 @@ void InputHandler::detectInput(CAData &cellData, SDL_Window* &SDLWindow) {
 					printf("Mouse pos (%d, %d)\n", cursorPos[0], cursorPos[1]);
 				}
 				#ifdef KAELIFE_DEBUG
-					auto cursorPosW = getWorldCursorPos(cellData, SDLWindow);
+					auto cursorPosW = getWorldCursorPos();
 					printf("Mouse world (%d, %d)\n", cursorPosW[0], cursorPosW[1]);
 				#endif
 			}
@@ -418,9 +421,11 @@ void InputHandler::detectInput(CAData &cellData, SDL_Window* &SDLWindow) {
 			
 		//run these every call
 		if (keyStates[SDL_BUTTON_LEFT] || keyStates[SDL_BUTTON_RIGHT] || event.type == SDL_MOUSEBUTTONDOWN) {
+			auto cursorPos = getWorldCursorPos();
 			// Mouse motion or left button pressed
 			int strength = keyStates[SDL_BUTTON_LEFT] ? 1 : 0;
-			cursorDraw(cellData, strength, SDLWindow);
+			cellData.kaeDraw.cursorDraw(strength, cursorPos[0], cursorPos[1], drawRadius, drawRandom, cellData.mainCache);
+			cellData.addBacklog("cursorDraw");
 		}
 
 		if (windowFocus){
@@ -454,80 +459,8 @@ void InputHandler::detectInput(CAData &cellData, SDL_Window* &SDLWindow) {
 
 
 
-
-bool isDrawOverlap(CAData &cellData, uint16_t ax, uint16_t ay) {
-	for (size_t i = 0; i < cellData.drawMouseBuf.size(); ++i) {
-		int64_t deltaX = (int)cellData.drawMouseBuf[i].pos[0]-ax;
-		int64_t deltaY = (int)cellData.drawMouseBuf[i].pos[1]-ay;
-		deltaX*=deltaX;
-		deltaY*=deltaY;			
-		int radSq = cellData.drawMouseBuf[i].radius*cellData.drawMouseBuf[i].radius;
-
-		if (deltaX + deltaY < radSq) {
-			return true; 
-		}
-	}
-	return false; 
-}
-
-//mouse draw on cellState values. called by InputHandler
-//mainsync before cursorDraw call
-void InputHandler::cursorDraw(CAData &cellData, int strength, SDL_Window* &SDLWindow) {
-	auto cursorPos = getWorldCursorPos(cellData, SDLWindow);
-	uint numStates = cellData.mainCache.stateCount;
-
-	if( cellData.drawMouseBuf.size()!=0 ){//Ensure we aren't checking uninitialized elements
-		//this only discards if this and previous positions are the same. 
-		//With big canvas it's unlikely to have two exact same positions, 
-		//and calculating the duplicates has marginal performance impact compared to std::find
-		if( ( cellData.drawMouseBuf.back().pos[0]==cursorPos[0] && cellData.drawMouseBuf.back().pos[1]==cursorPos[1] ) ) { 
-			return;
-		}
-	}
-
-	uint8_t drawValue=ceil(drawStrength * (numStates - 1) * strength);
-
-	{//mutex scope
-		std::lock_guard<std::mutex> lock(cellData.drawMutex); //make sure drawBuf is not being copied while drawing
-
-		for (int i = -drawRadius; i <= drawRadius; i++) {
-			for (int j = -drawRadius; j <= drawRadius; j++) {
-
-				int mouseDist = i*i+j*j;
-				int radSq = drawRadius*drawRadius;
-				if(mouseDist >= radSq ){continue;} //if inside the circle
-
-				//calculate point of the circle world position 
-				uint16_t ax = ((int)cursorPos[0] + i + cellData.mainCache.tileRows) % cellData.mainCache.tileRows;
-				uint16_t ay = ((int)cursorPos[1] + j + cellData.mainCache.tileCols) % cellData.mainCache.tileCols;
-				if ( isDrawOverlap(cellData, ax, ay) ) { continue; }
-				drawSeed++;
-				uint8_t rnum = (kaelife::rand(&drawSeed))%numStates;
-				drawValue= drawRandom ? rnum : drawValue;
-
-				CAData::drawBuffer pixel={
-					.pos={ax,ay},
-					.state = drawValue
-				};
-				
-				cellData.drawBuf.push_back(pixel);
-			}
-		}
-	}
-
-	//store to be checked by isDrawOverlap if cursorDraw is called on same frame
-	CAData::drawMouseBuffer cursorPosBuf = {
-		.pos={ (uint16_t)cursorPos[0], (uint16_t)cursorPos[1] },
-		.radius=(uint8_t)drawRadius
-	};
-	cellData.drawMouseBuf.push_back(cursorPosBuf);
-	cellData.addBacklog("cursorDraw");
-}
-
-
-
 	//sdl window to world transform
-	std::array<double, 4> InputHandler::getWorldTransform(const CAData &cellData, SDL_Window* &SDLWindow) {
+	std::array<double, 4> InputHandler::getWorldTransform() {
 		int x, y;
 		SDL_GetWindowSize(SDLWindow, &x, &y );
 
@@ -560,8 +493,8 @@ void InputHandler::cursorDraw(CAData &cellData, int strength, SDL_Window* &SDLWi
 	}
 
 	//mouse world coordinates
-	std::array<uint, 2> InputHandler::getWorldCursorPos(const CAData &cellData, SDL_Window* &SDLWindow) {
-		auto offsetScale = getWorldTransform(cellData, SDLWindow);
+	std::array<uint, 2> InputHandler::getWorldCursorPos() {
+		auto offsetScale = getWorldTransform();
 		std::vector<float> worldCursorPos(2);
 
 		//black bar offset
