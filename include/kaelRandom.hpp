@@ -126,7 +126,7 @@ private:
 		static constexpr const uint bitSize = sizeof(V)*CHAR_BIT;
 		
 		InsT hash=prm35;
-		InsT step=(V)14939;
+		InsT step=(V)0; //starting step 0 reduces collisions significantly
 		ShufflePair<InsT,InsT> bufPair = {&hash, &step};
 
 		InsT charVal = (uint8_t)cstr[0];
