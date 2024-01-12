@@ -8,6 +8,7 @@
 #include <cmath>
 #include <cstring>
 #include <climits>
+#include <algorithm>
 
 #include <type_traits>
 
@@ -105,8 +106,15 @@ public:
 private:
 
 	InsT seed=0;
-	static constexpr const InsT mul= (InsT) (sizeof(InsT) == 1 ? 235 : 913	 	);
-	static constexpr const InsT add= (InsT) (sizeof(InsT) == 1 ? 191 : 13238717 );
+	static constexpr const InsT mulInd = log2(sizeof(InsT)*8)-3; //uint8=1 uint16=2 uint32=3...
+	static constexpr const InsT addInd = log2(sizeof(InsT)*8)-3;
+
+	static constexpr const InsT mulArray[] = { (InsT)19, (InsT) 1153, (InsT)5849 };
+	static constexpr const InsT addArray[] = { (InsT)74, (InsT)29615, (InsT)7870717 };
+
+	static constexpr const InsT mul = mulArray[std::min( (InsT)mulInd, (InsT)(sizeof(mulArray)/sizeof(mulArray[0]) - 1 ) )]; //choose last element if bigger than array size
+	static constexpr const InsT add = addArray[std::min( (InsT)addInd, (InsT)(sizeof(addArray)/sizeof(addArray[0]) - 1 ) )];
+
  	//Generate pseudo random numbers RORR LCG
 	template <typename V = InsT>
 	inline const InsT kaelLCG(const V n) {	isUint<V>();
@@ -126,17 +134,17 @@ private:
 		static constexpr const uint bitSize = sizeof(V)*CHAR_BIT;
 		
 		InsT hash=prm35;
-		InsT step=(V)0; //starting step 0 reduces collisions significantly
+		InsT step=0; //starting step 0 reduces collisions significantly
 		ShufflePair<InsT,InsT> bufPair = {&hash, &step};
 
-		InsT charVal = (uint8_t)cstr[0];
+		InsT charVal;
 		while(true){ //iterate through every char until null termination
-			hash^=charVal;
+			charVal = (uint8_t)cstr[0];
+			hash+=charVal;
 			shuffle(bufPair); //shuffle hash
 			cstr++;
 			if(!*cstr){ break; }
 			hash = (hash>>CHAR_BIT) | (hash<<(bitSize-CHAR_BIT)) ; //RORR byte
-			charVal = (uint8_t)cstr[0];
 		}
 		hash = kaelLCG(hash); //randomize hash
 
@@ -148,14 +156,14 @@ private:
 	ShufflePair<X, Y>& kaelShfl(ShufflePair<X, Y>& shufflePair) {
 		constexpr const X a0 = (sizeof(X) == 1) ? 4 	: 4		; //Some values increase periodicity greatly
 		constexpr const X a1 = (sizeof(X) == 1) ? 31 	: 6619	;
-		constexpr const Y b0 = (sizeof(X) == 1) ? 13 	: 3083	;
-		constexpr const Y b1 = (sizeof(X) == 1) ? 7 	: 5419	;
+		constexpr const Y b0 = (sizeof(X) == 1) ? 13 	: (sizeof(X) == 2) ? 3083 : 3083 ;
+		constexpr const Y b1 = (sizeof(X) == 1) ? 7 	: (sizeof(X) == 2) ? 5419 : 5419 ;
 
 		*shufflePair.step &= (~0b1); //has to be even for the next check to work
 		*shufflePair.step += ( (*shufflePair.step & 3) == 2) || ((*shufflePair.step & 3) == 3) ? 2 : 0; //skip any step congruent to 2 or 3 of mod 4 
 		
 		*shufflePair.seed = *shufflePair.seed * ( (*shufflePair.step|0b1)+a0 ) + a1; //LCG
-		*shufflePair.step = *shufflePair.step * b0+b1; //some values have longer periods of m up to 1 quarter of states available
+		*shufflePair.step = *shufflePair.step * b0+b1; //some values have longer periods of m up to 1 quarter of m total states available
 
 		return shufflePair;
 	}
