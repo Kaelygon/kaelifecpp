@@ -182,8 +182,7 @@ public: //public functions
 			if(strcmp(*keyword, "randAdd") == 0){
 				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
-				int rr=std::min( (int)(kaePreset.current()->stateCount-1) ,127);
-				kaePreset.randRuleAdd(kaePreset.index,-rr,rr);
+				kaePreset.randRuleAdd(kaePreset.index);
 				loadPreset();
 				kaePreset.printRuleAdd(kaePreset.index);
 				cloneBufferRequest=1;

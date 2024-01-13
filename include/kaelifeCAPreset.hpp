@@ -306,9 +306,17 @@ public:
 
 	//BOF Randomizers
 		//randomize neigMask[!activeBuf]. Not thread safe
-		void randRuleMask( const uint ind, uint64_t* seed=nullptr ){
-			if(list[ind].stateCount==0){return;}
+		void randRuleMask( const uint ind, uint maskX=0, uint maskY=0, uint64_t* seed=nullptr ){
+			const uint cellStates=list[ind].stateCount;
+			if(cellStates==0){return;}
+			const uint frac256 = ((uint16_t)UINT8_MAX+cellStates-2)/(cellStates-1);
 			uint64_t* seedPtr = kaelife::rand.validSeedPtr(seed);
+			const uint maxSize=7;
+			maskX = maskX==0 ? (kaelife::rand(seedPtr)%maxSize)+1 : maskX;
+			maskY = maskY==0 ? (kaelife::rand(seedPtr)%maxSize)+1 : maskY;
+
+			list[ind].neigMask.setWidth(maskX);
+			list[ind].neigMask.setHeight(maskY);
 
 			//symmetrize
 			bool symX=kaelife::rand(seedPtr)%4;//75% chance
@@ -327,8 +335,9 @@ public:
 					uint mwDelta = mw - abs((int)mw/2-(int)i); //distance from mask center
 					uint mhDelta = mh - abs((int)mh/2-(int)j);
 					
-					uint maskValue = ceil ( (((float)(kaelife::rand(seedPtr)%list[ind].stateCount)) / list[ind].stateCount) * UINT8_MAX ); //randomized mask value
+					uint maskValue = ceil ( (((float)(kaelife::rand(seedPtr)%cellStates)) / cellStates) * UINT8_MAX ); //randomized mask value
 					maskValue=maskValue*(mwDelta*mhDelta)/(maxDelta)*multi/divid; //scale lower the further from mask center
+					maskValue = (maskValue+frac256-1)/frac256*frac256; //round to nearest cellState multiple scaled to 255
 					maskValue = maskValue > UINT8_MAX ? UINT8_MAX : maskValue;
 					list[ind].neigMask[i][j]=(uint8_t)maskValue;
 				}
@@ -369,9 +378,21 @@ public:
 			}
 		}
 
+
 		//randomize ruleAdd[]
-		void randRuleAdd(const uint ind, int8_t minValue, int8_t maxValue, uint64_t* seed=nullptr ) {
+		void randRuleAdd(const uint ind, int8_t minValue=0, int8_t maxValue=0, uint64_t* seed=nullptr ) {
 			uint64_t* seedPtr = kaelife::rand.validSeedPtr(seed);
+
+			if(minValue==0 && maxValue==0){
+				uint cellStates = list[ind].stateCount/2;
+				uint m0 = kaelife::rand(seedPtr)%cellStates;
+				uint m1 = kaelife::rand(seedPtr)%cellStates;
+				uint medRand = std::sqrt((uint)m0*m1); //geometric mean
+				medRand = (uint)std::round( std::lerp<uint,uint,double>(medRand,0,0.25) ); //shift median to first quarter
+				medRand = std::clamp(medRand,(uint)1,(uint)127);
+				maxValue= medRand;
+				minValue=-medRand;
+			}
 			int randRange = maxValue-minValue+1;
 
 			for(uint i=0;i<list[ind].ruleAdd.size();++i){
@@ -389,10 +410,7 @@ public:
 			uint newMaskX=kaelife::rand(seedPtr)%maxMask+1;
 			uint newMaskY=kaelife::rand(seedPtr)%maxMask+1;
 
-			list[ind].neigMask.setWidth(newMaskX);
-			list[ind].neigMask.setHeight(newMaskY);
-
-			randRuleMask(ind,seedPtr);
+			randRuleMask(ind, newMaskX, newMaskY, seedPtr);
 
 			uint maxNeigSum = calcMaxNeigsum(ind);
 			

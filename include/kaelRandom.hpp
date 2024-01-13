@@ -12,8 +12,8 @@
 
 #include <type_traits>
 
-//RORR LCG PRGN
 template <typename InsT = uint64_t> //instance type
+//Kaelygon randomizer and hash functions
 class KaelRandom {
 	typedef unsigned int uint128_t __attribute__((mode(TI)));
 	template <typename... Types>
@@ -104,6 +104,15 @@ public:
 	//
 
 private:
+	template <typename V = InsT>
+	inline V RORR(const V num, const size_t shift, const size_t invShift ){
+		return (num>>shift) | (num<<invShift);
+	}
+	template <typename V = InsT>
+	inline V RORR(const V num, const size_t shift ){
+		const V invShift = sizeof(V)*CHAR_BIT - shift;
+		return (num>>shift) | (num<<invShift);
+	}
 
 	InsT seed=0;
 	static constexpr const InsT mulInd = log2(sizeof(InsT)*8)-3; //uint8=1 uint16=2 uint32=3...
@@ -117,22 +126,20 @@ private:
 
  	//Generate pseudo random numbers RORR LCG
 	template <typename V = InsT>
-	inline const InsT kaelLCG(const V n) {	isUint<V>();
+	inline const InsT kaelLCG(V n) {	isUint<V>();
 		static constexpr const uint bitSize = sizeof(V)*CHAR_BIT;
 		static constexpr const uint shift = (sizeof(V)*3)-1;
 		static constexpr const uint invShift = bitSize-shift;
 
-		V buf = 0;
-		buf = ( (n>>shift) | (n<<invShift) ) * mul + add;
-		return buf ;
+		return RORR(n,shift,invShift) * mul + add;
 	}
 
 	static constexpr const InsT prm35 =(InsT)(mul*add+126U);
  	//Evenly distributed hash 
 	template <typename V = InsT>
-	V kaelHash(const char* cstr) {
-		static constexpr const uint bitSize = sizeof(V)*CHAR_BIT;
-		
+	V kaelHash(const char* cstr) {	isUint<V>();
+		static constexpr const uint shift = CHAR_BIT;
+
 		InsT hash=prm35;
 		InsT step=0; //starting step 0 reduces collisions significantly
 		ShufflePair<InsT,InsT> bufPair = {&hash, &step};
@@ -141,10 +148,10 @@ private:
 		while(true){ //iterate through every char until null termination
 			charVal = (uint8_t)cstr[0];
 			hash+=charVal;
-			shuffle(bufPair); //shuffle hash
+			hash = *shuffle(bufPair).seed; //shuffle hash
 			cstr++;
-			if(!*cstr){ break; }
-			hash = (hash>>CHAR_BIT) | (hash<<(bitSize-CHAR_BIT)) ; //RORR byte
+			if(!*cstr){ break; } //RORR is redundant if there's no characters left to mix
+			hash = RORR(hash,shift); //RORR byte
 		}
 		hash = kaelLCG(hash); //randomize hash
 
@@ -153,11 +160,11 @@ private:
 
 	//Bijective shuffle function. Mod 4 is predictable
 	template <typename X = InsT, typename Y = InsT>
-	ShufflePair<X, Y>& kaelShfl(ShufflePair<X, Y>& shufflePair) {
+	ShufflePair<X, Y>& kaelShfl(ShufflePair<X, Y>& shufflePair) {	isUint<X,Y>();
 		constexpr const X a0 = (sizeof(X) == 1) ? 4 	: 4		; //Some values increase periodicity greatly
 		constexpr const X a1 = (sizeof(X) == 1) ? 31 	: 6619	;
-		constexpr const Y b0 = (sizeof(X) == 1) ? 13 	: (sizeof(X) == 2) ? 3083 : 3083 ;
-		constexpr const Y b1 = (sizeof(X) == 1) ? 7 	: (sizeof(X) == 2) ? 5419 : 5419 ;
+		constexpr const Y b0 = (sizeof(X) == 1) ? 13 	: 3083 ;
+		constexpr const Y b1 = (sizeof(X) == 1) ? 7 	: 5419 ;
 
 		*shufflePair.step &= (~0b1); //has to be even for the next check to work
 		*shufflePair.step += ( (*shufflePair.step & 3) == 2) || ((*shufflePair.step & 3) == 3) ? 2 : 0; //skip any step congruent to 2 or 3 of mod 4 
