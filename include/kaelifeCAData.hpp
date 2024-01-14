@@ -164,10 +164,10 @@ public: //public functions
 				cloneBufferRequest=1;
 			}else 
 			if(strcmp(*keyword, "cursorDraw") == 0){
-				if(kaeDraw.hasPixels()){ 
-					kaeDraw.copyDrawBuf(cellState[!mainCache.activeBuf], mainCache); 
+				bool didCopy = kaeDraw.copyDrawBuf(cellState[!mainCache.activeBuf], mainCache); 
+				if(didCopy){ 
 					cloneBufferRequest=1;
-				}//copy drawBuf 
+				}
 			}else//randomizers
 			if(strcmp(*keyword, "randAll") == 0){
 				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
@@ -318,6 +318,8 @@ public: //public functions
 					threadCloneBuffer(lv);
 
 				}
+				//Ensure very slow threads catch up before entering waitResume()
+				localBarrier.arrive_and_wait(); 
 			}
 		}
 

@@ -48,10 +48,6 @@ private:
 
 public:
 
-	bool hasPixels(){
-		return drawBuf.pixels.size()>0;
-	}
-
 	bool isDrawOverlap(uint16_t ax, uint16_t ay) {
 		for (size_t i = 0; i < drawBuf.points.size(); ++i) {
 			int64_t deltaX = (int)drawBuf.points[i].pos[0]-ax;
@@ -123,8 +119,10 @@ public:
 
 
 	//Perform only when threads are paused
-	void copyDrawBuf(std::vector<std::vector<uint8_t>> &cellState, CACache::ThreadCache cache){
+	uint copyDrawBuf(std::vector<std::vector<uint8_t>> &cellState, CACache::ThreadCache cache){
 		std::lock_guard<std::mutex> lock(drawBuf.mtx);//wait till drawing is done
+
+		if(drawBuf.pixels.empty()){	return 0; } //This was previously outside mutex lock which was potential cause for "attempt to copy from a singular iterator"
 
 		for (const auto& pixel : drawBuf.pixels) {
 			uint16_t x = pixel.pos[0]%cache.tileRows;
@@ -140,6 +138,8 @@ public:
 			cellState[x][y] = pixel.state;
 		}
 		drawBuf.clear();
+
+		return 1;
 	}
 
 };
