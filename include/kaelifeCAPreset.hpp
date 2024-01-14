@@ -292,7 +292,7 @@ public:
 		}
 
 		void printPreset(const uint ind=UINT_MAX){
-			uint tmpind = ind==UINT_MAX ? index : ind;
+			uint tmpind = ind==UINT_MAX ? index : ind;		
 			printf("\n");
 			printf(list[tmpind].name.c_str());
 			printf("\n");
@@ -300,6 +300,9 @@ public:
 			printRuleAdd	(tmpind);
 			printRuleMask	(tmpind);
 			printf("State Count: %d\n",list[tmpind].stateCount);
+			#if KAELIFE_DEBUG
+				printf("maxNeigsum %d\n",calcMaxNeigsum(ind));
+			#endif	
 			if(list[tmpind].presetSeed!=UINT64_MAX){printf("Seed: %lu\n",list[tmpind].presetSeed);}
 		}
 	//EOF Printers
@@ -454,10 +457,11 @@ public:
 
 		//max possible neighboring cells sum
 		int calcMaxNeigsum(const uint ind){
+			uint tmpind = ind==UINT_MAX ? index : ind;
 			uint maxNeigsum=0;
-			for(uint i=0;i< list[ind].neigMask.getWidth(); ++i){
-				for(uint j=0;j< list[ind].neigMask.getHeight(); ++j){
-					maxNeigsum+=(uint) (list[ind].stateCount-1) * list[ind].neigMask[i][j]/UINT8_MAX;
+			for(uint i=0;i< list[tmpind].neigMask.getWidth(); ++i){
+				for(uint j=0;j< list[tmpind].neigMask.getHeight(); ++j){
+					maxNeigsum+=(uint) (list[tmpind].stateCount-1) * list[tmpind].neigMask[i][j]/UINT8_MAX;
 				}
 			}
 			#if KAELIFE_DEBUG

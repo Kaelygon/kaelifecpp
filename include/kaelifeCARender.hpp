@@ -105,7 +105,7 @@ private:
 		uint activeRenderBuf = cellData.mainCache.activeBuf; // ensure buffer doesn't change during render
 
 		// allocate memory for pixelData
-		uint8_t *pixelData = new uint8_t[cellData.mainCache.tileRows * cellData.mainCache.tileCols];
+		__attribute__((aligned(64))) uint8_t *pixelData = new uint8_t[cellData.mainCache.tileRows * cellData.mainCache.tileCols];
 
 		for (uint i = 0; i < cellData.mainCache.tileRows; ++i) {
 			const auto& row = cellData.cellState[activeRenderBuf].at(i);

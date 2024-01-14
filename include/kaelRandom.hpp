@@ -103,7 +103,7 @@ public:
 		}
 	//
 
-private:
+public:
 	template <typename V = InsT>
 	inline V RORR(const V num, const size_t shift, const size_t invShift ){
 		return (num>>shift) | (num<<invShift);
@@ -118,27 +118,35 @@ private:
 	static constexpr const InsT mulInd = log2(sizeof(InsT)*8)-3; //uint8=1 uint16=2 uint32=3...
 	static constexpr const InsT addInd = log2(sizeof(InsT)*8)-3;
 
-	static constexpr const InsT mulArray[] = { (InsT)19, (InsT) 1153, (InsT)5849 };
-	static constexpr const InsT addArray[] = { (InsT)74, (InsT)29615, (InsT)7870717 };
+/*
+	other uint32 candidates
+	high period, good randomness 
+	(3343, 11770513)=2^32-162245	(3457, 11774779)	(3457, 11747231)	(3433, 11860031)
+	high period, less random
+	(173, 103) (349, 103) (421, 127) (971, 139)
+*/
+	static constexpr const InsT mulArray[] = { (InsT)47, (InsT)365, (InsT)    3343 };
+	static constexpr const InsT addArray[] = { (InsT)7 , (InsT)921, (InsT)11770513 };
 
 	static constexpr const InsT mul = mulArray[std::min( (InsT)mulInd, (InsT)(sizeof(mulArray)/sizeof(mulArray[0]) - 1 ) )]; //choose last element if bigger than array size
 	static constexpr const InsT add = addArray[std::min( (InsT)addInd, (InsT)(sizeof(addArray)/sizeof(addArray[0]) - 1 ) )];
 
  	//Generate pseudo random numbers RORR LCG
+	//Periods: ui8 = 2^8-1, ui16 = 2^16-1, ui32 = 2^32-162245
 	template <typename V = InsT>
-	inline const InsT kaelLCG(V n) {	isUint<V>();
-		static constexpr const uint bitSize = sizeof(V)*CHAR_BIT;
-		static constexpr const uint shift = (sizeof(V)*3)-1;
-		static constexpr const uint invShift = bitSize-shift;
+	inline const InsT kaelLCG(V n, V mul2=mul, V add2=add) {	isUint<V>();
+		static constexpr const V bitSize = sizeof(V)*CHAR_BIT;
+		static constexpr const V shift = (sizeof(V)*3)-1;
+		static constexpr const V invShift = bitSize-shift;
 
-		return RORR(n,shift,invShift) * mul + add;
+		return RORR(n,shift,invShift) * mul2 + add2;
 	}
 
 	static constexpr const InsT prm35 =(InsT)(mul*add+126U);
  	//Evenly distributed hash 
 	template <typename V = InsT>
 	V kaelHash(const char* cstr) {	isUint<V>();
-		static constexpr const uint shift = CHAR_BIT;
+		static constexpr const V shift = CHAR_BIT;
 
 		InsT hash=prm35;
 		InsT step=0; //starting step 0 reduces collisions significantly

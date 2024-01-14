@@ -79,7 +79,7 @@ public:
 
 private: //private vars and custom data types
 
-	std::vector<const char*> backlogList; //tasks to do that are not thread safe
+	std::vector<std::string> backlogList; //tasks to do that are not thread safe
 
 public: //public vars and custom data types
 
@@ -87,7 +87,7 @@ public: //public vars and custom data types
 	//Writes must be done to [Buffer Index] !mainCache.activeBuf and reads must be done from mainCache.activeBuf
 	//X is left to right. Y is down to up
 	//cellState[Buffer Index][X][Y]
-	std::vector<std::vector<uint8_t>>cellState[2]; // double buffer
+	__attribute__((aligned(64))) std::vector<std::vector<uint8_t>>cellState[2]; // double buffer
 
 	//BOF vars that only CAData writes but others may read
 		float targetFrameTime = 20.0; //target frame time
@@ -121,14 +121,10 @@ public: //public functions
 			mainCache.neigMask1d.resize( mainCache.maskElements );
 		}
 
-		//mainCache.neigMaskInd.clear();
-		//mainCache.neigMaskInd.reserve( mainCache.maskElements );
-
 		for (int i = 0; i < mainCache.maskWidth; ++i) {
 			for (int j = 0; j < mainCache.maskHeight; ++j) {
 				uint ind = i+j*mainCache.maskWidth;
 				mainCache.neigMask1d[ind]=kaePreset.current()->neigMask[i][j]; //store 1d mask
-				//if(mainCache.neigMask1d[ind]!=0){ mainCache.neigMaskInd.push_back(ind); } //store non-zero index
 			}
 		}
 
@@ -151,25 +147,23 @@ public: //public functions
 		//this flag is used to prevent cloning buffer every single keyword
 		uint cloneBufferRequest=0;
 
-		std::vector<const char *> backlogBuf=backlogList;
-		auto keyword = backlogBuf.begin();
-
-		while (keyword != backlogBuf.end()) {
-			if (strcmp(*keyword, "cloneBuffer") == 0) {
+		while (!backlogList.empty()) {
+			std::string keyword = backlogList.back();
+			if ((keyword == "cloneBuffer")) {
 				cloneBufferRequest=1;
 			}else 
-			if (strcmp(*keyword, "loadPreset") == 0) {
+			if ((keyword == "loadPreset")) {
 				loadPreset();
 				kaePreset.printPreset();
 				cloneBufferRequest=1;
 			}else 
-			if(strcmp(*keyword, "cursorDraw") == 0){
+			if((keyword == "cursorDraw")){
 				bool didCopy = kaeDraw.copyDrawBuf(cellState[!mainCache.activeBuf], mainCache); 
 				if(didCopy){ 
 					cloneBufferRequest=1;
 				}
 			}else//randomizers
-			if(strcmp(*keyword, "randAll") == 0){
+			if((keyword == "randAll")){
 				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				uint64_t randSeed = kaePreset.randAll(copyIndex[0]);
@@ -179,7 +173,7 @@ public: //public functions
 				printf("RANDOM seed: %lu\n",(uint64_t)randSeed);
 				cloneBufferRequest=1;
 			}else 
-			if(strcmp(*keyword, "randAdd") == 0){
+			if((keyword == "randAdd")){
 				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				kaePreset.randRuleAdd(kaePreset.index);
@@ -187,7 +181,7 @@ public: //public functions
 				kaePreset.printRuleAdd(kaePreset.index);
 				cloneBufferRequest=1;
 			}else 
-			if(strcmp(*keyword, "randRange") == 0){
+			if((keyword == "randRange")){
 				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				kaePreset.randRuleRange(kaePreset.index,0);
@@ -195,7 +189,7 @@ public: //public functions
 				kaePreset.printRuleRange(kaePreset.index);	
 				cloneBufferRequest=1;
 			}else 
-			if(strcmp(*keyword, "randMask") == 0){
+			if((keyword == "randMask")){
 				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				kaePreset.randRuleMask(kaePreset.index);
@@ -203,7 +197,7 @@ public: //public functions
 				kaePreset.printRuleMask(kaePreset.index);
 				cloneBufferRequest=1;
 			}else 
-			if(strcmp(*keyword, "randMutate") == 0){
+			if((keyword == "randMutate")){
 				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
 				kaePreset.setPreset(copyIndex[0]);
 				kaePreset.randRuleMutate(kaePreset.index);
@@ -211,11 +205,8 @@ public: //public functions
 				kaePreset.printRuleRange(kaePreset.index);
 				kaePreset.printRuleAdd(kaePreset.index);
 				cloneBufferRequest=1;
-			}else{
-				++keyword;
-				continue;
 			}
-			keyword = backlogBuf.erase(keyword);
+			backlogList.pop_back();
 		}
 		backlogList.clear();
 
@@ -227,7 +218,7 @@ public: //public functions
 
 	//assumes updatedCells[0] and updatedCells[1] are same size
 	//Thread safe cloneBuffer
-	void threadCloneBuffer(CACache::ThreadCache &lv) {
+	inline void threadCloneBuffer(CACache::ThreadCache &lv) {
 
 		//clone buffer for updated cells only
 		for (size_t i = 0; i < lv.updatedCells[0].size(); ++i) {
@@ -281,8 +272,8 @@ public: //public functions
 			uint localIterTask=0;
 
 			//spread threads task to 2D stripes 
-			uint iterSize=(lv.tileRows+lv.threadCount/2)/lv.threadCount;
-			uint remainder=lv.tileRows%lv.threadCount; //remaining rows that couldn't be split evenly
+			uint iterSize	=(lv.tileRows+lv.threadCount/2)/lv.threadCount;
+			uint remainder	= lv.tileRows%lv.threadCount; //remaining rows that couldn't be split evenly
 			uint iterStart	=	 lv.threadId*iterSize;
 			uint iterEnd	=(lv.threadId+1)*iterSize;
 			iterStart+=remainder    *(lv.threadId)/lv.threadCount; //spread out by remainder
@@ -302,13 +293,13 @@ public: //public functions
 					return;
 				}
 				
-				for(uint i=0;i<localIterTask;i++){ //iterate the given amount 
+				for(size_t i=0;i<localIterTask;i++){ //iterate the given amount 
 
 					//iterate stripe of the world
-					for (uint tx = iterStart; tx < iterEnd; tx++) {
+					for (size_t tx = iterStart; tx < iterEnd; tx++) {
 						//check if tx is near border
 						bool nearBorderX = (tx < lv.maskRadx) || (tx >= lv.tileRows - lv.maskRadx);
-						for (uint ty = 0; ty < lv.tileCols; ++ty) {
+						for (size_t ty = 0; ty < lv.tileCols; ++ty) {
 							iterateCellLV(tx, ty, lv, nearBorderX);
 						}
 					}
@@ -336,7 +327,6 @@ public: //public functions
 			uint nx,ny;
 
 			for(int i=0;i<lv.maskElements;++i){		
-			//for (size_t i : lv.neigMaskInd) {		
 				if(lv.neigMask1d[i]==0){continue;}
 
 				//iterator to coordinate relative to mask center
