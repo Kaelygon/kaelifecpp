@@ -103,7 +103,7 @@ public:
 		}
 	//
 
-public:
+private:
 	template <typename V = InsT>
 	inline V RORR(const V num, const size_t shift, const size_t invShift ){
 		return (num>>shift) | (num<<invShift);
@@ -132,18 +132,22 @@ public:
 	static constexpr const InsT add = addArray[std::min( (InsT)addInd, (InsT)(sizeof(addArray)/sizeof(addArray[0]) - 1 ) )];
 
  	//Generate pseudo random numbers RORR LCG
-	//Periods: ui8 = 2^8-1, ui16 = 2^16-1, ui32 = 2^32-162245
+	//Periods: ui8 = 2^8-1, ui16 = 2^16-1, ui32 = 2^32-162245, ui64 (tested up to) 2^38
 	template <typename V = InsT>
-	inline const InsT kaelLCG(V n, V mul2=mul, V add2=add) {	isUint<V>();
+	inline const InsT kaelLCG( V n ) {	isUint<V>();
 		static constexpr const V bitSize = sizeof(V)*CHAR_BIT;
 		static constexpr const V shift = (sizeof(V)*3)-1;
 		static constexpr const V invShift = bitSize-shift;
 
-		return RORR(n,shift,invShift) * mul2 + add2;
+		return RORR(n,shift,invShift) * mul + add;
 	}
 
+	/*
+		Unique hashes of strings length of sieof(V): 
+		ui8 255, ui16 65250, ui32 ~2^31.89, ui64 (tested up to) 2^34.5
+	*/
 	static constexpr const InsT prm35 =(InsT)(mul*add+126U);
- 	//Evenly distributed hash 
+ 	//Evenly distributed hash
 	template <typename V = InsT>
 	V kaelHash(const char* cstr) {	isUint<V>();
 		static constexpr const V shift = CHAR_BIT;
@@ -184,3 +188,29 @@ public:
 	}
 
 };
+
+/*
+	static constexpr const InsT prm35 =(InsT)(mul*add+126U);
+ 	//Evenly distributed hash 
+	template <typename V = InsT>
+	V kaelHash(const char* cstr) {	isUint<V>();
+		static constexpr const V shift = CHAR_BIT;
+
+		InsT hash=prm35;
+		InsT step=0; //starting step 0 reduces collisions significantly
+		ShufflePair<InsT,InsT> bufPair = {&hash, &step};
+
+		InsT charVal;
+		while(true){ //iterate through every char until null termination
+			charVal = (uint8_t)cstr[0];
+			hash+=charVal;
+			hash = *shuffle(bufPair).seed; //shuffle hash
+			cstr++;
+			if(!*cstr){ break; } //RORR is redundant if there's no characters left to mix
+			hash = RORR(hash,shift); //RORR byte
+		}
+		hash = kaelLCG(hash); //randomize hash
+
+		return (V)hash*3+1;
+	}
+*/
