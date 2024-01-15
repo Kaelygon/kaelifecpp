@@ -19,13 +19,12 @@ out vec4 fragColor;
 
 
 void main() {
-	vec2 screenCursorPos = cursorPos; // position and texture in tile space
+	vec2 screenCursorPos = cursorPos;  // position and texture in tile space
 	vec2 screenTexCoord = floor(texCoord * tileDim);
 
-	// Calculate the distance to the closest tile position (considering wrapping)
-	vec2 wrappedCursorPos = mod(screenCursorPos, tileDim);
-	vec2 wrappedDist = min(abs(screenTexCoord - wrappedCursorPos), tileDim - abs(screenTexCoord - wrappedCursorPos));
-	float cursorDist = length(wrappedDist);
+	// Wrapping done at getWorldCursorPos
+	vec2  cursorDelta = min(abs(screenTexCoord - screenCursorPos), tileDim - abs(screenTexCoord - screenCursorPos));
+	float cursorDist = length(cursorDelta);
 
 	float isCursorNear = float((cursorDist >= cursorRadius - cursorBorder) && (cursorDist < cursorRadius));
 
