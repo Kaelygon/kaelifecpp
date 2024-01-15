@@ -166,7 +166,7 @@ public:
 	
 
 	std::array<double, 4> getWorldTransform ();
-	std::array<uint, 2>   getWorldCursorPos ();
+	std::array<int, 2>   getWorldCursorPos ();
 };
 
 
@@ -438,7 +438,7 @@ void InputHandler::detectInput() {
 			//if past window edges
 			if ( cursorPos[0]>= windowWrapLimit[0] ) {cursorPos[0]=0;	moveCursor=true;}
 			else
-			if ( cursorPos[0]<= 0  ) {cursorPos[0]=windowWrapLimit[0];moveCursor=true;}
+			if ( cursorPos[0]<= 0 ) {cursorPos[0]=windowWrapLimit[0];	moveCursor=true;}
 			
 			if ( cursorPos[1]>= windowWrapLimit[1] ) {cursorPos[1]=0;	moveCursor=true;}
 			else
@@ -492,8 +492,8 @@ void InputHandler::detectInput() {
 
 	}
 
-	//mouse world coordinates
-	std::array<uint, 2> InputHandler::getWorldCursorPos() {
+	//mouse world coordinates wrapped
+	std::array<int, 2> InputHandler::getWorldCursorPos() {
 		auto offsetScale = getWorldTransform();
 		std::vector<float> worldCursorPos(2);
 
@@ -509,8 +509,12 @@ void InputHandler::detectInput() {
 		worldCursorPos[0] *= cellData.mainCache.tileRows;
 		worldCursorPos[1] *= cellData.mainCache.tileCols;
 
-		std::array<uint, 2> worldCursorOut;
-		worldCursorOut[0]=worldCursorPos[0];
-		worldCursorOut[1]=worldCursorPos[1];
+		std::array<int, 2> worldCursorOut;
+		worldCursorOut[0]=(int)(worldCursorPos[0]+cellData.mainCache.tileRows)%cellData.mainCache.tileRows;
+		worldCursorOut[1]=(int)(worldCursorPos[1]+cellData.mainCache.tileCols)%cellData.mainCache.tileCols;
+		#ifdef KAELIFE_DEBUG
+			printf("worldCursorOut[0] %d\n",worldCursorOut[0]);
+			printf("worldCursorOut[1] %d\n",worldCursorOut[1]);
+		#endif
 		return worldCursorOut;
 	}
