@@ -412,16 +412,20 @@ void InputHandler::detectInput() {
 				if(debug){
 					printf("Mouse pos (%d, %d)\n", cursorPos[0], cursorPos[1]);
 				}
-				#ifdef KAELIFE_DEBUG
+				if(KAELIFE_DEBUG){
 					auto cursorPosW = getWorldCursorPos();
 					printf("Mouse world (%d, %d)\n", cursorPosW[0], cursorPosW[1]);
-				#endif
+				}
 			}
 		}
 			
 		//run these every call
 		if (keyStates[SDL_BUTTON_LEFT] || keyStates[SDL_BUTTON_RIGHT] || event.type == SDL_MOUSEBUTTONDOWN) {
 			auto cursorPos = getWorldCursorPos();
+			if(KAELIFE_DEBUG){
+				printf("cursorPos[0] %d\n",cursorPos[0]);
+				printf("cursorPos[1] %d\n",cursorPos[1]);
+			}
 			// Mouse motion or left button pressed
 			int strength = keyStates[SDL_BUTTON_LEFT] ? 1 : 0;
 			cellData.kaeDraw.cursorDraw(strength, cursorPos[0], cursorPos[1], drawRadius, drawRandom, cellData.mainCache);
@@ -512,9 +516,5 @@ void InputHandler::detectInput() {
 		std::array<int, 2> worldCursorOut;
 		worldCursorOut[0]=(int)(worldCursorPos[0]+cellData.mainCache.tileRows)%cellData.mainCache.tileRows;
 		worldCursorOut[1]=(int)(worldCursorPos[1]+cellData.mainCache.tileCols)%cellData.mainCache.tileCols;
-		#ifdef KAELIFE_DEBUG
-			printf("worldCursorOut[0] %d\n",worldCursorOut[0]);
-			printf("worldCursorOut[1] %d\n",worldCursorOut[1]);
-		#endif
 		return worldCursorOut;
 	}

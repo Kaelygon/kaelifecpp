@@ -3,68 +3,68 @@
 #include <cstdint>
 #include "kaelRandom.hpp"
 
+uint64_t period=0;
 
 int main() {
 	
-	typedef uint16_t hashType;
+	typedef uint32_t hashType;
 
-	kaelRandom<hashType> randomizer;
+	KaelRandom<hashType> randomizer;
 
 	hashType hashValue=0;   
 	hashType hashStep=0;   
-    kaelRandom<hashType>::ShufflePair<hashType, hashType> hashPair( &hashValue, &hashStep );
+    KaelRandom<hashType>::ShufflePair<hashType, hashType> hashPair( &hashValue, &hashStep );
 
-	std::unordered_set<hashType> history;
-	uint64_t gib = 1024*1024*1024;
+	std::vector<hashType> history;
+	uint64_t gib = 1024*1024*1024/8;
 	
 
-	uint dupe=0;
+	uint64_t dupe=0;
 	uint64_t randTypeMax = hashType(~0);
 	history.reserve(std::min(randTypeMax,gib/4));
 	
-	uint maxPeriod=0;
-	const uint wordSize=4+1; //+1 null
+	uint64_t maxPeriod=0;
+	const uint64_t wordSize=sizeof(hashType)+1; //+1 null
 	char tmpWord[wordSize]={'\0'};
 
 	randTypeMax=(hashType)(~0);
 
-	for (uint i = 0; i < randTypeMax; ++i) {
+	for (uint64_t i = 0; i < randTypeMax; ++i) {
 
 		for(int j=0;j<(int)wordSize-1;j++){
-			if(tmpWord[j]==tmpWord[j+1]){
-				tmpWord[j]++;
-			}
 			if(tmpWord[j]==0){
 				tmpWord[j]=1;
 				tmpWord[(j+1)%wordSize]++;
 			}
-
-			std::cout << (uint)(uint8_t)tmpWord[j] << " " ;
 		}
+		tmpWord[wordSize-1]='\0';
 		
-		*hashPair.seed = randomizer.hashCstr(tmpWord);
-
-		//randomizer.shuffle(hashPair); // *hashPair.seed is set here
-		
-		std::cout << " hash " << (uint)*hashPair.seed << "\n";
+		hashValue = randomizer.hashCstr(tmpWord);
 
 		tmpWord[0]++;
-		if (history.count(*hashPair.seed) > 0) {
-			std::cout << "Duplicate number " << (uint)*hashPair.seed << "\n";
+		if (std::find(history.begin(), history.end(), hashValue) != history.end() ) {
 			dupe++;
-			if(dupe>32){
+			std::cout << "Duplicate number " << (uint64_t)hashValue << " at " << i << " dupes " << dupe << "\n";
+			if(dupe>1){
 				break;
 			}
 		}
-		history.insert(*hashPair.seed);
-
+		const bool insertE = !(i&(~0xF));
+		const bool insertF = i<16;
+		if(i<16){
+			history.push_back(hashValue);
+		}
+		period++;
+		if((period&0b111111111111111111111111)==0){
+			std::cout << tmpWord ;
+			std::cout << " hash " << hashValue << " i: " << i << "\n";
+		}
 	}
 
-	if(maxPeriod<history.size()){
-		maxPeriod=history.size();
-		std::cout << "Period " << maxPeriod ;
-		std::cout << "\n";
-	}
+
+	std::cout << "Period " << period ;
+	std::cout << "\n";
+		
 
 	history.clear();
 

@@ -19,8 +19,6 @@ namespace kaelife { KaelRandom<uint64_t>rand; } //kaelife::rand()
 #include <SDL2/SDL.h>
 #include <GL/glew.h>
 
-#define KAELIFE_DEBUG 0
-
 int main() {
 
 //	MasterConfig config("./config/");

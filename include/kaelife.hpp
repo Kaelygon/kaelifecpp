@@ -3,6 +3,8 @@
 
 #pragma once
 
+constexpr bool KAELIFE_DEBUG = 1;
+
 #include "kaelifeSDL.hpp"
 #include "kaelifeWorldCore.hpp"
 #include "kaelifeBMPIO.hpp"

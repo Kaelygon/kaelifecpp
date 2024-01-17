@@ -97,6 +97,18 @@ private:
 			{0},
 			{{0}},
 			15858568242867829530UL
+		},{
+			"testing",
+			8,
+			{8,16,24,32,40,48,56},
+			{2,-1,1,3,-2,1,-1,-2},
+			{
+				{ 32, 64,255, 64, 32},
+				{255, 16, 96, 16,255},
+				{ 64, 96,  0, 96, 64},
+				{255, 64, 96, 64,255},
+				{ 32, 64,255, 64, 32}
+			}
 		}
 	}; 
 
@@ -112,7 +124,7 @@ public:
                 uint64_t* seedPtr = &automata.presetSeed;
                 randAll(ind, seedPtr);
             }
-			if(strcmp(automata.name.c_str(),"\0")==0){
+			if( automata.name == "\0" ){
 				automata.name=unsetName;
 			}
         }
@@ -263,7 +275,7 @@ public:
 			uint tmpind = ind==UINT_MAX ? index : ind;
 			printf(".ruleRange {");
 			for(uint i=0;i<list[tmpind].ruleRange.size();++i){
-				printf("%d",list[tmpind].ruleRange[i]);
+				printf("%u",list[tmpind].ruleRange[i]);
 				if(i!=list[tmpind].ruleRange.size()-1){
 					printf(",");
 				}
@@ -293,16 +305,14 @@ public:
 
 		void printPreset(const uint ind=UINT_MAX){
 			uint tmpind = ind==UINT_MAX ? index : ind;		
-			printf("\n");
-			printf(list[tmpind].name.c_str());
-			printf("\n");
+			printf("\n%s\n",list[tmpind].name.c_str());
 			printRuleRange	(tmpind);
 			printRuleAdd	(tmpind);
 			printRuleMask	(tmpind);
-			printf("State Count: %d\n",list[tmpind].stateCount);
-			#if KAELIFE_DEBUG
-				printf("maxNeigsum %d\n",calcMaxNeigsum(ind));
-			#endif	
+			printf("State Count: %u\n",list[tmpind].stateCount);
+			if(KAELIFE_DEBUG){
+				printf("maxNeigsum %u\n",calcMaxNeigsum(ind));
+			}
 			if(list[tmpind].presetSeed!=UINT64_MAX){printf("Seed: %lu\n",list[tmpind].presetSeed);}
 		}
 	//EOF Printers
@@ -464,8 +474,8 @@ public:
 					maxNeigsum+=(uint) (list[tmpind].stateCount-1) * list[tmpind].neigMask[i][j]/UINT8_MAX;
 				}
 			}
-			#if KAELIFE_DEBUG
-				printf("maxNeigsum %d\n",maxNeigsum);
+			#if KAELIFE_DEBUG == 1
+				printf("maxNeigsum %u\n",maxNeigsum);
 			#endif
 			return maxNeigsum;
 		}
@@ -482,7 +492,7 @@ private:
 		}else if constexpr (std::is_same<T1, std::string>::value) {
 			//search index by comparing names
 			for(uint i=0;i<list.size();++i){
-				if(strcmp(list[i].name.c_str(), charOrInd.c_str())==0){
+				if( list[i].name == charOrInd ){
 					ind=i;
 					break;
 				}

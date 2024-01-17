@@ -64,9 +64,6 @@ public:
 	}
 
     void terminateThread() {
-		#if KAELIFE_DEBUG==1
-			printf("Main signals terminate\n");
-		#endif
 		isThreadTerminated.store(true);
 		continueThread(1,0); //threads are paused until iterCount>0
     }

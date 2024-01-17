@@ -117,54 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named kaelifecpp_ASAN
+# Target rules for targets named test_DEBUG
 
 # Build rule for target.
-kaelifecpp_ASAN: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kaelifecpp_ASAN
-.PHONY : kaelifecpp_ASAN
+test_DEBUG: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_DEBUG
+.PHONY : test_DEBUG
 
 # fast build rule for target.
-kaelifecpp_ASAN/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_ASAN.dir/build.make CMakeFiles/kaelifecpp_ASAN.dir/build
-.PHONY : kaelifecpp_ASAN/fast
+test_DEBUG/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_DEBUG.dir/build.make CMakeFiles/test_DEBUG.dir/build
+.PHONY : test_DEBUG/fast
 
-#=============================================================================
-# Target rules for targets named clean_all
-
-# Build rule for target.
-clean_all: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean_all
-.PHONY : clean_all
-
-# fast build rule for target.
-clean_all/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clean_all.dir/build.make CMakeFiles/clean_all.dir/build
-.PHONY : clean_all/fast
-
-src/kaelifecpp.o: src/kaelifecpp.cpp.o
-.PHONY : src/kaelifecpp.o
+tools/test.o: tools/test.cpp.o
+.PHONY : tools/test.o
 
 # target to build an object file
-src/kaelifecpp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_ASAN.dir/build.make CMakeFiles/kaelifecpp_ASAN.dir/src/kaelifecpp.cpp.o
-.PHONY : src/kaelifecpp.cpp.o
+tools/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_DEBUG.dir/build.make CMakeFiles/test_DEBUG.dir/tools/test.cpp.o
+.PHONY : tools/test.cpp.o
 
-src/kaelifecpp.i: src/kaelifecpp.cpp.i
-.PHONY : src/kaelifecpp.i
+tools/test.i: tools/test.cpp.i
+.PHONY : tools/test.i
 
 # target to preprocess a source file
-src/kaelifecpp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_ASAN.dir/build.make CMakeFiles/kaelifecpp_ASAN.dir/src/kaelifecpp.cpp.i
-.PHONY : src/kaelifecpp.cpp.i
+tools/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_DEBUG.dir/build.make CMakeFiles/test_DEBUG.dir/tools/test.cpp.i
+.PHONY : tools/test.cpp.i
 
-src/kaelifecpp.s: src/kaelifecpp.cpp.s
-.PHONY : src/kaelifecpp.s
+tools/test.s: tools/test.cpp.s
+.PHONY : tools/test.s
 
 # target to generate assembly for a file
-src/kaelifecpp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_ASAN.dir/build.make CMakeFiles/kaelifecpp_ASAN.dir/src/kaelifecpp.cpp.s
-.PHONY : src/kaelifecpp.cpp.s
+tools/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_DEBUG.dir/build.make CMakeFiles/test_DEBUG.dir/tools/test.cpp.s
+.PHONY : tools/test.cpp.s
 
 # Help Target
 help:
@@ -174,11 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... clean_all"
-	@echo "... kaelifecpp_ASAN"
-	@echo "... src/kaelifecpp.o"
-	@echo "... src/kaelifecpp.i"
-	@echo "... src/kaelifecpp.s"
+	@echo "... test_DEBUG"
+	@echo "... tools/test.o"
+	@echo "... tools/test.i"
+	@echo "... tools/test.s"
 .PHONY : help
 
 

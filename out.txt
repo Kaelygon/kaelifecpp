@@ -1,0 +1,10908 @@
+64 identical consecutive numbers 
+Period 110026622
+multiplier 277
+addend 101
+
+64 identical consecutive numbers 
+Period 247361029
+multiplier 233
+addend 101
+
+64 identical consecutive numbers 
+Period 300949374
+multiplier 463
+addend 101
+
+64 identical consecutive numbers 
+Period 510522916
+multiplier 293
+addend 101
+
+64 identical consecutive numbers 
+Period 557015614
+multiplier 241
+addend 101
+
+64 identical consecutive numbers 
+Period 646594171
+multiplier 251
+addend 101
+
+64 identical consecutive numbers 
+Period 678425404
+multiplier 337
+addend 101
+
+64 identical consecutive numbers 
+Period 695530939
+multiplier 383
+addend 101
+
+64 identical consecutive numbers 
+Period 857427441
+multiplier 317
+addend 101
+
+64 identical consecutive numbers 
+Period 1029274375
+multiplier 181
+addend 101
+
+64 identical consecutive numbers 
+Period 1079422359
+multiplier 389
+addend 101
+
+64 identical consecutive numbers 
+Period 1124864325
+multiplier 311
+addend 101
+
+64 identical consecutive numbers 
+Period 1117421666
+multiplier 107
+addend 101
+
+64 identical consecutive numbers 
+Period 1143633021
+multiplier 503
+addend 101
+
+64 identical consecutive numbers 
+Period 1243175596
+multiplier 359
+addend 101
+
+64 identical consecutive numbers 
+Period 1648461182
+multiplier 109
+addend 101
+
+64 identical consecutive numbers 
+Period 1290001820
+multiplier 491
+addend 101
+
+64 identical consecutive numbers 
+Period 1534114515
+multiplier 419
+addend 101
+
+64 identical consecutive numbers 
+Period 1430084120
+multiplier 223
+addend 101
+
+64 identical consecutive numbers 
+Period 1892885470
+multiplier 353
+addend 101
+
+64 identical consecutive numbers 
+Period 1786309297
+multiplier 421
+addend 101
+
+64 identical consecutive numbers 
+Period 1591181887
+multiplier 263
+addend 101
+
+64 identical consecutive numbers 
+Period 1511569088
+multiplier 509
+addend 101
+
+64 identical consecutive numbers 
+Period 1668876005
+multiplier 199
+addend 101
+
+64 identical consecutive numbers 
+Period 1801096916
+multiplier 173
+addend 101
+
+64 identical consecutive numbers 
+Period 1717724239
+multiplier 401
+addend 101
+
+64 identical consecutive numbers 
+Period 2007271741
+multiplier 127
+addend 101
+
+64 identical consecutive numbers 
+Period 1770621004
+multiplier 149
+addend 101
+
+64 identical consecutive numbers 
+Period 1751731881
+multiplier 179
+addend 101
+
+64 identical consecutive numbers 
+Period 1753722551
+multiplier 163
+addend 101
+
+64 identical consecutive numbers 
+Period 1956082111
+multiplier 197
+addend 101
+
+64 identical consecutive numbers 
+Period 1818786111
+multiplier 227
+addend 101
+
+64 identical consecutive numbers 
+Period 2143916458
+multiplier 151
+addend 101
+
+64 identical consecutive numbers 
+Period 2072014258
+multiplier 101
+addend 101
+
+64 identical consecutive numbers 
+Period 1962844558
+multiplier 487
+addend 101
+
+64 identical consecutive numbers 
+Period 2571218434
+multiplier 439
+addend 101
+
+64 identical consecutive numbers 
+Period 2101830116
+multiplier 443
+addend 101
+
+64 identical consecutive numbers 
+Period 2348024720
+multiplier 307
+addend 101
+
+64 identical consecutive numbers 
+Period 2665146016
+multiplier 379
+addend 101
+
+64 identical consecutive numbers 
+Period 2064737724
+multiplier 479
+addend 101
+
+64 identical consecutive numbers 
+Period 2538167528
+multiplier 313
+addend 101
+
+64 identical consecutive numbers 
+Period 2508862268
+multiplier 449
+addend 101
+
+64 identical consecutive numbers 
+Period 2350567749
+multiplier 461
+addend 101
+
+64 identical consecutive numbers 
+Period 2822757563
+multiplier 457
+addend 101
+
+64 identical consecutive numbers 
+Period 2910596140
+multiplier 157
+addend 101
+
+64 identical consecutive numbers 
+Period 3253091987
+multiplier 373
+addend 101
+
+64 identical consecutive numbers 
+Period 2428417485
+multiplier 281
+addend 101
+
+64 identical consecutive numbers 
+Period 3412516368
+multiplier 499
+addend 101
+
+64 identical consecutive numbers 
+Period 3416136698
+multiplier 541
+addend 101
+
+64 identical consecutive numbers 
+Period 2608537970
+multiplier 269
+addend 101
+
+64 identical consecutive numbers 
+Period 2792127637
+multiplier 211
+addend 101
+
+64 identical consecutive numbers 
+Period 2669148652
+multiplier 347
+addend 101
+
+64 identical consecutive numbers 
+Period 2927645435
+multiplier 547
+addend 101
+
+64 identical consecutive numbers 
+Period 2540746000
+multiplier 431
+addend 101
+
+64 identical consecutive numbers 
+Period 3002730855
+multiplier 137
+addend 101
+
+64 identical consecutive numbers 
+Period 3280227132
+multiplier 523
+addend 101
+
+64 identical consecutive numbers 
+Period 2462841787
+multiplier 349
+addend 101
+
+64 identical consecutive numbers 
+Period 2665046562
+multiplier 257
+addend 101
+
+64 identical consecutive numbers 
+Period 3684063559
+multiplier 167
+addend 101
+
+64 identical consecutive numbers 
+Period 146168699
+multiplier 563
+addend 101
+
+64 identical consecutive numbers 
+Period 3302490189
+multiplier 467
+addend 101
+
+64 identical consecutive numbers 
+Period 3060774283
+multiplier 193
+addend 101
+
+64 identical consecutive numbers 
+Period 3470852998
+multiplier 521
+addend 101
+
+64 identical consecutive numbers 
+Period 4000403957
+multiplier 433
+addend 101
+
+64 identical consecutive numbers 
+Period 540663570
+multiplier 587
+addend 101
+
+64 identical consecutive numbers 
+Period 3163250055
+multiplier 367
+addend 101
+
+64 identical consecutive numbers 
+Period 3203503969
+multiplier 239
+addend 101
+
+64 identical consecutive numbers 
+Period 3736010551
+multiplier 131
+addend 101
+
+64 identical consecutive numbers 
+Period 3498582850
+multiplier 103
+addend 101
+
+64 identical consecutive numbers 
+Period 3012347525
+multiplier 113
+addend 101
+
+64 identical consecutive numbers 
+Period 757428935
+multiplier 593
+addend 101
+
+64 identical consecutive numbers 
+Period 539878670
+multiplier 613
+addend 101
+
+64 identical consecutive numbers 
+Period 3824920321
+multiplier 331
+addend 101
+
+64 identical consecutive numbers 
+Period 4138459777
+multiplier 139
+addend 101
+
+64 identical consecutive numbers 
+Period 3853303196
+multiplier 271
+addend 101
+
+64 identical consecutive numbers 
+Period 115562910
+multiplier 673
+addend 101
+
+64 identical consecutive numbers 
+Period 3844350230
+multiplier 283
+addend 101
+
+64 identical consecutive numbers 
+Period 4173225046
+multiplier 397
+addend 101
+
+64 identical consecutive numbers 
+Period 1083704983
+multiplier 569
+addend 101
+
+64 identical consecutive numbers 
+Period 142473626
+multiplier 683
+addend 101
+
+64 identical consecutive numbers 
+Period 88764627
+multiplier 727
+addend 101
+
+64 identical consecutive numbers 
+Period 3615785493
+multiplier 229
+addend 101
+
+64 identical consecutive numbers 
+Period 1177506089
+multiplier 571
+addend 101
+
+64 identical consecutive numbers 
+Period 3861216222
+multiplier 191
+addend 101
+
+64 identical consecutive numbers 
+Period 679163780
+multiplier 661
+addend 101
+
+64 identical consecutive numbers 
+Period 4188309466
+multiplier 409
+addend 101
+
+64 identical consecutive numbers 
+Period 482675294
+multiplier 751
+addend 101
+
+64 identical consecutive numbers 
+Period 920988690
+multiplier 647
+addend 101
+
+64 identical consecutive numbers 
+Period 797983923
+multiplier 739
+addend 101
+
+64 identical consecutive numbers 
+Period 2240254098
+multiplier 599
+addend 101
+
+64 identical consecutive numbers 
+Period 1475135582
+multiplier 709
+addend 101
+
+64 identical consecutive numbers 
+Period 1667371473
+multiplier 643
+addend 101
+
+64 identical consecutive numbers 
+Period 2454768352
+multiplier 607
+addend 101
+
+64 identical consecutive numbers 
+Period 17522826
+multiplier 853
+addend 101
+
+64 identical consecutive numbers 
+Period 61629477
+multiplier 1021
+addend 101
+
+64 identical consecutive numbers 
+Period 2799638147
+multiplier 557
+addend 101
+
+64 identical consecutive numbers 
+Period 2789465635
+multiplier 617
+addend 101
+
+64 identical consecutive numbers 
+Period 261812924
+multiplier 103
+addend 103
+
+64 identical consecutive numbers 
+Period 196533576
+multiplier 131
+addend 103
+
+64 identical consecutive numbers 
+Period 2626007277
+multiplier 601
+addend 101
+
+64 identical consecutive numbers 
+Period 240867187
+multiplier 839
+addend 101
+
+64 identical consecutive numbers 
+Period 1846287821
+multiplier 691
+addend 101
+
+64 identical consecutive numbers 
+Period 1090834135
+multiplier 787
+addend 101
+
+64 identical consecutive numbers 
+Period 2680594357
+multiplier 619
+addend 101
+
+64 identical consecutive numbers 
+Period 402590808
+multiplier 859
+addend 101
+
+64 identical consecutive numbers 
+Period 1565232656
+multiplier 797
+addend 101
+
+64 identical consecutive numbers 
+Period 770875760
+multiplier 971
+addend 101
+
+64 identical consecutive numbers 
+Period 792373964
+multiplier 827
+addend 101
+
+64 identical consecutive numbers 
+Period 1692228858
+multiplier 769
+addend 101
+
+64 identical consecutive numbers 
+Period 2498394183
+multiplier 743
+addend 101
+
+64 identical consecutive numbers 
+Period 3111431462
+multiplier 719
+addend 101
+
+64 identical consecutive numbers 
+Period 2530080772
+multiplier 653
+addend 101
+
+64 identical consecutive numbers 
+Period 2999572468
+multiplier 631
+addend 101
+
+64 identical consecutive numbers 
+Period 1191237358
+multiplier 881
+addend 101
+
+64 identical consecutive numbers 
+Period 1985374811
+multiplier 773
+addend 101
+
+64 identical consecutive numbers 
+Period 1313890902
+multiplier 983
+addend 101
+
+64 identical consecutive numbers 
+Period 3729724091
+multiplier 733
+addend 101
+
+64 identical consecutive numbers 
+Period 1228327514
+multiplier 907
+addend 101
+
+64 identical consecutive numbers 
+Period 2060264621
+multiplier 811
+addend 101
+
+64 identical consecutive numbers 
+Period 1767584090
+multiplier 821
+addend 101
+
+64 identical consecutive numbers 
+Period 3262210547
+multiplier 641
+addend 101
+
+64 identical consecutive numbers 
+Period 2762115515
+multiplier 757
+addend 101
+
+64 identical consecutive numbers 
+Period 1443156659
+multiplier 1019
+addend 101
+
+64 identical consecutive numbers 
+Period 1980393341
+multiplier 937
+addend 101
+
+64 identical consecutive numbers 
+Period 3291528317
+multiplier 701
+addend 101
+
+64 identical consecutive numbers 
+Period 1647679521
+multiplier 823
+addend 101
+
+64 identical consecutive numbers 
+Period 4023841915
+multiplier 577
+addend 101
+
+64 identical consecutive numbers 
+Period 1659353767
+multiplier 107
+addend 103
+
+64 identical consecutive numbers 
+Period 1988122771
+multiplier 941
+addend 101
+
+64 identical consecutive numbers 
+Period 2623173941
+multiplier 991
+addend 101
+
+64 identical consecutive numbers 
+Period 2418564831
+multiplier 863
+addend 101
+
+64 identical consecutive numbers 
+Period 3820343019
+multiplier 677
+addend 101
+
+64 identical consecutive numbers 
+Period 2657508409
+multiplier 883
+addend 101
+
+64 identical consecutive numbers 
+Period 2324078245
+multiplier 113
+addend 103
+
+64 identical consecutive numbers 
+Period 2649963427
+multiplier 809
+addend 101
+
+64 identical consecutive numbers 
+Period 2564872077
+multiplier 101
+addend 103
+
+64 identical consecutive numbers 
+Period 3408911989
+multiplier 127
+addend 103
+
+64 identical consecutive numbers 
+Period 4067878737
+multiplier 659
+addend 101
+
+64 identical consecutive numbers 
+Period 3245922085
+multiplier 947
+addend 101
+
+64 identical consecutive numbers 
+Period 2958981743
+multiplier 1009
+addend 101
+
+64 identical consecutive numbers 
+Period 2855116989
+multiplier 829
+addend 101
+
+64 identical consecutive numbers 
+Period 2785070594
+multiplier 953
+addend 101
+
+64 identical consecutive numbers 
+Period 2649838956
+multiplier 149
+addend 103
+
+64 identical consecutive numbers 
+Period 2805096487
+multiplier 857
+addend 101
+
+64 identical consecutive numbers 
+Period 4111916534
+multiplier 761
+addend 101
+
+64 identical consecutive numbers 
+Period 3542769183
+multiplier 919
+addend 101
+
+64 identical consecutive numbers 
+Period 3360177884
+multiplier 109
+addend 103
+
+64 identical consecutive numbers 
+Period 2710647316
+multiplier 151
+addend 103
+
+64 identical consecutive numbers 
+Period 2697514350
+multiplier 887
+addend 101
+
+64 identical consecutive numbers 
+Period 3211468777
+multiplier 877
+addend 101
+
+64 identical consecutive numbers 
+Period 560759741
+multiplier 191
+addend 103
+
+64 identical consecutive numbers 
+Period 601702427
+multiplier 223
+addend 103
+
+64 identical consecutive numbers 
+Period 1006237352
+multiplier 157
+addend 103
+
+64 identical consecutive numbers 
+Period 726111082
+multiplier 211
+addend 103
+
+64 identical consecutive numbers 
+Period 61589654
+multiplier 571
+addend 103
+
+64 identical consecutive numbers 
+Period 3903468454
+multiplier 997
+addend 101
+
+64 identical consecutive numbers 
+Period 4115795515
+multiplier 911
+addend 101
+
+64 identical consecutive numbers 
+Period 131661592
+multiplier 283
+addend 103
+
+64 identical consecutive numbers 
+Period 563010536
+multiplier 239
+addend 103
+
+64 identical consecutive numbers 
+Period 131180260
+multiplier 389
+addend 103
+
+64 identical consecutive numbers 
+Period 4055654370
+multiplier 929
+addend 101
+
+64 identical consecutive numbers 
+Period 3625027364
+multiplier 977
+addend 101
+
+64 identical consecutive numbers 
+Period 1062961862
+multiplier 193
+addend 103
+
+64 identical consecutive numbers 
+Period 3878500277
+multiplier 139
+addend 103
+
+64 identical consecutive numbers 
+Period 3903394495
+multiplier 967
+addend 101
+
+64 identical consecutive numbers 
+Period 301018763
+multiplier 509
+addend 103
+
+64 identical consecutive numbers 
+Period 450976985
+multiplier 331
+addend 103
+
+64 identical consecutive numbers 
+Period 616663623
+multiplier 599
+addend 103
+
+64 identical consecutive numbers 
+Period 956749667
+multiplier 619
+addend 103
+
+64 identical consecutive numbers 
+Period 556294066
+multiplier 367
+addend 103
+
+64 identical consecutive numbers 
+Period 705405349
+multiplier 631
+addend 103
+
+64 identical consecutive numbers 
+Period 4193166802
+multiplier 137
+addend 103
+
+64 identical consecutive numbers 
+Period 1676602492
+multiplier 229
+addend 103
+
+64 identical consecutive numbers 
+Period 1076708746
+multiplier 467
+addend 103
+
+64 identical consecutive numbers 
+################# GOOD CANDIDATE #################
+Period 4229464523
+multiplier 1013
+addend 101
+
+64 identical consecutive numbers 
+Period 1219259652
+multiplier 557
+addend 103
+
+64 identical consecutive numbers 
+Period 1091185831
+multiplier 521
+addend 103
+
+64 identical consecutive numbers 
+Period 1083588789
+multiplier 421
+addend 103
+
+64 identical consecutive numbers 
+Period 2514577066
+multiplier 167
+addend 103
+
+64 identical consecutive numbers 
+Period 1943866375
+multiplier 227
+addend 103
+
+64 identical consecutive numbers 
+Period 1191232399
+multiplier 379
+addend 103
+
+64 identical consecutive numbers 
+Period 1927158338
+multiplier 197
+addend 103
+
+64 identical consecutive numbers 
+Period 1123892453
+multiplier 457
+addend 103
+
+64 identical consecutive numbers 
+Period 1397295958
+multiplier 241
+addend 103
+
+64 identical consecutive numbers 
+Period 1512783774
+multiplier 577
+addend 103
+
+64 identical consecutive numbers 
+Period 1338323912
+multiplier 347
+addend 103
+
+64 identical consecutive numbers 
+Period 1655401448
+multiplier 523
+addend 103
+
+64 identical consecutive numbers 
+Period 1571307213
+multiplier 293
+addend 103
+
+64 identical consecutive numbers 
+Period 1811703561
+multiplier 431
+addend 103
+
+64 identical consecutive numbers 
+Period 1574735375
+multiplier 563
+addend 103
+
+64 identical consecutive numbers 
+Period 1574440710
+multiplier 461
+addend 103
+
+64 identical consecutive numbers 
+Period 2448201129
+multiplier 181
+addend 103
+
+64 identical consecutive numbers 
+Period 1699876688
+multiplier 487
+addend 103
+
+64 identical consecutive numbers 
+Period 2009774027
+multiplier 547
+addend 103
+
+64 identical consecutive numbers 
+Period 1572070432
+multiplier 317
+addend 103
+
+64 identical consecutive numbers 
+Period 2000575040
+multiplier 353
+addend 103
+
+64 identical consecutive numbers 
+Period 2496584411
+multiplier 401
+addend 103
+
+64 identical consecutive numbers 
+Period 1926942703
+multiplier 433
+addend 103
+
+64 identical consecutive numbers 
+Period 2160244670
+multiplier 409
+addend 103
+
+64 identical consecutive numbers 
+Period 2480148908
+multiplier 491
+addend 103
+
+64 identical consecutive numbers 
+Period 3355655864
+multiplier 163
+addend 103
+
+64 identical consecutive numbers 
+Period 2648738333
+multiplier 373
+addend 103
+
+64 identical consecutive numbers 
+Period 2592388000
+multiplier 281
+addend 103
+
+64 identical consecutive numbers 
+Period 2409930816
+multiplier 337
+addend 103
+
+64 identical consecutive numbers 
+Period 2601337581
+multiplier 313
+addend 103
+
+64 identical consecutive numbers 
+Period 3570488002
+multiplier 179
+addend 103
+
+64 identical consecutive numbers 
+Period 2489502167
+multiplier 607
+addend 103
+
+64 identical consecutive numbers 
+Period 2913683888
+multiplier 593
+addend 103
+
+64 identical consecutive numbers 
+Period 2547320919
+multiplier 359
+addend 103
+
+64 identical consecutive numbers 
+Period 3382871750
+multiplier 199
+addend 103
+
+64 identical consecutive numbers 
+Period 2488730700
+multiplier 277
+addend 103
+
+64 identical consecutive numbers 
+Period 2669555994
+multiplier 271
+addend 103
+
+64 identical consecutive numbers 
+Period 3436937018
+multiplier 439
+addend 103
+
+64 identical consecutive numbers 
+Period 3083644201
+multiplier 587
+addend 103
+
+64 identical consecutive numbers 
+Period 3289279726
+multiplier 613
+addend 103
+
+64 identical consecutive numbers 
+Period 3073235548
+multiplier 479
+addend 103
+
+64 identical consecutive numbers 
+Period 3114693879
+multiplier 617
+addend 103
+
+64 identical consecutive numbers 
+Period 3506967094
+multiplier 499
+addend 103
+
+64 identical consecutive numbers 
+Period 3075199142
+multiplier 419
+addend 103
+
+64 identical consecutive numbers 
+Period 3456372849
+multiplier 383
+addend 103
+
+64 identical consecutive numbers 
+Period 3601655046
+multiplier 503
+addend 103
+
+64 identical consecutive numbers 
+Period 3602752226
+multiplier 251
+addend 103
+
+64 identical consecutive numbers 
+Period 3312033155
+multiplier 263
+addend 103
+
+64 identical consecutive numbers 
+Period 3613731680
+multiplier 601
+addend 103
+
+64 identical consecutive numbers 
+Period 275660875
+multiplier 733
+addend 103
+
+64 identical consecutive numbers 
+################# GOOD CANDIDATE #################
+Period 4267951411
+multiplier 173
+addend 103
+
+64 identical consecutive numbers 
+Period 4230298602
+multiplier 269
+addend 103
+
+64 identical consecutive numbers 
+Period 3727771954
+multiplier 307
+addend 103
+
+64 identical consecutive numbers 
+Period 3413687346
+multiplier 449
+addend 103
+
+64 identical consecutive numbers 
+Period 488264904
+multiplier 773
+addend 103
+
+64 identical consecutive numbers 
+Period 3938690868
+multiplier 541
+addend 103
+
+64 identical consecutive numbers 
+Period 716279507
+multiplier 739
+addend 103
+
+64 identical consecutive numbers 
+Period 4171042002
+multiplier 463
+addend 103
+
+64 identical consecutive numbers 
+Period 4170726981
+multiplier 233
+addend 103
+
+64 identical consecutive numbers 
+Period 3804906463
+multiplier 311
+addend 103
+
+64 identical consecutive numbers 
+Period 3743903555
+multiplier 443
+addend 103
+
+64 identical consecutive numbers 
+Period 4126875019
+multiplier 397
+addend 103
+
+64 identical consecutive numbers 
+Period 1031710949
+multiplier 701
+addend 103
+
+64 identical consecutive numbers 
+Period 3780322515
+multiplier 569
+addend 103
+
+64 identical consecutive numbers 
+Period 1317567784
+multiplier 751
+addend 103
+
+64 identical consecutive numbers 
+Period 4207590591
+multiplier 257
+addend 103
+
+64 identical consecutive numbers 
+Period 1388895821
+multiplier 653
+addend 103
+
+64 identical consecutive numbers 
+################# GOOD CANDIDATE #################
+Period 4291073139
+multiplier 349
+addend 103
+
+64 identical consecutive numbers 
+Period 73170620
+multiplier 827
+addend 103
+
+64 identical consecutive numbers 
+Period 1451333794
+multiplier 691
+addend 103
+
+64 identical consecutive numbers 
+Period 1539870974
+multiplier 761
+addend 103
+
+64 identical consecutive numbers 
+Period 1695285236
+multiplier 727
+addend 103
+
+64 identical consecutive numbers 
+Period 1777246942
+multiplier 709
+addend 103
+
+64 identical consecutive numbers 
+Period 137851302
+multiplier 971
+addend 103
+
+64 identical consecutive numbers 
+Period 2026475362
+multiplier 757
+addend 103
+
+64 identical consecutive numbers 
+Period 171939263
+multiplier 151
+addend 107
+
+64 identical consecutive numbers 
+Period 227007125
+multiplier 137
+addend 107
+
+64 identical consecutive numbers 
+Period 393501536
+multiplier 857
+addend 103
+
+64 identical consecutive numbers 
+Period 2408749378
+multiplier 787
+addend 103
+
+64 identical consecutive numbers 
+Period 625062881
+multiplier 859
+addend 103
+
+64 identical consecutive numbers 
+Period 2058245877
+multiplier 719
+addend 103
+
+64 identical consecutive numbers 
+Period 2349141404
+multiplier 769
+addend 103
+
+64 identical consecutive numbers 
+Period 518912371
+multiplier 229
+addend 107
+
+64 identical consecutive numbers 
+Period 1322701162
+multiplier 823
+addend 103
+
+64 identical consecutive numbers 
+Period 681966453
+multiplier 167
+addend 107
+
+64 identical consecutive numbers 
+Period 725955906
+multiplier 887
+addend 103
+
+64 identical consecutive numbers 
+Period 1570043403
+multiplier 809
+addend 103
+
+64 identical consecutive numbers 
+Period 655914232
+multiplier 953
+addend 103
+
+64 identical consecutive numbers 
+Period 909457690
+multiplier 853
+addend 103
+
+64 identical consecutive numbers 
+Period 743332831
+multiplier 1013
+addend 103
+
+64 identical consecutive numbers 
+Period 1073219671
+multiplier 1019
+addend 103
+
+64 identical consecutive numbers 
+Period 2448664670
+multiplier 677
+addend 103
+
+64 identical consecutive numbers 
+Period 3165596077
+multiplier 647
+addend 103
+
+64 identical consecutive numbers 
+Period 974604987
+multiplier 113
+addend 107
+
+64 identical consecutive numbers 
+Period 2919113947
+multiplier 641
+addend 103
+
+64 identical consecutive numbers 
+Period 2688335776
+multiplier 659
+addend 103
+
+64 identical consecutive numbers 
+Period 1210324272
+multiplier 109
+addend 107
+
+64 identical consecutive numbers 
+Period 962273584
+multiplier 239
+addend 107
+
+64 identical consecutive numbers 
+Period 1827852827
+multiplier 821
+addend 103
+
+64 identical consecutive numbers 
+Period 2929683408
+multiplier 661
+addend 103
+
+64 identical consecutive numbers 
+Period 2921718755
+multiplier 643
+addend 103
+
+64 identical consecutive numbers 
+Period 1172644064
+multiplier 929
+addend 103
+
+64 identical consecutive numbers 
+Period 1217994650
+multiplier 149
+addend 107
+
+64 identical consecutive numbers 
+Period 1270481166
+multiplier 197
+addend 107
+
+64 identical consecutive numbers 
+Period 1769905716
+multiplier 131
+addend 107
+
+64 identical consecutive numbers 
+Period 3124045522
+multiplier 683
+addend 103
+
+64 identical consecutive numbers 
+Period 1885381133
+multiplier 883
+addend 103
+
+64 identical consecutive numbers 
+Period 1505172248
+multiplier 211
+addend 107
+
+64 identical consecutive numbers 
+Period 2050692168
+multiplier 877
+addend 103
+
+64 identical consecutive numbers 
+Period 1598242776
+multiplier 241
+addend 107
+
+64 identical consecutive numbers 
+Period 1875488266
+multiplier 101
+addend 107
+
+64 identical consecutive numbers 
+Period 2173946642
+multiplier 829
+addend 103
+
+64 identical consecutive numbers 
+Period 1755284269
+multiplier 191
+addend 107
+
+64 identical consecutive numbers 
+Period 2250447182
+multiplier 907
+addend 103
+
+64 identical consecutive numbers 
+Period 2692902723
+multiplier 127
+addend 107
+
+64 identical consecutive numbers 
+Period 1719550753
+multiplier 227
+addend 107
+
+64 identical consecutive numbers 
+Period 2788293258
+multiplier 1021
+addend 103
+
+64 identical consecutive numbers 
+Period 3494556554
+multiplier 673
+addend 103
+
+64 identical consecutive numbers 
+Period 1791326519
+multiplier 233
+addend 107
+
+64 identical consecutive numbers 
+Period 2546473444
+multiplier 977
+addend 103
+
+64 identical consecutive numbers 
+Period 2817640192
+multiplier 103
+addend 107
+
+64 identical consecutive numbers 
+Period 2724652007
+multiplier 911
+addend 103
+
+64 identical consecutive numbers 
+Period 2838396628
+multiplier 173
+addend 107
+
+64 identical consecutive numbers 
+Period 3738799415
+multiplier 811
+addend 103
+
+64 identical consecutive numbers 
+Period 2795327985
+multiplier 163
+addend 107
+
+64 identical consecutive numbers 
+Period 2542042540
+multiplier 107
+addend 107
+
+64 identical consecutive numbers 
+Period 2441850779
+multiplier 983
+addend 103
+
+64 identical consecutive numbers 
+Period 3151508445
+multiplier 139
+addend 107
+
+64 identical consecutive numbers 
+Period 3799323498
+multiplier 743
+addend 103
+
+64 identical consecutive numbers 
+Period 2910151949
+multiplier 199
+addend 107
+
+64 identical consecutive numbers 
+Period 131825357
+multiplier 383
+addend 107
+
+64 identical consecutive numbers 
+Period 3037726062
+multiplier 223
+addend 107
+
+64 identical consecutive numbers 
+Period 2902799333
+multiplier 967
+addend 103
+
+64 identical consecutive numbers 
+Period 155906165
+multiplier 307
+addend 107
+
+64 identical consecutive numbers 
+Period 3397055251
+multiplier 947
+addend 103
+
+64 identical consecutive numbers 
+Period 2485174798
+multiplier 881
+addend 103
+
+64 identical consecutive numbers 
+Period 184917996
+multiplier 373
+addend 107
+
+64 identical consecutive numbers 
+Period 3334124881
+multiplier 997
+addend 103
+
+64 identical consecutive numbers 
+Period 2864899447
+multiplier 179
+addend 107
+
+64 identical consecutive numbers 
+Period 301132362
+multiplier 347
+addend 107
+
+64 identical consecutive numbers 
+Period 252829908
+multiplier 353
+addend 107
+
+64 identical consecutive numbers 
+Period 586187940
+multiplier 419
+addend 107
+
+64 identical consecutive numbers 
+Period 4080677185
+multiplier 797
+addend 103
+
+64 identical consecutive numbers 
+Period 971077970
+multiplier 311
+addend 107
+
+64 identical consecutive numbers 
+Period 3727349516
+multiplier 937
+addend 103
+
+64 identical consecutive numbers 
+Period 3322697552
+multiplier 863
+addend 103
+
+64 identical consecutive numbers 
+Period 3870755734
+multiplier 991
+addend 103
+
+64 identical consecutive numbers 
+Period 3305045516
+multiplier 157
+addend 107
+
+64 identical consecutive numbers 
+Period 3241364550
+multiplier 193
+addend 107
+
+64 identical consecutive numbers 
+Period 4077918635
+multiplier 839
+addend 103
+
+64 identical consecutive numbers 
+Period 4159177182
+multiplier 1009
+addend 103
+
+64 identical consecutive numbers 
+Period 3342599344
+multiplier 941
+addend 103
+
+64 identical consecutive numbers 
+Period 3829844677
+multiplier 919
+addend 103
+
+64 identical consecutive numbers 
+Period 1597381740
+multiplier 421
+addend 107
+
+64 identical consecutive numbers 
+Period 2005605238
+multiplier 431
+addend 107
+
+64 identical consecutive numbers 
+Period 1982494920
+multiplier 251
+addend 107
+
+64 identical consecutive numbers 
+Period 40865659
+multiplier 461
+addend 107
+
+64 identical consecutive numbers 
+Period 1869906225
+multiplier 349
+addend 107
+
+64 identical consecutive numbers 
+Period 2121726403
+multiplier 283
+addend 107
+
+64 identical consecutive numbers 
+Period 246218473
+multiplier 593
+addend 107
+
+64 identical consecutive numbers 
+Period 2188899850
+multiplier 367
+addend 107
+
+64 identical consecutive numbers 
+Period 292644876
+multiplier 653
+addend 107
+
+64 identical consecutive numbers 
+Period 446993440
+multiplier 487
+addend 107
+
+64 identical consecutive numbers 
+Period 465940524
+multiplier 643
+addend 107
+
+64 identical consecutive numbers 
+Period 2435508487
+multiplier 317
+addend 107
+
+64 identical consecutive numbers 
+Period 2172181358
+multiplier 397
+addend 107
+
+64 identical consecutive numbers 
+Period 2259881475
+multiplier 389
+addend 107
+
+64 identical consecutive numbers 
+Period 481274302
+multiplier 547
+addend 107
+
+64 identical consecutive numbers 
+Period 2467661764
+multiplier 313
+addend 107
+
+64 identical consecutive numbers 
+Period 636358276
+multiplier 499
+addend 107
+
+64 identical consecutive numbers 
+Period 4066733240
+multiplier 181
+addend 107
+
+64 identical consecutive numbers 
+Period 2514995473
+multiplier 379
+addend 107
+
+64 identical consecutive numbers 
+Period 2732255882
+multiplier 337
+addend 107
+
+64 identical consecutive numbers 
+Period 2752581873
+multiplier 293
+addend 107
+
+64 identical consecutive numbers 
+Period 586341124
+multiplier 577
+addend 107
+
+64 identical consecutive numbers 
+Period 2716122976
+multiplier 331
+addend 107
+
+64 identical consecutive numbers 
+Period 2197103205
+multiplier 271
+addend 107
+
+64 identical consecutive numbers 
+Period 720191173
+multiplier 479
+addend 107
+
+64 identical consecutive numbers 
+Period 2593833443
+multiplier 269
+addend 107
+
+64 identical consecutive numbers 
+Period 2419383908
+multiplier 281
+addend 107
+
+64 identical consecutive numbers 
+Period 1092145087
+multiplier 677
+addend 107
+
+64 identical consecutive numbers 
+Period 1218685845
+multiplier 521
+addend 107
+
+64 identical consecutive numbers 
+Period 1292868779
+multiplier 457
+addend 107
+
+64 identical consecutive numbers 
+Period 1813261841
+multiplier 599
+addend 107
+
+64 identical consecutive numbers 
+Period 2997042715
+multiplier 277
+addend 107
+
+64 identical consecutive numbers 
+Period 3116626330
+multiplier 401
+addend 107
+
+64 identical consecutive numbers 
+Period 1741446551
+multiplier 503
+addend 107
+
+64 identical consecutive numbers 
+Period 1501631788
+multiplier 439
+addend 107
+
+64 identical consecutive numbers 
+Period 1466628581
+multiplier 673
+addend 107
+
+64 identical consecutive numbers 
+Period 3165799574
+multiplier 409
+addend 107
+
+64 identical consecutive numbers 
+Period 1744766146
+multiplier 563
+addend 107
+
+64 identical consecutive numbers 
+Period 3172829020
+multiplier 263
+addend 107
+
+64 identical consecutive numbers 
+Period 2026507572
+multiplier 641
+addend 107
+
+64 identical consecutive numbers 
+Period 4016525412
+multiplier 359
+addend 107
+
+64 identical consecutive numbers 
+Period 1751080875
+multiplier 463
+addend 107
+
+64 identical consecutive numbers 
+Period 2389415104
+multiplier 701
+addend 107
+
+64 identical consecutive numbers 
+Period 3792304845
+multiplier 257
+addend 107
+
+64 identical consecutive numbers 
+Period 2199614739
+multiplier 541
+addend 107
+
+64 identical consecutive numbers 
+Period 2294228905
+multiplier 659
+addend 107
+
+64 identical consecutive numbers 
+Period 2612977414
+multiplier 571
+addend 107
+
+64 identical consecutive numbers 
+Period 2334467260
+multiplier 443
+addend 107
+
+64 identical consecutive numbers 
+Period 2501410985
+multiplier 601
+addend 107
+
+64 identical consecutive numbers 
+Period 2630111259
+multiplier 491
+addend 107
+
+64 identical consecutive numbers 
+Period 2431634424
+multiplier 683
+addend 107
+
+64 identical consecutive numbers 
+Period 89405321
+multiplier 937
+addend 107
+
+64 identical consecutive numbers 
+Period 204813493
+multiplier 769
+addend 107
+
+64 identical consecutive numbers 
+Period 232480848
+multiplier 859
+addend 107
+
+64 identical consecutive numbers 
+Period 298392896
+multiplier 797
+addend 107
+
+64 identical consecutive numbers 
+Period 2965446393
+multiplier 619
+addend 107
+
+64 identical consecutive numbers 
+Period 415839631
+multiplier 929
+addend 107
+
+64 identical consecutive numbers 
+Period 439437023
+multiplier 853
+addend 107
+
+64 identical consecutive numbers 
+Period 2939553918
+multiplier 587
+addend 107
+
+64 identical consecutive numbers 
+Period 3149294926
+multiplier 661
+addend 107
+
+64 identical consecutive numbers 
+Period 3619471679
+multiplier 691
+addend 107
+
+64 identical consecutive numbers 
+Period 3183096803
+multiplier 607
+addend 107
+
+64 identical consecutive numbers 
+Period 3413774265
+multiplier 467
+addend 107
+
+64 identical consecutive numbers 
+Period 3661905514
+multiplier 617
+addend 107
+
+64 identical consecutive numbers 
+Period 813741162
+multiplier 809
+addend 107
+
+64 identical consecutive numbers 
+Period 1110784202
+multiplier 709
+addend 107
+
+64 identical consecutive numbers 
+Period 798201191
+multiplier 787
+addend 107
+
+64 identical consecutive numbers 
+Period 694589541
+multiplier 829
+addend 107
+
+64 identical consecutive numbers 
+Period 3823429267
+multiplier 509
+addend 107
+
+64 identical consecutive numbers 
+Period 3373807636
+multiplier 433
+addend 107
+
+64 identical consecutive numbers 
+Period 816615811
+multiplier 821
+addend 107
+
+64 identical consecutive numbers 
+Period 3548950254
+multiplier 449
+addend 107
+
+64 identical consecutive numbers 
+Period 3935344986
+multiplier 523
+addend 107
+
+64 identical consecutive numbers 
+Period 3645868288
+multiplier 613
+addend 107
+
+64 identical consecutive numbers 
+Period 3351386448
+multiplier 631
+addend 107
+
+64 identical consecutive numbers 
+Period 4145407553
+multiplier 557
+addend 107
+
+64 identical consecutive numbers 
+Period 1198991414
+multiplier 751
+addend 107
+
+64 identical consecutive numbers 
+Period 4129783212
+multiplier 569
+addend 107
+
+64 identical consecutive numbers 
+Period 1183606453
+multiplier 827
+addend 107
+
+64 identical consecutive numbers 
+Period 1446144692
+multiplier 761
+addend 107
+
+64 identical consecutive numbers 
+Period 1796807865
+multiplier 883
+addend 107
+
+64 identical consecutive numbers 
+Period 1255646652
+multiplier 757
+addend 107
+
+64 identical consecutive numbers 
+Period 1432956217
+multiplier 919
+addend 107
+
+64 identical consecutive numbers 
+Period 100575263
+multiplier 211
+addend 109
+
+64 identical consecutive numbers 
+Period 128649209
+multiplier 197
+addend 109
+
+64 identical consecutive numbers 
+Period 163687441
+multiplier 263
+addend 109
+
+64 identical consecutive numbers 
+Period 1967567470
+multiplier 907
+addend 107
+
+64 identical consecutive numbers 
+Period 4284145318
+multiplier 647
+addend 107
+
+64 identical consecutive numbers 
+Period 568249939
+multiplier 139
+addend 109
+
+64 identical consecutive numbers 
+Period 1993300425
+multiplier 863
+addend 107
+
+64 identical consecutive numbers 
+Period 642827906
+multiplier 1009
+addend 107
+
+64 identical consecutive numbers 
+Period 600060878
+multiplier 229
+addend 109
+
+64 identical consecutive numbers 
+Period 886483278
+multiplier 967
+addend 107
+
+64 identical consecutive numbers 
+Period 2432516653
+multiplier 727
+addend 107
+
+64 identical consecutive numbers 
+Period 959882523
+multiplier 163
+addend 109
+
+64 identical consecutive numbers 
+Period 2077695267
+multiplier 743
+addend 107
+
+64 identical consecutive numbers 
+Period 2545467468
+multiplier 947
+addend 107
+
+64 identical consecutive numbers 
+Period 2627870034
+multiplier 733
+addend 107
+
+64 identical consecutive numbers 
+Period 2747553876
+multiplier 857
+addend 107
+
+64 identical consecutive numbers 
+Period 838928267
+multiplier 977
+addend 107
+
+64 identical consecutive numbers 
+Period 2781022819
+multiplier 823
+addend 107
+
+64 identical consecutive numbers 
+Period 2340509023
+multiplier 877
+addend 107
+
+64 identical consecutive numbers 
+Period 3066377315
+multiplier 881
+addend 107
+
+64 identical consecutive numbers 
+Period 1226354637
+multiplier 149
+addend 109
+
+64 identical consecutive numbers 
+Period 1363453476
+multiplier 983
+addend 107
+
+64 identical consecutive numbers 
+Period 1679423728
+multiplier 1021
+addend 107
+
+64 identical consecutive numbers 
+Period 1268189261
+multiplier 241
+addend 109
+
+64 identical consecutive numbers 
+Period 1324569368
+multiplier 223
+addend 109
+
+64 identical consecutive numbers 
+Period 1780455388
+multiplier 997
+addend 107
+
+64 identical consecutive numbers 
+Period 1295621769
+multiplier 151
+addend 109
+
+64 identical consecutive numbers 
+Period 2150612455
+multiplier 113
+addend 109
+
+64 identical consecutive numbers 
+Period 3351965998
+multiplier 739
+addend 107
+
+64 identical consecutive numbers 
+Period 4268570787
+multiplier 719
+addend 107
+
+64 identical consecutive numbers 
+Period 2257405389
+multiplier 1019
+addend 107
+
+64 identical consecutive numbers 
+Period 1957184703
+multiplier 181
+addend 109
+
+64 identical consecutive numbers 
+Period 3251330383
+multiplier 941
+addend 107
+
+64 identical consecutive numbers 
+Period 2676317025
+multiplier 971
+addend 107
+
+64 identical consecutive numbers 
+Period 3874293393
+multiplier 839
+addend 107
+
+64 identical consecutive numbers 
+Period 3495093493
+multiplier 811
+addend 107
+
+64 identical consecutive numbers 
+Period 2197829890
+multiplier 257
+addend 109
+
+64 identical consecutive numbers 
+Period 2282204624
+multiplier 131
+addend 109
+
+64 identical consecutive numbers 
+Period 3926801221
+multiplier 887
+addend 107
+
+64 identical consecutive numbers 
+Period 2372801052
+multiplier 137
+addend 109
+
+64 identical consecutive numbers 
+Period 2712595673
+multiplier 103
+addend 109
+
+64 identical consecutive numbers 
+Period 2740158824
+multiplier 167
+addend 109
+
+64 identical consecutive numbers 
+Period 4236573834
+multiplier 911
+addend 107
+
+64 identical consecutive numbers 
+Period 2935227038
+multiplier 953
+addend 107
+
+64 identical consecutive numbers 
+Period 3940074284
+multiplier 773
+addend 107
+
+64 identical consecutive numbers 
+Period 2855685011
+multiplier 199
+addend 109
+
+64 identical consecutive numbers 
+Period 3636999689
+multiplier 191
+addend 109
+
+64 identical consecutive numbers 
+Period 3131788241
+multiplier 109
+addend 109
+
+64 identical consecutive numbers 
+Period 3311990041
+multiplier 239
+addend 109
+
+64 identical consecutive numbers 
+Period 508670854
+multiplier 311
+addend 109
+
+64 identical consecutive numbers 
+Period 3477877363
+multiplier 193
+addend 109
+
+64 identical consecutive numbers 
+Period 3325349681
+multiplier 269
+addend 109
+
+64 identical consecutive numbers 
+Period 3416592863
+multiplier 173
+addend 109
+
+64 identical consecutive numbers 
+Period 3514863555
+multiplier 157
+addend 109
+
+64 identical consecutive numbers 
+Period 3593147489
+multiplier 227
+addend 109
+
+64 identical consecutive numbers 
+Period 4182362017
+multiplier 107
+addend 109
+
+64 identical consecutive numbers 
+Period 4190145075
+multiplier 991
+addend 107
+
+64 identical consecutive numbers 
+Period 1167653467
+multiplier 307
+addend 109
+
+64 identical consecutive numbers 
+Period 1128834289
+multiplier 313
+addend 109
+
+64 identical consecutive numbers 
+Period 13037281
+multiplier 727
+addend 109
+
+64 identical consecutive numbers 
+Period 3855827089
+multiplier 277
+addend 109
+
+64 identical consecutive numbers 
+Period 1337948249
+multiplier 283
+addend 109
+
+64 identical consecutive numbers 
+Period 90453040
+multiplier 419
+addend 109
+
+64 identical consecutive numbers 
+Period 4215577437
+multiplier 233
+addend 109
+
+64 identical consecutive numbers 
+Period 3982895331
+multiplier 271
+addend 109
+
+64 identical consecutive numbers 
+Period 3782617451
+multiplier 127
+addend 109
+
+64 identical consecutive numbers 
+Period 167348980
+multiplier 641
+addend 109
+
+64 identical consecutive numbers 
+Period 4259228371
+multiplier 179
+addend 109
+
+64 identical consecutive numbers 
+Period 288835788
+multiplier 733
+addend 109
+
+64 identical consecutive numbers 
+Period 375709446
+multiplier 491
+addend 109
+
+64 identical consecutive numbers 
+Period 626741214
+multiplier 373
+addend 109
+
+64 identical consecutive numbers 
+Period 4162628357
+multiplier 1013
+addend 107
+
+64 identical consecutive numbers 
+Period 337359237
+multiplier 751
+addend 109
+
+64 identical consecutive numbers 
+Period 1548288840
+multiplier 281
+addend 109
+
+64 identical consecutive numbers 
+Period 351686995
+multiplier 769
+addend 109
+
+64 identical consecutive numbers 
+Period 424866313
+multiplier 547
+addend 109
+
+64 identical consecutive numbers 
+Period 4135233656
+multiplier 251
+addend 109
+
+64 identical consecutive numbers 
+Period 4145453381
+multiplier 101
+addend 109
+
+64 identical consecutive numbers 
+Period 508656486
+multiplier 797
+addend 109
+
+64 identical consecutive numbers 
+Period 580255769
+multiplier 677
+addend 109
+
+64 identical consecutive numbers 
+Period 582345939
+multiplier 439
+addend 109
+
+64 identical consecutive numbers 
+Period 1283448604
+multiplier 347
+addend 109
+
+64 identical consecutive numbers 
+Period 780815382
+multiplier 521
+addend 109
+
+64 identical consecutive numbers 
+Period 793591286
+multiplier 613
+addend 109
+
+64 identical consecutive numbers 
+Period 879329503
+multiplier 787
+addend 109
+
+64 identical consecutive numbers 
+Period 1145218765
+multiplier 431
+addend 109
+
+64 identical consecutive numbers 
+Period 1125557930
+multiplier 409
+addend 109
+
+64 identical consecutive numbers 
+Period 1069664004
+multiplier 761
+addend 109
+
+64 identical consecutive numbers 
+Period 1224727495
+multiplier 719
+addend 109
+
+64 identical consecutive numbers 
+Period 1260617306
+multiplier 421
+addend 109
+
+64 identical consecutive numbers 
+Period 1384483613
+multiplier 691
+addend 109
+
+64 identical consecutive numbers 
+Period 1421557948
+multiplier 461
+addend 109
+
+64 identical consecutive numbers 
+Period 1708562478
+multiplier 359
+addend 109
+
+64 identical consecutive numbers 
+Period 1283915005
+multiplier 503
+addend 109
+
+64 identical consecutive numbers 
+Period 1724858268
+multiplier 773
+addend 109
+
+64 identical consecutive numbers 
+Period 1527038720
+multiplier 523
+addend 109
+
+64 identical consecutive numbers 
+Period 1495421469
+multiplier 577
+addend 109
+
+64 identical consecutive numbers 
+Period 1842951635
+multiplier 353
+addend 109
+
+64 identical consecutive numbers 
+Period 2566869436
+multiplier 337
+addend 109
+
+64 identical consecutive numbers 
+Period 1823017327
+multiplier 739
+addend 109
+
+64 identical consecutive numbers 
+Period 1749534083
+multiplier 601
+addend 109
+
+64 identical consecutive numbers 
+Period 2036370344
+multiplier 379
+addend 109
+
+64 identical consecutive numbers 
+Period 2068767596
+multiplier 479
+addend 109
+
+64 identical consecutive numbers 
+Period 1862950181
+multiplier 571
+addend 109
+
+64 identical consecutive numbers 
+Period 2236244544
+multiplier 673
+addend 109
+
+64 identical consecutive numbers 
+Period 2052714514
+multiplier 647
+addend 109
+
+64 identical consecutive numbers 
+Period 2330591127
+multiplier 563
+addend 109
+
+64 identical consecutive numbers 
+Period 2180591423
+multiplier 433
+addend 109
+
+64 identical consecutive numbers 
+Period 2554323404
+multiplier 541
+addend 109
+
+64 identical consecutive numbers 
+Period 2249376637
+multiplier 593
+addend 109
+
+64 identical consecutive numbers 
+Period 2293267077
+multiplier 457
+addend 109
+
+64 identical consecutive numbers 
+Period 2731494955
+multiplier 569
+addend 109
+
+64 identical consecutive numbers 
+Period 2697634245
+multiplier 701
+addend 109
+
+64 identical consecutive numbers 
+Period 2485443175
+multiplier 599
+addend 109
+
+64 identical consecutive numbers 
+Period 3445313124
+multiplier 317
+addend 109
+
+64 identical consecutive numbers 
+Period 2643276688
+multiplier 643
+addend 109
+
+64 identical consecutive numbers 
+Period 3005161519
+multiplier 631
+addend 109
+
+64 identical consecutive numbers 
+Period 3397115858
+multiplier 349
+addend 109
+
+64 identical consecutive numbers 
+Period 2696766395
+multiplier 449
+addend 109
+
+64 identical consecutive numbers 
+Period 2631636287
+multiplier 499
+addend 109
+
+64 identical consecutive numbers 
+Period 2927003214
+multiplier 653
+addend 109
+
+64 identical consecutive numbers 
+Period 2950942563
+multiplier 659
+addend 109
+
+64 identical consecutive numbers 
+Period 3528012422
+multiplier 709
+addend 109
+
+64 identical consecutive numbers 
+Period 4247376528
+multiplier 293
+addend 109
+
+64 identical consecutive numbers 
+Period 3180790154
+multiplier 743
+addend 109
+
+64 identical consecutive numbers 
+Period 3640446423
+multiplier 367
+addend 109
+
+64 identical consecutive numbers 
+Period 3364024853
+multiplier 397
+addend 109
+
+64 identical consecutive numbers 
+Period 3908108646
+multiplier 467
+addend 109
+
+64 identical consecutive numbers 
+Period 3395467499
+multiplier 661
+addend 109
+
+64 identical consecutive numbers 
+Period 3240634105
+multiplier 757
+addend 109
+
+64 identical consecutive numbers 
+Period 105424794
+multiplier 941
+addend 109
+
+64 identical consecutive numbers 
+Period 4290127109
+multiplier 331
+addend 109
+
+64 identical consecutive numbers 
+Period 3163197353
+multiplier 487
+addend 109
+
+64 identical consecutive numbers 
+Period 3566611999
+multiplier 383
+addend 109
+
+64 identical consecutive numbers 
+Period 3609637693
+multiplier 401
+addend 109
+
+64 identical consecutive numbers 
+Period 3858125452
+multiplier 389
+addend 109
+
+64 identical consecutive numbers 
+Period 283263645
+multiplier 971
+addend 109
+
+64 identical consecutive numbers 
+Period 477063257
+multiplier 929
+addend 109
+
+64 identical consecutive numbers 
+Period 406180689
+multiplier 101
+addend 113
+
+64 identical consecutive numbers 
+Period 405432144
+multiplier 859
+addend 109
+
+64 identical consecutive numbers 
+Period 330372797
+multiplier 127
+addend 113
+
+64 identical consecutive numbers 
+Period 3874124551
+multiplier 619
+addend 109
+
+64 identical consecutive numbers 
+Period 3791081323
+multiplier 463
+addend 109
+
+64 identical consecutive numbers 
+Period 648013004
+multiplier 823
+addend 109
+
+64 identical consecutive numbers 
+Period 3839155727
+multiplier 443
+addend 109
+
+64 identical consecutive numbers 
+Period 941090195
+multiplier 829
+addend 109
+
+64 identical consecutive numbers 
+Period 3786741612
+multiplier 607
+addend 109
+
+64 identical consecutive numbers 
+Period 4155850111
+multiplier 557
+addend 109
+
+64 identical consecutive numbers 
+Period 588753775
+multiplier 107
+addend 113
+
+64 identical consecutive numbers 
+Period 638324866
+multiplier 131
+addend 113
+
+64 identical consecutive numbers 
+Period 4087416516
+multiplier 509
+addend 109
+
+64 identical consecutive numbers 
+Period 638338102
+multiplier 907
+addend 109
+
+64 identical consecutive numbers 
+Period 984001763
+multiplier 983
+addend 109
+
+64 identical consecutive numbers 
+Period 1242245290
+multiplier 827
+addend 109
+
+64 identical consecutive numbers 
+Period 3905608120
+multiplier 683
+addend 109
+
+64 identical consecutive numbers 
+Period 3937190149
+multiplier 617
+addend 109
+
+64 identical consecutive numbers 
+Period 1236688630
+multiplier 809
+addend 109
+
+64 identical consecutive numbers 
+Period 4179379938
+multiplier 587
+addend 109
+
+64 identical consecutive numbers 
+Period 911102767
+multiplier 1021
+addend 109
+
+64 identical consecutive numbers 
+Period 1536914930
+multiplier 1009
+addend 109
+
+64 identical consecutive numbers 
+Period 2238022296
+multiplier 853
+addend 109
+
+64 identical consecutive numbers 
+Period 1471467379
+multiplier 857
+addend 109
+
+64 identical consecutive numbers 
+Period 1823511391
+multiplier 103
+addend 113
+
+64 identical consecutive numbers 
+Period 1876268390
+multiplier 997
+addend 109
+
+64 identical consecutive numbers 
+Period 22264149
+multiplier 151
+addend 113
+
+64 identical consecutive numbers 
+Period 1712440570
+multiplier 947
+addend 109
+
+64 identical consecutive numbers 
+Period 1810599194
+multiplier 113
+addend 113
+
+64 identical consecutive numbers 
+Period 2300197065
+multiplier 881
+addend 109
+
+64 identical consecutive numbers 
+Period 2275360692
+multiplier 863
+addend 109
+
+64 identical consecutive numbers 
+Period 347713296
+multiplier 163
+addend 113
+
+64 identical consecutive numbers 
+Period 223722599
+multiplier 271
+addend 113
+
+64 identical consecutive numbers 
+Period 336015804
+multiplier 263
+addend 113
+
+64 identical consecutive numbers 
+Period 372836158
+multiplier 257
+addend 113
+
+64 identical consecutive numbers 
+Period 3121219378
+multiplier 821
+addend 109
+
+64 identical consecutive numbers 
+Period 2660375023
+multiplier 991
+addend 109
+
+64 identical consecutive numbers 
+Period 2784031078
+multiplier 967
+addend 109
+
+64 identical consecutive numbers 
+Period 867979912
+multiplier 251
+addend 113
+
+64 identical consecutive numbers 
+Period 2561260465
+multiplier 137
+addend 113
+
+64 identical consecutive numbers 
+Period 575417970
+multiplier 173
+addend 113
+
+64 identical consecutive numbers 
+Period 728095512
+multiplier 157
+addend 113
+
+64 identical consecutive numbers 
+Period 3089737004
+multiplier 953
+addend 109
+
+64 identical consecutive numbers 
+Period 908953950
+multiplier 269
+addend 113
+
+64 identical consecutive numbers 
+Period 2582803637
+multiplier 839
+addend 109
+
+64 identical consecutive numbers 
+Period 3357257152
+multiplier 977
+addend 109
+
+64 identical consecutive numbers 
+Period 990357744
+multiplier 281
+addend 113
+
+64 identical consecutive numbers 
+Period 2941381238
+multiplier 1019
+addend 109
+
+64 identical consecutive numbers 
+Period 2782191270
+multiplier 887
+addend 109
+
+64 identical consecutive numbers 
+Period 3418221156
+multiplier 919
+addend 109
+
+64 identical consecutive numbers 
+Period 4179416705
+multiplier 883
+addend 109
+
+64 identical consecutive numbers 
+Period 1042712000
+multiplier 197
+addend 113
+
+64 identical consecutive numbers 
+Period 1613986013
+multiplier 233
+addend 113
+
+64 identical consecutive numbers 
+Period 1113059898
+multiplier 227
+addend 113
+
+64 identical consecutive numbers 
+Period 2218949402
+multiplier 149
+addend 113
+
+64 identical consecutive numbers 
+Period 1324569368
+multiplier 223
+addend 113
+
+64 identical consecutive numbers 
+Period 4113797726
+multiplier 911
+addend 109
+
+64 identical consecutive numbers 
+Period 3472531091
+multiplier 811
+addend 109
+
+64 identical consecutive numbers 
+Period 3746741296
+multiplier 1013
+addend 109
+
+64 identical consecutive numbers 
+Period 3256650346
+multiplier 109
+addend 113
+
+64 identical consecutive numbers 
+Period 7263260
+multiplier 439
+addend 113
+
+64 identical consecutive numbers 
+Period 21924434
+multiplier 367
+addend 113
+
+64 identical consecutive numbers 
+Period 1512267928
+multiplier 313
+addend 113
+
+64 identical consecutive numbers 
+Period 1413649170
+multiplier 191
+addend 113
+
+64 identical consecutive numbers 
+Period 93944261
+multiplier 379
+addend 113
+
+64 identical consecutive numbers 
+Period 1468272755
+multiplier 211
+addend 113
+
+64 identical consecutive numbers 
+Period 1868168711
+multiplier 181
+addend 113
+
+64 identical consecutive numbers 
+Period 430387265
+multiplier 433
+addend 113
+
+64 identical consecutive numbers 
+Period 378375663
+multiplier 457
+addend 113
+
+64 identical consecutive numbers 
+Period 2253497083
+multiplier 241
+addend 113
+
+64 identical consecutive numbers 
+Period 452510278
+multiplier 389
+addend 113
+
+64 identical consecutive numbers 
+Period 3568115148
+multiplier 877
+addend 109
+
+64 identical consecutive numbers 
+Period 381468512
+multiplier 449
+addend 113
+
+64 identical consecutive numbers 
+Period 661043484
+multiplier 359
+addend 113
+
+64 identical consecutive numbers 
+Period 4267864307
+multiplier 937
+addend 109
+
+64 identical consecutive numbers 
+Period 1116866845
+multiplier 409
+addend 113
+
+64 identical consecutive numbers 
+Period 2196309396
+multiplier 199
+addend 113
+
+64 identical consecutive numbers 
+Period 854718749
+multiplier 383
+addend 113
+
+64 identical consecutive numbers 
+Period 2266721105
+multiplier 283
+addend 113
+
+64 identical consecutive numbers 
+Period 2669406626
+multiplier 229
+addend 113
+
+64 identical consecutive numbers 
+Period 1046830711
+multiplier 419
+addend 113
+
+64 identical consecutive numbers 
+Period 200122372
+multiplier 479
+addend 113
+
+64 identical consecutive numbers 
+Period 1816615217
+multiplier 337
+addend 113
+
+64 identical consecutive numbers 
+Period 65603525
+multiplier 593
+addend 113
+
+64 identical consecutive numbers 
+Period 62169080
+multiplier 641
+addend 113
+
+64 identical consecutive numbers 
+Period 95968313
+multiplier 487
+addend 113
+
+64 identical consecutive numbers 
+Period 196870603
+multiplier 751
+addend 113
+
+64 identical consecutive numbers 
+Period 242769913
+multiplier 757
+addend 113
+
+64 identical consecutive numbers 
+Period 3584421801
+multiplier 277
+addend 113
+
+64 identical consecutive numbers 
+Period 2306737828
+multiplier 317
+addend 113
+
+64 identical consecutive numbers 
+Period 2305638449
+multiplier 331
+addend 113
+
+64 identical consecutive numbers 
+Period 335179200
+multiplier 571
+addend 113
+
+64 identical consecutive numbers 
+Period 3486970137
+multiplier 139
+addend 113
+
+64 identical consecutive numbers 
+Period 600998003
+multiplier 587
+addend 113
+
+64 identical consecutive numbers 
+Period 3850612899
+multiplier 311
+addend 113
+
+64 identical consecutive numbers 
+Period 520971967
+multiplier 601
+addend 113
+
+64 identical consecutive numbers 
+Period 1636073033
+multiplier 421
+addend 113
+
+64 identical consecutive numbers 
+Period 573313337
+multiplier 811
+addend 113
+
+64 identical consecutive numbers 
+Period 3303149012
+multiplier 239
+addend 113
+
+64 identical consecutive numbers 
+Period 2199024374
+multiplier 353
+addend 113
+
+64 identical consecutive numbers 
+Period 2533548199
+multiplier 347
+addend 113
+
+64 identical consecutive numbers 
+Period 4283896946
+multiplier 167
+addend 113
+
+64 identical consecutive numbers 
+Period 2220735792
+multiplier 443
+addend 113
+
+64 identical consecutive numbers 
+Period 683477087
+multiplier 709
+addend 113
+
+64 identical consecutive numbers 
+Period 728952722
+multiplier 787
+addend 113
+
+64 identical consecutive numbers 
+Period 3571252387
+multiplier 193
+addend 113
+
+64 identical consecutive numbers 
+Period 943649152
+multiplier 499
+addend 113
+
+64 identical consecutive numbers 
+Period 811896737
+multiplier 631
+addend 113
+
+64 identical consecutive numbers 
+Period 3959797313
+multiplier 293
+addend 113
+
+64 identical consecutive numbers 
+Period 1814166059
+multiplier 607
+addend 113
+
+64 identical consecutive numbers 
+Period 1661300609
+multiplier 557
+addend 113
+
+64 identical consecutive numbers 
+Period 1639109166
+multiplier 643
+addend 113
+
+64 identical consecutive numbers 
+Period 2705331360
+multiplier 397
+addend 113
+
+64 identical consecutive numbers 
+Period 3965863037
+multiplier 179
+addend 113
+
+64 identical consecutive numbers 
+Period 2029765072
+multiplier 577
+addend 113
+
+64 identical consecutive numbers 
+Period 1367413029
+multiplier 547
+addend 113
+
+64 identical consecutive numbers 
+Period 3724887974
+multiplier 307
+addend 113
+
+64 identical consecutive numbers 
+Period 1381516288
+multiplier 743
+addend 113
+
+64 identical consecutive numbers 
+Period 1392329420
+multiplier 727
+addend 113
+
+64 identical consecutive numbers 
+Period 1537661206
+multiplier 733
+addend 113
+
+64 identical consecutive numbers 
+Period 1946375107
+multiplier 617
+addend 113
+
+64 identical consecutive numbers 
+Period 2264117943
+multiplier 683
+addend 113
+
+64 identical consecutive numbers 
+Period 2276073392
+multiplier 613
+addend 113
+
+64 identical consecutive numbers 
+Period 2506625982
+multiplier 773
+addend 113
+
+64 identical consecutive numbers 
+Period 1920908304
+multiplier 509
+addend 113
+
+64 identical consecutive numbers 
+Period 2799386036
+multiplier 647
+addend 113
+
+64 identical consecutive numbers 
+Period 3238602016
+multiplier 701
+addend 113
+
+64 identical consecutive numbers 
+Period 2652902995
+multiplier 541
+addend 113
+
+64 identical consecutive numbers 
+Period 1841432784
+multiplier 809
+addend 113
+
+64 identical consecutive numbers 
+Period 3741817590
+multiplier 431
+addend 113
+
+64 identical consecutive numbers 
+Period 3107967378
+multiplier 619
+addend 113
+
+64 identical consecutive numbers 
+Period 2455367191
+multiplier 569
+addend 113
+
+64 identical consecutive numbers 
+Period 2307378948
+multiplier 661
+addend 113
+
+64 identical consecutive numbers 
+Period 2614165642
+multiplier 673
+addend 113
+
+64 identical consecutive numbers 
+Period 2622732949
+multiplier 491
+addend 113
+
+64 identical consecutive numbers 
+Period 2194497250
+multiplier 653
+addend 113
+
+64 identical consecutive numbers 
+Period 2876168386
+multiplier 821
+addend 113
+
+64 identical consecutive numbers 
+Period 3771042251
+multiplier 769
+addend 113
+
+64 identical consecutive numbers 
+Period 3618979246
+multiplier 563
+addend 113
+
+64 identical consecutive numbers 
+Period 3783204275
+multiplier 373
+addend 113
+
+64 identical consecutive numbers 
+Period 2658373329
+multiplier 503
+addend 113
+
+64 identical consecutive numbers 
+Period 4247793295
+multiplier 461
+addend 113
+
+64 identical consecutive numbers 
+Period 3868718348
+multiplier 691
+addend 113
+
+64 identical consecutive numbers 
+Period 4264834836
+multiplier 761
+addend 113
+
+64 identical consecutive numbers 
+Period 3850140826
+multiplier 349
+addend 113
+
+64 identical consecutive numbers 
+Period 3709570339
+multiplier 401
+addend 113
+
+64 identical consecutive numbers 
+Period 3216319772
+multiplier 467
+addend 113
+
+64 identical consecutive numbers 
+Period 124543681
+multiplier 293
+addend 127
+
+64 identical consecutive numbers 
+Period 2732334415
+multiplier 823
+addend 113
+
+64 identical consecutive numbers 
+Period 3371680403
+multiplier 463
+addend 113
+
+64 identical consecutive numbers 
+Period 314476429
+multiplier 997
+addend 113
+
+64 identical consecutive numbers 
+Period 3161330220
+multiplier 523
+addend 113
+
+64 identical consecutive numbers 
+Period 3366207299
+multiplier 797
+addend 113
+
+64 identical consecutive numbers 
+Period 459883019
+multiplier 887
+addend 113
+
+64 identical consecutive numbers 
+Period 364690709
+multiplier 941
+addend 113
+
+64 identical consecutive numbers 
+Period 807736847
+multiplier 857
+addend 113
+
+64 identical consecutive numbers 
+Period 408766163
+multiplier 179
+addend 127
+
+64 identical consecutive numbers 
+Period 791478112
+multiplier 881
+addend 113
+
+64 identical consecutive numbers 
+Period 448432177
+multiplier 281
+addend 127
+
+64 identical consecutive numbers 
+Period 431392064
+multiplier 907
+addend 113
+
+64 identical consecutive numbers 
+Period 635307906
+multiplier 109
+addend 127
+
+64 identical consecutive numbers 
+Period 668786004
+multiplier 193
+addend 127
+
+64 identical consecutive numbers 
+Period 576285386
+multiplier 233
+addend 127
+
+64 identical consecutive numbers 
+Period 3363956647
+multiplier 599
+addend 113
+
+64 identical consecutive numbers 
+Period 3614821718
+multiplier 739
+addend 113
+
+64 identical consecutive numbers 
+Period 3396584940
+multiplier 521
+addend 113
+
+64 identical consecutive numbers 
+Period 979258676
+multiplier 947
+addend 113
+
+64 identical consecutive numbers 
+Period 1011555680
+multiplier 251
+addend 127
+
+64 identical consecutive numbers 
+Period 1354209528
+multiplier 853
+addend 113
+
+64 identical consecutive numbers 
+Period 3837919190
+multiplier 677
+addend 113
+
+64 identical consecutive numbers 
+Period 988829996
+multiplier 337
+addend 127
+
+64 identical consecutive numbers 
+Period 3742315512
+multiplier 719
+addend 113
+
+64 identical consecutive numbers 
+Period 2011724147
+multiplier 827
+addend 113
+
+64 identical consecutive numbers 
+Period 4079146485
+multiplier 659
+addend 113
+
+64 identical consecutive numbers 
+Period 1235107821
+multiplier 347
+addend 127
+
+64 identical consecutive numbers 
+Period 1373582402
+multiplier 977
+addend 113
+
+64 identical consecutive numbers 
+Period 1379262723
+multiplier 271
+addend 127
+
+64 identical consecutive numbers 
+Period 1462503105
+multiplier 307
+addend 127
+
+64 identical consecutive numbers 
+Period 1666415959
+multiplier 163
+addend 127
+
+64 identical consecutive numbers 
+Period 1434278675
+multiplier 197
+addend 127
+
+64 identical consecutive numbers 
+Period 1427510878
+multiplier 911
+addend 113
+
+64 identical consecutive numbers 
+Period 1383534664
+multiplier 971
+addend 113
+
+64 identical consecutive numbers 
+Period 1604664735
+multiplier 127
+addend 127
+
+64 identical consecutive numbers 
+Period 2692828943
+multiplier 859
+addend 113
+
+64 identical consecutive numbers 
+Period 2384905940
+multiplier 883
+addend 113
+
+64 identical consecutive numbers 
+Period 2253497083
+multiplier 241
+addend 127
+
+64 identical consecutive numbers 
+Period 2922140554
+multiplier 863
+addend 113
+
+64 identical consecutive numbers 
+Period 1779433278
+multiplier 983
+addend 113
+
+64 identical consecutive numbers 
+Period 2280480833
+multiplier 149
+addend 127
+
+64 identical consecutive numbers 
+Period 1895352805
+multiplier 967
+addend 113
+
+64 identical consecutive numbers 
+Period 2656042045
+multiplier 839
+addend 113
+
+64 identical consecutive numbers 
+Period 2948775269
+multiplier 103
+addend 127
+
+64 identical consecutive numbers 
+Period 3193415994
+multiplier 829
+addend 113
+
+64 identical consecutive numbers 
+Period 2207945127
+multiplier 311
+addend 127
+
+64 identical consecutive numbers 
+Period 2785926105
+multiplier 1021
+addend 113
+
+64 identical consecutive numbers 
+Period 2680906172
+multiplier 929
+addend 113
+
+64 identical consecutive numbers 
+Period 2956388300
+multiplier 191
+addend 127
+
+64 identical consecutive numbers 
+Period 2537345626
+multiplier 919
+addend 113
+
+64 identical consecutive numbers 
+Period 2401918314
+multiplier 269
+addend 127
+
+64 identical consecutive numbers 
+Period 2563867184
+multiplier 173
+addend 127
+
+64 identical consecutive numbers 
+Period 3893677840
+multiplier 877
+addend 113
+
+64 identical consecutive numbers 
+Period 3221275424
+multiplier 131
+addend 127
+
+64 identical consecutive numbers 
+Period 2641069315
+multiplier 277
+addend 127
+
+64 identical consecutive numbers 
+Period 3296741886
+multiplier 239
+addend 127
+
+64 identical consecutive numbers 
+Period 2880399117
+multiplier 937
+addend 113
+
+64 identical consecutive numbers 
+Period 2797070164
+multiplier 331
+addend 127
+
+64 identical consecutive numbers 
+Period 2824668702
+multiplier 101
+addend 127
+
+64 identical consecutive numbers 
+Period 2780446623
+multiplier 991
+addend 113
+
+64 identical consecutive numbers 
+Period 2947855804
+multiplier 1019
+addend 113
+
+64 identical consecutive numbers 
+Period 3615785493
+multiplier 229
+addend 127
+
+64 identical consecutive numbers 
+Period 214693055
+multiplier 683
+addend 127
+
+64 identical consecutive numbers 
+Period 77021354
+multiplier 401
+addend 127
+
+64 identical consecutive numbers 
+Period 3668758597
+multiplier 107
+addend 127
+
+64 identical consecutive numbers 
+Period 172195613
+multiplier 691
+addend 127
+
+64 identical consecutive numbers 
+Period 3687020471
+multiplier 263
+addend 127
+
+64 identical consecutive numbers 
+Period 3358183762
+multiplier 113
+addend 127
+
+64 identical consecutive numbers 
+Period 3426833918
+multiplier 151
+addend 127
+
+64 identical consecutive numbers 
+Period 2931348372
+multiplier 211
+addend 127
+
+64 identical consecutive numbers 
+Period 3944500402
+multiplier 953
+addend 113
+
+64 identical consecutive numbers 
+Period 4037238687
+multiplier 139
+addend 127
+
+64 identical consecutive numbers 
+Period 2850152323
+multiplier 227
+addend 127
+
+64 identical consecutive numbers 
+Period 362803317
+multiplier 719
+addend 127
+
+64 identical consecutive numbers 
+Period 3902662695
+multiplier 181
+addend 127
+
+64 identical consecutive numbers 
+Period 4148665604
+multiplier 137
+addend 127
+
+64 identical consecutive numbers 
+Period 3634995826
+multiplier 1013
+addend 113
+
+64 identical consecutive numbers 
+Period 3332825284
+multiplier 257
+addend 127
+
+64 identical consecutive numbers 
+Period 251048481
+multiplier 787
+addend 127
+
+64 identical consecutive numbers 
+Period 1007690199
+multiplier 643
+addend 127
+
+64 identical consecutive numbers 
+Period 279138829
+multiplier 601
+addend 127
+
+64 identical consecutive numbers 
+Period 350738698
+multiplier 563
+addend 127
+
+64 identical consecutive numbers 
+Period 3499911584
+multiplier 157
+addend 127
+
+64 identical consecutive numbers 
+Period 3906544417
+multiplier 167
+addend 127
+
+64 identical consecutive numbers 
+Period 4054282500
+multiplier 223
+addend 127
+
+64 identical consecutive numbers 
+Period 509690097
+multiplier 647
+addend 127
+
+64 identical consecutive numbers 
+Period 525153169
+multiplier 599
+addend 127
+
+64 identical consecutive numbers 
+Period 1223688406
+multiplier 613
+addend 127
+
+64 identical consecutive numbers 
+Period 459596727
+multiplier 457
+addend 127
+
+64 identical consecutive numbers 
+Period 3680206574
+multiplier 317
+addend 127
+
+64 identical consecutive numbers 
+Period 1535396711
+multiplier 701
+addend 127
+
+64 identical consecutive numbers 
+Period 740249629
+multiplier 373
+addend 127
+
+64 identical consecutive numbers 
+Period 3847328577
+multiplier 283
+addend 127
+
+64 identical consecutive numbers 
+Period 3655685573
+multiplier 349
+addend 127
+
+64 identical consecutive numbers 
+Period 801719692
+multiplier 757
+addend 127
+
+64 identical consecutive numbers 
+Period 3865340646
+multiplier 313
+addend 127
+
+64 identical consecutive numbers 
+Period 949897806
+multiplier 431
+addend 127
+
+64 identical consecutive numbers 
+Period 1052339067
+multiplier 397
+addend 127
+
+64 identical consecutive numbers 
+Period 2587395470
+multiplier 353
+addend 127
+
+64 identical consecutive numbers 
+Period 3968969131
+multiplier 199
+addend 127
+
+64 identical consecutive numbers 
+Period 3954764726
+multiplier 1009
+addend 113
+
+64 identical consecutive numbers 
+Period 1345749502
+multiplier 743
+addend 127
+
+64 identical consecutive numbers 
+Period 1984683000
+multiplier 409
+addend 127
+
+64 identical consecutive numbers 
+Period 1308166248
+multiplier 547
+addend 127
+
+64 identical consecutive numbers 
+Period 1317386319
+multiplier 761
+addend 127
+
+64 identical consecutive numbers 
+Period 2551673741
+multiplier 619
+addend 127
+
+64 identical consecutive numbers 
+Period 1504388096
+multiplier 631
+addend 127
+
+64 identical consecutive numbers 
+Period 1448732336
+multiplier 467
+addend 127
+
+64 identical consecutive numbers 
+Period 2146631512
+multiplier 653
+addend 127
+
+64 identical consecutive numbers 
+Period 1623276742
+multiplier 739
+addend 127
+
+64 identical consecutive numbers 
+Period 1610910340
+multiplier 773
+addend 127
+
+64 identical consecutive numbers 
+Period 3090315839
+multiplier 439
+addend 127
+
+64 identical consecutive numbers 
+Period 3215755132
+multiplier 487
+addend 127
+
+64 identical consecutive numbers 
+Period 4239645004
+multiplier 709
+addend 127
+
+64 identical consecutive numbers 
+Period 3472248288
+multiplier 661
+addend 127
+
+64 identical consecutive numbers 
+Period 2953624100
+multiplier 587
+addend 127
+
+64 identical consecutive numbers 
+Period 1962168648
+multiplier 433
+addend 127
+
+64 identical consecutive numbers 
+Period 3982384536
+multiplier 571
+addend 127
+
+64 identical consecutive numbers 
+Period 2200981396
+multiplier 733
+addend 127
+
+64 identical consecutive numbers 
+Period 3734578531
+multiplier 379
+addend 127
+
+64 identical consecutive numbers 
+Period 4280691553
+multiplier 677
+addend 127
+
+64 identical consecutive numbers 
+Period 3921301614
+multiplier 491
+addend 127
+
+64 identical consecutive numbers 
+Period 2648339490
+multiplier 443
+addend 127
+
+64 identical consecutive numbers 
+Period 2508311909
+multiplier 383
+addend 127
+
+64 identical consecutive numbers 
+Period 3038005458
+multiplier 607
+addend 127
+
+64 identical consecutive numbers 
+Period 2671436310
+multiplier 569
+addend 127
+
+64 identical consecutive numbers 
+Period 2601410388
+multiplier 499
+addend 127
+
+64 identical consecutive numbers 
+Period 4030846256
+multiplier 367
+addend 127
+
+64 identical consecutive numbers 
+Period 2328804419
+multiplier 503
+addend 127
+
+64 identical consecutive numbers 
+Period 2448941906
+multiplier 449
+addend 127
+
+64 identical consecutive numbers 
+Period 2599344040
+multiplier 769
+addend 127
+
+64 identical consecutive numbers 
+Period 2832195076
+multiplier 389
+addend 127
+
+64 identical consecutive numbers 
+Period 3175254633
+multiplier 751
+addend 127
+
+64 identical consecutive numbers 
+Period 3321553693
+multiplier 463
+addend 127
+
+64 identical consecutive numbers 
+Period 4054953071
+multiplier 617
+addend 127
+
+64 identical consecutive numbers 
+Period 4198175537
+multiplier 557
+addend 127
+
+64 identical consecutive numbers 
+Period 3683389021
+multiplier 461
+addend 127
+
+64 identical consecutive numbers 
+Period 3463521660
+multiplier 359
+addend 127
+
+64 identical consecutive numbers 
+Period 3462767491
+multiplier 419
+addend 127
+
+64 identical consecutive numbers 
+Period 642342888
+multiplier 859
+addend 127
+
+64 identical consecutive numbers 
+Period 867377478
+multiplier 863
+addend 127
+
+64 identical consecutive numbers 
+Period 677334048
+multiplier 827
+addend 127
+
+64 identical consecutive numbers 
+Period 3586337502
+multiplier 521
+addend 127
+
+64 identical consecutive numbers 
+Period 3397770969
+multiplier 509
+addend 127
+
+64 identical consecutive numbers 
+Period 848894357
+multiplier 829
+addend 127
+
+64 identical consecutive numbers 
+Period 3997809109
+multiplier 541
+addend 127
+
+64 identical consecutive numbers 
+Period 3288103458
+multiplier 593
+addend 127
+
+64 identical consecutive numbers 
+Period 3422419462
+multiplier 577
+addend 127
+
+64 identical consecutive numbers 
+Period 1026222805
+multiplier 887
+addend 127
+
+64 identical consecutive numbers 
+################# GOOD CANDIDATE #################
+Period 4293657377
+multiplier 421
+addend 127
+
+64 identical consecutive numbers 
+Period 3529709840
+multiplier 659
+addend 127
+
+64 identical consecutive numbers 
+Period 3891322565
+multiplier 523
+addend 127
+
+64 identical consecutive numbers 
+Period 56726917
+multiplier 137
+addend 131
+
+64 identical consecutive numbers 
+Period 61391332
+multiplier 149
+addend 131
+
+64 identical consecutive numbers 
+Period 3837360585
+multiplier 727
+addend 127
+
+64 identical consecutive numbers 
+Period 3683543753
+multiplier 673
+addend 127
+
+64 identical consecutive numbers 
+Period 191986109
+multiplier 263
+addend 131
+
+64 identical consecutive numbers 
+Period 194543898
+multiplier 311
+addend 131
+
+64 identical consecutive numbers 
+Period 1390302898
+multiplier 823
+addend 127
+
+64 identical consecutive numbers 
+Period 3858170475
+multiplier 479
+addend 127
+
+64 identical consecutive numbers 
+Period 237748021
+multiplier 367
+addend 131
+
+64 identical consecutive numbers 
+Period 733584613
+multiplier 167
+addend 131
+
+64 identical consecutive numbers 
+Period 1855323734
+multiplier 947
+addend 127
+
+64 identical consecutive numbers 
+Period 504254344
+multiplier 313
+addend 131
+
+64 identical consecutive numbers 
+Period 401573565
+multiplier 421
+addend 131
+
+64 identical consecutive numbers 
+Period 4275689876
+multiplier 641
+addend 127
+
+64 identical consecutive numbers 
+Period 1895868010
+multiplier 919
+addend 127
+
+64 identical consecutive numbers 
+Period 623051404
+multiplier 389
+addend 131
+
+64 identical consecutive numbers 
+Period 1703020629
+multiplier 857
+addend 127
+
+64 identical consecutive numbers 
+Period 848059120
+multiplier 281
+addend 131
+
+64 identical consecutive numbers 
+Period 1424573307
+multiplier 127
+addend 131
+
+64 identical consecutive numbers 
+Period 2426984079
+multiplier 877
+addend 127
+
+64 identical consecutive numbers 
+Period 927239472
+multiplier 223
+addend 131
+
+64 identical consecutive numbers 
+Period 3335654953
+multiplier 809
+addend 127
+
+64 identical consecutive numbers 
+Period 856099934
+multiplier 353
+addend 131
+
+64 identical consecutive numbers 
+Period 963693484
+multiplier 1019
+addend 127
+
+64 identical consecutive numbers 
+Period 1960923879
+multiplier 911
+addend 127
+
+64 identical consecutive numbers 
+Period 1418615383
+multiplier 331
+addend 131
+
+64 identical consecutive numbers 
+Period 1011806521
+multiplier 181
+addend 131
+
+64 identical consecutive numbers 
+Period 2903794327
+multiplier 907
+addend 127
+
+64 identical consecutive numbers 
+Period 1180256724
+multiplier 293
+addend 131
+
+64 identical consecutive numbers 
+Period 1320242660
+multiplier 241
+addend 131
+
+64 identical consecutive numbers 
+Period 1394110265
+multiplier 163
+addend 131
+
+64 identical consecutive numbers 
+Period 1205382019
+multiplier 373
+addend 131
+
+64 identical consecutive numbers 
+Period 1650254302
+multiplier 971
+addend 127
+
+64 identical consecutive numbers 
+Period 1627027523
+multiplier 409
+addend 131
+
+64 identical consecutive numbers 
+Period 2175756287
+multiplier 431
+addend 131
+
+64 identical consecutive numbers 
+Period 2359418647
+multiplier 317
+addend 131
+
+64 identical consecutive numbers 
+Period 3914318544
+multiplier 937
+addend 127
+
+64 identical consecutive numbers 
+Period 1644473020
+multiplier 229
+addend 131
+
+64 identical consecutive numbers 
+Period 2631291546
+multiplier 283
+addend 131
+
+64 identical consecutive numbers 
+Period 3685184002
+multiplier 883
+addend 127
+
+64 identical consecutive numbers 
+Period 2806883516
+multiplier 797
+addend 127
+
+64 identical consecutive numbers 
+Period 2137916961
+multiplier 269
+addend 131
+
+64 identical consecutive numbers 
+Period 1910467673
+multiplier 977
+addend 127
+
+64 identical consecutive numbers 
+Period 2229063222
+multiplier 307
+addend 131
+
+64 identical consecutive numbers 
+Period 2576516295
+multiplier 953
+addend 127
+
+64 identical consecutive numbers 
+Period 3268013982
+multiplier 277
+addend 131
+
+64 identical consecutive numbers 
+Period 3244468548
+multiplier 839
+addend 127
+
+64 identical consecutive numbers 
+Period 2135054130
+multiplier 151
+addend 131
+
+64 identical consecutive numbers 
+Period 2307130720
+multiplier 211
+addend 131
+
+64 identical consecutive numbers 
+Period 3586399165
+multiplier 941
+addend 127
+
+64 identical consecutive numbers 
+Period 2843536273
+multiplier 257
+addend 131
+
+64 identical consecutive numbers 
+Period 2934377430
+multiplier 251
+addend 131
+
+64 identical consecutive numbers 
+Period 3831613989
+multiplier 821
+addend 127
+
+64 identical consecutive numbers 
+Period 2148344655
+multiplier 349
+addend 131
+
+64 identical consecutive numbers 
+Period 2098730476
+multiplier 239
+addend 131
+
+64 identical consecutive numbers 
+Period 2588107280
+multiplier 107
+addend 131
+
+64 identical consecutive numbers 
+Period 2134124375
+multiplier 109
+addend 131
+
+64 identical consecutive numbers 
+Period 3381101596
+multiplier 881
+addend 127
+
+64 identical consecutive numbers 
+Period 4210234000
+multiplier 853
+addend 127
+
+64 identical consecutive numbers 
+Period 3239360910
+multiplier 271
+addend 131
+
+64 identical consecutive numbers 
+Period 2149215814
+multiplier 199
+addend 131
+
+64 identical consecutive numbers 
+Period 2345769736
+multiplier 379
+addend 131
+
+64 identical consecutive numbers 
+Period 3079862973
+multiplier 173
+addend 131
+
+64 identical consecutive numbers 
+Period 3320123848
+multiplier 113
+addend 131
+
+64 identical consecutive numbers 
+Period 4117163222
+multiplier 929
+addend 127
+
+64 identical consecutive numbers 
+Period 2532564470
+multiplier 397
+addend 131
+
+64 identical consecutive numbers 
+Period 2691759016
+multiplier 103
+addend 131
+
+64 identical consecutive numbers 
+Period 2495658787
+multiplier 1021
+addend 127
+
+64 identical consecutive numbers 
+Period 3323522545
+multiplier 419
+addend 131
+
+64 identical consecutive numbers 
+Period 2926371922
+multiplier 401
+addend 131
+
+64 identical consecutive numbers 
+Period 2702179648
+multiplier 227
+addend 131
+
+64 identical consecutive numbers 
+Period 2804987082
+multiplier 101
+addend 131
+
+64 identical consecutive numbers 
+Period 3167682479
+multiplier 347
+addend 131
+
+64 identical consecutive numbers 
+Period 4031035054
+multiplier 811
+addend 127
+
+64 identical consecutive numbers 
+Period 3002149830
+multiplier 1009
+addend 127
+
+64 identical consecutive numbers 
+Period 2909613699
+multiplier 383
+addend 131
+
+64 identical consecutive numbers 
+Period 3084277832
+multiplier 1013
+addend 127
+
+64 identical consecutive numbers 
+Period 69996224
+multiplier 677
+addend 131
+
+64 identical consecutive numbers 
+Period 85606745
+multiplier 809
+addend 131
+
+64 identical consecutive numbers 
+Period 3246051495
+multiplier 131
+addend 131
+
+64 identical consecutive numbers 
+Period 138729700
+multiplier 751
+addend 131
+
+64 identical consecutive numbers 
+Period 3780407426
+multiplier 157
+addend 131
+
+64 identical consecutive numbers 
+Period 191034231
+multiplier 659
+addend 131
+
+64 identical consecutive numbers 
+Period 209987198
+multiplier 653
+addend 131
+
+64 identical consecutive numbers 
+Period 256392696
+multiplier 457
+addend 131
+
+64 identical consecutive numbers 
+Period 628566968
+multiplier 577
+addend 131
+
+64 identical consecutive numbers 
+Period 3286629342
+multiplier 191
+addend 131
+
+64 identical consecutive numbers 
+Period 3050238346
+multiplier 359
+addend 131
+
+64 identical consecutive numbers 
+Period 411359266
+multiplier 883
+addend 131
+
+64 identical consecutive numbers 
+Period 308312773
+multiplier 509
+addend 131
+
+64 identical consecutive numbers 
+Period 4232472560
+multiplier 139
+addend 131
+
+64 identical consecutive numbers 
+Period 501557894
+multiplier 619
+addend 131
+
+64 identical consecutive numbers 
+Period 461504952
+multiplier 839
+addend 131
+
+64 identical consecutive numbers 
+Period 528820064
+multiplier 541
+addend 131
+
+64 identical consecutive numbers 
+Period 3699971739
+multiplier 967
+addend 127
+
+64 identical consecutive numbers 
+Period 609707287
+multiplier 491
+addend 131
+
+64 identical consecutive numbers 
+Period 3769848596
+multiplier 983
+addend 127
+
+64 identical consecutive numbers 
+Period 609896565
+multiplier 797
+addend 131
+
+64 identical consecutive numbers 
+Period 4246114970
+multiplier 337
+addend 131
+
+64 identical consecutive numbers 
+Period 741998413
+multiplier 757
+addend 131
+
+64 identical consecutive numbers 
+Period 705729056
+multiplier 821
+addend 131
+
+64 identical consecutive numbers 
+Period 750000809
+multiplier 499
+addend 131
+
+64 identical consecutive numbers 
+Period 3359241738
+multiplier 179
+addend 131
+
+64 identical consecutive numbers 
+Period 3382248645
+multiplier 997
+addend 127
+
+64 identical consecutive numbers 
+Period 884324642
+multiplier 739
+addend 131
+
+64 identical consecutive numbers 
+Period 3610230204
+multiplier 233
+addend 131
+
+64 identical consecutive numbers 
+Period 3716952000
+multiplier 991
+addend 127
+
+64 identical consecutive numbers 
+Period 730554139
+multiplier 607
+addend 131
+
+64 identical consecutive numbers 
+Period 787440837
+multiplier 787
+addend 131
+
+64 identical consecutive numbers 
+Period 1090234503
+multiplier 547
+addend 131
+
+64 identical consecutive numbers 
+Period 1001505619
+multiplier 881
+addend 131
+
+64 identical consecutive numbers 
+Period 1095726514
+multiplier 929
+addend 131
+
+64 identical consecutive numbers 
+Period 3993289508
+multiplier 193
+addend 131
+
+64 identical consecutive numbers 
+Period 1611640569
+multiplier 937
+addend 131
+
+64 identical consecutive numbers 
+Period 1543000878
+multiplier 911
+addend 131
+
+64 identical consecutive numbers 
+Period 1441302189
+multiplier 523
+addend 131
+
+64 identical consecutive numbers 
+Period 4223590460
+multiplier 197
+addend 131
+
+64 identical consecutive numbers 
+Period 1623073473
+multiplier 613
+addend 131
+
+64 identical consecutive numbers 
+Period 1539732523
+multiplier 823
+addend 131
+
+64 identical consecutive numbers 
+Period 2303862299
+multiplier 631
+addend 131
+
+64 identical consecutive numbers 
+Period 1662939692
+multiplier 733
+addend 131
+
+64 identical consecutive numbers 
+Period 1742900887
+multiplier 487
+addend 131
+
+64 identical consecutive numbers 
+Period 2227812203
+multiplier 859
+addend 131
+
+64 identical consecutive numbers 
+Period 1779293657
+multiplier 467
+addend 131
+
+64 identical consecutive numbers 
+Period 2000831728
+multiplier 563
+addend 131
+
+64 identical consecutive numbers 
+Period 1912275652
+multiplier 683
+addend 131
+
+64 identical consecutive numbers 
+Period 2166607369
+multiplier 521
+addend 131
+
+64 identical consecutive numbers 
+Period 2530600267
+multiplier 569
+addend 131
+
+64 identical consecutive numbers 
+Period 2562455001
+multiplier 829
+addend 131
+
+64 identical consecutive numbers 
+Period 2786086419
+multiplier 571
+addend 131
+
+64 identical consecutive numbers 
+Period 2361219420
+multiplier 643
+addend 131
+
+64 identical consecutive numbers 
+Period 3165984547
+multiplier 433
+addend 131
+
+64 identical consecutive numbers 
+Period 2596802752
+multiplier 601
+addend 131
+
+64 identical consecutive numbers 
+Period 2852494908
+multiplier 661
+addend 131
+
+64 identical consecutive numbers 
+Period 2676297403
+multiplier 461
+addend 131
+
+64 identical consecutive numbers 
+Period 3041773660
+multiplier 857
+addend 131
+
+64 identical consecutive numbers 
+Period 2622966676
+multiplier 599
+addend 131
+
+64 identical consecutive numbers 
+Period 2494409633
+multiplier 479
+addend 131
+
+64 identical consecutive numbers 
+Period 2839661753
+multiplier 691
+addend 131
+
+64 identical consecutive numbers 
+Period 2616072778
+multiplier 727
+addend 131
+
+64 identical consecutive numbers 
+Period 3685734067
+multiplier 761
+addend 131
+
+64 identical consecutive numbers 
+Period 3474659108
+multiplier 853
+addend 131
+
+64 identical consecutive numbers 
+Period 3319758809
+multiplier 863
+addend 131
+
+64 identical consecutive numbers 
+Period 2983096249
+multiplier 769
+addend 131
+
+64 identical consecutive numbers 
+Period 3002843989
+multiplier 773
+addend 131
+
+64 identical consecutive numbers 
+Period 6551515
+multiplier 821
+addend 137
+
+64 identical consecutive numbers 
+Period 3055525798
+multiplier 443
+addend 131
+
+64 identical consecutive numbers 
+Period 32218113
+multiplier 683
+addend 137
+
+64 identical consecutive numbers 
+Period 26243968
+multiplier 467
+addend 137
+
+64 identical consecutive numbers 
+Period 2879002533
+multiplier 811
+addend 131
+
+64 identical consecutive numbers 
+Period 2966334613
+multiplier 449
+addend 131
+
+64 identical consecutive numbers 
+Period 74744625
+multiplier 691
+addend 137
+
+64 identical consecutive numbers 
+Period 4177009518
+multiplier 877
+addend 131
+
+64 identical consecutive numbers 
+Period 146194887
+multiplier 229
+addend 137
+
+64 identical consecutive numbers 
+Period 3744224616
+multiplier 587
+addend 131
+
+64 identical consecutive numbers 
+Period 165145837
+multiplier 367
+addend 137
+
+64 identical consecutive numbers 
+Period 2771803086
+multiplier 503
+addend 131
+
+64 identical consecutive numbers 
+Period 178386238
+multiplier 311
+addend 137
+
+64 identical consecutive numbers 
+Period 2918018634
+multiplier 701
+addend 131
+
+64 identical consecutive numbers 
+Period 223908663
+multiplier 337
+addend 137
+
+64 identical consecutive numbers 
+Period 247616615
+multiplier 359
+addend 137
+
+64 identical consecutive numbers 
+Period 165130017
+multiplier 149
+addend 137
+
+64 identical consecutive numbers 
+Period 3471709766
+multiplier 439
+addend 131
+
+64 identical consecutive numbers 
+Period 4200160913
+multiplier 907
+addend 131
+
+64 identical consecutive numbers 
+Period 230611641
+multiplier 479
+addend 137
+
+64 identical consecutive numbers 
+Period 280267130
+multiplier 433
+addend 137
+
+64 identical consecutive numbers 
+Period 344633662
+multiplier 661
+addend 137
+
+64 identical consecutive numbers 
+Period 3539783992
+multiplier 743
+addend 131
+
+64 identical consecutive numbers 
+Period 421727587
+multiplier 389
+addend 137
+
+64 identical consecutive numbers 
+Period 352665602
+multiplier 541
+addend 137
+
+64 identical consecutive numbers 
+Period 310809334
+multiplier 757
+addend 137
+
+64 identical consecutive numbers 
+Period 580553281
+multiplier 193
+addend 137
+
+64 identical consecutive numbers 
+Period 3513410594
+multiplier 673
+addend 131
+
+64 identical consecutive numbers 
+Period 382987468
+multiplier 839
+addend 137
+
+64 identical consecutive numbers 
+Period 434681321
+multiplier 127
+addend 137
+
+64 identical consecutive numbers 
+Period 572780011
+multiplier 677
+addend 137
+
+64 identical consecutive numbers 
+Period 653133467
+multiplier 223
+addend 137
+
+64 identical consecutive numbers 
+Period 1060340432
+multiplier 139
+addend 137
+
+64 identical consecutive numbers 
+Period 3906535905
+multiplier 887
+addend 131
+
+64 identical consecutive numbers 
+Period 501206596
+multiplier 563
+addend 137
+
+64 identical consecutive numbers 
+Period 513399113
+multiplier 587
+addend 137
+
+64 identical consecutive numbers 
+Period 625243426
+multiplier 659
+addend 137
+
+64 identical consecutive numbers 
+Period 3722580836
+multiplier 641
+addend 131
+
+64 identical consecutive numbers 
+Period 3838249925
+multiplier 919
+addend 131
+
+64 identical consecutive numbers 
+Period 656425029
+multiplier 617
+addend 137
+
+64 identical consecutive numbers 
+Period 3471640652
+multiplier 709
+addend 131
+
+64 identical consecutive numbers 
+Period 711777915
+multiplier 739
+addend 137
+
+64 identical consecutive numbers 
+Period 3719982215
+multiplier 617
+addend 131
+
+64 identical consecutive numbers 
+Period 4163569191
+multiplier 593
+addend 131
+
+64 identical consecutive numbers 
+Period 3352225446
+multiplier 557
+addend 131
+
+64 identical consecutive numbers 
+Period 691653126
+multiplier 281
+addend 137
+
+64 identical consecutive numbers 
+Period 730187111
+multiplier 607
+addend 137
+
+64 identical consecutive numbers 
+Period 3324571458
+multiplier 827
+addend 131
+
+64 identical consecutive numbers 
+Period 4215461012
+multiplier 647
+addend 131
+
+64 identical consecutive numbers 
+Period 861068644
+multiplier 947
+addend 131
+
+64 identical consecutive numbers 
+Period 958565301
+multiplier 613
+addend 137
+
+64 identical consecutive numbers 
+Period 933352642
+multiplier 251
+addend 137
+
+64 identical consecutive numbers 
+Period 1278093699
+multiplier 211
+addend 137
+
+64 identical consecutive numbers 
+Period 2839607505
+multiplier 349
+addend 137
+
+64 identical consecutive numbers 
+Period 4257887731
+multiplier 719
+addend 131
+
+64 identical consecutive numbers 
+Period 1182876875
+multiplier 727
+addend 137
+
+64 identical consecutive numbers 
+Period 1386284938
+multiplier 857
+addend 137
+
+64 identical consecutive numbers 
+Period 1050804008
+multiplier 983
+addend 131
+
+64 identical consecutive numbers 
+Period 1144130271
+multiplier 157
+addend 137
+
+64 identical consecutive numbers 
+Period 1450961932
+multiplier 379
+addend 137
+
+64 identical consecutive numbers 
+Period 1371224320
+multiplier 173
+addend 137
+
+64 identical consecutive numbers 
+Period 1458656013
+multiplier 1009
+addend 131
+
+64 identical consecutive numbers 
+Period 1424920876
+multiplier 227
+addend 137
+
+64 identical consecutive numbers 
+Period 1502240163
+multiplier 109
+addend 137
+
+64 identical consecutive numbers 
+Period 1176177942
+multiplier 419
+addend 137
+
+64 identical consecutive numbers 
+Period 2137916961
+multiplier 269
+addend 137
+
+64 identical consecutive numbers 
+Period 1205202633
+multiplier 463
+addend 137
+
+64 identical consecutive numbers 
+Period 1226295543
+multiplier 769
+addend 137
+
+64 identical consecutive numbers 
+Period 4160262613
+multiplier 463
+addend 131
+
+64 identical consecutive numbers 
+Period 1308174768
+multiplier 293
+addend 137
+
+64 identical consecutive numbers 
+Period 1542893537
+multiplier 641
+addend 137
+
+64 identical consecutive numbers 
+Period 1369687913
+multiplier 577
+addend 137
+
+64 identical consecutive numbers 
+Period 1550889871
+multiplier 313
+addend 137
+
+64 identical consecutive numbers 
+Period 1698256654
+multiplier 101
+addend 137
+
+64 identical consecutive numbers 
+Period 2125444371
+multiplier 977
+addend 131
+
+64 identical consecutive numbers 
+Period 1397295958
+multiplier 241
+addend 137
+
+64 identical consecutive numbers 
+Period 1406148350
+multiplier 827
+addend 137
+
+64 identical consecutive numbers 
+Period 1842400542
+multiplier 383
+addend 137
+
+64 identical consecutive numbers 
+Period 1555501243
+multiplier 181
+addend 137
+
+64 identical consecutive numbers 
+Period 1677014370
+multiplier 491
+addend 137
+
+64 identical consecutive numbers 
+Period 2905009634
+multiplier 709
+addend 137
+
+64 identical consecutive numbers 
+Period 1686150748
+multiplier 431
+addend 137
+
+64 identical consecutive numbers 
+Period 1668815497
+multiplier 647
+addend 137
+
+64 identical consecutive numbers 
+Period 1901981198
+multiplier 797
+addend 137
+
+64 identical consecutive numbers 
+Period 1744689167
+multiplier 277
+addend 137
+
+64 identical consecutive numbers 
+Period 1987195609
+multiplier 953
+addend 131
+
+64 identical consecutive numbers 
+Period 2078919878
+multiplier 823
+addend 137
+
+64 identical consecutive numbers 
+Period 2283615756
+multiplier 443
+addend 137
+
+64 identical consecutive numbers 
+Period 1871641410
+multiplier 761
+addend 137
+
+64 identical consecutive numbers 
+Period 1698357337
+multiplier 409
+addend 137
+
+64 identical consecutive numbers 
+Period 1956789067
+multiplier 601
+addend 137
+
+64 identical consecutive numbers 
+Period 1825510216
+multiplier 199
+addend 137
+
+64 identical consecutive numbers 
+Period 1908845303
+multiplier 673
+addend 137
+
+64 identical consecutive numbers 
+Period 2030052368
+multiplier 1021
+addend 131
+
+64 identical consecutive numbers 
+Period 1824412177
+multiplier 809
+addend 137
+
+64 identical consecutive numbers 
+Period 1870598555
+multiplier 457
+addend 137
+
+64 identical consecutive numbers 
+Period 2615079710
+multiplier 991
+addend 131
+
+64 identical consecutive numbers 
+Period 2080860616
+multiplier 773
+addend 137
+
+64 identical consecutive numbers 
+Period 2234529864
+multiplier 307
+addend 137
+
+64 identical consecutive numbers 
+Period 2522494850
+multiplier 317
+addend 137
+
+64 identical consecutive numbers 
+Period 1951856159
+multiplier 197
+addend 137
+
+64 identical consecutive numbers 
+Period 2425135639
+multiplier 941
+addend 131
+
+64 identical consecutive numbers 
+Period 2643107808
+multiplier 1013
+addend 131
+
+64 identical consecutive numbers 
+Period 3136714177
+multiplier 599
+addend 137
+
+64 identical consecutive numbers 
+Period 2564309062
+multiplier 733
+addend 137
+
+64 identical consecutive numbers 
+Period 2665036034
+multiplier 233
+addend 137
+
+64 identical consecutive numbers 
+Period 2662558102
+multiplier 151
+addend 137
+
+64 identical consecutive numbers 
+Period 2319873097
+multiplier 163
+addend 137
+
+64 identical consecutive numbers 
+Period 3059988618
+multiplier 331
+addend 137
+
+64 identical consecutive numbers 
+Period 4129420452
+multiplier 719
+addend 137
+
+64 identical consecutive numbers 
+Period 2609245958
+multiplier 107
+addend 137
+
+64 identical consecutive numbers 
+Period 2497097051
+multiplier 859
+addend 137
+
+64 identical consecutive numbers 
+Period 2220174819
+multiplier 547
+addend 137
+
+64 identical consecutive numbers 
+Period 2581715563
+multiplier 521
+addend 137
+
+64 identical consecutive numbers 
+Period 3882033699
+multiplier 347
+addend 137
+
+64 identical consecutive numbers 
+Period 2245957090
+multiplier 569
+addend 137
+
+64 identical consecutive numbers 
+Period 2255088909
+multiplier 263
+addend 137
+
+64 identical consecutive numbers 
+Period 2547091234
+multiplier 557
+addend 137
+
+64 identical consecutive numbers 
+Period 2741898777
+multiplier 701
+addend 137
+
+64 identical consecutive numbers 
+Period 2702643861
+multiplier 643
+addend 137
+
+64 identical consecutive numbers 
+Period 3456796879
+multiplier 131
+addend 137
+
+64 identical consecutive numbers 
+Period 2399720008
+multiplier 113
+addend 137
+
+64 identical consecutive numbers 
+Period 2415137779
+multiplier 283
+addend 137
+
+64 identical consecutive numbers 
+Period 3154314379
+multiplier 653
+addend 137
+
+64 identical consecutive numbers 
+Period 2702370481
+multiplier 397
+addend 137
+
+64 identical consecutive numbers 
+Period 2637094062
+multiplier 829
+addend 137
+
+64 identical consecutive numbers 
+Period 2511738699
+multiplier 971
+addend 131
+
+64 identical consecutive numbers 
+Period 2660179206
+multiplier 751
+addend 137
+
+64 identical consecutive numbers 
+Period 3414783727
+multiplier 137
+addend 137
+
+64 identical consecutive numbers 
+Period 2598523307
+multiplier 461
+addend 137
+
+64 identical consecutive numbers 
+Period 2701853611
+multiplier 439
+addend 137
+
+64 identical consecutive numbers 
+Period 4233846168
+multiplier 1019
+addend 131
+
+64 identical consecutive numbers 
+Period 3939939633
+multiplier 191
+addend 137
+
+64 identical consecutive numbers 
+Period 3191978099
+multiplier 509
+addend 137
+
+64 identical consecutive numbers 
+Period 4233890889
+multiplier 373
+addend 137
+
+64 identical consecutive numbers 
+Period 4155348968
+multiplier 353
+addend 137
+
+64 identical consecutive numbers 
+Period 2705703901
+multiplier 853
+addend 137
+
+64 identical consecutive numbers 
+Period 3611711117
+multiplier 487
+addend 137
+
+64 identical consecutive numbers 
+Period 3867408365
+multiplier 631
+addend 137
+
+64 identical consecutive numbers 
+Period 3766291031
+multiplier 787
+addend 137
+
+64 identical consecutive numbers 
+Period 3572660575
+multiplier 593
+addend 137
+
+64 identical consecutive numbers 
+Period 3402946043
+multiplier 523
+addend 137
+
+64 identical consecutive numbers 
+Period 3443885855
+multiplier 811
+addend 137
+
+64 identical consecutive numbers 
+Period 4213865281
+multiplier 967
+addend 131
+
+64 identical consecutive numbers 
+Period 3195809869
+multiplier 103
+addend 137
+
+64 identical consecutive numbers 
+Period 3000102069
+multiplier 499
+addend 137
+
+64 identical consecutive numbers 
+Period 4050495116
+multiplier 257
+addend 137
+
+64 identical consecutive numbers 
+Period 3310719654
+multiplier 503
+addend 137
+
+64 identical consecutive numbers 
+Period 3203503969
+multiplier 239
+addend 137
+
+64 identical consecutive numbers 
+Period 3938676059
+multiplier 449
+addend 137
+
+64 identical consecutive numbers 
+Period 3441311306
+multiplier 997
+addend 131
+
+64 identical consecutive numbers 
+Period 78704426
+multiplier 983
+addend 137
+
+64 identical consecutive numbers 
+Period 56017655
+multiplier 421
+addend 139
+
+64 identical consecutive numbers 
+Period 3507268755
+multiplier 421
+addend 137
+
+64 identical consecutive numbers 
+Period 65822167
+multiplier 271
+addend 139
+
+64 identical consecutive numbers 
+Period 113826846
+multiplier 313
+addend 139
+
+64 identical consecutive numbers 
+Period 232646857
+multiplier 127
+addend 139
+
+64 identical consecutive numbers 
+Period 3426846176
+multiplier 619
+addend 137
+
+64 identical consecutive numbers 
+Period 674545718
+multiplier 881
+addend 137
+
+64 identical consecutive numbers 
+Period 801475403
+multiplier 953
+addend 137
+
+64 identical consecutive numbers 
+Period 158748530
+multiplier 587
+addend 139
+
+64 identical consecutive numbers 
+Period 191231336
+multiplier 563
+addend 139
+
+64 identical consecutive numbers 
+Period 216467635
+multiplier 599
+addend 139
+
+64 identical consecutive numbers 
+Period 482261955
+multiplier 971
+addend 137
+
+64 identical consecutive numbers 
+Period 3840578114
+multiplier 271
+addend 137
+
+64 identical consecutive numbers 
+Period 3603867321
+multiplier 571
+addend 137
+
+64 identical consecutive numbers 
+Period 450917141
+multiplier 293
+addend 139
+
+64 identical consecutive numbers 
+Period 585041985
+multiplier 227
+addend 139
+
+64 identical consecutive numbers 
+Period 1208277188
+multiplier 941
+addend 137
+
+64 identical consecutive numbers 
+Period 549742931
+multiplier 251
+addend 139
+
+64 identical consecutive numbers 
+Period 746089408
+multiplier 197
+addend 139
+
+64 identical consecutive numbers 
+Period 608127209
+multiplier 619
+addend 139
+
+64 identical consecutive numbers 
+Period 4023610497
+multiplier 743
+addend 137
+
+64 identical consecutive numbers 
+Period 1270232717
+multiplier 863
+addend 137
+
+64 identical consecutive numbers 
+Period 4014078528
+multiplier 179
+addend 137
+
+64 identical consecutive numbers 
+Period 862882412
+multiplier 131
+addend 139
+
+64 identical consecutive numbers 
+Period 681700330
+multiplier 263
+addend 139
+
+64 identical consecutive numbers 
+Period 901302807
+multiplier 191
+addend 139
+
+64 identical consecutive numbers 
+Period 855365790
+multiplier 373
+addend 139
+
+64 identical consecutive numbers 
+Period 930759551
+multiplier 257
+addend 139
+
+64 identical consecutive numbers 
+Period 1009792873
+multiplier 179
+addend 139
+
+64 identical consecutive numbers 
+Period 775904460
+multiplier 487
+addend 139
+
+64 identical consecutive numbers 
+Period 968243294
+multiplier 211
+addend 139
+
+64 identical consecutive numbers 
+Period 4285576846
+multiplier 401
+addend 137
+
+64 identical consecutive numbers 
+Period 932260074
+multiplier 509
+addend 139
+
+64 identical consecutive numbers 
+Period 925846167
+multiplier 359
+addend 139
+
+64 identical consecutive numbers 
+Period 869939623
+multiplier 617
+addend 139
+
+64 identical consecutive numbers 
+Period 4252679083
+multiplier 167
+addend 137
+
+64 identical consecutive numbers 
+Period 889792690
+multiplier 641
+addend 139
+
+64 identical consecutive numbers 
+Period 958484096
+multiplier 347
+addend 139
+
+64 identical consecutive numbers 
+Period 1039103282
+multiplier 499
+addend 139
+
+64 identical consecutive numbers 
+Period 1032555924
+multiplier 277
+addend 139
+
+64 identical consecutive numbers 
+Period 1134497090
+multiplier 547
+addend 139
+
+64 identical consecutive numbers 
+Period 1088609219
+multiplier 239
+addend 139
+
+64 identical consecutive numbers 
+Period 1059655787
+multiplier 367
+addend 139
+
+64 identical consecutive numbers 
+Period 1147049381
+multiplier 523
+addend 139
+
+64 identical consecutive numbers 
+Period 1470579809
+multiplier 947
+addend 137
+
+64 identical consecutive numbers 
+Period 1189998576
+multiplier 389
+addend 139
+
+64 identical consecutive numbers 
+Period 1434407829
+multiplier 139
+addend 139
+
+64 identical consecutive numbers 
+Period 1278836604
+multiplier 337
+addend 139
+
+64 identical consecutive numbers 
+Period 1298670540
+multiplier 571
+addend 139
+
+64 identical consecutive numbers 
+Period 1565502261
+multiplier 991
+addend 137
+
+64 identical consecutive numbers 
+Period 1673699828
+multiplier 607
+addend 139
+
+64 identical consecutive numbers 
+Period 1895846359
+multiplier 919
+addend 137
+
+64 identical consecutive numbers 
+Period 1416741840
+multiplier 269
+addend 139
+
+64 identical consecutive numbers 
+Period 1489538713
+multiplier 467
+addend 139
+
+64 identical consecutive numbers 
+Period 1734146692
+multiplier 283
+addend 139
+
+64 identical consecutive numbers 
+Period 1604821833
+multiplier 631
+addend 139
+
+64 identical consecutive numbers 
+Period 1664597136
+multiplier 181
+addend 139
+
+64 identical consecutive numbers 
+Period 1675037054
+multiplier 457
+addend 139
+
+64 identical consecutive numbers 
+Period 2353210912
+multiplier 877
+addend 137
+
+64 identical consecutive numbers 
+Period 1566798880
+multiplier 353
+addend 139
+
+64 identical consecutive numbers 
+Period 1786448028
+multiplier 431
+addend 139
+
+64 identical consecutive numbers 
+Period 1939239347
+multiplier 281
+addend 139
+
+64 identical consecutive numbers 
+Period 1699425383
+multiplier 569
+addend 139
+
+64 identical consecutive numbers 
+Period 2050385868
+multiplier 593
+addend 139
+
+64 identical consecutive numbers 
+Period 1742410994
+multiplier 173
+addend 139
+
+64 identical consecutive numbers 
+Period 1982445806
+multiplier 311
+addend 139
+
+64 identical consecutive numbers 
+Period 2026444601
+multiplier 1019
+addend 137
+
+64 identical consecutive numbers 
+Period 2050620826
+multiplier 613
+addend 139
+
+64 identical consecutive numbers 
+Period 2041530519
+multiplier 409
+addend 139
+
+64 identical consecutive numbers 
+Period 2156166076
+multiplier 977
+addend 137
+
+64 identical consecutive numbers 
+Period 2285262548
+multiplier 443
+addend 139
+
+64 identical consecutive numbers 
+Period 2249026852
+multiplier 491
+addend 139
+
+64 identical consecutive numbers 
+Period 2250384223
+multiplier 149
+addend 139
+
+64 identical consecutive numbers 
+Period 2220491845
+multiplier 1013
+addend 137
+
+64 identical consecutive numbers 
+Period 3105076054
+multiplier 907
+addend 137
+
+64 identical consecutive numbers 
+Period 2673480018
+multiplier 449
+addend 139
+
+64 identical consecutive numbers 
+Period 2222884338
+multiplier 331
+addend 139
+
+64 identical consecutive numbers 
+Period 3035043327
+multiplier 887
+addend 137
+
+64 identical consecutive numbers 
+Period 2472383805
+multiplier 241
+addend 139
+
+64 identical consecutive numbers 
+Period 2630715371
+multiplier 1009
+addend 137
+
+64 identical consecutive numbers 
+Period 3331751685
+multiplier 929
+addend 137
+
+64 identical consecutive numbers 
+Period 2765277006
+multiplier 967
+addend 137
+
+64 identical consecutive numbers 
+Period 3007269709
+multiplier 349
+addend 139
+
+64 identical consecutive numbers 
+Period 3211188436
+multiplier 557
+addend 139
+
+64 identical consecutive numbers 
+Period 3052857540
+multiplier 151
+addend 139
+
+64 identical consecutive numbers 
+Period 3054368187
+multiplier 541
+addend 139
+
+64 identical consecutive numbers 
+Period 2850670074
+multiplier 107
+addend 139
+
+64 identical consecutive numbers 
+Period 3135025207
+multiplier 419
+addend 139
+
+64 identical consecutive numbers 
+Period 2956035020
+multiplier 379
+addend 139
+
+64 identical consecutive numbers 
+Period 3396680140
+multiplier 199
+addend 139
+
+64 identical consecutive numbers 
+Period 3412646511
+multiplier 439
+addend 139
+
+64 identical consecutive numbers 
+Period 3189421604
+multiplier 401
+addend 139
+
+64 identical consecutive numbers 
+Period 3368122639
+multiplier 647
+addend 139
+
+64 identical consecutive numbers 
+Period 3065405637
+multiplier 1021
+addend 137
+
+64 identical consecutive numbers 
+Period 3159120690
+multiplier 317
+addend 139
+
+64 identical consecutive numbers 
+Period 3380672335
+multiplier 463
+addend 139
+
+64 identical consecutive numbers 
+Period 3382017629
+multiplier 163
+addend 139
+
+64 identical consecutive numbers 
+Period 3721500738
+multiplier 911
+addend 137
+
+64 identical consecutive numbers 
+Period 3675660395
+multiplier 503
+addend 139
+
+64 identical consecutive numbers 
+Period 3409653568
+multiplier 997
+addend 137
+
+64 identical consecutive numbers 
+Period 3533977499
+multiplier 137
+addend 139
+
+64 identical consecutive numbers 
+Period 3599173030
+multiplier 521
+addend 139
+
+64 identical consecutive numbers 
+Period 3991268661
+multiplier 383
+addend 139
+
+64 identical consecutive numbers 
+Period 4037029753
+multiplier 883
+addend 137
+
+64 identical consecutive numbers 
+Period 3425092008
+multiplier 193
+addend 139
+
+64 identical consecutive numbers 
+Period 3904229973
+multiplier 233
+addend 139
+
+64 identical consecutive numbers 
+Period 3495547392
+multiplier 577
+addend 139
+
+64 identical consecutive numbers 
+Period 3811582631
+multiplier 433
+addend 139
+
+64 identical consecutive numbers 
+Period 3313893128
+multiplier 643
+addend 139
+
+64 identical consecutive numbers 
+Period 3474454158
+multiplier 101
+addend 139
+
+64 identical consecutive numbers 
+Period 3402927827
+multiplier 157
+addend 139
+
+64 identical consecutive numbers 
+Period 3907537472
+multiplier 937
+addend 137
+
+64 identical consecutive numbers 
+Period 3549466302
+multiplier 103
+addend 139
+
+64 identical consecutive numbers 
+Period 267372948
+multiplier 907
+addend 139
+
+64 identical consecutive numbers 
+Period 3591574689
+multiplier 113
+addend 139
+
+64 identical consecutive numbers 
+Period 3944396825
+multiplier 601
+addend 139
+
+64 identical consecutive numbers 
+Period 3597269783
+multiplier 397
+addend 139
+
+64 identical consecutive numbers 
+Period 3929695153
+multiplier 223
+addend 139
+
+64 identical consecutive numbers 
+Period 535714563
+multiplier 709
+addend 139
+
+64 identical consecutive numbers 
+Period 591415880
+multiplier 811
+addend 139
+
+64 identical consecutive numbers 
+Period 3879482677
+multiplier 307
+addend 139
+
+64 identical consecutive numbers 
+Period 4262405164
+multiplier 167
+addend 139
+
+64 identical consecutive numbers 
+Period 532864790
+multiplier 691
+addend 139
+
+64 identical consecutive numbers 
+Period 615977785
+multiplier 883
+addend 139
+
+64 identical consecutive numbers 
+Period 4044756264
+multiplier 109
+addend 139
+
+64 identical consecutive numbers 
+Period 613801520
+multiplier 743
+addend 139
+
+64 identical consecutive numbers 
+Period 3658945170
+multiplier 229
+addend 139
+
+64 identical consecutive numbers 
+Period 3746703402
+multiplier 461
+addend 139
+
+64 identical consecutive numbers 
+Period 718385731
+multiplier 991
+addend 139
+
+64 identical consecutive numbers 
+Period 872385172
+multiplier 881
+addend 139
+
+64 identical consecutive numbers 
+Period 780472668
+multiplier 769
+addend 139
+
+64 identical consecutive numbers 
+Period 725755919
+multiplier 827
+addend 139
+
+64 identical consecutive numbers 
+Period 885281374
+multiplier 661
+addend 139
+
+64 identical consecutive numbers 
+Period 4099403729
+multiplier 479
+addend 139
+
+64 identical consecutive numbers 
+Period 1388166390
+multiplier 797
+addend 139
+
+64 identical consecutive numbers 
+Period 1097407745
+multiplier 677
+addend 139
+
+64 identical consecutive numbers 
+Period 1305468694
+multiplier 929
+addend 139
+
+64 identical consecutive numbers 
+Period 1178083980
+multiplier 859
+addend 139
+
+64 identical consecutive numbers 
+Period 1376666016
+multiplier 727
+addend 139
+
+64 identical consecutive numbers 
+Period 1252515227
+multiplier 967
+addend 139
+
+64 identical consecutive numbers 
+Period 1937834602
+multiplier 877
+addend 139
+
+64 identical consecutive numbers 
+Period 1826590618
+multiplier 821
+addend 139
+
+64 identical consecutive numbers 
+Period 1572409437
+multiplier 977
+addend 139
+
+64 identical consecutive numbers 
+Period 1501934352
+multiplier 953
+addend 139
+
+64 identical consecutive numbers 
+Period 1920407898
+multiplier 823
+addend 139
+
+64 identical consecutive numbers 
+Period 2395319303
+multiplier 701
+addend 139
+
+64 identical consecutive numbers 
+Period 2265003615
+multiplier 809
+addend 139
+
+64 identical consecutive numbers 
+Period 2119143804
+multiplier 941
+addend 139
+
+64 identical consecutive numbers 
+Period 2549756363
+multiplier 787
+addend 139
+
+64 identical consecutive numbers 
+Period 2425859072
+multiplier 983
+addend 139
+
+64 identical consecutive numbers 
+Period 2761562586
+multiplier 857
+addend 139
+
+64 identical consecutive numbers 
+Period 2437453880
+multiplier 839
+addend 139
+
+64 identical consecutive numbers 
+Period 2647919770
+multiplier 853
+addend 139
+
+64 identical consecutive numbers 
+Period 325593416
+multiplier 997
+addend 139
+
+64 identical consecutive numbers 
+Period 3031683817
+multiplier 733
+addend 139
+
+64 identical consecutive numbers 
+Period 2703637615
+multiplier 719
+addend 139
+
+64 identical consecutive numbers 
+Period 2646978189
+multiplier 659
+addend 139
+
+64 identical consecutive numbers 
+Period 2795990128
+multiplier 653
+addend 139
+
+64 identical consecutive numbers 
+Period 3068402037
+multiplier 863
+addend 139
+
+64 identical consecutive numbers 
+Period 2771899191
+multiplier 751
+addend 139
+
+64 identical consecutive numbers 
+Period 2801370024
+multiplier 757
+addend 139
+
+64 identical consecutive numbers 
+Period 3150770513
+multiplier 911
+addend 139
+
+64 identical consecutive numbers 
+Period 406478155
+multiplier 151
+addend 149
+
+64 identical consecutive numbers 
+Period 2960564275
+multiplier 829
+addend 139
+
+64 identical consecutive numbers 
+Period 272195788
+multiplier 331
+addend 149
+
+64 identical consecutive numbers 
+Period 235550853
+multiplier 347
+addend 149
+
+64 identical consecutive numbers 
+Period 3043532921
+multiplier 937
+addend 139
+
+64 identical consecutive numbers 
+Period 2735339200
+multiplier 673
+addend 139
+
+64 identical consecutive numbers 
+Period 931418616
+multiplier 1021
+addend 139
+
+64 identical consecutive numbers 
+Period 401786989
+multiplier 337
+addend 149
+
+64 identical consecutive numbers 
+Period 536877476
+multiplier 239
+addend 149
+
+64 identical consecutive numbers 
+Period 1147931585
+multiplier 163
+addend 149
+
+64 identical consecutive numbers 
+Period 4033678310
+multiplier 919
+addend 139
+
+64 identical consecutive numbers 
+Period 3239345855
+multiplier 887
+addend 139
+
+64 identical consecutive numbers 
+Period 4065781955
+multiplier 683
+addend 139
+
+64 identical consecutive numbers 
+Period 702330066
+multiplier 127
+addend 149
+
+64 identical consecutive numbers 
+Period 3575074317
+multiplier 761
+addend 139
+
+64 identical consecutive numbers 
+Period 813177428
+multiplier 307
+addend 149
+
+64 identical consecutive numbers 
+Period 3452612392
+multiplier 773
+addend 139
+
+64 identical consecutive numbers 
+Period 790301415
+multiplier 241
+addend 149
+
+64 identical consecutive numbers 
+Period 1860530440
+multiplier 1013
+addend 139
+
+64 identical consecutive numbers 
+Period 1307917725
+multiplier 193
+addend 149
+
+64 identical consecutive numbers 
+Period 4275786190
+multiplier 739
+addend 139
+
+64 identical consecutive numbers 
+Period 3683892494
+multiplier 947
+addend 139
+
+64 identical consecutive numbers 
+Period 990578124
+multiplier 311
+addend 149
+
+64 identical consecutive numbers 
+Period 1449442310
+multiplier 199
+addend 149
+
+64 identical consecutive numbers 
+Period 1397249213
+multiplier 223
+addend 149
+
+64 identical consecutive numbers 
+Period 1403406182
+multiplier 251
+addend 149
+
+64 identical consecutive numbers 
+Period 1387696054
+multiplier 281
+addend 149
+
+64 identical consecutive numbers 
+Period 1277350880
+multiplier 211
+addend 149
+
+64 identical consecutive numbers 
+Period 1423907906
+multiplier 113
+addend 149
+
+64 identical consecutive numbers 
+Period 1303966458
+multiplier 229
+addend 149
+
+64 identical consecutive numbers 
+Period 1988576708
+multiplier 157
+addend 149
+
+64 identical consecutive numbers 
+Period 1331476660
+multiplier 233
+addend 149
+
+64 identical consecutive numbers 
+################# GOOD CANDIDATE #################
+Period 4294333599
+multiplier 971
+addend 139
+
+64 identical consecutive numbers 
+Period 1667935360
+multiplier 317
+addend 149
+
+64 identical consecutive numbers 
+Period 1949632509
+multiplier 101
+addend 149
+
+64 identical consecutive numbers 
+Period 2195134417
+multiplier 179
+addend 149
+
+64 identical consecutive numbers 
+Period 2116118769
+multiplier 191
+addend 149
+
+64 identical consecutive numbers 
+Period 2473448724
+multiplier 181
+addend 149
+
+64 identical consecutive numbers 
+Period 2036541729
+multiplier 349
+addend 149
+
+64 identical consecutive numbers 
+Period 3017287441
+multiplier 107
+addend 149
+
+64 identical consecutive numbers 
+Period 237926384
+multiplier 547
+addend 149
+
+64 identical consecutive numbers 
+Period 322418399
+multiplier 359
+addend 149
+
+64 identical consecutive numbers 
+Period 2425305026
+multiplier 271
+addend 149
+
+64 identical consecutive numbers 
+Period 2526358819
+multiplier 353
+addend 149
+
+64 identical consecutive numbers 
+Period 403249740
+multiplier 479
+addend 149
+
+64 identical consecutive numbers 
+Period 424203548
+multiplier 389
+addend 149
+
+64 identical consecutive numbers 
+Period 3161255886
+multiplier 139
+addend 149
+
+64 identical consecutive numbers 
+Period 585444196
+multiplier 647
+addend 149
+
+64 identical consecutive numbers 
+Period 567034744
+multiplier 463
+addend 149
+
+64 identical consecutive numbers 
+Period 3601323796
+multiplier 137
+addend 149
+
+64 identical consecutive numbers 
+Period 2641069315
+multiplier 277
+addend 149
+
+64 identical consecutive numbers 
+Period 4061431324
+multiplier 1019
+addend 139
+
+64 identical consecutive numbers 
+Period 3133232625
+multiplier 167
+addend 149
+
+64 identical consecutive numbers 
+Period 3509348930
+multiplier 149
+addend 149
+
+64 identical consecutive numbers 
+Period 766264874
+multiplier 577
+addend 149
+
+64 identical consecutive numbers 
+Period 2982709597
+multiplier 269
+addend 149
+
+64 identical consecutive numbers 
+Period 3769180726
+multiplier 131
+addend 149
+
+64 identical consecutive numbers 
+Period 3636212238
+multiplier 283
+addend 149
+
+64 identical consecutive numbers 
+Period 3361514542
+multiplier 263
+addend 149
+
+64 identical consecutive numbers 
+Period 3441395452
+multiplier 197
+addend 149
+
+64 identical consecutive numbers 
+Period 3103584114
+multiplier 109
+addend 149
+
+64 identical consecutive numbers 
+Period 1027977659
+multiplier 431
+addend 149
+
+64 identical consecutive numbers 
+Period 3171145100
+multiplier 103
+addend 149
+
+64 identical consecutive numbers 
+Period 961375017
+multiplier 491
+addend 149
+
+64 identical consecutive numbers 
+Period 1230219127
+multiplier 541
+addend 149
+
+64 identical consecutive numbers 
+Period 4035759967
+multiplier 1009
+addend 139
+
+64 identical consecutive numbers 
+Period 1152554344
+multiplier 487
+addend 149
+
+64 identical consecutive numbers 
+Period 1150202771
+multiplier 617
+addend 149
+
+64 identical consecutive numbers 
+Period 1540881902
+multiplier 631
+addend 149
+
+64 identical consecutive numbers 
+Period 1211039834
+multiplier 613
+addend 149
+
+64 identical consecutive numbers 
+Period 1136814813
+multiplier 653
+addend 149
+
+64 identical consecutive numbers 
+Period 3711678187
+multiplier 313
+addend 149
+
+64 identical consecutive numbers 
+Period 3485552753
+multiplier 227
+addend 149
+
+64 identical consecutive numbers 
+Period 1332099226
+multiplier 587
+addend 149
+
+64 identical consecutive numbers 
+Period 1250971223
+multiplier 443
+addend 149
+
+64 identical consecutive numbers 
+Period 3356266655
+multiplier 293
+addend 149
+
+64 identical consecutive numbers 
+Period 1973895996
+multiplier 373
+addend 149
+
+64 identical consecutive numbers 
+Period 1411625903
+multiplier 461
+addend 149
+
+64 identical consecutive numbers 
+Period 1378253449
+multiplier 619
+addend 149
+
+64 identical consecutive numbers 
+Period 1887177192
+multiplier 563
+addend 149
+
+64 identical consecutive numbers 
+Period 3698990362
+multiplier 173
+addend 149
+
+64 identical consecutive numbers 
+Period 1776907887
+multiplier 509
+addend 149
+
+64 identical consecutive numbers 
+Period 1575687863
+multiplier 659
+addend 149
+
+64 identical consecutive numbers 
+Period 3792304845
+multiplier 257
+addend 149
+
+64 identical consecutive numbers 
+Period 1925168157
+multiplier 433
+addend 149
+
+64 identical consecutive numbers 
+Period 2276343198
+multiplier 523
+addend 149
+
+64 identical consecutive numbers 
+Period 2430751841
+multiplier 419
+addend 149
+
+64 identical consecutive numbers 
+Period 2149330759
+multiplier 499
+addend 149
+
+64 identical consecutive numbers 
+Period 2168476945
+multiplier 593
+addend 149
+
+64 identical consecutive numbers 
+Period 2135800539
+multiplier 569
+addend 149
+
+64 identical consecutive numbers 
+Period 106465438
+multiplier 733
+addend 149
+
+64 identical consecutive numbers 
+Period 2543634576
+multiplier 397
+addend 149
+
+64 identical consecutive numbers 
+Period 2535637775
+multiplier 383
+addend 149
+
+64 identical consecutive numbers 
+Period 2352422804
+multiplier 599
+addend 149
+
+64 identical consecutive numbers 
+Period 2741048428
+multiplier 467
+addend 149
+
+64 identical consecutive numbers 
+Period 2460030071
+multiplier 409
+addend 149
+
+64 identical consecutive numbers 
+Period 2649908011
+multiplier 643
+addend 149
+
+64 identical consecutive numbers 
+Period 3004726464
+multiplier 379
+addend 149
+
+64 identical consecutive numbers 
+Period 95392963
+multiplier 877
+addend 149
+
+64 identical consecutive numbers 
+Period 3028062998
+multiplier 421
+addend 149
+
+64 identical consecutive numbers 
+Period 138098433
+multiplier 751
+addend 149
+
+64 identical consecutive numbers 
+Period 150446168
+multiplier 743
+addend 149
+
+64 identical consecutive numbers 
+Period 201278379
+multiplier 941
+addend 149
+
+64 identical consecutive numbers 
+Period 377251993
+multiplier 857
+addend 149
+
+64 identical consecutive numbers 
+Period 3919410504
+multiplier 439
+addend 149
+
+64 identical consecutive numbers 
+Period 324981865
+multiplier 137
+addend 151
+
+64 identical consecutive numbers 
+Period 3164225715
+multiplier 503
+addend 149
+
+64 identical consecutive numbers 
+Period 351730663
+multiplier 131
+addend 151
+
+64 identical consecutive numbers 
+Period 408612840
+multiplier 139
+addend 151
+
+64 identical consecutive numbers 
+Period 564912263
+multiplier 859
+addend 149
+
+64 identical consecutive numbers 
+Period 625713591
+multiplier 179
+addend 151
+
+64 identical consecutive numbers 
+Period 3645363918
+multiplier 521
+addend 149
+
+64 identical consecutive numbers 
+Period 716117249
+multiplier 193
+addend 151
+
+64 identical consecutive numbers 
+Period 594689362
+multiplier 233
+addend 151
+
+64 identical consecutive numbers 
+Period 3276921892
+multiplier 607
+addend 149
+
+64 identical consecutive numbers 
+Period 957283435
+multiplier 919
+addend 149
+
+64 identical consecutive numbers 
+Period 3885001750
+multiplier 457
+addend 149
+
+64 identical consecutive numbers 
+Period 1353927253
+multiplier 673
+addend 149
+
+64 identical consecutive numbers 
+Period 3431192482
+multiplier 601
+addend 149
+
+64 identical consecutive numbers 
+Period 804478134
+multiplier 821
+addend 149
+
+64 identical consecutive numbers 
+Period 1264391634
+multiplier 929
+addend 149
+
+64 identical consecutive numbers 
+Period 858001412
+multiplier 887
+addend 149
+
+64 identical consecutive numbers 
+Period 3549442314
+multiplier 641
+addend 149
+
+64 identical consecutive numbers 
+Period 3991526221
+multiplier 367
+addend 149
+
+64 identical consecutive numbers 
+Period 1059571421
+multiplier 149
+addend 151
+
+64 identical consecutive numbers 
+Period 3535781189
+multiplier 401
+addend 149
+
+64 identical consecutive numbers 
+Period 1278137129
+multiplier 1013
+addend 149
+
+64 identical consecutive numbers 
+Period 1184502491
+multiplier 977
+addend 149
+
+64 identical consecutive numbers 
+Period 1131346964
+multiplier 241
+addend 151
+
+64 identical consecutive numbers 
+Period 4232362140
+multiplier 571
+addend 149
+
+64 identical consecutive numbers 
+Period 2428022659
+multiplier 691
+addend 149
+
+64 identical consecutive numbers 
+Period 3759844341
+multiplier 449
+addend 149
+
+64 identical consecutive numbers 
+Period 1878122481
+multiplier 677
+addend 149
+
+64 identical consecutive numbers 
+Period 4255147756
+multiplier 557
+addend 149
+
+64 identical consecutive numbers 
+Period 1214434300
+multiplier 797
+addend 149
+
+64 identical consecutive numbers 
+Period 2153882830
+multiplier 827
+addend 149
+
+64 identical consecutive numbers 
+Period 1793067002
+multiplier 107
+addend 151
+
+64 identical consecutive numbers 
+Period 2218766404
+multiplier 1009
+addend 149
+
+64 identical consecutive numbers 
+Period 1817623303
+multiplier 829
+addend 149
+
+64 identical consecutive numbers 
+Period 1822154107
+multiplier 109
+addend 151
+
+64 identical consecutive numbers 
+Period 2271452733
+multiplier 811
+addend 149
+
+64 identical consecutive numbers 
+Period 2549610439
+multiplier 661
+addend 149
+
+64 identical consecutive numbers 
+Period 2473901129
+multiplier 701
+addend 149
+
+64 identical consecutive numbers 
+Period 2258487118
+multiplier 881
+addend 149
+
+64 identical consecutive numbers 
+Period 2643266669
+multiplier 197
+addend 151
+
+64 identical consecutive numbers 
+Period 1955294205
+multiplier 103
+addend 151
+
+64 identical consecutive numbers 
+Period 2257836609
+multiplier 739
+addend 149
+
+64 identical consecutive numbers 
+Period 2200464661
+multiplier 239
+addend 151
+
+64 identical consecutive numbers 
+Period 2322403829
+multiplier 769
+addend 149
+
+64 identical consecutive numbers 
+Period 2175954385
+multiplier 229
+addend 151
+
+64 identical consecutive numbers 
+Period 2506119277
+multiplier 167
+addend 151
+
+64 identical consecutive numbers 
+Period 2270308379
+multiplier 971
+addend 149
+
+64 identical consecutive numbers 
+Period 2844664655
+multiplier 823
+addend 149
+
+64 identical consecutive numbers 
+Period 2801624825
+multiplier 1019
+addend 149
+
+64 identical consecutive numbers 
+Period 3044280642
+multiplier 151
+addend 151
+
+64 identical consecutive numbers 
+Period 3006401437
+multiplier 173
+addend 151
+
+64 identical consecutive numbers 
+Period 2717108855
+multiplier 757
+addend 149
+
+64 identical consecutive numbers 
+Period 3034255784
+multiplier 191
+addend 151
+
+64 identical consecutive numbers 
+Period 2459875900
+multiplier 113
+addend 151
+
+64 identical consecutive numbers 
+Period 2382951588
+multiplier 787
+addend 149
+
+64 identical consecutive numbers 
+Period 2940221128
+multiplier 727
+addend 149
+
+64 identical consecutive numbers 
+Period 2758677049
+multiplier 157
+addend 151
+
+64 identical consecutive numbers 
+Period 3509769210
+multiplier 773
+addend 149
+
+64 identical consecutive numbers 
+Period 3835269849
+multiplier 683
+addend 149
+
+64 identical consecutive numbers 
+Period 2856178236
+multiplier 127
+addend 151
+
+64 identical consecutive numbers 
+Period 2888122026
+multiplier 199
+addend 151
+
+64 identical consecutive numbers 
+Period 3174171917
+multiplier 991
+addend 149
+
+64 identical consecutive numbers 
+Period 4202786738
+multiplier 947
+addend 149
+
+64 identical consecutive numbers 
+Period 2482943276
+multiplier 227
+addend 151
+
+64 identical consecutive numbers 
+Period 2987163346
+multiplier 163
+addend 151
+
+64 identical consecutive numbers 
+Period 2643409805
+multiplier 983
+addend 149
+
+64 identical consecutive numbers 
+Period 189770697
+multiplier 617
+addend 151
+
+64 identical consecutive numbers 
+Period 3724537674
+multiplier 809
+addend 149
+
+64 identical consecutive numbers 
+Period 3666989919
+multiplier 761
+addend 149
+
+64 identical consecutive numbers 
+Period 3563132045
+multiplier 719
+addend 149
+
+64 identical consecutive numbers 
+Period 4067288139
+multiplier 883
+addend 149
+
+64 identical consecutive numbers 
+Period 227687074
+multiplier 571
+addend 151
+
+64 identical consecutive numbers 
+Period 3747368442
+multiplier 709
+addend 149
+
+64 identical consecutive numbers 
+Period 403089891
+multiplier 307
+addend 151
+
+64 identical consecutive numbers 
+Period 2967669712
+multiplier 863
+addend 149
+
+64 identical consecutive numbers 
+Period 2989042809
+multiplier 911
+addend 149
+
+64 identical consecutive numbers 
+Period 568737030
+multiplier 257
+addend 151
+
+64 identical consecutive numbers 
+Period 2765293947
+multiplier 223
+addend 151
+
+64 identical consecutive numbers 
+Period 3155690989
+multiplier 853
+addend 149
+
+64 identical consecutive numbers 
+Period 3068840403
+multiplier 101
+addend 151
+
+64 identical consecutive numbers 
+Period 428623019
+multiplier 431
+addend 151
+
+64 identical consecutive numbers 
+Period 530919582
+multiplier 353
+addend 151
+
+64 identical consecutive numbers 
+Period 488910509
+multiplier 269
+addend 151
+
+64 identical consecutive numbers 
+Period 3165908179
+multiplier 997
+addend 149
+
+64 identical consecutive numbers 
+Period 688614186
+multiplier 509
+addend 151
+
+64 identical consecutive numbers 
+Period 594253639
+multiplier 593
+addend 151
+
+64 identical consecutive numbers 
+Period 3106883391
+multiplier 211
+addend 151
+
+64 identical consecutive numbers 
+Period 569656519
+multiplier 409
+addend 151
+
+64 identical consecutive numbers 
+Period 3307322183
+multiplier 1021
+addend 149
+
+64 identical consecutive numbers 
+Period 930755221
+multiplier 499
+addend 151
+
+64 identical consecutive numbers 
+Period 640106797
+multiplier 547
+addend 151
+
+64 identical consecutive numbers 
+Period 3405184192
+multiplier 839
+addend 149
+
+64 identical consecutive numbers 
+Period 721108361
+multiplier 439
+addend 151
+
+64 identical consecutive numbers 
+Period 3833368237
+multiplier 937
+addend 149
+
+64 identical consecutive numbers 
+Period 1417373624
+multiplier 317
+addend 151
+
+64 identical consecutive numbers 
+Period 871591698
+multiplier 487
+addend 151
+
+64 identical consecutive numbers 
+Period 4283141690
+multiplier 181
+addend 151
+
+64 identical consecutive numbers 
+Period 1190897837
+multiplier 467
+addend 151
+
+64 identical consecutive numbers 
+Period 1084338976
+multiplier 401
+addend 151
+
+64 identical consecutive numbers 
+Period 4169738994
+multiplier 907
+addend 149
+
+64 identical consecutive numbers 
+Period 3948413133
+multiplier 967
+addend 149
+
+64 identical consecutive numbers 
+Period 1213132840
+multiplier 421
+addend 151
+
+64 identical consecutive numbers 
+Period 1793759844
+multiplier 281
+addend 151
+
+64 identical consecutive numbers 
+Period 1231885671
+multiplier 601
+addend 151
+
+64 identical consecutive numbers 
+Period 1234412249
+multiplier 607
+addend 151
+
+64 identical consecutive numbers 
+Period 1480925304
+multiplier 479
+addend 151
+
+64 identical consecutive numbers 
+Period 1346991879
+multiplier 419
+addend 151
+
+64 identical consecutive numbers 
+Period 1544530059
+multiplier 379
+addend 151
+
+64 identical consecutive numbers 
+Period 1894800129
+multiplier 331
+addend 151
+
+64 identical consecutive numbers 
+Period 4212981231
+multiplier 953
+addend 149
+
+64 identical consecutive numbers 
+Period 1631404117
+multiplier 263
+addend 151
+
+64 identical consecutive numbers 
+Period 1698811245
+multiplier 457
+addend 151
+
+64 identical consecutive numbers 
+Period 1909391039
+multiplier 563
+addend 151
+
+64 identical consecutive numbers 
+Period 1806804894
+multiplier 541
+addend 151
+
+64 identical consecutive numbers 
+Period 1898957842
+multiplier 367
+addend 151
+
+64 identical consecutive numbers 
+Period 2036778185
+multiplier 251
+addend 151
+
+64 identical consecutive numbers 
+Period 2077993327
+multiplier 293
+addend 151
+
+64 identical consecutive numbers 
+Period 2106874275
+multiplier 503
+addend 151
+
+64 identical consecutive numbers 
+Period 1897799145
+multiplier 461
+addend 151
+
+64 identical consecutive numbers 
+Period 2536904608
+multiplier 577
+addend 151
+
+64 identical consecutive numbers 
+Period 2046312358
+multiplier 359
+addend 151
+
+64 identical consecutive numbers 
+Period 2320464520
+multiplier 389
+addend 151
+
+64 identical consecutive numbers 
+Period 2335875178
+multiplier 347
+addend 151
+
+64 identical consecutive numbers 
+Period 2583465600
+multiplier 449
+addend 151
+
+64 identical consecutive numbers 
+Period 2420786907
+multiplier 337
+addend 151
+
+64 identical consecutive numbers 
+Period 2169524119
+multiplier 557
+addend 151
+
+64 identical consecutive numbers 
+Period 165571451
+multiplier 709
+addend 151
+
+64 identical consecutive numbers 
+Period 2909758582
+multiplier 311
+addend 151
+
+64 identical consecutive numbers 
+Period 2678560929
+multiplier 599
+addend 151
+
+64 identical consecutive numbers 
+Period 2853966239
+multiplier 349
+addend 151
+
+64 identical consecutive numbers 
+Period 2631291546
+multiplier 283
+addend 151
+
+64 identical consecutive numbers 
+Period 2596014311
+multiplier 587
+addend 151
+
+64 identical consecutive numbers 
+Period 2595181110
+multiplier 313
+addend 151
+
+64 identical consecutive numbers 
+Period 2794264584
+multiplier 463
+addend 151
+
+64 identical consecutive numbers 
+Period 633562465
+multiplier 757
+addend 151
+
+64 identical consecutive numbers 
+Period 652278526
+multiplier 641
+addend 151
+
+64 identical consecutive numbers 
+Period 2687390635
+multiplier 569
+addend 151
+
+64 identical consecutive numbers 
+Period 2944183491
+multiplier 277
+addend 151
+
+64 identical consecutive numbers 
+Period 3510060416
+multiplier 619
+addend 151
+
+64 identical consecutive numbers 
+Period 4091880791
+multiplier 613
+addend 151
+
+64 identical consecutive numbers 
+Period 1086019384
+multiplier 743
+addend 151
+
+64 identical consecutive numbers 
+Period 3385241931
+multiplier 373
+addend 151
+
+64 identical consecutive numbers 
+Period 1434934898
+multiplier 733
+addend 151
+
+64 identical consecutive numbers 
+Period 3784656712
+multiplier 521
+addend 151
+
+64 identical consecutive numbers 
+Period 3401695712
+multiplier 523
+addend 151
+
+64 identical consecutive numbers 
+Period 3314322900
+multiplier 271
+addend 151
+
+64 identical consecutive numbers 
+Period 3676167451
+multiplier 397
+addend 151
+
+64 identical consecutive numbers 
+Period 1719995022
+multiplier 797
+addend 151
+
+64 identical consecutive numbers 
+Period 4164039456
+multiplier 443
+addend 151
+
+64 identical consecutive numbers 
+Period 3661916543
+multiplier 433
+addend 151
+
+64 identical consecutive numbers 
+Period 8463489
+multiplier 839
+addend 151
+
+64 identical consecutive numbers 
+Period 3918440007
+multiplier 491
+addend 151
+
+64 identical consecutive numbers 
+Period 2157766983
+multiplier 751
+addend 151
+
+64 identical consecutive numbers 
+Period 3861399425
+multiplier 383
+addend 151
+
+64 identical consecutive numbers 
+Period 237289340
+multiplier 863
+addend 151
+
+64 identical consecutive numbers 
+Period 600165346
+multiplier 829
+addend 151
+
+64 identical consecutive numbers 
+Period 2677255979
+multiplier 653
+addend 151
+
+64 identical consecutive numbers 
+Period 905044650
+multiplier 877
+addend 151
+
+64 identical consecutive numbers 
+Period 2615700021
+multiplier 809
+addend 151
+
+64 identical consecutive numbers 
+Period 2496066362
+multiplier 773
+addend 151
+
+64 identical consecutive numbers 
+Period 2858184407
+multiplier 659
+addend 151
+
+64 identical consecutive numbers 
+Period 3037766452
+multiplier 719
+addend 151
+
+64 identical consecutive numbers 
+Period 69742486
+multiplier 971
+addend 151
+
+64 identical consecutive numbers 
+Period 2455322129
+multiplier 701
+addend 151
+
+64 identical consecutive numbers 
+Period 2811509442
+multiplier 769
+addend 151
+
+64 identical consecutive numbers 
+Period 2827517258
+multiplier 761
+addend 151
+
+64 identical consecutive numbers 
+Period 280765550
+multiplier 887
+addend 151
+
+64 identical consecutive numbers 
+Period 243081231
+multiplier 997
+addend 151
+
+64 identical consecutive numbers 
+Period 179511903
+multiplier 251
+addend 157
+
+64 identical consecutive numbers 
+Period 261042577
+multiplier 1019
+addend 151
+
+64 identical consecutive numbers 
+Period 203426111
+multiplier 977
+addend 151
+
+64 identical consecutive numbers 
+Period 2705822597
+multiplier 661
+addend 151
+
+64 identical consecutive numbers 
+Period 3347294883
+multiplier 631
+addend 151
+
+64 identical consecutive numbers 
+Period 506604390
+multiplier 881
+addend 151
+
+64 identical consecutive numbers 
+Period 3207204792
+multiplier 787
+addend 151
+
+64 identical consecutive numbers 
+Period 2930444944
+multiplier 677
+addend 151
+
+64 identical consecutive numbers 
+Period 3658844657
+multiplier 691
+addend 151
+
+64 identical consecutive numbers 
+Period 430352827
+multiplier 281
+addend 157
+
+64 identical consecutive numbers 
+Period 714880557
+multiplier 883
+addend 151
+
+64 identical consecutive numbers 
+Period 484422424
+multiplier 139
+addend 157
+
+64 identical consecutive numbers 
+Period 543585209
+multiplier 181
+addend 157
+
+64 identical consecutive numbers 
+Period 547023376
+multiplier 311
+addend 157
+
+64 identical consecutive numbers 
+Period 628547029
+multiplier 107
+addend 157
+
+64 identical consecutive numbers 
+Period 682788191
+multiplier 157
+addend 157
+
+64 identical consecutive numbers 
+Period 643637048
+multiplier 1009
+addend 151
+
+64 identical consecutive numbers 
+Period 3748733069
+multiplier 647
+addend 151
+
+64 identical consecutive numbers 
+Period 3485949749
+multiplier 739
+addend 151
+
+64 identical consecutive numbers 
+Period 796991462
+multiplier 191
+addend 157
+
+64 identical consecutive numbers 
+Period 3623126719
+multiplier 683
+addend 151
+
+64 identical consecutive numbers 
+Period 2223781478
+multiplier 823
+addend 151
+
+64 identical consecutive numbers 
+Period 809670889
+multiplier 947
+addend 151
+
+64 identical consecutive numbers 
+Period 1058681087
+multiplier 239
+addend 157
+
+64 identical consecutive numbers 
+Period 906811041
+multiplier 967
+addend 151
+
+64 identical consecutive numbers 
+Period 4276994091
+multiplier 673
+addend 151
+
+64 identical consecutive numbers 
+Period 1114043716
+multiplier 149
+addend 157
+
+64 identical consecutive numbers 
+Period 1326666202
+multiplier 137
+addend 157
+
+64 identical consecutive numbers 
+Period 4145926348
+multiplier 727
+addend 151
+
+64 identical consecutive numbers 
+Period 2690986370
+multiplier 827
+addend 151
+
+64 identical consecutive numbers 
+Period 4169031286
+multiplier 643
+addend 151
+
+64 identical consecutive numbers 
+Period 1423614905
+multiplier 283
+addend 157
+
+64 identical consecutive numbers 
+Period 1477612069
+multiplier 109
+addend 157
+
+64 identical consecutive numbers 
+Period 1620934240
+multiplier 331
+addend 157
+
+64 identical consecutive numbers 
+Period 3154590752
+multiplier 821
+addend 151
+
+64 identical consecutive numbers 
+Period 1572660137
+multiplier 1021
+addend 151
+
+64 identical consecutive numbers 
+Period 1490223399
+multiplier 271
+addend 157
+
+64 identical consecutive numbers 
+Period 1711778259
+multiplier 953
+addend 151
+
+64 identical consecutive numbers 
+Period 1762185198
+multiplier 347
+addend 157
+
+64 identical consecutive numbers 
+Period 1558482222
+multiplier 151
+addend 157
+
+64 identical consecutive numbers 
+Period 2105782571
+multiplier 223
+addend 157
+
+64 identical consecutive numbers 
+Period 1956969441
+multiplier 1013
+addend 151
+
+64 identical consecutive numbers 
+Period 3087994221
+multiplier 859
+addend 151
+
+64 identical consecutive numbers 
+Period 3962486952
+multiplier 811
+addend 151
+
+64 identical consecutive numbers 
+Period 1766465320
+multiplier 293
+addend 157
+
+64 identical consecutive numbers 
+Period 1718160987
+multiplier 353
+addend 157
+
+64 identical consecutive numbers 
+Period 2182930806
+multiplier 929
+addend 151
+
+64 identical consecutive numbers 
+Period 1722630180
+multiplier 257
+addend 157
+
+64 identical consecutive numbers 
+Period 2005152428
+multiplier 359
+addend 157
+
+64 identical consecutive numbers 
+Period 1870981344
+multiplier 307
+addend 157
+
+64 identical consecutive numbers 
+Period 2496763404
+multiplier 941
+addend 151
+
+64 identical consecutive numbers 
+Period 2002595654
+multiplier 277
+addend 157
+
+64 identical consecutive numbers 
+Period 1960852312
+multiplier 367
+addend 157
+
+64 identical consecutive numbers 
+Period 2005127610
+multiplier 337
+addend 157
+
+64 identical consecutive numbers 
+Period 2451597457
+multiplier 349
+addend 157
+
+64 identical consecutive numbers 
+Period 2156824075
+multiplier 193
+addend 157
+
+64 identical consecutive numbers 
+Period 2130017116
+multiplier 127
+addend 157
+
+64 identical consecutive numbers 
+Period 4126583588
+multiplier 857
+addend 151
+
+64 identical consecutive numbers 
+Period 2646642092
+multiplier 317
+addend 157
+
+64 identical consecutive numbers 
+Period 3293542490
+multiplier 263
+addend 157
+
+64 identical consecutive numbers 
+Period 2632075217
+multiplier 163
+addend 157
+
+64 identical consecutive numbers 
+Period 2703617220
+multiplier 211
+addend 157
+
+64 identical consecutive numbers 
+Period 2559397190
+multiplier 313
+addend 157
+
+64 identical consecutive numbers 
+Period 2770767113
+multiplier 937
+addend 151
+
+64 identical consecutive numbers 
+Period 3105944942
+multiplier 373
+addend 157
+
+64 identical consecutive numbers 
+Period 4011479787
+multiplier 853
+addend 151
+
+64 identical consecutive numbers 
+Period 3253243306
+multiplier 911
+addend 151
+
+64 identical consecutive numbers 
+Period 40382535
+multiplier 439
+addend 157
+
+64 identical consecutive numbers 
+Period 2503648168
+multiplier 173
+addend 157
+
+64 identical consecutive numbers 
+Period 3019840189
+multiplier 199
+addend 157
+
+64 identical consecutive numbers 
+Period 3230075876
+multiplier 919
+addend 151
+
+64 identical consecutive numbers 
+Period 3117494127
+multiplier 103
+addend 157
+
+64 identical consecutive numbers 
+Period 3370080947
+multiplier 241
+addend 157
+
+64 identical consecutive numbers 
+Period 3689233657
+multiplier 983
+addend 151
+
+64 identical consecutive numbers 
+Period 3874844940
+multiplier 233
+addend 157
+
+64 identical consecutive numbers 
+Period 3877406569
+multiplier 113
+addend 157
+
+64 identical consecutive numbers 
+Period 3903455571
+multiplier 229
+addend 157
+
+64 identical consecutive numbers 
+Period 4177298761
+multiplier 991
+addend 151
+
+64 identical consecutive numbers 
+Period 3752422466
+multiplier 131
+addend 157
+
+64 identical consecutive numbers 
+Period 169148214
+multiplier 521
+addend 157
+
+64 identical consecutive numbers 
+Period 3860925973
+multiplier 167
+addend 157
+
+64 identical consecutive numbers 
+Period 1166657908
+multiplier 397
+addend 157
+
+64 identical consecutive numbers 
+Period 196424258
+multiplier 587
+addend 157
+
+64 identical consecutive numbers 
+Period 3491076439
+multiplier 101
+addend 157
+
+64 identical consecutive numbers 
+Period 4214049232
+multiplier 907
+addend 151
+
+64 identical consecutive numbers 
+Period 3954608941
+multiplier 179
+addend 157
+
+64 identical consecutive numbers 
+Period 561674320
+multiplier 631
+addend 157
+
+64 identical consecutive numbers 
+Period 1380137407
+multiplier 389
+addend 157
+
+64 identical consecutive numbers 
+Period 376942343
+multiplier 541
+addend 157
+
+64 identical consecutive numbers 
+Period 464537299
+multiplier 499
+addend 157
+
+64 identical consecutive numbers 
+Period 527194996
+multiplier 727
+addend 157
+
+64 identical consecutive numbers 
+Period 4196826382
+multiplier 227
+addend 157
+
+64 identical consecutive numbers 
+Period 486979710
+multiplier 647
+addend 157
+
+64 identical consecutive numbers 
+Period 4211063384
+multiplier 197
+addend 157
+
+64 identical consecutive numbers 
+Period 4155012880
+multiplier 269
+addend 157
+
+64 identical consecutive numbers 
+Period 498448711
+multiplier 599
+addend 157
+
+64 identical consecutive numbers 
+Period 942995516
+multiplier 641
+addend 157
+
+64 identical consecutive numbers 
+Period 691841062
+multiplier 613
+addend 157
+
+64 identical consecutive numbers 
+Period 1984144693
+multiplier 419
+addend 157
+
+64 identical consecutive numbers 
+Period 849634055
+multiplier 461
+addend 157
+
+64 identical consecutive numbers 
+Period 814041882
+multiplier 491
+addend 157
+
+64 identical consecutive numbers 
+Period 722440248
+multiplier 673
+addend 157
+
+64 identical consecutive numbers 
+Period 785840105
+multiplier 719
+addend 157
+
+64 identical consecutive numbers 
+Period 1004505660
+multiplier 691
+addend 157
+
+64 identical consecutive numbers 
+Period 2753211718
+multiplier 421
+addend 157
+
+64 identical consecutive numbers 
+Period 1719948606
+multiplier 479
+addend 157
+
+64 identical consecutive numbers 
+Period 1204648554
+multiplier 523
+addend 157
+
+64 identical consecutive numbers 
+Period 2085944951
+multiplier 563
+addend 157
+
+64 identical consecutive numbers 
+Period 2250974797
+multiplier 431
+addend 157
+
+64 identical consecutive numbers 
+Period 1212295964
+multiplier 701
+addend 157
+
+64 identical consecutive numbers 
+Period 1548559217
+multiplier 617
+addend 157
+
+64 identical consecutive numbers 
+Period 3214439373
+multiplier 401
+addend 157
+
+64 identical consecutive numbers 
+Period 3642591441
+multiplier 383
+addend 157
+
+64 identical consecutive numbers 
+Period 2241713344
+multiplier 661
+addend 157
+
+64 identical consecutive numbers 
+Period 2013320053
+multiplier 503
+addend 157
+
+64 identical consecutive numbers 
+Period 1916461315
+multiplier 463
+addend 157
+
+64 identical consecutive numbers 
+Period 2092365827
+multiplier 653
+addend 157
+
+64 identical consecutive numbers 
+Period 2806963867
+multiplier 443
+addend 157
+
+64 identical consecutive numbers 
+Period 5003739
+multiplier 739
+addend 157
+
+64 identical consecutive numbers 
+Period 14135411
+multiplier 317
+addend 163
+
+64 identical consecutive numbers 
+Period 33622233
+multiplier 751
+addend 157
+
+64 identical consecutive numbers 
+Period 3965946463
+multiplier 449
+addend 157
+
+64 identical consecutive numbers 
+Period 3153974990
+multiplier 379
+addend 157
+
+64 identical consecutive numbers 
+Period 65276970
+multiplier 1009
+addend 157
+
+64 identical consecutive numbers 
+Period 2562424741
+multiplier 683
+addend 157
+
+64 identical consecutive numbers 
+Period 1853139842
+multiplier 487
+addend 157
+
+64 identical consecutive numbers 
+Period 134061605
+multiplier 811
+addend 157
+
+64 identical consecutive numbers 
+Period 136467027
+multiplier 233
+addend 163
+
+64 identical consecutive numbers 
+Period 170946822
+multiplier 131
+addend 163
+
+64 identical consecutive numbers 
+Period 162250608
+multiplier 787
+addend 157
+
+64 identical consecutive numbers 
+Period 153172526
+multiplier 257
+addend 163
+
+64 identical consecutive numbers 
+Period 190616118
+multiplier 193
+addend 163
+
+64 identical consecutive numbers 
+Period 233488949
+multiplier 103
+addend 163
+
+64 identical consecutive numbers 
+Period 221181837
+multiplier 883
+addend 157
+
+64 identical consecutive numbers 
+Period 2359436626
+multiplier 619
+addend 157
+
+64 identical consecutive numbers 
+Period 244279924
+multiplier 887
+addend 157
+
+64 identical consecutive numbers 
+Period 2321191295
+multiplier 557
+addend 157
+
+64 identical consecutive numbers 
+Period 2709928456
+multiplier 547
+addend 157
+
+64 identical consecutive numbers 
+Period 3692165997
+multiplier 571
+addend 157
+
+64 identical consecutive numbers 
+Period 382092301
+multiplier 929
+addend 157
+
+64 identical consecutive numbers 
+Period 461902224
+multiplier 839
+addend 157
+
+64 identical consecutive numbers 
+Period 3824884106
+multiplier 607
+addend 157
+
+64 identical consecutive numbers 
+Period 524182536
+multiplier 947
+addend 157
+
+64 identical consecutive numbers 
+Period 3003913908
+multiplier 709
+addend 157
+
+64 identical consecutive numbers 
+Period 553195332
+multiplier 199
+addend 163
+
+64 identical consecutive numbers 
+Period 588308291
+multiplier 821
+addend 157
+
+64 identical consecutive numbers 
+Period 608949652
+multiplier 211
+addend 163
+
+64 identical consecutive numbers 
+Period 735549062
+multiplier 197
+addend 163
+
+64 identical consecutive numbers 
+Period 699230621
+multiplier 167
+addend 163
+
+64 identical consecutive numbers 
+Period 892220355
+multiplier 977
+addend 157
+
+64 identical consecutive numbers 
+Period 722694664
+multiplier 271
+addend 163
+
+64 identical consecutive numbers 
+Period 2496137392
+multiplier 577
+addend 157
+
+64 identical consecutive numbers 
+Period 774633491
+multiplier 157
+addend 163
+
+64 identical consecutive numbers 
+Period 994838713
+multiplier 823
+addend 157
+
+64 identical consecutive numbers 
+Period 3443570615
+multiplier 457
+addend 157
+
+64 identical consecutive numbers 
+Period 917737622
+multiplier 347
+addend 163
+
+64 identical consecutive numbers 
+Period 883328452
+multiplier 971
+addend 157
+
+64 identical consecutive numbers 
+Period 3685728459
+multiplier 509
+addend 157
+
+64 identical consecutive numbers 
+Period 834061628
+multiplier 251
+addend 163
+
+64 identical consecutive numbers 
+Period 2853456962
+multiplier 677
+addend 157
+
+64 identical consecutive numbers 
+Period 980543040
+multiplier 337
+addend 163
+
+64 identical consecutive numbers 
+Period 4101914205
+multiplier 659
+addend 157
+
+64 identical consecutive numbers 
+Period 918220048
+multiplier 139
+addend 163
+
+64 identical consecutive numbers 
+Period 4125253994
+multiplier 433
+addend 157
+
+64 identical consecutive numbers 
+Period 1104445471
+multiplier 109
+addend 163
+
+64 identical consecutive numbers 
+Period 1293288456
+multiplier 173
+addend 163
+
+64 identical consecutive numbers 
+Period 971153351
+multiplier 401
+addend 163
+
+64 identical consecutive numbers 
+Period 1043707127
+multiplier 911
+addend 157
+
+64 identical consecutive numbers 
+Period 1099391537
+multiplier 797
+addend 157
+
+64 identical consecutive numbers 
+Period 1099404726
+multiplier 281
+addend 163
+
+64 identical consecutive numbers 
+Period 1103562413
+multiplier 761
+addend 157
+
+64 identical consecutive numbers 
+Period 1143899513
+multiplier 409
+addend 163
+
+64 identical consecutive numbers 
+Period 3988980716
+multiplier 409
+addend 157
+
+64 identical consecutive numbers 
+Period 3305023337
+multiplier 643
+addend 157
+
+64 identical consecutive numbers 
+Period 1305303278
+multiplier 941
+addend 157
+
+64 identical consecutive numbers 
+Period 1481911816
+multiplier 1021
+addend 157
+
+64 identical consecutive numbers 
+Period 4083677914
+multiplier 467
+addend 157
+
+64 identical consecutive numbers 
+Period 3707579076
+multiplier 569
+addend 157
+
+64 identical consecutive numbers 
+Period 3189611103
+multiplier 601
+addend 157
+
+64 identical consecutive numbers 
+Period 1791361676
+multiplier 937
+addend 157
+
+64 identical consecutive numbers 
+Period 1592350978
+multiplier 311
+addend 163
+
+64 identical consecutive numbers 
+Period 1757497344
+multiplier 107
+addend 163
+
+64 identical consecutive numbers 
+Period 4107292518
+multiplier 593
+addend 157
+
+64 identical consecutive numbers 
+Period 2138906237
+multiplier 983
+addend 157
+
+64 identical consecutive numbers 
+Period 1822703284
+multiplier 229
+addend 163
+
+64 identical consecutive numbers 
+Period 1813413147
+multiplier 101
+addend 163
+
+64 identical consecutive numbers 
+Period 1891731291
+multiplier 191
+addend 163
+
+64 identical consecutive numbers 
+Period 3585075567
+multiplier 733
+addend 157
+
+64 identical consecutive numbers 
+Period 2220765567
+multiplier 149
+addend 163
+
+64 identical consecutive numbers 
+Period 2155118108
+multiplier 359
+addend 163
+
+64 identical consecutive numbers 
+Period 2122605093
+multiplier 269
+addend 163
+
+64 identical consecutive numbers 
+Period 2301413853
+multiplier 389
+addend 163
+
+64 identical consecutive numbers 
+Period 2241793966
+multiplier 397
+addend 163
+
+64 identical consecutive numbers 
+Period 2818109205
+multiplier 907
+addend 157
+
+64 identical consecutive numbers 
+Period 2782234870
+multiplier 331
+addend 163
+
+64 identical consecutive numbers 
+Period 2221089573
+multiplier 223
+addend 163
+
+64 identical consecutive numbers 
+Period 2461956244
+multiplier 307
+addend 163
+
+64 identical consecutive numbers 
+Period 2491010165
+multiplier 373
+addend 163
+
+64 identical consecutive numbers 
+Period 2880605438
+multiplier 859
+addend 157
+
+64 identical consecutive numbers 
+Period 2667791416
+multiplier 349
+addend 163
+
+64 identical consecutive numbers 
+Period 3107598750
+multiplier 181
+addend 163
+
+64 identical consecutive numbers 
+Period 2471942727
+multiplier 757
+addend 157
+
+64 identical consecutive numbers 
+Period 2891330714
+multiplier 1013
+addend 157
+
+64 identical consecutive numbers 
+Period 3540035974
+multiplier 163
+addend 163
+
+64 identical consecutive numbers 
+Period 3003770961
+multiplier 773
+addend 157
+
+64 identical consecutive numbers 
+Period 3322349113
+multiplier 997
+addend 157
+
+64 identical consecutive numbers 
+Period 2978491064
+multiplier 239
+addend 163
+
+64 identical consecutive numbers 
+Period 2777235138
+multiplier 113
+addend 163
+
+64 identical consecutive numbers 
+Period 2845621334
+multiplier 877
+addend 157
+
+64 identical consecutive numbers 
+Period 4268338925
+multiplier 283
+addend 163
+
+64 identical consecutive numbers 
+Period 2966899562
+multiplier 743
+addend 157
+
+64 identical consecutive numbers 
+Period 3509689817
+multiplier 383
+addend 163
+
+64 identical consecutive numbers 
+Period 3416514383
+multiplier 809
+addend 157
+
+64 identical consecutive numbers 
+Period 3697569772
+multiplier 991
+addend 157
+
+64 identical consecutive numbers 
+Period 3518312189
+multiplier 353
+addend 163
+
+64 identical consecutive numbers 
+Period 3508428914
+multiplier 263
+addend 163
+
+64 identical consecutive numbers 
+Period 3152480935
+multiplier 919
+addend 157
+
+64 identical consecutive numbers 
+Period 8898301
+multiplier 557
+addend 163
+
+64 identical consecutive numbers 
+Period 3632283395
+multiplier 127
+addend 163
+
+64 identical consecutive numbers 
+Period 3711678187
+multiplier 313
+addend 163
+
+64 identical consecutive numbers 
+Period 3305316158
+multiplier 967
+addend 157
+
+64 identical consecutive numbers 
+Period 3584421801
+multiplier 277
+addend 163
+
+64 identical consecutive numbers 
+Period 199889746
+multiplier 439
+addend 163
+
+64 identical consecutive numbers 
+Period 3695203440
+multiplier 769
+addend 157
+
+64 identical consecutive numbers 
+Period 4183953227
+multiplier 179
+addend 163
+
+64 identical consecutive numbers 
+Period 3807434265
+multiplier 293
+addend 163
+
+64 identical consecutive numbers 
+Period 254854672
+multiplier 499
+addend 163
+
+64 identical consecutive numbers 
+Period 3655260914
+multiplier 137
+addend 163
+
+64 identical consecutive numbers 
+Period 4153515230
+multiplier 151
+addend 163
+
+64 identical consecutive numbers 
+Period 3672703016
+multiplier 857
+addend 157
+
+64 identical consecutive numbers 
+Period 4073832208
+multiplier 827
+addend 157
+
+64 identical consecutive numbers 
+Period 3958245260
+multiplier 953
+addend 157
+
+64 identical consecutive numbers 
+Period 3891100104
+multiplier 881
+addend 157
+
+64 identical consecutive numbers 
+Period 3779472197
+multiplier 379
+addend 163
+
+64 identical consecutive numbers 
+Period 4104915264
+multiplier 1019
+addend 157
+
+64 identical consecutive numbers 
+Period 3892970652
+multiplier 863
+addend 157
+
+64 identical consecutive numbers 
+Period 4253426943
+multiplier 419
+addend 163
+
+64 identical consecutive numbers 
+Period 3764619562
+multiplier 241
+addend 163
+
+64 identical consecutive numbers 
+Period 4197387913
+multiplier 829
+addend 157
+
+64 identical consecutive numbers 
+Period 3754827450
+multiplier 227
+addend 163
+
+64 identical consecutive numbers 
+Period 973436191
+multiplier 433
+addend 163
+
+64 identical consecutive numbers 
+Period 4064643306
+multiplier 367
+addend 163
+
+64 identical consecutive numbers 
+Period 1180571661
+multiplier 467
+addend 163
+
+64 identical consecutive numbers 
+Period 350839824
+multiplier 577
+addend 163
+
+64 identical consecutive numbers 
+Period 4196177778
+multiplier 853
+addend 157
+
+64 identical consecutive numbers 
+Period 1313678473
+multiplier 463
+addend 163
+
+64 identical consecutive numbers 
+Period 419736804
+multiplier 601
+addend 163
+
+64 identical consecutive numbers 
+Period 1459782724
+multiplier 457
+addend 163
+
+64 identical consecutive numbers 
+Period 870722141
+multiplier 571
+addend 163
+
+64 identical consecutive numbers 
+Period 2067946732
+multiplier 443
+addend 163
+
+64 identical consecutive numbers 
+Period 1812325975
+multiplier 487
+addend 163
+
+64 identical consecutive numbers 
+Period 1872721514
+multiplier 521
+addend 163
+
+64 identical consecutive numbers 
+Period 2288322530
+multiplier 547
+addend 163
+
+64 identical consecutive numbers 
+Period 298104835
+multiplier 757
+addend 163
+
+64 identical consecutive numbers 
+Period 321213287
+multiplier 751
+addend 163
+
+64 identical consecutive numbers 
+Period 1582333751
+multiplier 569
+addend 163
+
+64 identical consecutive numbers 
+Period 2514862911
+multiplier 523
+addend 163
+
+64 identical consecutive numbers 
+Period 668594861
+multiplier 641
+addend 163
+
+64 identical consecutive numbers 
+Period 717635420
+multiplier 647
+addend 163
+
+64 identical consecutive numbers 
+Period 1885773801
+multiplier 563
+addend 163
+
+64 identical consecutive numbers 
+Period 2342202552
+multiplier 479
+addend 163
+
+64 identical consecutive numbers 
+Period 994006222
+multiplier 739
+addend 163
+
+64 identical consecutive numbers 
+Period 2365651570
+multiplier 541
+addend 163
+
+64 identical consecutive numbers 
+Period 1301283776
+multiplier 619
+addend 163
+
+64 identical consecutive numbers 
+Period 2068519829
+multiplier 461
+addend 163
+
+64 identical consecutive numbers 
+Period 3027722354
+multiplier 509
+addend 163
+
+64 identical consecutive numbers 
+Period 2049436172
+multiplier 613
+addend 163
+
+64 identical consecutive numbers 
+Period 691710670
+multiplier 683
+addend 163
+
+64 identical consecutive numbers 
+Period 3111477179
+multiplier 491
+addend 163
+
+64 identical consecutive numbers 
+Period 1996187514
+multiplier 593
+addend 163
+
+64 identical consecutive numbers 
+Period 1403488335
+multiplier 691
+addend 163
+
+64 identical consecutive numbers 
+Period 2665794234
+multiplier 449
+addend 163
+
+64 identical consecutive numbers 
+Period 975293964
+multiplier 769
+addend 163
+
+64 identical consecutive numbers 
+Period 1474237662
+multiplier 743
+addend 163
+
+64 identical consecutive numbers 
+Period 1330264441
+multiplier 719
+addend 163
+
+64 identical consecutive numbers 
+Period 1780980440
+multiplier 727
+addend 163
+
+64 identical consecutive numbers 
+Period 3618524485
+multiplier 421
+addend 163
+
+64 identical consecutive numbers 
+Period 2388750853
+multiplier 617
+addend 163
+
+64 identical consecutive numbers 
+Period 1633597105
+multiplier 673
+addend 163
+
+64 identical consecutive numbers 
+Period 1705293846
+multiplier 709
+addend 163
+
+64 identical consecutive numbers 
+Period 4057108231
+multiplier 431
+addend 163
+
+64 identical consecutive numbers 
+Period 14717724
+multiplier 881
+addend 163
+
+64 identical consecutive numbers 
+Period 821027596
+multiplier 811
+addend 163
+
+64 identical consecutive numbers 
+Period 4081241012
+multiplier 503
+addend 163
+
+64 identical consecutive numbers 
+Period 3231744660
+multiplier 607
+addend 163
+
+64 identical consecutive numbers 
+Period 1188749446
+multiplier 797
+addend 163
+
+64 identical consecutive numbers 
+Period 3656427829
+multiplier 587
+addend 163
+
+64 identical consecutive numbers 
+Period 2688171272
+multiplier 661
+addend 163
+
+64 identical consecutive numbers 
+Period 2925400394
+multiplier 631
+addend 163
+
+64 identical consecutive numbers 
+Period 3742581324
+multiplier 599
+addend 163
+
+64 identical consecutive numbers 
+Period 7060856
+multiplier 1021
+addend 163
+
+64 identical consecutive numbers 
+Period 2851578888
+multiplier 761
+addend 163
+
+64 identical consecutive numbers 
+Period 830199597
+multiplier 887
+addend 163
+
+64 identical consecutive numbers 
+Period 3254805326
+multiplier 643
+addend 163
+
+64 identical consecutive numbers 
+Period 348960636
+multiplier 953
+addend 163
+
+64 identical consecutive numbers 
+Period 3029412505
+multiplier 773
+addend 163
+
+64 identical consecutive numbers 
+Period 389290910
+multiplier 1013
+addend 163
+
+64 identical consecutive numbers 
+Period 3379742300
+multiplier 701
+addend 163
+
+64 identical consecutive numbers 
+Period 3368075568
+multiplier 677
+addend 163
+
+64 identical consecutive numbers 
+Period 3005352964
+multiplier 653
+addend 163
+
+64 identical consecutive numbers 
+Period 3746511297
+multiplier 733
+addend 163
+
+64 identical consecutive numbers 
+Period 728988678
+multiplier 997
+addend 163
+
+64 identical consecutive numbers 
+Period 1468748408
+multiplier 859
+addend 163
+
+64 identical consecutive numbers 
+Period 825236686
+multiplier 1019
+addend 163
+
+64 identical consecutive numbers 
+Period 3388093013
+multiplier 659
+addend 163
+
+64 identical consecutive numbers 
+Period 2330509732
+multiplier 823
+addend 163
+
+64 identical consecutive numbers 
+Period 1939227588
+multiplier 857
+addend 163
+
+64 identical consecutive numbers 
+Period 1218221298
+multiplier 911
+addend 163
+
+64 identical consecutive numbers 
+Period 2675511601
+multiplier 827
+addend 163
+
+64 identical consecutive numbers 
+Period 1385190760
+multiplier 937
+addend 163
+
+64 identical consecutive numbers 
+Period 1762961372
+multiplier 967
+addend 163
+
+64 identical consecutive numbers 
+Period 2558306308
+multiplier 821
+addend 163
+
+64 identical consecutive numbers 
+Period 3128161579
+multiplier 787
+addend 163
+
+64 identical consecutive numbers 
+Period 429675
+multiplier 311
+addend 167
+
+64 identical consecutive numbers 
+Period 1944946086
+multiplier 919
+addend 163
+
+64 identical consecutive numbers 
+Period 94420726
+multiplier 131
+addend 167
+
+64 identical consecutive numbers 
+Period 148198647
+multiplier 461
+addend 167
+
+64 identical consecutive numbers 
+Period 2961926292
+multiplier 839
+addend 163
+
+64 identical consecutive numbers 
+Period 121484703
+multiplier 743
+addend 167
+
+64 identical consecutive numbers 
+Period 1677352821
+multiplier 941
+addend 163
+
+64 identical consecutive numbers 
+Period 339607671
+multiplier 397
+addend 167
+
+64 identical consecutive numbers 
+Period 3086255954
+multiplier 853
+addend 163
+
+64 identical consecutive numbers 
+Period 180165014
+multiplier 431
+addend 167
+
+64 identical consecutive numbers 
+Period 183075380
+multiplier 577
+addend 167
+
+64 identical consecutive numbers 
+Period 391864108
+multiplier 839
+addend 167
+
+64 identical consecutive numbers 
+Period 435312658
+multiplier 509
+addend 167
+
+64 identical consecutive numbers 
+Period 2987088134
+multiplier 863
+addend 163
+
+64 identical consecutive numbers 
+Period 448805918
+multiplier 401
+addend 167
+
+64 identical consecutive numbers 
+Period 546764963
+multiplier 167
+addend 167
+
+64 identical consecutive numbers 
+Period 470626909
+multiplier 719
+addend 167
+
+64 identical consecutive numbers 
+Period 851726069
+multiplier 829
+addend 167
+
+64 identical consecutive numbers 
+Period 489649446
+multiplier 163
+addend 167
+
+64 identical consecutive numbers 
+Period 693920985
+multiplier 773
+addend 167
+
+64 identical consecutive numbers 
+Period 705322021
+multiplier 379
+addend 167
+
+64 identical consecutive numbers 
+Period 541273291
+multiplier 619
+addend 167
+
+64 identical consecutive numbers 
+Period 575733060
+multiplier 557
+addend 167
+
+64 identical consecutive numbers 
+Period 555910682
+multiplier 757
+addend 167
+
+64 identical consecutive numbers 
+Period 608518703
+multiplier 541
+addend 167
+
+64 identical consecutive numbers 
+Period 2405486376
+multiplier 929
+addend 163
+
+64 identical consecutive numbers 
+Period 671947305
+multiplier 661
+addend 167
+
+64 identical consecutive numbers 
+Period 625636903
+multiplier 683
+addend 167
+
+64 identical consecutive numbers 
+Period 2339493335
+multiplier 971
+addend 163
+
+64 identical consecutive numbers 
+Period 2292985400
+multiplier 991
+addend 163
+
+64 identical consecutive numbers 
+Period 855341898
+multiplier 211
+addend 167
+
+64 identical consecutive numbers 
+Period 3074249062
+multiplier 907
+addend 163
+
+64 identical consecutive numbers 
+Period 3734295293
+multiplier 883
+addend 163
+
+64 identical consecutive numbers 
+Period 900790419
+multiplier 797
+addend 167
+
+64 identical consecutive numbers 
+Period 716976161
+multiplier 229
+addend 167
+
+64 identical consecutive numbers 
+Period 970499516
+multiplier 389
+addend 167
+
+64 identical consecutive numbers 
+Period 921449303
+multiplier 811
+addend 167
+
+64 identical consecutive numbers 
+Period 3971702855
+multiplier 809
+addend 163
+
+64 identical consecutive numbers 
+Period 1002554960
+multiplier 701
+addend 167
+
+64 identical consecutive numbers 
+Period 1202058090
+multiplier 191
+addend 167
+
+64 identical consecutive numbers 
+Period 1530468072
+multiplier 569
+addend 167
+
+64 identical consecutive numbers 
+Period 1106904705
+multiplier 691
+addend 167
+
+64 identical consecutive numbers 
+Period 1247432374
+multiplier 439
+addend 167
+
+64 identical consecutive numbers 
+Period 1151136248
+multiplier 443
+addend 167
+
+64 identical consecutive numbers 
+Period 1408087479
+multiplier 233
+addend 167
+
+64 identical consecutive numbers 
+Period 1282851441
+multiplier 643
+addend 167
+
+64 identical consecutive numbers 
+Period 1217984203
+multiplier 739
+addend 167
+
+64 identical consecutive numbers 
+Period 1236348178
+multiplier 733
+addend 167
+
+64 identical consecutive numbers 
+Period 1277580128
+multiplier 647
+addend 167
+
+64 identical consecutive numbers 
+Period 3082860142
+multiplier 977
+addend 163
+
+64 identical consecutive numbers 
+Period 1569158141
+multiplier 269
+addend 167
+
+64 identical consecutive numbers 
+Period 1694332239
+multiplier 239
+addend 167
+
+64 identical consecutive numbers 
+Period 1573569449
+multiplier 383
+addend 167
+
+64 identical consecutive numbers 
+Period 4181009003
+multiplier 829
+addend 163
+
+64 identical consecutive numbers 
+Period 1981131713
+multiplier 523
+addend 167
+
+64 identical consecutive numbers 
+Period 2884217447
+multiplier 947
+addend 163
+
+64 identical consecutive numbers 
+Period 2148065781
+multiplier 151
+addend 167
+
+64 identical consecutive numbers 
+Period 1741783696
+multiplier 193
+addend 167
+
+64 identical consecutive numbers 
+Period 1391670584
+multiplier 677
+addend 167
+
+64 identical consecutive numbers 
+Period 2326020485
+multiplier 109
+addend 167
+
+64 identical consecutive numbers 
+Period 1841004665
+multiplier 373
+addend 167
+
+64 identical consecutive numbers 
+Period 1926027757
+multiplier 199
+addend 167
+
+64 identical consecutive numbers 
+Period 1786690818
+multiplier 433
+addend 167
+
+64 identical consecutive numbers 
+Period 4100231773
+multiplier 107
+addend 167
+
+64 identical consecutive numbers 
+Period 3283389578
+multiplier 1009
+addend 163
+
+64 identical consecutive numbers 
+Period 1667935360
+multiplier 317
+addend 167
+
+64 identical consecutive numbers 
+Period 1842150551
+multiplier 257
+addend 167
+
+64 identical consecutive numbers 
+Period 1729610481
+multiplier 613
+addend 167
+
+64 identical consecutive numbers 
+Period 2234667296
+multiplier 521
+addend 167
+
+64 identical consecutive numbers 
+Period 2113665405
+multiplier 241
+addend 167
+
+64 identical consecutive numbers 
+Period 3634335148
+multiplier 101
+addend 167
+
+64 identical consecutive numbers 
+Period 4031873789
+multiplier 877
+addend 163
+
+64 identical consecutive numbers 
+Period 2200525416
+multiplier 499
+addend 167
+
+64 identical consecutive numbers 
+Period 2145523946
+multiplier 293
+addend 167
+
+64 identical consecutive numbers 
+Period 4083566309
+multiplier 983
+addend 163
+
+64 identical consecutive numbers 
+Period 2541710248
+multiplier 827
+addend 167
+
+64 identical consecutive numbers 
+Period 1970551814
+multiplier 571
+addend 167
+
+64 identical consecutive numbers 
+Period 1970404454
+multiplier 659
+addend 167
+
+64 identical consecutive numbers 
+Period 2495527455
+multiplier 281
+addend 167
+
+64 identical consecutive numbers 
+Period 2056679565
+multiplier 113
+addend 167
+
+64 identical consecutive numbers 
+Period 2286154767
+multiplier 359
+addend 167
+
+64 identical consecutive numbers 
+Period 2238706594
+multiplier 617
+addend 167
+
+64 identical consecutive numbers 
+Period 1904503342
+multiplier 173
+addend 167
+
+64 identical consecutive numbers 
+Period 2975291071
+multiplier 787
+addend 167
+
+64 identical consecutive numbers 
+Period 2326008377
+multiplier 821
+addend 167
+
+64 identical consecutive numbers 
+Period 2283073430
+multiplier 223
+addend 167
+
+64 identical consecutive numbers 
+Period 2675614367
+multiplier 467
+addend 167
+
+64 identical consecutive numbers 
+Period 2234544340
+multiplier 761
+addend 167
+
+64 identical consecutive numbers 
+Period 4079562719
+multiplier 103
+addend 167
+
+64 identical consecutive numbers 
+Period 2173246948
+multiplier 349
+addend 167
+
+64 identical consecutive numbers 
+Period 2625576894
+multiplier 197
+addend 167
+
+64 identical consecutive numbers 
+Period 2311780352
+multiplier 593
+addend 167
+
+64 identical consecutive numbers 
+Period 2273640827
+multiplier 769
+addend 167
+
+64 identical consecutive numbers 
+Period 2863961154
+multiplier 419
+addend 167
+
+64 identical consecutive numbers 
+Period 3044486213
+multiplier 479
+addend 167
+
+64 identical consecutive numbers 
+Period 3338729795
+multiplier 463
+addend 167
+
+64 identical consecutive numbers 
+Period 2700118901
+multiplier 263
+addend 167
+
+64 identical consecutive numbers 
+Period 2289481807
+multiplier 139
+addend 167
+
+64 identical consecutive numbers 
+Period 3345483093
+multiplier 367
+addend 167
+
+64 identical consecutive numbers 
+Period 3120142479
+multiplier 283
+addend 167
+
+64 identical consecutive numbers 
+Period 3225702627
+multiplier 503
+addend 167
+
+64 identical consecutive numbers 
+Period 2376397446
+multiplier 673
+addend 167
+
+64 identical consecutive numbers 
+Period 3250093667
+multiplier 823
+addend 167
+
+64 identical consecutive numbers 
+Period 3656836251
+multiplier 491
+addend 167
+
+64 identical consecutive numbers 
+Period 2729179994
+multiplier 601
+addend 167
+
+64 identical consecutive numbers 
+Period 3097641868
+multiplier 607
+addend 167
+
+64 identical consecutive numbers 
+Period 2677073051
+multiplier 487
+addend 167
+
+64 identical consecutive numbers 
+Period 2782234870
+multiplier 331
+addend 167
+
+64 identical consecutive numbers 
+Period 2669555994
+multiplier 271
+addend 167
+
+64 identical consecutive numbers 
+Period 4027126551
+multiplier 179
+addend 167
+
+64 identical consecutive numbers 
+Period 3082095107
+multiplier 181
+addend 167
+
+64 identical consecutive numbers 
+Period 3879482677
+multiplier 307
+addend 167
+
+64 identical consecutive numbers 
+Period 4080854869
+multiplier 137
+addend 167
+
+64 identical consecutive numbers 
+Period 2886561264
+multiplier 347
+addend 167
+
+64 identical consecutive numbers 
+Period 2915986870
+multiplier 227
+addend 167
+
+64 identical consecutive numbers 
+Period 3192202552
+multiplier 353
+addend 167
+
+64 identical consecutive numbers 
+Period 4033597873
+multiplier 563
+addend 167
+
+64 identical consecutive numbers 
+Period 3159170785
+multiplier 251
+addend 167
+
+64 identical consecutive numbers 
+Period 2971995159
+multiplier 751
+addend 167
+
+64 identical consecutive numbers 
+Period 2995058901
+multiplier 641
+addend 167
+
+64 identical consecutive numbers 
+Period 100959706
+multiplier 863
+addend 167
+
+64 identical consecutive numbers 
+Period 3071318705
+multiplier 337
+addend 167
+
+64 identical consecutive numbers 
+Period 3759223441
+multiplier 631
+addend 167
+
+64 identical consecutive numbers 
+Period 3919598308
+multiplier 457
+addend 167
+
+64 identical consecutive numbers 
+Period 3587129979
+multiplier 809
+addend 167
+
+64 identical consecutive numbers 
+Period 4033666183
+multiplier 599
+addend 167
+
+64 identical consecutive numbers 
+Period 365832194
+multiplier 877
+addend 167
+
+64 identical consecutive numbers 
+Period 3121247530
+multiplier 313
+addend 167
+
+64 identical consecutive numbers 
+Period 3391051674
+multiplier 421
+addend 167
+
+64 identical consecutive numbers 
+Period 3851725278
+multiplier 653
+addend 167
+
+64 identical consecutive numbers 
+Period 3901012833
+multiplier 149
+addend 167
+
+64 identical consecutive numbers 
+Period 4099106026
+multiplier 547
+addend 167
+
+64 identical consecutive numbers 
+Period 3513851771
+multiplier 127
+addend 167
+
+64 identical consecutive numbers 
+Period 46781408
+multiplier 113
+addend 173
+
+64 identical consecutive numbers 
+Period 3891453205
+multiplier 709
+addend 167
+
+64 identical consecutive numbers 
+Period 920807969
+multiplier 919
+addend 167
+
+64 identical consecutive numbers 
+Period 3798589186
+multiplier 727
+addend 167
+
+64 identical consecutive numbers 
+Period 4292716642
+multiplier 449
+addend 167
+
+64 identical consecutive numbers 
+Period 3700540603
+multiplier 409
+addend 167
+
+64 identical consecutive numbers 
+Period 3855827089
+multiplier 277
+addend 167
+
+64 identical consecutive numbers 
+Period 877637002
+multiplier 953
+addend 167
+
+64 identical consecutive numbers 
+Period 4190064531
+multiplier 587
+addend 167
+
+64 identical consecutive numbers 
+Period 3842549342
+multiplier 157
+addend 167
+
+64 identical consecutive numbers 
+Period 385778639
+multiplier 1013
+addend 167
+
+64 identical consecutive numbers 
+Period 1196354291
+multiplier 857
+addend 167
+
+64 identical consecutive numbers 
+Period 600697240
+multiplier 101
+addend 173
+
+64 identical consecutive numbers 
+Period 1732867406
+multiplier 859
+addend 167
+
+64 identical consecutive numbers 
+Period 1030127193
+multiplier 983
+addend 167
+
+64 identical consecutive numbers 
+Period 694251929
+multiplier 137
+addend 173
+
+64 identical consecutive numbers 
+Period 1496375265
+multiplier 1019
+addend 167
+
+64 identical consecutive numbers 
+Period 1117325868
+multiplier 127
+addend 173
+
+64 identical consecutive numbers 
+Period 2419601271
+multiplier 907
+addend 167
+
+64 identical consecutive numbers 
+Period 2635875292
+multiplier 941
+addend 167
+
+64 identical consecutive numbers 
+Period 1431465323
+multiplier 149
+addend 173
+
+64 identical consecutive numbers 
+Period 1976865651
+multiplier 887
+addend 167
+
+64 identical consecutive numbers 
+Period 1443355025
+multiplier 971
+addend 167
+
+64 identical consecutive numbers 
+Period 2091605027
+multiplier 881
+addend 167
+
+64 identical consecutive numbers 
+Period 1604906174
+multiplier 109
+addend 173
+
+64 identical consecutive numbers 
+Period 1665868862
+multiplier 997
+addend 167
+
+64 identical consecutive numbers 
+Period 75532832
+multiplier 463
+addend 173
+
+64 identical consecutive numbers 
+Period 54824060
+multiplier 283
+addend 173
+
+64 identical consecutive numbers 
+Period 291281535
+multiplier 179
+addend 173
+
+64 identical consecutive numbers 
+Period 135352522
+multiplier 379
+addend 173
+
+64 identical consecutive numbers 
+Period 208738517
+multiplier 281
+addend 173
+
+64 identical consecutive numbers 
+Period 252872669
+multiplier 397
+addend 173
+
+64 identical consecutive numbers 
+Period 325404091
+multiplier 467
+addend 173
+
+64 identical consecutive numbers 
+Period 812967530
+multiplier 157
+addend 173
+
+64 identical consecutive numbers 
+Period 3018259051
+multiplier 853
+addend 167
+
+64 identical consecutive numbers 
+Period 309800015
+multiplier 653
+addend 173
+
+64 identical consecutive numbers 
+Period 395276361
+multiplier 569
+addend 173
+
+64 identical consecutive numbers 
+Period 361264744
+multiplier 443
+addend 173
+
+64 identical consecutive numbers 
+Period 1971072225
+multiplier 107
+addend 173
+
+64 identical consecutive numbers 
+Period 522313889
+multiplier 401
+addend 173
+
+64 identical consecutive numbers 
+Period 450031101
+multiplier 439
+addend 173
+
+64 identical consecutive numbers 
+Period 2083514859
+multiplier 1021
+addend 167
+
+64 identical consecutive numbers 
+Period 572236483
+multiplier 347
+addend 173
+
+64 identical consecutive numbers 
+Period 2804848916
+multiplier 929
+addend 167
+
+64 identical consecutive numbers 
+Period 3564373420
+multiplier 911
+addend 167
+
+64 identical consecutive numbers 
+Period 2100552936
+multiplier 977
+addend 167
+
+64 identical consecutive numbers 
+Period 646365056
+multiplier 509
+addend 173
+
+64 identical consecutive numbers 
+Period 672365025
+multiplier 313
+addend 173
+
+64 identical consecutive numbers 
+Period 747648881
+multiplier 311
+addend 173
+
+64 identical consecutive numbers 
+Period 834781905
+multiplier 269
+addend 173
+
+64 identical consecutive numbers 
+Period 884752107
+multiplier 593
+addend 173
+
+64 identical consecutive numbers 
+Period 888082501
+multiplier 479
+addend 173
+
+64 identical consecutive numbers 
+Period 980543040
+multiplier 337
+addend 173
+
+64 identical consecutive numbers 
+Period 3008131715
+multiplier 967
+addend 167
+
+64 identical consecutive numbers 
+Period 2846178748
+multiplier 947
+addend 167
+
+64 identical consecutive numbers 
+Period 1021657935
+multiplier 661
+addend 173
+
+64 identical consecutive numbers 
+Period 1382898747
+multiplier 233
+addend 173
+
+64 identical consecutive numbers 
+Period 2598478773
+multiplier 139
+addend 173
+
+64 identical consecutive numbers 
+Period 1169220221
+multiplier 547
+addend 173
+
+64 identical consecutive numbers 
+Period 3302480606
+multiplier 937
+addend 167
+
+64 identical consecutive numbers 
+Period 4225650130
+multiplier 883
+addend 167
+
+64 identical consecutive numbers 
+Period 1668706564
+multiplier 607
+addend 173
+
+64 identical consecutive numbers 
+Period 1493445686
+multiplier 251
+addend 173
+
+64 identical consecutive numbers 
+Period 3177014013
+multiplier 131
+addend 173
+
+64 identical consecutive numbers 
+Period 1762347710
+multiplier 641
+addend 173
+
+64 identical consecutive numbers 
+Period 1849346145
+multiplier 373
+addend 173
+
+64 identical consecutive numbers 
+Period 1919384584
+multiplier 421
+addend 173
+
+64 identical consecutive numbers 
+Period 1742214046
+multiplier 263
+addend 173
+
+64 identical consecutive numbers 
+Period 1733210508
+multiplier 523
+addend 173
+
+64 identical consecutive numbers 
+Period 1852716750
+multiplier 499
+addend 173
+
+64 identical consecutive numbers 
+Period 1620934240
+multiplier 331
+addend 173
+
+64 identical consecutive numbers 
+Period 1702123830
+multiplier 359
+addend 173
+
+64 identical consecutive numbers 
+Period 2113279261
+multiplier 167
+addend 173
+
+64 identical consecutive numbers 
+Period 1895142711
+multiplier 383
+addend 173
+
+64 identical consecutive numbers 
+Period 1762831968
+multiplier 521
+addend 173
+
+64 identical consecutive numbers 
+Period 2321482728
+multiplier 617
+addend 173
+
+64 identical consecutive numbers 
+Period 2167568957
+multiplier 599
+addend 173
+
+64 identical consecutive numbers 
+Period 1984806240
+multiplier 293
+addend 173
+
+64 identical consecutive numbers 
+Period 2063394391
+multiplier 257
+addend 173
+
+64 identical consecutive numbers 
+Period 1888595203
+multiplier 491
+addend 173
+
+64 identical consecutive numbers 
+Period 1924293887
+multiplier 353
+addend 173
+
+64 identical consecutive numbers 
+Period 2095669177
+multiplier 643
+addend 173
+
+64 identical consecutive numbers 
+Period 2555857404
+multiplier 227
+addend 173
+
+64 identical consecutive numbers 
+Period 3089015642
+multiplier 151
+addend 173
+
+64 identical consecutive numbers 
+Period 2194092130
+multiplier 647
+addend 173
+
+64 identical consecutive numbers 
+Period 2408325764
+multiplier 433
+addend 173
+
+64 identical consecutive numbers 
+Period 3126765176
+multiplier 587
+addend 173
+
+64 identical consecutive numbers 
+Period 4031273337
+multiplier 991
+addend 167
+
+64 identical consecutive numbers 
+Period 3997785398
+multiplier 103
+addend 173
+
+64 identical consecutive numbers 
+Period 2361329005
+multiplier 541
+addend 173
+
+64 identical consecutive numbers 
+Period 3275765931
+multiplier 601
+addend 173
+
+64 identical consecutive numbers 
+Period 3307158735
+multiplier 577
+addend 173
+
+64 identical consecutive numbers 
+Period 2831101610
+multiplier 619
+addend 173
+
+64 identical consecutive numbers 
+Period 2720293080
+multiplier 307
+addend 173
+
+64 identical consecutive numbers 
+Period 2488730700
+multiplier 277
+addend 173
+
+64 identical consecutive numbers 
+Period 2473811103
+multiplier 673
+addend 173
+
+64 identical consecutive numbers 
+Period 2600616809
+multiplier 173
+addend 173
+
+64 identical consecutive numbers 
+Period 2886627692
+multiplier 487
+addend 173
+
+64 identical consecutive numbers 
+Period 2388522316
+multiplier 461
+addend 173
+
+64 identical consecutive numbers 
+Period 2819941649
+multiplier 563
+addend 173
+
+64 identical consecutive numbers 
+Period 2538484813
+multiplier 197
+addend 173
+
+64 identical consecutive numbers 
+Period 3206368608
+multiplier 431
+addend 173
+
+64 identical consecutive numbers 
+Period 2946732733
+multiplier 449
+addend 173
+
+64 identical consecutive numbers 
+Period 3334613844
+multiplier 613
+addend 173
+
+64 identical consecutive numbers 
+Period 2903629528
+multiplier 367
+addend 173
+
+64 identical consecutive numbers 
+Period 4162850630
+multiplier 1009
+addend 167
+
+64 identical consecutive numbers 
+Period 2739937115
+multiplier 241
+addend 173
+
+64 identical consecutive numbers 
+Period 3564391856
+multiplier 223
+addend 173
+
+64 identical consecutive numbers 
+Period 2917625295
+multiplier 239
+addend 173
+
+64 identical consecutive numbers 
+Period 3234509274
+multiplier 191
+addend 173
+
+64 identical consecutive numbers 
+Period 3116819684
+multiplier 409
+addend 173
+
+64 identical consecutive numbers 
+Period 3726922825
+multiplier 349
+addend 173
+
+64 identical consecutive numbers 
+Period 4167707511
+multiplier 571
+addend 173
+
+64 identical consecutive numbers 
+Period 48053238
+multiplier 769
+addend 173
+
+64 identical consecutive numbers 
+Period 3153756084
+multiplier 419
+addend 173
+
+64 identical consecutive numbers 
+Period 4190201975
+multiplier 193
+addend 173
+
+64 identical consecutive numbers 
+Period 89340227
+multiplier 821
+addend 173
+
+64 identical consecutive numbers 
+Period 3582000145
+multiplier 503
+addend 173
+
+64 identical consecutive numbers 
+Period 3197577667
+multiplier 659
+addend 173
+
+64 identical consecutive numbers 
+Period 3401456223
+multiplier 271
+addend 173
+
+64 identical consecutive numbers 
+Period 217338602
+multiplier 811
+addend 173
+
+64 identical consecutive numbers 
+Period 4039144647
+multiplier 211
+addend 173
+
+64 identical consecutive numbers 
+Period 3608445535
+multiplier 199
+addend 173
+
+64 identical consecutive numbers 
+Period 3719876351
+multiplier 389
+addend 173
+
+64 identical consecutive numbers 
+Period 3309179662
+multiplier 229
+addend 173
+
+64 identical consecutive numbers 
+Period 3123374523
+multiplier 457
+addend 173
+
+64 identical consecutive numbers 
+Period 209001628
+multiplier 727
+addend 173
+
+64 identical consecutive numbers 
+Period 315272991
+multiplier 743
+addend 173
+
+64 identical consecutive numbers 
+Period 510978254
+multiplier 691
+addend 173
+
+64 identical consecutive numbers 
+Period 269994836
+multiplier 857
+addend 173
+
+64 identical consecutive numbers 
+Period 4049910721
+multiplier 631
+addend 173
+
+64 identical consecutive numbers 
+Period 3678752001
+multiplier 181
+addend 173
+
+64 identical consecutive numbers 
+Period 936853604
+multiplier 839
+addend 173
+
+64 identical consecutive numbers 
+Period 966363196
+multiplier 787
+addend 173
+
+64 identical consecutive numbers 
+Period 4094472013
+multiplier 557
+addend 173
+
+64 identical consecutive numbers 
+Period 4003841474
+multiplier 163
+addend 173
+
+64 identical consecutive numbers 
+Period 889084087
+multiplier 719
+addend 173
+
+64 identical consecutive numbers 
+Period 1794355845
+multiplier 683
+addend 173
+
+64 identical consecutive numbers 
+Period 1594168550
+multiplier 881
+addend 173
+
+64 identical consecutive numbers 
+Period 4095516853
+multiplier 317
+addend 173
+
+64 identical consecutive numbers 
+Period 1803998395
+multiplier 907
+addend 173
+
+64 identical consecutive numbers 
+Period 1937130084
+multiplier 823
+addend 173
+
+64 identical consecutive numbers 
+Period 1871603641
+multiplier 761
+addend 173
+
+64 identical consecutive numbers 
+Period 2355209948
+multiplier 883
+addend 173
+
+64 identical consecutive numbers 
+Period 1898653896
+multiplier 887
+addend 173
+
+64 identical consecutive numbers 
+Period 1963243589
+multiplier 751
+addend 173
+
+64 identical consecutive numbers 
+Period 1996679108
+multiplier 853
+addend 173
+
+64 identical consecutive numbers 
+Period 2370306676
+multiplier 797
+addend 173
+
+64 identical consecutive numbers 
+Period 2563393156
+multiplier 863
+addend 173
+
+64 identical consecutive numbers 
+Period 2798069235
+multiplier 809
+addend 173
+
+64 identical consecutive numbers 
+Period 81652996
+multiplier 101
+addend 179
+
+64 identical consecutive numbers 
+Period 733990014
+multiplier 967
+addend 173
+
+64 identical consecutive numbers 
+Period 2834079751
+multiplier 859
+addend 173
+
+64 identical consecutive numbers 
+Period 115341752
+mult

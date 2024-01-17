@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "kaelife.hpp"
 #include "kaelifeCAData.hpp" 
 #include "kaelRandom.hpp"
 #include "kaelifeCACache.hpp"
@@ -128,12 +129,12 @@ public:
 			uint16_t x = pixel.pos[0]%cache.tileRows;
 			uint16_t y = pixel.pos[1]%cache.tileCols;
 
-			#if KAELIFE_DEBUG
+			if(KAELIFE_DEBUG){
 				if(x>=cache.tileRows || y>=cache.tileCols){
 					printf("OUT OF WORLD BOUNDS copyDrawBuf\n");
 					abort();
 				}	
-			#endif
+			}
 
 			cellState[x][y] = pixel.state;
 		}

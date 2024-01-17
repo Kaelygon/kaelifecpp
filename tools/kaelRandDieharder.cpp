@@ -1,5 +1,5 @@
-//$(ls ./build/kaelRandDieharder* | grep -v '\.o$') | dieharder -B -g 200 -a
-//$(ls ./build/kaelRandDieharder* | grep -v '\.o$') | pv > /dev/zero
+//$(ls ./build/kaelRandDieharder*O* | grep -v '\.o$') | dieharder -B -g 200 -a
+//$(ls ./build/kaelRandDieharder*O* | grep -v '\.o$') | pv > /dev/zero
 #include <iostream>
 #include <thread>
 #include <vector>
@@ -21,15 +21,20 @@ void sigint(int a)
 #include "kaelRandom.hpp"
 
 const int THREAD_COUNT = 24;
-const int BUFFER_SIZE = 10000000;
+const int BUFFER_SIZE = 1000000;
 
-//typedef uint64_t randType;
-typedef uint32_t randType;
+typedef uint64_t randType;
+//typedef uint32_t randType;
 
-kaelRandom<randType> randomizer;
+KaelRandom<randType> randomizer;
+
 
 void generateRandomData(randType* resultBuffer, int bufferSize, int threadId, randType start) {
-    randType n = threadId + start;
+    randType n = (threadId + start)*80131+932517113;
+    n^=n<<15;
+    n^=n>>11;
+    n^=n<<7;
+    n*= (threadId + start)*80131+932517113;
     for (int i = 0; i < bufferSize; ++i) {
          n = randomizer(&n);
         //n = randomizer.shuffleLCG(n);
@@ -42,8 +47,12 @@ void generateRandomData2(randType* resultBuffer, int bufferSize, int threadId, r
 
     uint wordSize = sizeof(randType)+1; //+1 null terminate
     char* tmpWord = new char[wordSize];
-    randType num = (start*threadId*80131)^932517113;
-    kaelRandom<randType>::ShufflePair<randType, randType> hashPair( &num );
+    randType num = ((start*threadId+1)*80131)^932517113;
+    num^=num<<15;
+    num^=num>>11;
+    num^=num<<7;
+    num*= (threadId + start)*80131+932517113;
+    KaelRandom<randType>::ShufflePair<randType, randType> hashPair( &num );
     
     randType n = threadId + start;
     for (int i = 0; i < bufferSize; ++i) {
@@ -52,7 +61,7 @@ void generateRandomData2(randType* resultBuffer, int bufferSize, int threadId, r
             letter += letter=='\0';
             tmpWord[i]=letter;  //get letters
         }
-        randomizer.shuffle(hashPair);
+        num++;
 
         tmpWord[wordSize-1]='\0';
         

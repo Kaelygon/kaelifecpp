@@ -336,7 +336,7 @@ public: //public functions
 				//mask cell coordinate in world space, wrapped if out of bound
 				nx = nearBorder ? (ti+x+lv.tileRows)%lv.tileRows : ti+x;
 				ny = nearBorder ? (tj+y+lv.tileCols)%lv.tileCols : tj+y;
-				#if KAELIFE_DEBUG
+				if(KAELIFE_DEBUG){
 					if(nx>=lv.tileRows || ny>=lv.tileCols){
 						printf("OUT OF WORLD BOUNDS iterateCellLV0\n");
 						abort();
@@ -345,7 +345,7 @@ public: //public functions
 						printf("OUT OF WORLD BOUNDS iterateCellLV1\n");
 						abort();
 					}			
-				#endif
+				}
 
 				uint neigValue=cellState[lv.activeBuf][nx][ny]; //get world cell value
 
