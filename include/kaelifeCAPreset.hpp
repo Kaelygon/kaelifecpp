@@ -3,9 +3,11 @@
 
 #pragma once
 
+#include "kaelifeSDL.hpp"
 #include "kaelRandom.hpp"
 #include "kaelife.hpp"
 #include "kaelifeWorldMatrix.hpp"
+
 #include <iostream>
 #include <vector>
 #include <cstdint>
@@ -310,7 +312,7 @@ public:
 			printRuleAdd	(tmpind);
 			printRuleMask	(tmpind);
 			printf("State Count: %u\n",list[tmpind].stateCount);
-			if(KAELIFE_DEBUG){
+			if(kaelife::DEBUG){
 				printf("maxNeigsum %u\n",calcMaxNeigsum(ind));
 			}
 			if(list[tmpind].presetSeed!=UINT64_MAX){printf("Seed: %lu\n",list[tmpind].presetSeed);}
@@ -476,9 +478,9 @@ private:
 					maxNeigsum+=(uint) (list[tmpind].stateCount-1) * list[tmpind].neigMask[i][j]/UINT8_MAX;
 				}
 			}
-			#if KAELIFE_DEBUG == 1
+			if(kaelife::DEBUG){
 				printf("maxNeigsum %u\n",maxNeigsum);
-			#endif
+			}
 			return maxNeigsum;
 		}
 	//EOF Randomizers

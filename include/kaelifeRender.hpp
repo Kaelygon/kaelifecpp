@@ -11,7 +11,6 @@
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
 #include <cmath>
-#include <time.h>
 #include <vector>
 #include <algorithm>
 
@@ -46,13 +45,12 @@ public:
 		shaderCursorPos[0]=worldCursorPos[0];
 		shaderCursorPos[1]=worldCursorPos[1];
 		uint numStates=cellData.kaePreset.current()->stateCount;
-		float shaderCellStateScale = (float)UINT8_MAX / (numStates - 1);
 		float shaderDrawRadius  = (float)kaeInput.drawRadius;
 		float shaderCursorBorder= (float)cursorBorder;
 		float shaderShaderColor = kaeInput.shaderColor;
-		float shaderShaderHue = kaeInput.shaderHue;
 		float shaderStateCount = numStates;
-		float shaderColorStagger = kaeInput.colorStagger;
+		float shaderShaderHue = (float)kaeInput.shaderHue/255.0; //normalize to 0.0-1.0
+		float shaderColorStagger = (float)kaeInput.colorStagger/255.0;
 		
 
 		float shaderTileDim[2];
@@ -65,12 +63,11 @@ public:
 		// Pass shader variables
 		glUniform2f (glGetUniformLocation(shaderProgram, "tileDim"		    ), shaderTileDim  [0], shaderTileDim  [1] );
 		glUniform2f (glGetUniformLocation(shaderProgram, "cursorPos"		), shaderCursorPos[0], shaderCursorPos[1] );
-		glUniform1f (glGetUniformLocation(shaderProgram, "cellStateScale"	), shaderCellStateScale);
 		glUniform1f (glGetUniformLocation(shaderProgram, "cursorRadius"		), shaderDrawRadius);
 		glUniform1f (glGetUniformLocation(shaderProgram, "cursorBorder"		), shaderCursorBorder);
 		glUniform1f (glGetUniformLocation(shaderProgram, "shaderColor"		), shaderShaderColor);
-		glUniform1f (glGetUniformLocation(shaderProgram, "shaderHue"		), shaderShaderHue);
 		glUniform1f (glGetUniformLocation(shaderProgram, "stateCount"	    ), shaderStateCount);
+		glUniform1f (glGetUniformLocation(shaderProgram, "shaderHue"		), shaderShaderHue);
 		glUniform1f (glGetUniformLocation(shaderProgram, "colorStagger"	    ), shaderColorStagger);
 
 

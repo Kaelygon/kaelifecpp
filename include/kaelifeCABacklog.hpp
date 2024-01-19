@@ -1,4 +1,6 @@
 //kaelifeCABacklog.hpp
+//Backlog thread critical tasks and execute them later
+
 #pragma once
 
 #include "kaelife.hpp"

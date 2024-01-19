@@ -21,7 +21,6 @@
 #include <string.h>
 #include <array>
 #include <memory>
-
 #include <barrier>
 #include <syncstream>
 #include <thread>
@@ -215,7 +214,7 @@ public: //public functions
 				//mask cell coordinate in world space, wrapped if out of bound
 				nx = nearBorder ? (ti+x+lv.tileRows)%lv.tileRows : ti+x;
 				ny = nearBorder ? (tj+y+lv.tileCols)%lv.tileCols : tj+y;
-				if(KAELIFE_DEBUG){
+				if(kaelife::DEBUG){
 					if(nx>=lv.tileRows || ny>=lv.tileCols){
 						printf("OUT OF WORLD BOUNDS iterateCellLV0\n");
 						abort();
@@ -300,7 +299,9 @@ CAData::CAData() {
 	uint randIndex = kaePreset.addPreset(bufPreset);
 	kaePreset.seedFromName(randIndex);
 
-	printf("cache size: %lu\n",sizeof(mainCache));
+	if(kaelife::DEBUG){
+		printf("cache size: %lu\n",sizeof(mainCache));
+	}
 
 	loadPreset(!mainCache.activeBuf); //initialize rest mainCache variables
 	cloneBuffer(); 

@@ -2,10 +2,12 @@
 //TODO: Import and export world state to bitmap
 
 #pragma once
-#include <iostream>
+
 #include "kaelifeWorldMatrix.hpp"
 #include "kaelifeCAData.hpp"
 #include "kaelife.hpp"
+
+#include <iostream>
 
 namespace kaelife {
 	//eventually make this bitmap import export

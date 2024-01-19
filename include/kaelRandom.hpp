@@ -9,7 +9,6 @@
 #include <cstring>
 #include <climits>
 #include <algorithm>
-
 #include <type_traits>
 
 template <typename InsT = uint64_t> //instance type

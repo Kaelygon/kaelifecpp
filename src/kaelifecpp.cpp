@@ -3,17 +3,19 @@
 //https://github.com/Kaelygon/kaelifecpp/
 
 #include "kaelRandom.hpp" //Randomizers and Hashers
-namespace kaelife { KaelRandom<uint64_t>rand; } //kaelife::rand()
+namespace kaelife { 
+	KaelRandom<uint64_t>rand; 
+    constexpr bool DEBUG = 1;
+}
+
 #include "kaelife.hpp" //kaelife:: Namespace functions
-#include "kaelifeSDL.hpp" //SDL window creation
-#include "kaelifeWorldMatrix.hpp" //2D vector in world space
-#include "kaelifeCAData.hpp" //CA simulation iterator
-#include "kaelifeConfigIO.hpp" //TODO: Import JSON to data struct and pass sub structs to each class constructor. This could act as global like variables
-#include "kaelifeWorldCore.hpp" //Manages user input and simulation threads
 #include "kaelifeBMPIO.hpp" //TODO: import export world data to bitmap
+#include "kaelifeCAData.hpp" //CA simulation iterator
 #include "kaelifeControls.hpp" //user controls
-#include "kaelifeCARender.hpp" //OpenGL render world as texture
-#include "kaelifeCADraw.hpp" //Change world cell states from mouse input 
+#include "kaelifeConfigIO.hpp" //TODO: Import JSON to data struct and pass sub structs to each class constructor. This could act as global like variables
+#include "kaelifeRender.hpp" //OpenGL render world as texture
+#include "kaelifeSDL.hpp" //SDL window creation
+#include "kaelifeWorldCore.hpp" //Manages user input and simulation threads
 
 #include <iostream>
 #include <SDL2/SDL.h>
