@@ -51,32 +51,9 @@ vec3 calculateNormal(float normalizedCellState){
 }
 
 vec3 hslToRgb(vec3 hsl) {
-    float hue = hsl.x;
-    float saturation = hsl.y;
-    float lightness = hsl.z;
+    vec3 rgb = clamp( abs(mod(hsl.x*6.0+vec3(0.0,4.0,2.0),6.0)-3.0)-1.0, 0.0, 1.0 );
 
-    float chroma = (1.0 - abs(2.0 * lightness - 1.0)) * saturation;
-    float huePrime = hue * 6.0;
-    float x = chroma * (1.0 - abs(mod(huePrime, 2.0) - 1.0));
-
-    vec3 rgb;
-
-    if (huePrime < 1.0) {
-        rgb = vec3(chroma, x, 0.0);
-    } else if (huePrime < 2.0) {
-        rgb = vec3(x, chroma, 0.0);
-    } else if (huePrime < 3.0) {
-        rgb = vec3(0.0, chroma, x);
-    } else if (huePrime < 4.0) {
-        rgb = vec3(0.0, x, chroma);
-    } else if (huePrime < 5.0) {
-        rgb = vec3(x, 0.0, chroma);
-    } else {
-        rgb = vec3(chroma, 0.0, x);
-    }
-
-    float m = lightness - 0.5 * chroma;
-    return rgb + m;
+    return hsl.z + hsl.y * (rgb-0.5)*(1.0-abs(2.0*hsl.z-1.0));
 }
 
 //https://www.desmos.com/calculator/1yswqyau5v

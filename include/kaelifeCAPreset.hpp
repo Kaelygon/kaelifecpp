@@ -478,9 +478,7 @@ private:
 					maxNeigsum+=(uint) (list[tmpind].stateCount-1) * list[tmpind].neigMask[i][j]/UINT8_MAX;
 				}
 			}
-			if(kaelife::DEBUG){
-				printf("maxNeigsum %u\n",maxNeigsum);
-			}
+			printf("maxNeigsum %u\n",maxNeigsum);
 			return maxNeigsum;
 		}
 	//EOF Randomizers

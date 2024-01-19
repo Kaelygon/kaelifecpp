@@ -5,7 +5,8 @@
 #include "kaelRandom.hpp" //Randomizers and Hashers
 namespace kaelife { 
 	KaelRandom<uint64_t>rand; 
-    constexpr bool DEBUG = 1;
+    constexpr bool DEBUG = 0; //lots of checks in tight loops
+    constexpr bool KEY_DEBUG = 1; //conservative InputHandler checks
 }
 
 #include "kaelife.hpp" //kaelife:: Namespace functions
