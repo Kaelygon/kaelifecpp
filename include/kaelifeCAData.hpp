@@ -273,8 +273,8 @@ CAData::CAData() {
 
 	mainCache.threadId		=	UINT_MAX; //only threads use this
 	mainCache.activeBuf		=	0;
-	mainCache.tileRows		=	32; 
-	mainCache.tileCols		=	32;
+	mainCache.tileRows		=	576; 
+	mainCache.tileCols		=	384;
 	mainCache.threadCount	=	std::thread::hardware_concurrency();
 	if(mainCache.threadCount>mainCache.tileCols){mainCache.threadCount=mainCache.tileCols;}
 

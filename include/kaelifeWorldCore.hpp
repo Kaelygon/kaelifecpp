@@ -78,8 +78,9 @@ namespace kaelife {
 					periodIters[periodIndex]=iterTask;
 				}
 			}
+			//pass previous buffer iteration to GPU while iterTask is being computed in new buffer
 			SDL_GL_SwapWindow(SDLWindow);
-			kaeRender.renderCells(); 
+			kaeRender.renderCells();
 
 			do{ // Cap the frame rate
 				elapsedTime=SDL_GetTicks() - frameStartTime;
