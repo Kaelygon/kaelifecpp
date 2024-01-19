@@ -132,7 +132,7 @@ namespace kaelife {
 			}
 
 			kaelife.kaeMutex.syncMainThread(); //sync iterations
-			kaelife.doBacklog(); //execute not-thread-safe-tasks thread-safely
+			kaelife.backlog->doBacklog(); //execute not-thread-safe-tasks thread-safely
 		}
 
 		//join any running threads

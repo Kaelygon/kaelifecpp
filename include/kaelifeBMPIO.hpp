@@ -72,7 +72,7 @@ namespace kaelife {
 	//	cellData.cellState[!cellData.mainCache.activeBuf][cellData.mainCache.tileRows-1][0]=2;
 	//	cellData.cellState[!cellData.mainCache.activeBuf][cellData.witmainCache.tileRows-1][cellData.mainCache.tileCols-1]=3;
 
-		cellData.addBacklog("cloneBuffer");
-		cellData.doBacklog();
+		cellData.backlog->add("cloneBuffer");
+		cellData.backlog->doBacklog();
 	}
 }

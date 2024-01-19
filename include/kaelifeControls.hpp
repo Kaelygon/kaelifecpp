@@ -45,10 +45,8 @@ private:
 
     CAData& cellData;
     SDL_Window*& SDLWindow;
-	// Define a type for function pointers
-	using KeyFunction = std::function<void(CAData&)>;
 	// Map key combinations to functions
-	std::map<SDL_Keycode, KeyFunction> keyFuncMap;
+	std::map<SDL_Keycode, std::function<void(CAData&)>> keyFuncMap;
 
     // Map to store the state of keys or mouse buttons
     std::map<int, bool> keyStates;
@@ -108,7 +106,14 @@ public:
 	}
 	
 	// Initialize key mappings in the constructor
-	InputHandler(CAData &inCAData, SDL_Window*& inSDL_Window) : cellData(inCAData), SDLWindow(inSDL_Window), keyFuncMap{
+	InputHandler(
+		CAData &inCAData, 
+		SDL_Window*& inSDL_Window
+	) : 
+		cellData(inCAData), 
+		SDLWindow(inSDL_Window),
+		keyFuncMap
+	{
 			{SDLK_r					 		, 	std::bind(&InputHandler::press_r, 			this )},
 			{SDLK_t					 		, 	std::bind(&InputHandler::press_t, 			this )},
 			{SDLK_q					 		, 	std::bind(&InputHandler::press_q, 			this )},
@@ -177,23 +182,23 @@ int InputHandler::cursorPos[2] = {0, 0};
 // Function implementations
 	//randomize all
 	void InputHandler::press_y(){
-		cellData.addBacklog("randAll");
+		cellData.backlog->add("randAll");
 	};
 	//random mask
 	void InputHandler::press_n(){
-		cellData.addBacklog("randMask");
+		cellData.backlog->add("randMask");
 	};
 	//randomize ranges
 	void InputHandler::press_r(){
-		cellData.addBacklog("randRange");
+		cellData.backlog->add("randRange");
 	};
 	//randomize adds
 	void InputHandler::press_t(){
-		cellData.addBacklog("randAdd");
+		cellData.backlog->add("randAdd");
 	};
 	//rand mutate
 	void InputHandler::press_m(){
-		cellData.addBacklog("randMutate");
+		cellData.backlog->add("randMutate");
 	};
 	//shader color stagger--
 	void InputHandler::press_q_LALT(){
@@ -343,7 +348,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 			printf("preset: %d\n",ind);
 		}
 		//wait buffer sync
-		cellData.addBacklog("loadPreset");
+		cellData.backlog->add("loadPreset");
 	};
 	//previous preset
 	void InputHandler::press_COMMA(){
@@ -351,7 +356,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 		if(debug){
 			printf("preset: %d\n",ind);
 		}
-		cellData.addBacklog("loadPreset");
+		cellData.backlog->add("loadPreset");
 	};
 
 
@@ -395,7 +400,7 @@ void InputHandler::detectInput() {
 
 					// If the key combination is found, execute the associated function
 					if (it != keyFuncMap.end()) {
-						KeyFunction& func = it->second;
+						std::function<void(CAData&)>& func = it->second;
 						func(cellData);
 					}
 				}
@@ -429,7 +434,7 @@ void InputHandler::detectInput() {
 			// Mouse motion or left button pressed
 			int strength = keyStates[SDL_BUTTON_LEFT] ? 1 : 0;
 			cellData.kaeDraw.cursorDraw(strength, cursorPos[0], cursorPos[1], drawRadius, drawRandom, cellData.mainCache);
-			cellData.addBacklog("cursorDraw");
+			cellData.backlog->add("cursorDraw");
 		}
 
 		if (windowFocus){

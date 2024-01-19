@@ -19,14 +19,16 @@
 #include <algorithm>
 #include <cstring>
 #include <string.h>
+#include <array>
+#include <memory>
 
 #include <barrier>
 #include <syncstream>
 #include <thread>
 #include <mutex>
 #include <condition_variable>
-#include <array>
 
+class CABacklog; // Forward declaration
 
 //Cellular Automata Data
 class CAData {
@@ -37,49 +39,9 @@ public:
 	CACache kaeCache;
 	CACache::ThreadCache mainCache; //cache of CAData that should be used to update thread cache synchronously
 	CADraw kaeDraw;
+    std::unique_ptr<CABacklog> backlog;
 
-	//TODO: better init config system.
-	CAData() { // Constructor
-
-		mainCache.threadId		=	UINT_MAX; //only threads use this
-		mainCache.activeBuf		=	0;
-		mainCache.tileRows		=	576; 
-		mainCache.tileCols		=	384;
-		mainCache.threadCount	=	std::thread::hardware_concurrency();
-		if(mainCache.threadCount>mainCache.tileCols){mainCache.threadCount=mainCache.tileCols;}
-
-		aspectRatio=(float)mainCache.tileRows/mainCache.tileCols;
-		if(true){
-			renderWidth = mainCache.tileRows*2 ;
-			renderHeight = mainCache.tileCols*2;
-		}else{
-			renderWidth = mainCache.tileRows>1024 ? mainCache.tileRows : 1024 ;
-			renderHeight = renderWidth/aspectRatio;
-		}
-
-		for (int j = 0; j < 2; j++) {
-			cellState[j].resize(mainCache.tileRows);
-			for (uint i = 0; i < mainCache.tileRows; i++) {
-				cellState[j][i].resize(mainCache.tileCols);
-			}
-		}
-
-		targetFrameTime= targetFrameTime<=0.0 ? 0.000001 : targetFrameTime;
-
-		CAPreset::PresetList bufPreset("RANDOM");
-		uint randIndex = kaePreset.addPreset(bufPreset);
-		kaePreset.seedFromName(randIndex);
-
-		printf("cache size: %lu\n",sizeof(mainCache));
-
-		loadPreset(!mainCache.activeBuf); //initialize rest mainCache variables
-		cloneBuffer(); 
-		kaePreset.printPreset(0);
-	}
-
-private: //private vars and custom data types
-
-	std::vector<std::string> backlogList; //tasks to do that are not thread safe
+	CAData();
 
 public: //public vars and custom data types
 
@@ -131,91 +93,6 @@ public: //public functions
 		mainCache.index++;
 	}
 
-	//execute before cloneBuffer not-thread safe functions backlog
-	//writes must happen in !activeBuf
-	void addBacklog(const char* keyword){
-		//check if already backlogged
-		auto it = std::find(backlogList.begin(), backlogList.end(), keyword);
-		if(backlogList.end()==it){
-			backlogList.push_back(keyword);
-		}
-	}
-	
-	void doBacklog(){
-		if(backlogList.size()==0){ return; }
-
-		//this flag is used to prevent cloning buffer every single keyword
-		uint cloneBufferRequest=0;
-
-		while (!backlogList.empty()) {
-			std::string keyword = backlogList.back();
-			if ((keyword == "cloneBuffer")) {
-				cloneBufferRequest=1;
-			}else 
-			if ((keyword == "loadPreset")) {
-				loadPreset();
-				kaePreset.printPreset();
-				cloneBufferRequest=1;
-			}else 
-			if((keyword == "cursorDraw")){
-				bool didCopy = kaeDraw.copyDrawBuf(cellState[!mainCache.activeBuf], mainCache); 
-				if(didCopy){ 
-					cloneBufferRequest=1;
-				}
-			}else//randomizers
-			if((keyword == "randAll")){
-				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
-				kaePreset.setPreset(copyIndex[0]);
-				uint64_t randSeed = kaePreset.randAll(copyIndex[0]);
-				randState(kaePreset.current()->stateCount);
-				loadPreset();
-				kaePreset.printPreset();
-				printf("RANDOM seed: %lu\n",(uint64_t)randSeed);
-				cloneBufferRequest=1;
-			}else 
-			if((keyword == "randAdd")){
-				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
-				kaePreset.setPreset(copyIndex[0]);
-				kaePreset.randRuleAdd(kaePreset.index);
-				loadPreset();
-				kaePreset.printRuleAdd(kaePreset.index);
-				cloneBufferRequest=1;
-			}else 
-			if((keyword == "randRange")){
-				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
-				kaePreset.setPreset(copyIndex[0]);
-				kaePreset.randRuleRange(kaePreset.index,0);
-				loadPreset();		
-				kaePreset.printRuleRange(kaePreset.index);	
-				cloneBufferRequest=1;
-			}else 
-			if((keyword == "randMask")){
-				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
-				kaePreset.setPreset(copyIndex[0]);
-				kaePreset.randRuleMask(kaePreset.index);
-				loadPreset();
-				kaePreset.printRuleMask(kaePreset.index);
-				cloneBufferRequest=1;
-			}else 
-			if((keyword == "randMutate")){
-				auto copyIndex = kaePreset.copyPreset((std::string)"RANDOM",kaePreset.index);
-				kaePreset.setPreset(copyIndex[0]);
-				kaePreset.randRuleMutate(kaePreset.index);
-				loadPreset();
-				kaePreset.printRuleRange(kaePreset.index);
-				kaePreset.printRuleAdd(kaePreset.index);
-				cloneBufferRequest=1;
-			}
-			backlogList.pop_back();
-		}
-		backlogList.clear();
-
-		if(cloneBufferRequest){
-			cloneBuffer();
-			cloneBufferRequest=0;
-		}
-	}
-
 	//assumes updatedCells[0] and updatedCells[1] are same size
 	//Thread safe cloneBuffer
 	inline void threadCloneBuffer(CACache::ThreadCache &lv) {
@@ -242,6 +119,8 @@ public: //public functions
 		//swap buffer index
 		mainCache.activeBuf = !mainCache.activeBuf;
 	}
+
+
 
 	//BOF iterate functions
 	public:
@@ -386,3 +265,44 @@ public: //public functions
 	}
 	//EOF cellState functions
 };
+
+#include "kaelifeCABacklog.hpp"
+
+CAData::CAData() {
+    backlog = std::make_unique<CABacklog>(*this);
+
+	mainCache.threadId		=	UINT_MAX; //only threads use this
+	mainCache.activeBuf		=	0;
+	mainCache.tileRows		=	32; 
+	mainCache.tileCols		=	32;
+	mainCache.threadCount	=	std::thread::hardware_concurrency();
+	if(mainCache.threadCount>mainCache.tileCols){mainCache.threadCount=mainCache.tileCols;}
+
+	aspectRatio=(float)mainCache.tileRows/mainCache.tileCols;
+	if(true){
+		renderWidth = mainCache.tileRows*2 ;
+		renderHeight = mainCache.tileCols*2;
+	}else{
+		renderWidth = mainCache.tileRows>1024 ? mainCache.tileRows : 1024 ;
+		renderHeight = renderWidth/aspectRatio;
+	}
+
+	for (int j = 0; j < 2; j++) {
+		cellState[j].resize(mainCache.tileRows);
+		for (uint i = 0; i < mainCache.tileRows; i++) {
+			cellState[j][i].resize(mainCache.tileCols);
+		}
+	}
+
+	targetFrameTime= targetFrameTime<=0.0 ? 0.000001 : targetFrameTime;
+
+	CAPreset::PresetList bufPreset("RANDOM");
+	uint randIndex = kaePreset.addPreset(bufPreset);
+	kaePreset.seedFromName(randIndex);
+
+	printf("cache size: %lu\n",sizeof(mainCache));
+
+	loadPreset(!mainCache.activeBuf); //initialize rest mainCache variables
+	cloneBuffer(); 
+	kaePreset.printPreset(0);
+}
