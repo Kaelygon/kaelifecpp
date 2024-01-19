@@ -59,9 +59,12 @@ public:
 		shaderTileDim[0]=cellData.mainCache.tileRows;
 		shaderTileDim[1]=cellData.mainCache.tileCols;
 
+		std::swap(shaderTileDim  [1], shaderTileDim  [0]); //swap coordinates for glew
+		std::swap(shaderCursorPos[1], shaderCursorPos[0]);
+
 		// Pass shader variables
-		glUniform2f (glGetUniformLocation(shaderProgram, "tileDim"		    ), shaderTileDim  [1], shaderTileDim  [0] ); //flip coordinates in glew
-		glUniform2f (glGetUniformLocation(shaderProgram, "cursorPos"		), shaderCursorPos[1], shaderCursorPos[0] );
+		glUniform2f (glGetUniformLocation(shaderProgram, "tileDim"		    ), shaderTileDim  [0], shaderTileDim  [1] );
+		glUniform2f (glGetUniformLocation(shaderProgram, "cursorPos"		), shaderCursorPos[0], shaderCursorPos[1] );
 		glUniform1f (glGetUniformLocation(shaderProgram, "cellStateScale"	), shaderCellStateScale);
 		glUniform1f (glGetUniformLocation(shaderProgram, "cursorRadius"		), shaderDrawRadius);
 		glUniform1f (glGetUniformLocation(shaderProgram, "cursorBorder"		), shaderCursorBorder);

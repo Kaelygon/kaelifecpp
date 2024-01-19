@@ -109,7 +109,7 @@ namespace kaelife {
 				lastframeTime=0;
 			}else{
 				//average current avg and previous value otherwise
-				avgTime =(avgTime *(periodSize-1)+elapsedTime							)/periodSize;
+				avgTime =(avgTime *(periodSize-1)+elapsedTime				)/periodSize;
 				avgIters=(avgIters*(periodSize-1)+periodIters[periodIndex]	)/periodSize;
 			}
 			periodSize=(int)2*(1000.0/avgTime); //change period size depending on frame rate

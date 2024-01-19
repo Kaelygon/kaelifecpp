@@ -274,7 +274,7 @@ public: //public functions
 			//spread threads task to 2D stripes 
 			uint iterSize	=(lv.tileRows+lv.threadCount/2)/lv.threadCount;
 			uint remainder	= lv.tileRows%lv.threadCount; //remaining rows that couldn't be split evenly
-			uint iterStart	=	 lv.threadId*iterSize;
+			uint iterStart	= lv.threadId*iterSize;
 			uint iterEnd	=(lv.threadId+1)*iterSize;
 			iterStart+=remainder    *(lv.threadId)/lv.threadCount; //spread out by remainder
 			iterEnd  +=(remainder)*(lv.threadId+1)/lv.threadCount; //fill gaps with remaining rows

@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_DEBUG
+# Target rules for targets named kaelifecpp_OPTIMIZED
 
 # Build rule for target.
-test_DEBUG: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_DEBUG
-.PHONY : test_DEBUG
+kaelifecpp_OPTIMIZED: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 kaelifecpp_OPTIMIZED
+.PHONY : kaelifecpp_OPTIMIZED
 
 # fast build rule for target.
-test_DEBUG/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_DEBUG.dir/build.make CMakeFiles/test_DEBUG.dir/build
-.PHONY : test_DEBUG/fast
+kaelifecpp_OPTIMIZED/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/build
+.PHONY : kaelifecpp_OPTIMIZED/fast
 
-tools/test.o: tools/test.cpp.o
-.PHONY : tools/test.o
+src/kaelifecpp.o: src/kaelifecpp.cpp.o
+.PHONY : src/kaelifecpp.o
 
 # target to build an object file
-tools/test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_DEBUG.dir/build.make CMakeFiles/test_DEBUG.dir/tools/test.cpp.o
-.PHONY : tools/test.cpp.o
+src/kaelifecpp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.o
+.PHONY : src/kaelifecpp.cpp.o
 
-tools/test.i: tools/test.cpp.i
-.PHONY : tools/test.i
+src/kaelifecpp.i: src/kaelifecpp.cpp.i
+.PHONY : src/kaelifecpp.i
 
 # target to preprocess a source file
-tools/test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_DEBUG.dir/build.make CMakeFiles/test_DEBUG.dir/tools/test.cpp.i
-.PHONY : tools/test.cpp.i
+src/kaelifecpp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.i
+.PHONY : src/kaelifecpp.cpp.i
 
-tools/test.s: tools/test.cpp.s
-.PHONY : tools/test.s
+src/kaelifecpp.s: src/kaelifecpp.cpp.s
+.PHONY : src/kaelifecpp.s
 
 # target to generate assembly for a file
-tools/test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_DEBUG.dir/build.make CMakeFiles/test_DEBUG.dir/tools/test.cpp.s
-.PHONY : tools/test.cpp.s
+src/kaelifecpp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/kaelifecpp_OPTIMIZED.dir/build.make CMakeFiles/kaelifecpp_OPTIMIZED.dir/src/kaelifecpp.cpp.s
+.PHONY : src/kaelifecpp.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_DEBUG"
-	@echo "... tools/test.o"
-	@echo "... tools/test.i"
-	@echo "... tools/test.s"
+	@echo "... kaelifecpp_OPTIMIZED"
+	@echo "... src/kaelifecpp.o"
+	@echo "... src/kaelifecpp.i"
+	@echo "... src/kaelifecpp.s"
 .PHONY : help
 
 

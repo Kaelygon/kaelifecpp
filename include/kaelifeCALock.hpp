@@ -14,7 +14,24 @@
 #include <numeric>
 
 class CALock {
+private:
+	std::vector<bool> resumeWaitPool;
+	std::atomic<bool> allThreadsWaiting = false;
+
+	uint threadCount;
+	
+	std::mutex resumeMutex;
+	std::mutex mainMutex;
+	std::condition_variable resumeCV;
+	std::condition_variable mainCV;
+
+    std::atomic<bool> isThreadPaused=false; //each thread has it's own memory location to prevent data racing without using per thread mutex
+	std::vector<int> transferIterRepeats;
+	std::atomic<bool> transferActiveBuf=0;
+
 public:
+    std::atomic<bool> isThreadTerminated=false;
+	
     CALock() {
 		threadCount=1;
 		isThreadPaused=1; //start paused
@@ -22,9 +39,6 @@ public:
 	}
 
 	uint getPoolSize(std::vector<bool> &pool){
-		return std::accumulate(pool.begin(),pool.end(),0);
-	}
-	int getPoolSize(std::vector<int> &pool){
 		return std::accumulate(pool.begin(),pool.end(),0);
 	}
 
@@ -50,10 +64,7 @@ public:
 	//main thread confirms that all threads are at waitResume()
 	void syncMainThread(){
 		std::unique_lock<std::mutex> lock(mainMutex);
-		mainCV.wait(lock, [&] { return allThreadsWaiting.load(); }); //main waits threads to enter pause. deadlocks?
-		//while(getPoolSize(resumeWaitPool) != threadCount){ //busy loop replacing mutex lock for debugging
-		//	threadSleep();
-		//}
+		mainCV.wait(lock, [&] { return allThreadsWaiting.load(); }); //main waits threads to enter pause
 	}
 
 	//called after syncMainThread in next cycle
@@ -73,22 +84,5 @@ public:
 		transferIterRepeats.resize(tc,-1);
 		resumeWaitPool.resize(tc,0);
 	}
-
-public:
-	uint threadCount;
-	
-	std::mutex resumeMutex;
-	std::mutex mainMutex;
-	std::condition_variable resumeCV;
-	std::condition_variable mainCV;
-
-    std::atomic<bool> isThreadPaused=false; //each thread has it's own memory location to prevent data racing without using per thread mutex
-    std::atomic<bool> isThreadTerminated=false;
-	std::vector<int> transferIterRepeats;
-	std::atomic<bool> transferActiveBuf=0;
-	bool threadsCanContinue=0;
 		
-private:
-	std::vector<bool> resumeWaitPool;
-	std::atomic<bool> allThreadsWaiting = false;
 };

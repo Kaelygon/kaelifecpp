@@ -465,6 +465,8 @@ public:
 		}
 		
 
+private:
+
 		//max possible neighboring cells sum
 		int calcMaxNeigsum(const uint ind){
 			uint tmpind = ind==UINT_MAX ? index : ind;
@@ -480,8 +482,6 @@ public:
 			return maxNeigsum;
 		}
 	//EOF Randomizers
-
-private:
 
 	template <typename T1, typename = std::enable_if_t<std::is_same<T1, std::string>::value || std::is_same<T1, uint>::value>>
 	uint getPresetIndex(T1 charOrInd) {
