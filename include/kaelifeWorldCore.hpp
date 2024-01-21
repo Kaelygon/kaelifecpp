@@ -1,10 +1,13 @@
-//kaelifeWorldCore.hpp
-//Main thread CA iteration managing loop
+/**
+ * @file kaelifeWorldCore.hpp
+ * 
+ * @brief Main thread CA iteration managing loop
+*/
 
 #pragma once
 
 #include "kaelifeRender.hpp" 
-#include "kaelifeCAData.hpp" 
+#include "CA/kaelifeCAData.hpp" 
 #include "kaelifeControls.hpp" 
 #include "kaelife.hpp"
 
@@ -16,11 +19,15 @@
 
 namespace kaelife {
 
-	void worldCore(CAData &kaelife, InputHandler &kaeInput, CARender &kaeRender, SDL_Window* &SDLWindow){
+	/**
+	 * @brief Main iteration loop cycle and periodic updates 
+	 * 
+	*/
+	void worldCore(CAData &kaelife, CARender &kaeRender, InputHandler &kaeInput, SDL_Window *&SDLWindow){
 		std::vector<std::thread> iterThreads;
 
 		std::thread iterHandler = std::thread([&]() {
-			kaelife.iterateStateMT(iterThreads);
+			kaelife.startWorkerThreads(iterThreads);
 		});
 
 		std::thread inputThread = std::thread([&]() {
@@ -80,7 +87,7 @@ namespace kaelife {
 			}
 			//pass previous buffer iteration to GPU while iterTask is being computed in new buffer
 			SDL_GL_SwapWindow(SDLWindow);
-			kaeRender.renderCells();
+			kaeRender.renderWorld();
 
 			do{ // Cap the frame rate
 				elapsedTime=SDL_GetTicks() - frameStartTime;

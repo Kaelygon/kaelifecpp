@@ -1,5 +1,8 @@
-//kaelifeSDL.hpp
-//Initialize SDL2 window and GLEW
+/**
+ * @file kaelifeSDL.hpp
+ * @brief Initialize SDL2 window and GLEW
+ *
+ */
 
 #pragma once
 
@@ -10,6 +13,9 @@
 #include <GL/glew.h>
 
 namespace kaelife {
+	/**
+	 * @brief Initialize SDL2 window and GLEW
+	 */
 	SDL_GLContext initSDL(	SDL_Window* &SDLWindow, int windowWidth, int windowHeight){
 
 

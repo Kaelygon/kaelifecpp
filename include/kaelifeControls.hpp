@@ -1,10 +1,14 @@
-//kaelifeControls.hpp
-//Manage SDL2 user input
+
+/**
+ * @file kaelifeControls.hpp
+ * @brief Manage SDL2 user input
+ * 
+ */
 
 #pragma once
 
 #include "kaelife.hpp"
-#include "kaelifeCAData.hpp"
+#include "CA/kaelifeCAData.hpp"
 
 #include <SDL2/SDL.h>
 #include <map>
@@ -14,30 +18,35 @@
 #include <atomic>
 #include <stdint.h>
 
-/*
-controls
-Random rules..... [R]
-Random add rule.. [T]
-Random all....... [Y]
-Mutate........... [M]
-Draw............. mouse left/right
-Draw radius...... [Q]:-1 [E]:+1
-Draw random...... [W]
-Simu Speed....... [1]:-1 [3]:+1
-Pause............ [2], [Shift]+[P]
-Iterate once..... [4]
-Print rules...... [P]
-Switch automata.. [,] [.]
-Shader Color..... [Shift]+[N]
-print frameTime.. [F]
-Hue--............ [Shift]+[Q]
-Hue++............ [Shift]+[E]
-Color stagger--.. [Alt]+[Q]
-Color stagger++.. [Alt]+[E]
-Exit:............ [ESC]
-*/
-
 //TODO: organize these billion variables to structs
+
+/**
+ * @brief Manage SDL2 user input
+ *
+ * @param CAData &inCAData 
+ * @param SDL_Window *&inSDL_Window
+ *
+ * controls
+ * Random rules..... [R]
+ * Random add rule.. [T]
+ * Random all....... [Y]
+ * Mutate........... [M]
+ * Draw............. mouse left/right
+ * Draw radius...... [Q]:-1 [E]:+1
+ * Draw random...... [W]
+ * Simu Speed....... [1]:-1 [3]:+1
+ * Pause............ [2], [Shift]+[P]
+ * Iterate once..... [4]
+ * Print rules...... [P]
+ * Switch automata.. [,] [.]
+ * Shader Color..... [Shift]+[N]
+ * print frameTime.. [F]
+ * Hue--............ [Shift]+[Q]
+ * Hue++............ [Shift]+[E]
+ * Color stagger--.. [Alt]+[Q]
+ * Color stagger++.. [Alt]+[E]
+ * Exit:............ [ESC]
+ */
 class InputHandler {
 private:
 
@@ -97,6 +106,7 @@ public:
 		return hasChanged;
 	}
 	
+	//TODO: a new overhauled keymapping wouldn't hurt. This worked for few inputs but is starting to feel yank and inflexible
 	// Initialize key mappings in the constructor
 	InputHandler(
 		CAData &inCAData, 
@@ -196,7 +206,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 	void InputHandler::press_q_LALT(){
 		uint8_t add=std::min(holdAccel*holdAccel/40.0f,3.0f)+1;
 		colorStagger-=add;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("colorStagger: %d\n",colorStagger);
 		}
 	};
@@ -204,7 +214,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 	void InputHandler::press_e_LALT(){
 		uint8_t add=std::min(holdAccel*holdAccel/40.0f,3.0f)+1;
 		colorStagger+=add;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("colorStagger: %d\n",colorStagger);
 		}
 	};
@@ -212,7 +222,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 	void InputHandler::press_q_LSHIFT(){
 		uint8_t add=std::min(holdAccel*holdAccel/40.0f,3.0f)+1;
 		shaderHue-=add;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("shaderHue: %d\n",shaderHue);
 		}
 	};
@@ -220,7 +230,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 	void InputHandler::press_e_LSHIFT(){
 		uint8_t add=std::min(holdAccel*holdAccel/40.0f,3.0f)+1;
 		shaderHue+=add;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("shaderHue: %d\n",shaderHue);
 		}
 	};
@@ -233,7 +243,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 		}else{
 			drawRadius=1;
 		}
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("drawRadius: %d\n",drawRadius);
 		}
 	};
@@ -245,7 +255,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 		}else{
 			drawRadius=255;
 		}
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("drawRadius: %d\n",drawRadius);
 		}
 	};
@@ -259,14 +269,14 @@ int InputHandler::cursorPos[2] = {0, 0};
 		}else{
 			simSpeed=0.01;
 		}
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("simulationSpeed: %f\n",simSpeed);
 		}
 	};
 	//pause
 	void InputHandler::press_2(){ 
 		pause=!pause;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("pause: %d\n", pause);
 		}
 	};
@@ -279,21 +289,21 @@ int InputHandler::cursorPos[2] = {0, 0};
 		}else{
 			simSpeed=1000;
 		}
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("simulationSpeed: %f\n",simSpeed);
 		}
 	};
 	//progress one sim step
 	void InputHandler::press_4(){ 
 		stepFrame=1;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("stepFrame: %d\n",stepFrame);
 		}
 	};
 	//draw random
 	void InputHandler::press_w(){
 		drawRandom=!drawRandom;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("drawRandom: %d\n",drawRandom);
 		}
 	};
@@ -305,7 +315,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 	//show frame time
 	void InputHandler::press_f(){
 		displayFrameTime=!displayFrameTime;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("displayFrameTime: %d\n", displayFrameTime);
 		}
 	};
@@ -313,28 +323,28 @@ int InputHandler::cursorPos[2] = {0, 0};
 	void InputHandler::press_n_LSHIFT(){
 		shaderColor++;
 		shaderColor=(shaderColor)%2;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("shaderColor: %d\n", shaderColor);
 		}
 	};
-	//show kaelife::KEY_DEBUG 
+	//show kaelife::INPUT_DEBUG 
 	void InputHandler::press_p_LSHIFT(){
 		pause=!pause;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("pause: %d\n", pause);
 		}
 	};
 	//quit
 	void InputHandler::press_ESCAPE(){
 		QUIT_FLAG = true;
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("Exit\n");
 		}
 	};
 	//next preset
 	void InputHandler::press_PERIOD(){
 		int ind =cellData.kaePreset.nextPreset();
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("preset: %d\n",ind);
 		}
 		//wait buffer sync
@@ -343,7 +353,7 @@ int InputHandler::cursorPos[2] = {0, 0};
 	//previous preset
 	void InputHandler::press_COMMA(){
 		int ind = cellData.kaePreset.prevPreset();
-		if(kaelife::KEY_DEBUG){
+		if(kaelife::INPUT_DEBUG){
 			printf("preset: %d\n",ind);
 		}
 		cellData.backlog->add("loadPreset");
@@ -382,7 +392,7 @@ void InputHandler::detectInput() {
 				SDL_Keycode combinedKey = event.key.keysym.sym | (modState<<16);
 
 				if(event.type == SDL_KEYDOWN){
-					if(kaelife::KEY_DEBUG){
+					if(kaelife::INPUT_DEBUG){
 						printf("Key: %d, Modifiers: %d, Result: %d \n", event.key.keysym.sym, (modState<<16), combinedKey);
 					}
 					// Find the associated function in the map
@@ -401,13 +411,13 @@ void InputHandler::detectInput() {
 				keyStates[event.button.button] = (event.type == SDL_MOUSEBUTTONDOWN);
 				windowFocus=keyStates[event.button.button];
 
-				if (kaelife::KEY_DEBUG) {
+				if (kaelife::INPUT_DEBUG) {
 					printf("Mouse button %d pressed\n", event.button.button);
 				}
-				if(kaelife::KEY_DEBUG){
+				if(kaelife::INPUT_DEBUG){
 					printf("Mouse pos (%d, %d)\n", cursorPos[0], cursorPos[1]);
 				}
-				if(kaelife::KEY_DEBUG){
+				if(kaelife::INPUT_DEBUG){
 					auto cursorPosW = getWorldCursorPos();
 					printf("Mouse world (%d, %d)\n", cursorPosW[0], cursorPosW[1]);
 				}
@@ -417,7 +427,7 @@ void InputHandler::detectInput() {
 		//run these every call
 		if (keyStates[SDL_BUTTON_LEFT] || keyStates[SDL_BUTTON_RIGHT] || event.type == SDL_MOUSEBUTTONDOWN) {
 			auto cursorPos = getWorldCursorPos();
-			if(kaelife::KEY_DEBUG){
+			if(kaelife::INPUT_DEBUG){
 				printf("cursorPos[0] %d\n",cursorPos[0]);
 				printf("cursorPos[1] %d\n",cursorPos[1]);
 			}

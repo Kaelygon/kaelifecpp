@@ -1,16 +1,22 @@
-//kaelifeBMPIO.hpp
-//TODO: Import and export world state to bitmap
+/**
+ * @file kaelifeBMPIO.hpp
+ * 
+ * @brief TODO: Import and export world state to bitmap
+
+*/
 
 #pragma once
 
 #include "kaelifeWorldMatrix.hpp"
-#include "kaelifeCAData.hpp"
+#include "CA/kaelifeCAData.hpp"
 #include "kaelife.hpp"
 
 #include <iostream>
 
 namespace kaelife {
-	//eventually make this bitmap import export
+	/**
+	 * @brief eventually make this bitmap import export
+	*/
 	void placeHolderDraw(CAData &cellData){
 	
 		uint rows = cellData.mainCache.tileRows;

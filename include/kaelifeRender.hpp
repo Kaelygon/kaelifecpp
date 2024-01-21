@@ -1,9 +1,13 @@
-//kaelifeCARender.hpp
-//OpenGL CA render cellState[] 
+/**
+ * @file kaelifeRender.hpp
+ * 
+ * @brief OpenGL CA render all world cells in cellState[][][]
+ * 
+*/
 
 #pragma once
 
-#include "kaelifeCAData.hpp" 
+#include "CA/kaelifeCAData.hpp" 
 #include "kaelifeControls.hpp" 
 
 #include <iostream>
@@ -14,13 +18,23 @@
 #include <vector>
 #include <algorithm>
 
+/**
+ * @brief Cellular Automata world OpenGL renderer
+*/
 class CARender {
 private:
-    CAData& cellData;
-    InputHandler& kaeInput;
-    SDL_Window*& SDLWindow;  // Use reference to pointer
+    CAData &cellData;
+    InputHandler &kaeInput;
+    SDL_Window *&SDLWindow;  // Use reference to pointer
 
 public:
+	/**
+	 * @brief Initialize with reference injections
+	 * 
+	 * @param inCAData& CAData 
+	 * @param inInputHandler& InputHandler 
+	 * @param inSDL_Window*& SDL_Window
+	*/
     CARender(CAData &inCAData, InputHandler &inInputHandler, SDL_Window*& inSDL_Window)
         : cellData(inCAData), kaeInput(inInputHandler), SDLWindow(inSDL_Window) {}
 
@@ -29,11 +43,11 @@ public:
 	static GLuint shaderProgram;
 	void initOpenGL();
 
-	inline void renderCells() {
+	inline void renderWorld() {
 		const GLfloat quadVertices[] = {
 			-1.0f, -1.0f,
-			1.0f, -1.0f,
-			1.0f,  1.0f,
+			 1.0f, -1.0f,
+			 1.0f,  1.0f,
 			-1.0f,  1.0f
 		};
 
@@ -100,6 +114,7 @@ public:
 		glDisable(GL_TEXTURE_2D);
 
 	}
+
 private:
 	static void updateTexture(const CAData& cellData) {
 		uint activeRenderBuf = cellData.mainCache.activeBuf; // ensure buffer doesn't change during render

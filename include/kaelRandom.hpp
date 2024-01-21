@@ -1,5 +1,7 @@
-//kaelRandom.hpp
-//Fast pseudo randomizers and hashers
+/**
+ * @file kaelRandom.hpp
+ * @brief Fast pseudo randomizers and hashers
+*/
 
 #pragma once
 #include <iostream>
@@ -11,8 +13,17 @@
 #include <algorithm>
 #include <type_traits>
 
-template <typename InsT = uint64_t> //instance type
-//Kaelygon randomizer and hash functions
+template <typename TRand = uint64_t> //Random type
+/**
+ * @brief Kaelygon randomizers and hashers
+ *
+ * The class is template 'TRand' specifies highest default uint width 
+ *
+ * Example usage:
+ * @code
+ * KaelRandom<uint64_t> rand;
+ * @endcode
+ */
 class KaelRandom {
 	typedef unsigned int uint128_t __attribute__((mode(TI)));
 	template <typename... Types>
@@ -25,11 +36,16 @@ class KaelRandom {
 		); 
 	}
 public:
-	KaelRandom(){ isUint<InsT>(); }
+	KaelRandom(){ isUint<TRand>(); }
 
-	//Store pointers to be used and modified in kaelShfl
-	//If no pointer is give, private variables are used
-	template <typename X = InsT, typename Y = InsT>
+	/**
+	 * @brief Store pointers to be used and modified in kaelShfl
+	 * If no pointer is given, private variables are used
+	 * 
+	 * @param seedInit starting seed
+	 * @param stepInit step progress. optional
+	*/
+	template <typename X = TRand, typename Y = TRand>
 	struct ShufflePair {
 		X* seed;
 		Y* step;
@@ -45,77 +61,135 @@ public:
 			Y privateStep = defaultStep;
 	};
 
-	//iterate instance seed
-		//definitely not thread safe
-		inline InsT const operator()() { 
-			seed = kaelLCG(seed);
-			return seed;
-		}
-		inline void setSeed(InsT n) {
-			seed = n;
-		}
-		//potentially not thread safe
-		//Seed pointer null check. If input *n is nullptr, return instance seed ptr. Otherwise return *n unchanged
-		inline InsT* validSeedPtr(InsT *n){
-			return n==nullptr ? &seed : n;
-		}
-		//Pointer to instance seed. Not thread safe to modify. No null check.
-		inline InsT* getSeedPtr() {
-			return &seed;
-		}
-	//
+	/**
+	 * @brief Iterate instance seed. Not thread-safe.
+	 *
+	 * @return iteration result
+	 */
+	inline TRand const operator()() { 
+		seed = kaelLCG(seed);
+		return seed;
+	}
+	/**
+	 * @brief Set instance seed
+	 */
+	inline void setSeed(TRand n) {
+		seed = n;
+	}
+	/**
+	 * @brief Validate seed pointer. If the input pointer is nullptr, return the instance seed pointer.
+	 *        Otherwise, return the input pointer unchanged.
+	 *        
+	 * @note Not thread-safe to modify if the input pointer is nullptr.
+	 *
+	 * @param seedPtr Pointer to a seed
+	 * @return Pointer to a valid seed
+	 */
+	inline TRand* validSeedPtr(TRand *seedPtr){
+		return seedPtr==nullptr ? &seed : seedPtr;
+	}
+    /**
+     * @brief Get the pointer to the instance seed.
+     *        
+	 * @note Not thread-safe to modify.
+     *
+     * @return Pointer to the instance seed.
+     */
+	inline TRand* getSeedPtr() {
+		return &seed;
+	}
 
-	//thread safe as we are iterating the given argument value or ptr. Unless the pointer is instance seed
-		//iterate literal (thread safe)
-		template <typename U = InsT, typename = std::enable_if_t<!std::is_pointer<std::remove_reference_t<U>>::value>>
-		inline const InsT operator()(const U& n) { 
-			return kaelLCG(n);
-		}
-		//Iterate pointer
-		template <typename U = InsT, typename = std::enable_if_t<std::is_pointer<std::remove_reference_t<U>>::value>>
-		inline const InsT operator()(U n) { 
-			*n = kaelLCG(*n);
-			return *n;
-		}
-	//
+	/**
+	 * @brief Iterate literal (thread safe)
+	 * @param seed uint literal 
+	 *
+	 * @return Iterate result
+	 */
+	template <typename U = TRand, typename = std::enable_if_t<!std::is_pointer<std::remove_reference_t<U>>::value>>
+	inline const TRand operator()(const U& seed) { 
+		return kaelLCG(seed);
+	}
+	/**
+	 * @brief Iterate pointer
+	 * @param seedPtr *uint
+	 *
+	 * @return Iterated result
+	 */
+	template <typename U = TRand, typename = std::enable_if_t<std::is_pointer<std::remove_reference_t<U>>::value>>
+	inline const TRand operator()(U seedPtr) { 
+		*seedPtr = kaelLCG(*seedPtr);
+		return *seedPtr;
+	}
 
-	//other randomizers
-		//hash c string
-		inline InsT hashCstr(const std::string& str) {
-			return kaelHash<InsT>(str.c_str());
-		}
-		
-		inline InsT hashCstr(const char* str) {
-			return kaelHash<InsT>(str);
-		}
+    /**
+     * @brief Hash std::string.
+     *
+     * @param str Input string.
+     * @return Hash result.
+     */
+	template <typename U = TRand>
+	inline U hashCstr(const std::string& str) {
+		return kaelHash<U>(str.c_str());
+	}
+    /**
+     * @brief Hash const char*.
+     *
+     * @param str Input const char*.
+     * @return Hash result.
+     */
+	template <typename U = TRand>
+	inline U hashCstr(const char* str) {
+		return kaelHash<U>(str);
+	}
 
-		template <typename X = InsT, typename Y = InsT>
-		inline ShufflePair<X, Y>& shuffle(ShufflePair<X, Y>& shflPair) {
-			return kaelShfl(shflPair);
-		}
+	/**
+	 * @brief Shuffle ShufflePair.seed
+	 *
+	 * @param shflPair ShufflePair
+	 *
+	 * @return ShufflePair
+	 */
+	template <typename X = TRand, typename Y = TRand>
+	inline ShufflePair<X, Y>& shuffle(ShufflePair<X, Y>& shflPair) {
+		return kaelShfl(shflPair);
+	}
 
-		template <typename X = InsT, typename Y = InsT>
-		inline InsT shuffle(X *seed, Y step=0) {
-			Y *stepPtr = step==0 ? nullptr : &step;
-			ShufflePair<X,Y> bufPair( seed, stepPtr );
-			return *kaelShfl( bufPair ).seed;
-		}
-	//
+	/**
+	 * @brief Shuffle *seedPtr
+	 *
+	 * @param seedPtr Seed pointer
+	 * @param step step progress
+	 *
+	 * @return ShufflePair.seed
+	 */
+	template <typename X = TRand, typename Y = TRand>
+	inline TRand shuffle(X *seedPtr, Y step=0) {
+		Y *stepPtr = step==0 ? nullptr : &step;
+		ShufflePair<X,Y> bufPair( seedPtr, stepPtr );
+		return *kaelShfl( bufPair ).seedPtr;
+	}
 
 private:
-	template <typename V = InsT>
+	//Rotate right x86 instruction
+	template <typename V = TRand>
 	inline V RORR(const V num, const size_t shift, const size_t invShift ){
 		return (num>>shift) | (num<<invShift);
 	}
-	template <typename V = InsT>
+	template <typename V = TRand>
 	inline V RORR(const V num, const size_t shift ){
 		const V invShift = sizeof(V)*CHAR_BIT - shift;
 		return (num>>shift) | (num<<invShift);
 	}
 
-	InsT seed=0;
-	static constexpr const InsT mulInd = log2(sizeof(InsT)*8)-3; //uint8=1 uint16=2 uint32=3...
-	static constexpr const InsT addInd = log2(sizeof(InsT)*8)-3;
+	/**
+	 * @brief Instance seed
+	 * 
+	 * @note Not thread safe to modify
+	*/
+	TRand seed=0;
+	
+	static constexpr const TRand mulInd = log2(sizeof(TRand)*8)-3; //Constant multiplier and addend index depending on uint width. uint8=1 uint16=2 uint32=3...
+	static constexpr const TRand addInd = log2(sizeof(TRand)*8)-3;
 
 /*
 	other uint32 candidates
@@ -124,16 +198,18 @@ private:
 	high period, less random
 	(173, 103) (349, 103) (421, 127) (971, 139)
 */
-	static constexpr const InsT mulArray[] = { (InsT)47, (InsT)365, (InsT)    3343 };
-	static constexpr const InsT addArray[] = { (InsT)7 , (InsT)921, (InsT)11770513 };
+	//LCG constants
+	static constexpr const TRand mulArray[] = { (TRand)47, (TRand)365, (TRand)    3343 };
+	static constexpr const TRand addArray[] = { (TRand)7 , (TRand)921, (TRand)11770513 };
 
-	static constexpr const InsT mul = mulArray[std::min( (InsT)mulInd, (InsT)(sizeof(mulArray)/sizeof(mulArray[0]) - 1 ) )]; //choose last element if bigger than array size
-	static constexpr const InsT add = addArray[std::min( (InsT)addInd, (InsT)(sizeof(addArray)/sizeof(addArray[0]) - 1 ) )];
+	//Choose element depending on TRand width. Select last if index exceeds constants array size
+	static constexpr const TRand mul = mulArray[std::min( (TRand)mulInd, (TRand)(sizeof(mulArray)/sizeof(mulArray[0]) - 1 ) )];
+	static constexpr const TRand add = addArray[std::min( (TRand)addInd, (TRand)(sizeof(addArray)/sizeof(addArray[0]) - 1 ) )];
 
  	//Generate pseudo random numbers RORR LCG
 	//Periods: ui8 = 2^8-1, ui16 = 2^16-1, ui32 = 2^32-162245, ui64 (tested up to) 2^38
-	template <typename V = InsT>
-	inline const InsT kaelLCG( V n ) {	isUint<V>();
+	template <typename V = TRand>
+	inline const TRand kaelLCG( V n ) {	isUint<V>();
 		static constexpr const V bitSize = sizeof(V)*CHAR_BIT;
 		static constexpr const V shift = (sizeof(V)*3)-1;
 		static constexpr const V invShift = bitSize-shift;
@@ -145,20 +221,20 @@ private:
 		Unique hashes of strings length of sieof(V): 
 		ui8 255, ui16 65250, ui32 ~2^31.89, ui64 (tested up to) 2^34.5
 	*/
-	static constexpr const InsT prm35 =(InsT)(mul*add+126U);
- 	//Evenly distributed hash
-	template <typename V = InsT>
+	static constexpr const TRand prm35 =(TRand)(mul*add+126U); //Some large prime for hasher starting seed
+ 	//Evenly distributed hash of const char*
+	template <typename V = TRand>
 	V kaelHash(const char* cstr) {	isUint<V>();
 		static constexpr const V shift = CHAR_BIT;
 
-		InsT hash=prm35;
-		InsT step=0; //starting step 0 reduces collisions significantly
-		ShufflePair<InsT,InsT> bufPair = {&hash, &step};
+		TRand hash=prm35;
+		TRand step=0; //starting step 0 reduces collisions significantly
+		ShufflePair<TRand,TRand> bufPair = {&hash, &step};
 
-		InsT charVal;
+		TRand charVal;
 		while(true){ //iterate through every char until null termination
 			charVal = (uint8_t)cstr[0];
-			hash+=charVal;
+			hash+=charVal; //Mix character
 			hash = *shuffle(bufPair).seed; //shuffle hash
 			cstr++;
 			if(!*cstr){ break; } //RORR is redundant if there's no characters left to mix
@@ -170,7 +246,7 @@ private:
 	}
 
 	//Bijective shuffle function. Mod 4 is predictable
-	template <typename X = InsT, typename Y = InsT>
+	template <typename X = TRand, typename Y = TRand>
 	ShufflePair<X, Y>& kaelShfl(ShufflePair<X, Y>& shufflePair) {	isUint<X,Y>();
 		constexpr const X a0 = (sizeof(X) == 1) ? 4 	: 4		; //Some values increase periodicity greatly
 		constexpr const X a1 = (sizeof(X) == 1) ? 31 	: 6619	;
@@ -187,29 +263,3 @@ private:
 	}
 
 };
-
-/*
-	static constexpr const InsT prm35 =(InsT)(mul*add+126U);
- 	//Evenly distributed hash 
-	template <typename V = InsT>
-	V kaelHash(const char* cstr) {	isUint<V>();
-		static constexpr const V shift = CHAR_BIT;
-
-		InsT hash=prm35;
-		InsT step=0; //starting step 0 reduces collisions significantly
-		ShufflePair<InsT,InsT> bufPair = {&hash, &step};
-
-		InsT charVal;
-		while(true){ //iterate through every char until null termination
-			charVal = (uint8_t)cstr[0];
-			hash+=charVal;
-			hash = *shuffle(bufPair).seed; //shuffle hash
-			cstr++;
-			if(!*cstr){ break; } //RORR is redundant if there's no characters left to mix
-			hash = RORR(hash,shift); //RORR byte
-		}
-		hash = kaelLCG(hash); //randomize hash
-
-		return (V)hash*3+1;
-	}
-*/

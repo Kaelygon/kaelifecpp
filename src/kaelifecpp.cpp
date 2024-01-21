@@ -1,17 +1,20 @@
-//kaelife.cpp
-//Generalized 8-bit cellular automata c++ 
-//https://github.com/Kaelygon/kaelifecpp/
+/**
+ * @file kaelifecpp.cpp
+ * 
+ * @brief Generalized 8-bit cellular automata c++ 
+ * https://github.com/Kaelygon/kaelifecpp/
+*/
 
 #include "kaelRandom.hpp" //Randomizers and Hashers
 namespace kaelife { 
-	KaelRandom<uint64_t>rand; 
-    constexpr bool DEBUG = 0; //lots of checks in tight loops
-    constexpr bool KEY_DEBUG = 1; //conservative InputHandler checks
+	KaelRandom<uint64_t>rand; //global randomizer kaelife::rand()
+    constexpr bool CA_DEBUG = 0; //Enable debugging for CA related classes
+    constexpr bool INPUT_DEBUG = 1; //Enable debugging for InputHandler
 }
 
 #include "kaelife.hpp" //kaelife:: Namespace functions
 #include "kaelifeBMPIO.hpp" //TODO: import export world data to bitmap
-#include "kaelifeCAData.hpp" //CA simulation iterator
+#include "CA/kaelifeCAData.hpp" //CA simulation iterator
 #include "kaelifeControls.hpp" //user controls
 #include "kaelifeConfigIO.hpp" //TODO: Import JSON to data struct and pass sub structs to each class constructor. This could act as global like variables
 #include "kaelifeRender.hpp" //OpenGL render world as texture
@@ -24,7 +27,7 @@ namespace kaelife {
 
 int main() {
 
-//	MasterConfig config("./config/");
+//	MasterConfig config("./config/"); //todo
 
     CAData kaelife;
 
@@ -43,7 +46,7 @@ int main() {
 
 	kaelife::placeHolderDraw(kaelife);
 
-	kaelife::worldCore(kaelife, kaeInput, kaeRender, mainSDLWindow);
+	kaelife::worldCore(kaelife, kaeRender, kaeInput, mainSDLWindow);
 
 	SDL_GL_SetSwapInterval(0);
 

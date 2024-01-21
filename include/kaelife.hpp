@@ -1,6 +1,10 @@
-//kaelife.hpp
-//Global namespace kaelife::
-//Functions that would otherwise be free functions but are related to kaelife
+/**
+ * @file kaelife.hpp
+ * 
+ * @brief Global namespace kaelife::
+ * 
+ * Functions that would otherwise be free functions but are related to kaelife 
+*/
 
 #pragma once
 
@@ -11,6 +15,9 @@
 
 #include <stdint.h>
 
+/**
+ * @brief Global namespace kaelife:: 
+*/
 namespace kaelife {
     SDL_GLContext initSDL(SDL_Window* &SDLWindow, int windowWidth, int windowHeight);  
     void worldCore(CAData &kaelife, InputHandler &kaeInput, CARender &kaeRender, SDL_Window* &SDLWindow);
