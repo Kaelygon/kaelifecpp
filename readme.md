@@ -3,7 +3,7 @@
 ![alt text](./icon.png)
 
 # kaelifecpp Generalized Cellular Automata
- 
+
 ## Rules explanation
 ```
 The cellular automata in this program can have number of different 
@@ -30,9 +30,9 @@ stateCount is the number of states, 0 to 3
 ruleRange is a sorted list of possible neighbor sums
 ruleAdd is list of modifiers that will be added to the cell
 neigMask (neighbor mask) is a 2D WorldMatrix. WorldMatrix which acts similar to vector but it 
-   matches the world space orientation and it is always a rectangle. These values are a
-   nominator of 255. As an example neigMask 128 will result in floor(cellValue*128/255) which
-   is added to neighbor sum.
+matches the world space orientation and it is always a rectangle. These values are a
+nominator of 255. As an example neigMask 128 will result in floor(cellValue*128/255) which
+is added to neighbor sum.
 clipTreshold is value, any any cell values below it are discarded.
 
 Each iteration following calculations are performed on each cell as follows:
@@ -126,24 +126,30 @@ Make sure to run it from root folder as the program has to link GL shader files.
 
 ## Source Files
 ```
- ./src/kaelifecpp.cpp              # Main program
- 
- ./include/kaelifeBMPIO.hpp        # CA world state Bitmap export import
- ./include/kaelifeCACache.hpp      # CAData thread cache
- ./include/kaelifeCAData.hpp       # CA multi-threaded world state iteration
- ./include/kaelifeCALock.hpp       # CAData thread lock
- ./include/kaelifeCAPreset.hpp     # CA preset manager
- ./include/kaelifeCARender.hpp     # OpenGL draw CA world state
- ./include/kaelifeConfigIO.hpp     # Import JSON configuration
- ./include/kaelifeControls.hpp     # Manage user input
- ./include/kaelife.hpp             # Namespace for free functions
- ./include/kaelifeSDL.hpp          # SDL2 window initialization
- ./include/kaelifeWorldCore.hpp    # Main thread CA iteration managing loop
- ./include/kaelifeWorldMatrix.hpp  # 2D rectangle std::vector in world space
- ./include/kaelRandom.hpp          # Random and hash functions
+src
+kaelifecpp.cpp                Generalized 8-bit cellular automata c++ https://github.com/Kaelygon/kaelifecpp/
 
- ./shader/fragment.fs.glsl         # glsl fragment shader
- ./shader/palette.h.glsl           # hard coded 256 color palette
- ./shader/vertex.vs.glsl           # glsl vertex shader
+include    
+    kaelife.hpp               Global namespace kaelife::
+    kaelifeBMPIO.hpp          TODO: Import and export world state to bitmap
+    kaelifeConfigIO.hpp       JSON Config parser and MasterConfig struct in ConfigHandler class
+    kaelifeControls.hpp       Manage SDL2 user input
+    kaelifeRender.hpp         OpenGL CA render all world cells in cellState[][][]
+    kaelifeSDL.hpp            Initialize SDL2 window and GLEW
+    kaelifeWorldCore.hpp      Main thread CA iteration managing loop
+    kaelifeWorldMatrix.hpp    2D rectangle std::vector in world orientation and transform
+    kaelRandom.hpp            Fast pseudo randomizers and hashers
+
+include/CA
+    kaelifeCABacklog.hpp      CAData Backlog thread critical tasks and execute them later
+    kaelifeCACache.hpp        CAData Thread cache and copy
+    kaelifeCAData.hpp         Manages and iterates cellState that holds CA cell states
+    kaelifeCADraw.hpp         CAData Convert mouse press points to pixels to be updated in cellState[][][]
+    kaelifeCALock.hpp         CAData thread locks
+    kaelifeCAPreset.hpp       CAData preset manager
+
+
+./shader/fragment.fs.glsl     glsl fragment shader
+./shader/vertex.vs.glsl       glsl vertex shader
 
 ```
